@@ -166,17 +166,7 @@
 
       <a href="index.html" class="bk-nav-link">Home</a>
 
-      <!-- About -->
-      <div class="bk-dropdown-wrap">
-        <button class="bk-nav-link bk-has-dropdown" onclick="bkToggle(this)">
-          About <span style="font-size:10px;opacity:0.6;">&#9660;</span>
-        </button>
-        <div class="bk-dropdown">
-          <a href="about.html" class="bk-dd-item">Our Story</a>
-          <a href="about.html#directors" class="bk-dd-item">Meet The Directors</a>
-          <a href="about.html#philosophy" class="bk-dd-item">Our Philosophy</a>
-        </div>
-      </div>
+      <a href="about.html" class="bk-nav-link">About</a>
 
       <!-- Experiences -->
       <div class="bk-dropdown-wrap">
@@ -207,22 +197,9 @@
         </div>
       </div>
 
-      <a href="women-supporting-women.html" class="bk-nav-link">Women Supporting Women</a>
+      <a href="women-supporting-women.html" class="bk-nav-link">Networking</a>
 
-      <!-- Shop -->
-      <div class="bk-dropdown-wrap">
-        <button class="bk-nav-link bk-has-dropdown" onclick="bkToggle(this)">
-          Shop <span style="font-size:10px;opacity:0.6;">&#9660;</span>
-        </button>
-        <div class="bk-dropdown">
-          <a href="shop.html" class="bk-dd-item">Aprons</a>
-          <a href="shop.html" class="bk-dd-item">Dining &amp; Serving</a>
-          <a href="shop.html" class="bk-dd-item">Tableware</a>
-          <a href="shop.html" class="bk-dd-item">Cutlery &amp; Serving</a>
-          <a href="shop.html" class="bk-dd-item">Wine &amp; Dining</a>
-          <a href="shop.html" class="bk-dd-item">Hosting Collection</a>
-        </div>
-      </div>
+      <a href="shop.html" class="bk-nav-link">Shop</a>
 
       <a href="food-truck.html" class="bk-nav-link">Food Truck</a>
       <a href="gallery.html" class="bk-nav-link">Gallery</a>
@@ -230,10 +207,31 @@
 
     </nav>
 
-    <!-- CTAs -->
-    <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
-      <a href="shop.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#424844;text-decoration:none;border:1px solid #c1c8c2;padding:7px 14px;transition:all .2s;" onmouseover="this.style.color='#466556';this.style.borderColor='#466556';" onmouseout="this.style.color='#424844';this.style.borderColor='#c1c8c2';">Shop Now</a>
-      <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#fff;background:#466556;text-decoration:none;padding:8px 16px;transition:background .2s;white-space:nowrap;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Book An Experience</a>
+    <!-- Right icons: Currency / Account / Cart -->
+    <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+
+      <!-- Currency selector -->
+      <div style="position:relative;">
+        <select onchange="" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.05em;color:#424844;background:transparent;border:1px solid #c1c8c2;padding:6px 8px;cursor:pointer;appearance:none;-webkit-appearance:none;outline:none;transition:border-color .2s;min-width:60px;"
+          onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';">
+          <option>GBP</option>
+          <option>USD</option>
+          <option>EUR</option>
+          <option>NGN</option>
+        </select>
+      </div>
+
+      <!-- Account icon -->
+      <a href="contact.html" title="Account" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+      </a>
+
+      <!-- Cart icon -->
+      <a href="shop.html" title="Cart" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;position:relative;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
+        <span style="position:absolute;top:4px;right:4px;width:8px;height:8px;background:#8f4c37;border-radius:50%;font-size:0;"></span>
+      </a>
+
     </div>
 
     <!-- Mobile burger -->
@@ -249,11 +247,6 @@
   <div style="padding:12px 20px;">
     <a href="index.html" class="bk-mob-link">Home</a>
     <a href="about.html" class="bk-mob-link">About</a>
-    <div style="padding-left:16px;border-left:2px solid rgba(70,101,86,0.2);margin-left:8px;">
-      <a href="about.html" class="bk-mob-sub">Our Story</a>
-      <a href="about.html#directors" class="bk-mob-sub">Meet The Directors</a>
-      <a href="about.html#philosophy" class="bk-mob-sub">Our Philosophy</a>
-    </div>
     <a href="experiences.html" class="bk-mob-link">Experiences</a>
     <div style="padding-left:16px;border-left:2px solid rgba(70,101,86,0.2);margin-left:8px;">
       <a href="private-dining.html" class="bk-mob-sub">Private Dining</a>
@@ -262,14 +255,18 @@
       <a href="event-food-planning.html" class="bk-mob-sub">Event Food Planning</a>
     </div>
     <a href="menus.html" class="bk-mob-link">Menus</a>
-    <a href="women-supporting-women.html" class="bk-mob-link">Women Supporting Women</a>
+    <a href="women-supporting-women.html" class="bk-mob-link">Networking</a>
     <a href="shop.html" class="bk-mob-link">Shop</a>
     <a href="food-truck.html" class="bk-mob-link">Food Truck</a>
     <a href="gallery.html" class="bk-mob-link">Gallery</a>
     <a href="contact.html" class="bk-mob-link">Contact</a>
-    <div style="padding-top:12px;border-top:1px solid #e3e2e0;margin-top:8px;display:flex;flex-direction:column;gap:8px;">
-      <a href="shop.html" style="text-align:center;border:1px solid #c1c8c2;padding:10px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#424844;text-decoration:none;">Shop Now</a>
-      <a href="book.html" style="text-align:center;background:#466556;padding:10px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#fff;text-decoration:none;">Book An Experience</a>
+    <div style="padding-top:12px;border-top:1px solid #e3e2e0;margin-top:8px;display:flex;gap:12px;align-items:center;">
+      <a href="contact.html" title="Account" style="color:#424844;text-decoration:none;">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+      </a>
+      <a href="shop.html" title="Cart" style="color:#424844;text-decoration:none;">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
+      </a>
     </div>
   </div>
 </div>
@@ -705,12 +702,6 @@ document.addEventListener('click', function(e) {
             Subscribe
           </button>
         </form>
-        <div style="margin-top:24px;">
-          <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 10px;">Contact</p>
-          <a href="tel:+447000000000"         style="display:block;font-family:Inter,sans-serif;font-size:13px;color:#424844;text-decoration:none;margin-bottom:6px;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">+44 700 000 0000</a>
-          <a href="mailto:hello@bukahauz.com" style="display:block;font-family:Inter,sans-serif;font-size:13px;color:#424844;text-decoration:none;margin-bottom:6px;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">hello@bukahauz.com</a>
-          <a href="https://wa.me/447000000000" target="_blank" style="display:block;font-family:Inter,sans-serif;font-size:13px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">WhatsApp Us</a>
-        </div>
       </div>
 
     </div>
