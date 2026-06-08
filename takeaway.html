@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#7d9d8c",
+                    "secondary-fixed-dim": "#ffb59e",
+                    "surface-container": "#eeeeeb",
+                    "on-tertiary-fixed-variant": "#623d3d",
+                    "on-surface-variant": "#424844",
+                    "secondary": "#8f4c37",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#163427",
+                    "on-error": "#ffffff",
+                    "surface": "#faf9f7",
+                    "secondary-fixed": "#ffdbd0",
+                    "outline": "#727974",
+                    "on-tertiary-container": "#462526",
+                    "inverse-surface": "#2f312f",
+                    "tertiary-fixed": "#ffdad9",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#eebaba",
+                    "background": "#faf9f7",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e9e8e5",
+                    "tertiary-container": "#b98a8a",
+                    "on-background": "#1a1c1b",
+                    "on-primary-fixed": "#022115",
+                    "surface-container-highest": "#e3e2e0",
+                    "surface-variant": "#e3e2e0",
+                    "tertiary": "#7c5454",
+                    "on-primary-fixed-variant": "#2f4d3f",
+                    "surface-container-low": "#f4f4f1",
+                    "primary": "#466556",
+                    "on-surface": "#1a1c1b",
+                    "outline-variant": "#c1c8c2",
+                    "on-secondary-container": "#7a3b27",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#723522",
+                    "inverse-on-surface": "#f1f1ee",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#faf9f7",
+                    "primary-fixed-dim": "#adcebc",
+                    "primary-fixed": "#c8ead7",
+                    "surface-dim": "#dadad7",
+                    "surface-tint": "#466556",
+                    "secondary-container": "#ffa98f",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#301314",
+                    "on-secondary-fixed": "#3a0b00",
+                    "inverse-primary": "#adcebc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "lg": "32px",
+                    "md": "16px",
+                    "container-max": "1440px",
+                    "xl": "64px",
+                    "unit": "4px",
+                    "xxl": "128px",
+                    "gutter": "24px",
+                    "sm": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Bodoni Moda"],
+                    "label-sm": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Bodoni Moda"],
+                    "display-md": ["Bodoni Moda"],
+                    "display-lg": ["Bodoni Moda"],
+                    "headline-lg": ["Bodoni Moda"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "display-md": ["48px", {"lineHeight": "1.1", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+        .grain-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #faf9f7; }
+        ::-webkit-scrollbar-thumb { background: #466556; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header id="bk-header" style="position:fixed;top:0;left:0;right:0;z-index:50;">
+
+<!-- Outer strip: subtle bg only for the bar itself -->
+<div style="background:rgba(250,249,247,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(193,200,194,0.2);">
+  <div style="max-width:1440px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+
+    <!-- Logo -->
+    <a href="index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;">
+      <img src="bk-header-logo.png" alt="Bukahauz" style="height:52px;width:auto;object-fit:contain;" />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav id="bk-desktop-nav" style="display:flex;align-items:center;gap:2px;flex:1;justify-content:center;flex-wrap:nowrap;">
+
+      <a href="index.html" class="bk-nav-link">Home</a>
+
+      <a href="about.html" class="bk-nav-link">About</a>
+
+      <!-- Experiences -->
+      <div class="bk-dropdown-wrap">
+        <button class="bk-nav-link bk-has-dropdown" onclick="bkToggle(this)">
+          Experiences <span style="font-size:10px;opacity:0.6;">&#9660;</span>
+        </button>
+        <div class="bk-dropdown">
+          <a href="private-dining.html"      class="bk-dd-item">Private Dining</a>
+          <a href="chef-experiences.html"    class="bk-dd-item">Chef Experiences</a>
+          <a href="wine-tastings.html"       class="bk-dd-item">Wine Tastings</a>
+          <a href="private-parties.html"     class="bk-dd-item">Private Parties</a>
+          <a href="corporate-catering.html"  class="bk-dd-item">Corporate Catering</a>
+          <a href="event-food-planning.html" class="bk-dd-item">Event Food Planning</a>
+          <a href="takeaway.html"            class="bk-dd-item">Takeaway</a>
+        </div>
+      </div>
+
+      <!-- Menus -->
+      <div class="bk-dropdown-wrap">
+        <button class="bk-nav-link bk-has-dropdown" onclick="bkToggle(this)">
+          Menus <span style="font-size:10px;opacity:0.6;">&#9660;</span>
+        </button>
+        <div class="bk-dropdown">
+          <a href="afro-caribbean-menu.html"  class="bk-dd-item">Afro-Caribbean Menu</a>
+          <a href="african-menu.html"         class="bk-dd-item">African Menu</a>
+          <a href="intercontinental-menu.html"class="bk-dd-item">Intercontinental Menu</a>
+          <a href="menus.html"                class="bk-dd-item">Private Dining Menu</a>
+          <a href="wine-pairing-menu.html"    class="bk-dd-item">Wine Pairing Menu</a>
+        </div>
+      </div>
+
+      <a href="networking.html" class="bk-nav-link">Networking</a>
+
+      <a href="shop.html" class="bk-nav-link">Shop</a>
+
+      <a href="food-truck.html" class="bk-nav-link">Food Truck</a>
+      <a href="gallery.html" class="bk-nav-link">Gallery</a>
+      <a href="contact.html" class="bk-nav-link">Contact</a>
+
+    </nav>
+
+    <!-- Right icons: Currency / Account / Cart -->
+    <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+
+      <!-- Currency selector -->
+      <div style="position:relative;">
+        <select onchange="" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.05em;color:#424844;background:transparent;border:1px solid #c1c8c2;padding:6px 8px;cursor:pointer;appearance:none;-webkit-appearance:none;outline:none;transition:border-color .2s;min-width:60px;"
+          onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';">
+          <option>GBP</option>
+          <option>USD</option>
+          <option>EUR</option>
+          <option>NGN</option>
+        </select>
+      </div>
+
+      <!-- Account icon -->
+      <a href="contact.html" title="Account" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+      </a>
+
+      <!-- Cart icon -->
+      <a href="shop.html" title="Cart" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;position:relative;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
+        <span style="position:absolute;top:4px;right:4px;width:8px;height:8px;background:#8f4c37;border-radius:50%;font-size:0;"></span>
+      </a>
+
+    </div>
+
+    <!-- Mobile burger -->
+    <button onclick="document.getElementById('bk-mobile-menu').classList.toggle('bk-open');" style="display:none;background:none;border:none;cursor:pointer;padding:4px;" id="bk-burger" aria-label="Menu">
+      <svg width="22" height="22" fill="none" stroke="#1a1c1b" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+
+  </div>
+</div>
+
+<!-- Mobile menu -->
+<div id="bk-mobile-menu" style="display:none;background:#faf9f7;border-top:1px solid #e3e2e0;max-height:80vh;overflow-y:auto;">
+  <div style="padding:12px 20px;">
+    <a href="index.html" class="bk-mob-link">Home</a>
+    <a href="about.html" class="bk-mob-link">About</a>
+    <a href="experiences.html" class="bk-mob-link">Experiences</a>
+    <div style="padding-left:16px;border-left:2px solid rgba(70,101,86,0.2);margin-left:8px;">
+      <a href="private-dining.html"      class="bk-mob-sub">Private Dining</a>
+      <a href="chef-experiences.html"    class="bk-mob-sub">Chef Experiences</a>
+      <a href="wine-tastings.html"       class="bk-mob-sub">Wine Tastings</a>
+      <a href="private-parties.html"     class="bk-mob-sub">Private Parties</a>
+      <a href="corporate-catering.html"  class="bk-mob-sub">Corporate Catering</a>
+      <a href="event-food-planning.html" class="bk-mob-sub">Event Food Planning</a>
+      <a href="takeaway.html"            class="bk-mob-sub">Takeaway</a>
+    </div>
+    <a href="menus.html" class="bk-mob-link">Menus</a>
+    <a href="networking.html" class="bk-mob-link">Networking</a>
+    <a href="shop.html" class="bk-mob-link">Shop</a>
+    <a href="food-truck.html" class="bk-mob-link">Food Truck</a>
+    <a href="gallery.html" class="bk-mob-link">Gallery</a>
+    <a href="contact.html" class="bk-mob-link">Contact</a>
+    <div style="padding-top:12px;border-top:1px solid #e3e2e0;margin-top:8px;display:flex;gap:12px;align-items:center;">
+      <a href="contact.html" title="Account" style="color:#424844;text-decoration:none;">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+      </a>
+      <a href="shop.html" title="Cart" style="color:#424844;text-decoration:none;">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Nav link base */
+.bk-nav-link {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #424844;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+  display: inline-block;
+}
+.bk-nav-link:hover { color: #466556; }
+
+/* Dropdown wrapper */
+.bk-dropdown-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown panel — hidden by default */
+.bk-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: #faf9f7;
+  border: 1px solid rgba(193,200,194,0.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  min-width: 200px;
+  z-index: 100;
+}
+.bk-dropdown.bk-open { display: block; }
+
+.bk-dd-item {
+  display: block;
+  padding: 10px 16px;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  color: #424844;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.bk-dd-item:hover { background: #f4f4f1; color: #466556; }
+
+/* Mobile links */
+.bk-mob-link {
+  display: block;
+  padding: 10px 8px;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #424844;
+  text-decoration: none;
+}
+.bk-mob-sub {
+  display: block;
+  padding: 7px 8px;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  color: #424844;
+  text-decoration: none;
+}
+.bk-mob-link:hover, .bk-mob-sub:hover { color: #466556; }
+
+/* Mobile open state */
+#bk-mobile-menu.bk-open { display: block !important; }
+
+/* Responsive: hide desktop nav, show burger */
+@media (max-width: 1199px) {
+  #bk-desktop-nav { display: none !important; }
+  #bk-desktop-nav + div { display: none !important; }
+  #bk-burger { display: block !important; }
+}
+</style>
+
+<script>
+// Toggle dropdown open/close
+function bkToggle(btn) {
+  var dd = btn.nextElementSibling;
+  var isOpen = dd.classList.contains('bk-open');
+  // Close all dropdowns
+  document.querySelectorAll('.bk-dropdown.bk-open').forEach(function(el){ el.classList.remove('bk-open'); });
+  if (!isOpen) dd.classList.add('bk-open');
+}
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.bk-dropdown-wrap')) {
+    document.querySelectorAll('.bk-dropdown.bk-open').forEach(function(el){ el.classList.remove('bk-open'); });
+  }
+});
+</script>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-xxl overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-angle shot of a premium Bukahauz gourmet takeaway box open on a reclaimed oak table. The lighting is soft and warm, reminiscent of a late afternoon sun streaming through a kitchen window. Inside the box, perfectly portioned Afro-Caribbean dishes are presented in minimalist sustainable packaging. The overall aesthetic is one of quiet luxury, featuring a sophisticated palette of deep greens, earthy browns, and pristine whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJtjJoDJJBYQJHKDiU0yy4-O46rl4qjSYr_Ut6GGWjBojqA7WR-5r3IMhu8RKcri6dT3LNrvESaAzFag1OSTR3nUIJ1bvQks_4Z3hVFLRysuBF5zrN0XNUrpUzSAXuf9tcPzbUCQfljD6Uw9cy9urA7Pcy36gfHyzT9kLUx7lMCK8PPjotPF4KQdmtIUm9jAWhwz28BQ1YXomUX9JKPefp25eJKE2Gy6Y9mvhh8nN3qHBi0t3uvkMptcQkrDAWJdVU0k6ZFL3bPUtz"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-xl grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-7 lg:col-span-5 flex flex-col items-start gap-lg">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">The Kitchen at Home</span>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-background leading-tight">Bukahauz <br/><span class="italic">À La Maison</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Experience the intimacy of our culinary studio in the sanctuary of your own home. Our takeaway service bridges the gap between fine dining and domestic comfort.</p>
+<div class="flex gap-md pt-md">
+<button class="bg-primary text-on-primary px-xl py-md rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-all flex items-center gap-xs">
+                        ORDER NOW <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="border border-outline-variant text-on-surface px-xl py-md rounded-lg font-label-lg text-label-lg hover:bg-surface-container-high transition-all">VIEW MENU</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Concept Section -->
+<section class="py-xxl bg-surface-container-low relative">
+<div class="grain-overlay absolute inset-0"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-xl items-center">
+<div class="md:col-span-5">
+<div class="aspect-[4/5] relative overflow-hidden rounded-lg editorial-shadow">
+<img class="w-full h-full object-cover" data-alt="A close-up, editorial-style photograph of a chef meticulously arranging micro-greens on a gourmet dish inside a sleek, dark-toned sustainable takeaway container. The scene is set in a modern, high-end professional kitchen with soft, atmospheric lighting focusing on the vibrant colors of the food. The mood is sophisticated and emphasizes the attention to detail and craftsmanship of the Bukahauz kitchen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBK2BH-4W1vm1IfrmZ2I9G_ivmGF4C24ebXpCTOwusSaZcUOqZyggt23S4xYezsb7046zrHwYTUJXtmqX3vXyFXf5SqMMiJS6kmLFwR4BCucAXYmrhxk6wmm2WHwWUmPCuZFN1G8z7Oo7nfPa8MMNr8DiS0ul4IfW18-jRQuVYrfZZd-OJ6vTm1FJfsUhlfhtSfqCorfwW1pjtE3ZVlSHWJQSwUICMf8tM71jK8kOyIjlRECcQc6ztEA3w93TepAPAYO4LVvSvgyRy"/>
+</div>
+</div>
+<div class="md:col-span-6 md:col-start-7 flex flex-col gap-lg">
+<h2 class="font-display-md text-display-md text-primary">The Bukahauz <span class="italic text-secondary">Kitchen at Home</span> Concept</h2>
+<div class="w-20 h-px bg-secondary/30"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        We believe that the ritual of a meal is sacred, whether served in our dining room or yours. Our 'Kitchen at Home' initiative brings the complexity of Afro-Caribbean flavors and the precision of fine culinary arts to your doorstep. Each element is prepared with the same dedication as our tasting menus, designed for effortless assembly and professional presentation.
+                    </p>
+<div class="grid grid-cols-2 gap-lg pt-md">
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface mb-xs">Chef Prepared</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Hours of preparation in our kitchen, minutes of finishing in yours.</p>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface mb-xs">Curated Pairings</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Optionally paired with our sommelier's selection of boutique wines.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Boxes: Bento Grid Style -->
+<section class="py-xxl bg-surface overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
+<div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
+<div class="max-w-xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-xs block">Seasonal Collections</span>
+<h2 class="font-display-md text-display-md text-on-surface">Signature Takeaway Boxes</h2>
+</div>
+<a class="font-label-lg text-label-lg text-primary hover:underline decoration-primary/30 underline-offset-8" href="#">Explore All Collections</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg h-auto md:h-[700px]">
+<!-- Box 1: Weekend Feast (Vertical Focus) -->
+<div class="group relative md:row-span-2 overflow-hidden rounded-xl bg-surface-container-high cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A lush, vibrant top-down view of a 'Weekend Feast' box from Bukahauz, featuring a variety of colorful African-inspired small plates, artisanal breads, and vibrant dips. The image captures the abundance and joy of a shared meal. The table is decorated with minimalist linen napkins and ceramic bowls, set in a bright, sun-drenched breakfast nook. The color palette is rich with terracottas, deep greens, and warm gold tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9alyLd863X-mFqMlY_-6co2uHwUe5TGllH9wxia_yDWy3F8f_hdWE0yGhVafB3HZGlMK-k8tC8d1tW7SPbM6XkdmCQYyAw1PCWdj0-RyPqG-HC6471f6v00lWxzt-IZKVAJryzHP_iqnprJxs7vx_0Us_Urq6jsMGp7PlOXbnArYB-Udup59ia5UGsO_CQXOwrS0_6sPidYPD4ZQPN-eQ1LvAMjy0pZiHO9wTkbg8G166TTIVYIYfooTQQj1MqITmAAB3g_Z9sUZQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full">
+<div class="flex justify-between items-end">
+<div>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-sm py-xs rounded mb-sm inline-block">Popular Choice</span>
+<h3 class="font-headline-lg text-headline-lg text-white">Weekend Feast</h3>
+<p class="font-body-md text-body-md text-white/80">Designed for 4-6 people. A celebration of variety.</p>
+</div>
+<div class="font-display-md text-display-md text-white">£120</div>
+</div>
+</div>
+</div>
+<!-- Box 2: Date Night (Horizontal Focus) -->
+<div class="group relative md:col-span-2 overflow-hidden rounded-xl bg-surface-container-high cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A romantic and intimate scene showing a 'Date Night' takeaway experience. Two elegant crystal wine glasses are partially visible beside a beautifully presented dessert and main course from the Bukahauz menu. The lighting is low and moody, with warm candlelight creating long, soft shadows. The setting is luxurious and sophisticated, focusing on the quality of ingredients and the intimate atmosphere of a private dinner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBww8iQIrqaw4962ZjmBVMLnnrL-SzgB_7MEFJOvnzS9-3DdYCYgndNB2f75EmCXyZEhkEZE6OqXyBie58waP1H-KDmYSrzPZkTwSTLf4zPJJDVQg2ABk7xTmmzwmrgnJg3NNutur7ObQjBUFwANbbLddEuND4wb139KwGEQ2xbniXnnpvKr2wQ4x4q4FyqHQMBwRHIgN-bUkKFTnVXy35jV5__AvLgCnKLyOVlGRuKiIEsuoZgIzsaXC4qFR6AbneqJagdTlWay4eZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white">Date Night <span class="italic font-normal">Essentials</span></h3>
+<p class="font-body-md text-body-md text-white/80">Three-course curated menu for two, including wine.</p>
+</div>
+<div class="font-display-md text-display-md text-white">£85</div>
+</div>
+</div>
+</div>
+<!-- Box 3: Gourmet Office Lunch -->
+<div class="group relative md:col-span-2 overflow-hidden rounded-xl bg-surface-container-high cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A clean, minimalist high-angle shot of a 'Gourmet Office Lunch' salad box. The container is a light, natural paper texture, filled with vibrant, fresh ingredients like roasted root vegetables, quinoa, and bright citrus segments. The setting is a clean, modern workspace with a sleek laptop and a marble desk surface in the background. The aesthetic is bright, professional, and emphasizes healthy luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5r7OFLlm4BsprKe0VO2FLSyxfzVrulKwJK9gS3K8_9YGcYj_jnhbE9B-joT7AOpSZ2eAPeHM-azfl5dzVFd8B_6c3GLuQfbMqJrGjD_w891lyck8k-RUbDP0QIJOfHuZt2aGkvMDgvp2h5sSVDYwOtF7JlBYxPyKwdQFRxQL-Khv_qPAL3VglqyIBUlK83VoGb62qw9cxEVt__12zBuS6AKGZ3bEdFD-3m96VyEVzHCqV0oLPjs99oUdhKybDBh7AoBJVQ9kSJa7n"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white">Gourmet Office Lunch</h3>
+<p class="font-body-md text-body-md text-white/80">Refined midday nourishment for the discerning professional.</p>
+</div>
+<div class="font-display-md text-display-md text-white">£24</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section class="py-xxl bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+<!-- Best Sellers -->
+<div class="flex flex-col gap-lg">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary">star</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Best Sellers</h2>
+</div>
+<div class="flex flex-col gap-md">
+<div class="flex items-center gap-md p-md bg-surface-container-low rounded-xl border border-outline-variant/10">
+<img alt="Jerk Chicken" class="w-20 h-20 object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+<div class="flex-grow">
+<h4 class="font-label-lg text-label-lg">Signature Jerk Chicken Box</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Our most requested classic.</p>
+</div>
+<span class="font-headline-md text-primary">£28</span>
+</div>
+<div class="flex items-center gap-md p-md bg-surface-container-low rounded-xl border border-outline-variant/10">
+<img alt="Jollof Rice" class="w-20 h-20 object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+<div class="flex-grow">
+<h4 class="font-label-lg text-label-lg">Smoky Jollof Combo</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">A festival of West African spice.</p>
+</div>
+<span class="font-headline-md text-primary">£24</span>
+</div>
+</div>
+</div>
+<!-- Popular Meals -->
+<div class="flex flex-col gap-lg">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Popular Meals</h2>
+</div>
+<div class="flex flex-col gap-md">
+<div class="flex items-center gap-md p-md bg-surface-container-low rounded-xl border border-outline-variant/10">
+<img alt="Curry Goat" class="w-20 h-20 object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+<div class="flex-grow">
+<h4 class="font-label-lg text-label-lg">Slow-Cooked Curry Goat</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Tender, aromatic, and rich.</p>
+</div>
+<span class="font-headline-md text-primary">£32</span>
+</div>
+<div class="flex items-center gap-md p-md bg-surface-container-low rounded-xl border border-outline-variant/10">
+<img alt="Plantain" class="w-20 h-20 object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+<div class="flex-grow">
+<h4 class="font-label-lg text-label-lg">Artisanal Plantain Sides</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Sweet, caramelized perfection.</p>
+</div>
+<span class="font-headline-md text-primary">£12</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row justify-center gap-md mt-xl">
+<button class="bg-primary text-on-primary px-xl py-md rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">shopping_cart</span> ORDER NOW
+      </button>
+<button class="bg-secondary text-on-secondary px-xl py-md rounded-lg font-label-lg text-label-lg hover:scale-105 transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">chat</span> ORDER VIA WHATSAPP
+      </button>
+</div>
+</div>
+</section><section class="py-xxl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
+<div class="text-center mb-xl">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-xs block">The Collection</span>
+<h2 class="font-display-md text-display-md text-on-surface">Gourmet Gallery</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<div class="aspect-square overflow-hidden rounded-lg editorial-shadow group">
+<img alt="Gourmet Meal 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+</div>
+<div class="aspect-square overflow-hidden rounded-lg editorial-shadow group">
+<img alt="Gourmet Meal 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+</div>
+<div class="aspect-square overflow-hidden rounded-lg editorial-shadow group">
+<img alt="Gourmet Meal 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+</div>
+<div class="aspect-square overflow-hidden rounded-lg editorial-shadow group">
+<img alt="Gourmet Meal 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+</div>
+<div class="aspect-square overflow-hidden rounded-lg editorial-shadow group">
+<img alt="Gourmet Meal 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+</div>
+<div class="aspect-square overflow-hidden rounded-lg editorial-shadow group">
+<img alt="Gourmet Meal 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+</div>
+<div class="aspect-square overflow-hidden rounded-lg editorial-shadow group">
+<img alt="Gourmet Meal 7" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+</div>
+<div class="aspect-square overflow-hidden rounded-lg editorial-shadow group">
+<img alt="Gourmet Meal 8" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+</div>
+<div class="aspect-square overflow-hidden rounded-lg editorial-shadow group">
+<img alt="Gourmet Meal 9" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+</div>
+<div class="aspect-square overflow-hidden rounded-lg editorial-shadow group">
+<img alt="Gourmet Meal 10" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+</div>
+<div class="aspect-square overflow-hidden rounded-lg editorial-shadow group">
+<img alt="Gourmet Meal 11" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+</div>
+<div class="aspect-square overflow-hidden rounded-lg editorial-shadow group">
+<img alt="Gourmet Meal 12" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOYF64nY2rQbuG3xCTASWMYA3_olVIc9BPLXZEhyeH45REMgNjfbot1P0DPXBKRgpBcFJ3BsVqlxxIrmb9uQ5eJlAdpEu3i2nb5WXc5Th60TjoA5NAgjXnuIeHfBcI_gxHXdIbKnWK9dcUEFnHc0LXg-qmhTDjE6vCAYjchK24faP-hWWDDUN5XoT6OrRmH_zUNhYZJFmPgGAA43-9XebtYeKt0oye2mLMAst4kUCLpebyDPk8urEx5BoSWmjvHIjUDvHzcDAmClJQ"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Sustainable Packaging Commitment -->
+<section class="py-xxl bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl text-center">
+<div class="max-w-3xl mx-auto flex flex-col items-center gap-lg">
+<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<h2 class="font-display-md text-display-md">Conscious Luxury in Every Layer</h2>
+<p class="font-body-lg text-body-lg text-primary-fixed leading-relaxed">
+                    Our commitment to the environment is as deep as our commitment to flavor. Every Bukahauz takeaway box is crafted from 100% compostable or recyclable materials. We use soy-based inks, stone-paper labels, and biodegradable mycelium-based insulation to ensure our footprint is minimal while the experience remains maximal.
+                </p>
+<div class="flex flex-wrap justify-center gap-xl mt-lg">
+<div class="flex flex-col items-center gap-sm">
+<span class="font-display-md text-display-md">0%</span>
+<span class="font-label-lg text-label-lg uppercase tracking-widest opacity-70">Single-use Plastic</span>
+</div>
+<div class="w-px h-16 bg-on-primary/20"></div>
+<div class="flex flex-col items-center gap-sm">
+<span class="font-display-md text-display-md">100%</span>
+<span class="font-label-lg text-label-lg uppercase tracking-widest opacity-70">Compostable</span>
+</div>
+<div class="w-px h-16 bg-on-primary/20"></div>
+<div class="flex flex-col items-center gap-sm">
+<span class="font-display-md text-display-md">2.5k</span>
+<span class="font-label-lg text-label-lg uppercase tracking-widest opacity-70">Trees Planted</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Heating & Plating Guide -->
+<section class="py-xxl bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xxl items-center">
+<div class="order-2 lg:order-1">
+<h2 class="font-display-md text-display-md text-on-surface mb-lg">The Art of the Finish</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl leading-relaxed">
+                        The final stage of the culinary journey happens in your kitchen. We provide detailed, interactive guides to help you heat and plate your meal with the precision of a Michelin-starred kitchen.
+                    </p>
+<ul class="flex flex-col gap-lg">
+<li class="flex gap-md group cursor-pointer">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border border-primary flex items-center justify-center text-primary font-headline-md group-hover:bg-primary group-hover:text-on-primary transition-all">01</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Precision Heating</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Step-by-step temperature guides for every component to maintain texture and moisture.</p>
+</div>
+</li>
+<li class="flex gap-md group cursor-pointer">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border border-primary flex items-center justify-center text-primary font-headline-md group-hover:bg-primary group-hover:text-on-primary transition-all">02</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Plating Diagrams</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Visual maps showing you how to build height, color contrast, and flow on your plates.</p>
+</div>
+</li>
+<li class="flex gap-md group cursor-pointer">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border border-primary flex items-center justify-center text-primary font-headline-md group-hover:bg-primary group-hover:text-on-primary transition-all">03</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Atmospheric Curation</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Access our custom 'Bukahauz Evening' playlists and lighting suggestions for a total sensory experience.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="order-1 lg:order-2 relative">
+<div class="aspect-square relative rounded-full overflow-hidden border-[12px] border-white editorial-shadow">
+<img class="w-full h-full object-cover" data-alt="A beautiful, artistic overhead shot of a finished gourmet dish, meticulously plated on a dark ceramic plate. The dish features a seared piece of meat, a vibrant puree swirl, and perfectly placed vegetable garnish. The scene represents the 'Art of the Finish' with a human hand gently placing a final micro-herb with tweezers. The lighting is focused and dramatic, highlighting the textures and vibrant colors of the food against the dark plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE5DKuM0EJ09ejLlz4bJQ-s04230hvFUj9TFGruAUkKViI1cByzvyPbyMg9gYoZW2YVgeoKwHzcT6gXe8BybbAXQSANcNk9jY_XFdymd4G5LEjhF4Jp5r3T-sTitctNOJlkiO22pHjc1q4c4mB8YnoVmJk01mBtvMDVU1bI6PnYmkh5ERCDJqfHgcSSnUaTb_6dZKyoLt92ucuN8cvL98_u_Z4MUtee4rpVPPXp2jnI-Ff7ZsXzuC5g9U2rHmPE_VeuyQjIkX-mv1L"/>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -bottom-10 -right-10 bg-secondary p-lg rounded-lg text-on-secondary hidden md:block">
+<span class="font-label-lg text-label-lg uppercase tracking-widest block mb-xs">Next Level Hosting</span>
+<p class="font-body-md text-body-md italic opacity-90">"The secret is in the temperature of the plate."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="relative py-xxl overflow-hidden bg-on-background">
+<div class="absolute inset-0 opacity-20">
+<img class="w-full h-full object-cover grayscale brightness-50" data-alt="An abstract, out-of-focus background image of a glowing, warm kitchen at night. Soft bokeh lights from the stove and overhead pendants create a cozy, luxurious atmosphere. The scene evokes the feeling of a late-night private chef preparing a special meal. The colors are deep blacks, warm ambers, and soft golden glows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7Z1KdbHUpd4dHa9KGCcU0SfhvBPDXNE_1IesA7NTORI0qajqQYrc1maUjvDwNI9PfxT88M6dtsI7PdiHHbhxlGDyAB9hnxSbYryyrgesOD4J-Qe9HbzUiEaQBMXdgcI9xwkI_fum9xpYq-ZMvJIAARxYXlmm_Pl7ef_A47-v_CpZ2AuMoUsVT7GFqYzqRgDtIczbtwRaUYOxM9c1yYSjcR7HPDqd_rYaPNUrPzyK25EHlWRgGK00huFONesEUm_RGzF-1cayEqS-D"/>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-xl text-center flex flex-col items-center gap-lg">
+<h2 class="font-display-lg text-display-lg text-white">Bring the Experience Home</h2>
+<p class="font-body-lg text-body-lg text-white/70 max-w-2xl">
+                Deliveries are available Friday through Sunday. Pre-order is required 24 hours in advance to ensure peak freshness and culinary integrity.
+            </p>
+<div class="flex flex-col sm:flex-row gap-md mt-md">
+<button class="bg-secondary text-on-secondary px-xl py-md rounded-lg font-label-lg text-label-lg hover:scale-105 transition-all">ORDER YOUR BOX</button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-xl py-md rounded-lg font-label-lg text-label-lg hover:bg-white/20 transition-all">VIEW WEEKEND MENU</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer style="background:#f4f4f1;border-top:1px solid rgba(193,200,194,0.3);">
+
+  <!-- 5-Column grid -->
+  <div style="max-width:1440px;margin:0 auto;padding:80px 32px 48px;">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:40px;">
+
+      <!-- Col 1: Brand -->
+      <div>
+        <a href="index.html" style="display:inline-block;margin-bottom:14px;">
+          <img src="bk-footer-logo.png" alt="Bukahauz — Culinary Excellence. Timeless Experiences." style="height:60px;width:auto;object-fit:contain;" />
+        </a>
+        <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.7;color:#424844;max-width:200px;margin-bottom:20px;">
+          A sanctuary for those who appreciate the narrative behind the meal.
+        </p>
+        <div style="display:flex;gap:10px;">
+          <a href="https://instagram.com/bukahauz" target="_blank" aria-label="Instagram"
+             style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;"
+             onmouseover="this.style.borderColor='#466656';this.style.color='#466556';"
+             onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://facebook.com/bukahauz" target="_blank" aria-label="Facebook"
+             style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;"
+             onmouseover="this.style.borderColor='#466556';this.style.color='#466556';"
+             onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/447000000000" target="_blank" aria-label="WhatsApp"
+             style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;"
+             onmouseover="this.style.borderColor='#466556';this.style.color='#466556';"
+             onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Experiences -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Experiences</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="private-dining.html"     style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Private Dining</a></li>
+          <li><a href="wine-tastings.html"      style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine Tastings</a></li>
+          <li><a href="chef-experiences.html"   style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Chef Experiences</a></li>
+          <li><a href="corporate-catering.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Corporate Catering</a></li>
+          <li><a href="event-food-planning.html"style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Event Planning</a></li>
+          <li><a href="private-parties.html"    style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Private Parties</a></li>
+          <li><a href="takeaway.html"           style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Takeaway</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Menus -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Menus</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="afro-caribbean-menu.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Afro-Caribbean</a></li>
+          <li><a href="african-menu.html"          style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">African</a></li>
+          <li><a href="intercontinental-menu.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Intercontinental</a></li>
+          <li><a href="menus.html"                 style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Private Dining</a></li>
+          <li><a href="wine-pairing-menu.html"     style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine Pairings</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Shop -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Shop</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="shop.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Aprons</a></li>
+          <li><a href="shop.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Dining &amp; Serving</a></li>
+          <li><a href="shop.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Tableware</a></li>
+          <li><a href="shop.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine &amp; Dining</a></li>
+          <li><a href="shop.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Hosting Collection</a></li>
+          <li><a href="shop.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Cutlery &amp; Serving</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Newsletter -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Stay in the Loop</h3>
+        <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#424844;margin:0 0 18px;">
+          Early access to new experiences, seasonal menus and artisan collaborations.
+        </p>
+        <form onsubmit="this.innerHTML='<p style='font-family:Inter,sans-serif;font-size:14px;color:#466556;'>Thank you &mdash; you're on the list!</p>';return false;" style="display:flex;flex-direction:column;gap:8px;">
+          <input type="email" required placeholder="Your email address"
+            style="font-family:Inter,sans-serif;font-size:14px;border:none;border-bottom:1px solid #c1c8c2;background:transparent;padding:8px 0;color:#1a1c1b;outline:none;transition:border-color .2s;"
+            onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+          <button type="submit"
+            style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:10px 16px;cursor:pointer;transition:background .2s;margin-top:4px;"
+            onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div style="border-top:1px solid rgba(193,200,194,0.4);background:#eeeeeb;">
+    <div style="max-width:1440px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
+      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2025 Bukahauz. All rights reserved.</p>
+      <nav style="display:flex;flex-wrap:wrap;gap:24px;">
+        <a href="privacy.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Privacy Policy</a>
+        <a href="terms.html"    style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Terms &amp; Conditions</a>
+        <a href="refunds.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Refund Policy</a>
+        <a href="cookies.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Cookie Policy</a>
+      </nav>
+    </div>
+  </div>
+
+  <style>
+  @media (max-width: 1023px) {
+    footer > div:first-child > div { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+  @media (max-width: 639px) {
+    footer > div:first-child > div { grid-template-columns: 1fr !important; }
+    footer > div:first-child { padding: 48px 20px 32px !important; }
+  }
+  </style>
+
+</footer>
+<script>
+        // Micro-interactions and atmospheric effects
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                // Subtle feedback if needed
+            });
+        });
+
+        // Simple scroll reveal for sections
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
