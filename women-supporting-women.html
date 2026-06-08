@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Women Supporting Women | Bukahauz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grain-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "secondary": "#8f4c37",
+                        "on-primary-container": "#163427",
+                        "on-error": "#ffffff",
+                        "surface": "#faf9f7",
+                        "primary-container": "#7d9d8c",
+                        "secondary-fixed-dim": "#ffb59e",
+                        "surface-container": "#eeeeeb",
+                        "on-tertiary-fixed-variant": "#623d3d",
+                        "on-surface-variant": "#424844",
+                        "inverse-surface": "#2f312f",
+                        "on-tertiary-container": "#462526",
+                        "secondary-fixed": "#ffdbd0",
+                        "outline": "#727974",
+                        "tertiary-fixed": "#ffdad9",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e3e2e0",
+                        "tertiary": "#7c5454",
+                        "surface-variant": "#e3e2e0",
+                        "on-surface": "#1a1c1b",
+                        "surface-container-low": "#f4f4f1",
+                        "primary": "#466556",
+                        "on-primary-fixed-variant": "#2f4d3f",
+                        "on-secondary-container": "#7a3b27",
+                        "outline-variant": "#c1c8c2",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#eebaba",
+                        "background": "#faf9f7",
+                        "tertiary-container": "#b98a8a",
+                        "on-background": "#1a1c1b",
+                        "surface-container-high": "#e9e8e5",
+                        "on-primary-fixed": "#022115",
+                        "surface-tint": "#466556",
+                        "surface-dim": "#dadad7",
+                        "secondary-container": "#ffa98f",
+                        "on-tertiary-fixed": "#301314",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#adcebc",
+                        "on-secondary-fixed": "#3a0b00",
+                        "inverse-on-surface": "#f1f1ee",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#723522",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#faf9f7",
+                        "primary-fixed": "#c8ead7",
+                        "primary-fixed-dim": "#adcebc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "xxl": "128px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "md": "16px",
+                        "lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Bodoni Moda"],
+                        "display-lg": ["Bodoni Moda"],
+                        "headline-md": ["Bodoni Moda"],
+                        "display-md": ["Bodoni Moda"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "display-md": ["48px", {"lineHeight": "1.1", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container font-body-md overflow-x-hidden">
+<div class="fixed inset-0 grain-overlay z-[60]"></div>
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/10" id="main-header">
+<div class="flex justify-between items-center px-lg py-sm max-w-container-max mx-auto h-20">
+
+  <!-- Logo -->
+  <a href="index.html" class="font-display-md text-display-md text-primary tracking-tight shrink-0 hover:opacity-80 transition-opacity">Bukahauz</a>
+
+  <!-- Desktop Nav -->
+  <nav class="hidden xl:flex items-center gap-1 flex-1 justify-center">
+
+    <a href="index.html" class="px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest whitespace-nowrap">Home</a>
+
+    <!-- About -->
+    <div class="relative group">
+      <a href="about.html" class="flex items-center gap-1 px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest whitespace-nowrap">
+        About
+        <svg class="w-3 h-3 opacity-60 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </a>
+      <div class="absolute top-full left-0 mt-1 bg-surface border border-outline-variant/20 shadow-lg min-w-[200px] z-50 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
+        <a href="about.html#our-story" class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Our Story</a>
+        <a href="about.html#directors"  class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Meet The Directors</a>
+        <a href="about.html#philosophy" class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Our Philosophy</a>
+      </div>
+    </div>
+
+    <!-- Experiences -->
+    <div class="relative group">
+      <a href="experiences.html" class="flex items-center gap-1 px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest whitespace-nowrap">
+        Experiences
+        <svg class="w-3 h-3 opacity-60 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </a>
+      <div class="absolute top-full left-0 mt-1 bg-surface border border-outline-variant/20 shadow-lg min-w-[200px] z-50 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
+        <a href="private-dining.html"       class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Private Dining</a>
+        <a href="experiences.html#chef"     class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Chef Experiences</a>
+        <a href="wine-tastings.html"        class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Wine Tastings</a>
+        <a href="experiences.html#parties"  class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Private Parties</a>
+        <a href="corporate-catering.html"   class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Corporate Catering</a>
+        <a href="event-food-planning.html"  class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Event Food Planning</a>
+      </div>
+    </div>
+
+    <!-- Menus -->
+    <div class="relative group">
+      <a href="menus.html" class="flex items-center gap-1 px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest whitespace-nowrap">
+        Menus
+        <svg class="w-3 h-3 opacity-60 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </a>
+      <div class="absolute top-full left-0 mt-1 bg-surface border border-outline-variant/20 shadow-lg min-w-[200px] z-50 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
+        <a href="menus.html#afro-caribbean"   class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Afro-Caribbean Menu</a>
+        <a href="menus.html#african"          class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">African Menu</a>
+        <a href="menus.html#intercontinental" class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Intercontinental Menu</a>
+        <a href="menus.html#private-dining"   class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Private Dining Menu</a>
+        <a href="menus.html#wine-pairing"     class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Wine Pairing Menu</a>
+      </div>
+    </div>
+
+    <a href="women-supporting-women.html" class="px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest whitespace-nowrap">Women Supporting Women</a>
+
+    <!-- Shop -->
+    <div class="relative group">
+      <a href="shop.html" class="flex items-center gap-1 px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest">
+        Shop
+        <svg class="w-3 h-3 opacity-60 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </a>
+      <div class="absolute top-full left-0 mt-1 bg-surface border border-outline-variant/20 shadow-lg min-w-[200px] z-50 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
+        <a href="shop.html#aprons"             class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Aprons</a>
+        <a href="shop.html#dining-serving"     class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Dining &amp; Serving</a>
+        <a href="shop.html#tableware"          class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Tableware</a>
+        <a href="shop.html#cutlery"            class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Cutlery &amp; Serving</a>
+        <a href="shop.html#wine-dining"        class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Wine &amp; Dining</a>
+        <a href="shop.html#hosting-collection" class="block px-4 py-3 text-body-md font-inter text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">Hosting Collection</a>
+      </div>
+    </div>
+
+    <a href="food-truck.html"  class="px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest whitespace-nowrap">Food Truck</a>
+    <a href="gallery.html"     class="px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest">Gallery</a>
+    <a href="contact.html"     class="px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest">Contact</a>
+
+  </nav>
+
+  <!-- CTAs -->
+  <div class="hidden xl:flex items-center gap-md shrink-0">
+    <a href="shop.html" class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors border border-outline-variant px-md py-sm uppercase tracking-widest">Shop Now</a>
+    <a href="book.html" class="bg-primary text-on-primary font-label-lg text-label-lg px-md py-sm hover:bg-on-primary-fixed-variant transition-colors uppercase tracking-widest">Book An Experience</a>
+  </div>
+
+  <!-- Mobile burger -->
+  <button onclick="var m=document.getElementById('bk-mobile-menu');m.classList.toggle('hidden');" class="xl:hidden p-2 text-on-surface" aria-label="Menu">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+</div>
+
+<!-- Mobile menu -->
+<div id="bk-mobile-menu" class="hidden xl:hidden bg-surface border-t border-outline-variant/10 overflow-y-auto max-h-[80vh]">
+  <div class="px-md py-md space-y-1">
+    <a href="index.html"                  class="block px-md py-sm font-label-lg text-label-lg text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">Home</a>
+    <a href="about.html"                  class="block px-md py-sm font-label-lg text-label-lg text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">About</a>
+    <div class="pl-lg py-1 border-l-2 border-primary/20 ml-md space-y-1">
+      <a href="about.html#our-story"  class="block py-sm text-body-md text-on-surface-variant hover:text-primary transition-colors">Our Story</a>
+      <a href="about.html#directors"  class="block py-sm text-body-md text-on-surface-variant hover:text-primary transition-colors">Meet The Directors</a>
+      <a href="about.html#philosophy" class="block py-sm text-body-md text-on-surface-variant hover:text-primary transition-colors">Our Philosophy</a>
+    </div>
+    <a href="experiences.html"            class="block px-md py-sm font-label-lg text-label-lg text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">Experiences</a>
+    <div class="pl-lg py-1 border-l-2 border-primary/20 ml-md space-y-1">
+      <a href="private-dining.html"      class="block py-sm text-body-md text-on-surface-variant hover:text-primary transition-colors">Private Dining</a>
+      <a href="wine-tastings.html"       class="block py-sm text-body-md text-on-surface-variant hover:text-primary transition-colors">Wine Tastings</a>
+      <a href="corporate-catering.html"  class="block py-sm text-body-md text-on-surface-variant hover:text-primary transition-colors">Corporate Catering</a>
+      <a href="event-food-planning.html" class="block py-sm text-body-md text-on-surface-variant hover:text-primary transition-colors">Event Food Planning</a>
+    </div>
+    <a href="menus.html"                  class="block px-md py-sm font-label-lg text-label-lg text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">Menus</a>
+    <a href="women-supporting-women.html" class="block px-md py-sm font-label-lg text-label-lg text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">Women Supporting Women</a>
+    <a href="shop.html"                   class="block px-md py-sm font-label-lg text-label-lg text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">Shop</a>
+    <a href="food-truck.html"             class="block px-md py-sm font-label-lg text-label-lg text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">Food Truck</a>
+    <a href="gallery.html"                class="block px-md py-sm font-label-lg text-label-lg text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">Gallery</a>
+    <a href="contact.html"                class="block px-md py-sm font-label-lg text-label-lg text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">Contact</a>
+    <div class="pt-md space-y-sm border-t border-outline-variant/10">
+      <a href="shop.html" class="block text-center border border-outline-variant px-md py-sm font-label-lg text-label-lg text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">Shop Now</a>
+      <a href="book.html" class="block text-center bg-primary text-on-primary px-md py-sm font-label-lg text-label-lg uppercase tracking-widest hover:bg-on-primary-fixed-variant transition-colors">Book An Experience</a>
+    </div>
+  </div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero & Mission Section -->
+<section class="relative min-h-[90vh] flex flex-col items-center justify-center px-margin-mobile md:px-xl py-xxl overflow-hidden">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-lg items-center">
+<div class="md:col-span-7 z-10">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-sm py-xs font-label-sm text-label-sm rounded-full mb-md uppercase tracking-widest">The Initiative</span>
+<h1 class="font-display-lg text-display-lg md:text-[80px] mb-lg text-primary leading-tight">Women Supporting Women</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-xl">A dedicated sanctuary for ambitious women to converge, collaborate, and cultivate lasting impact. At Bukahauz, we believe female leadership is defined by the depth of our community and the strength of our shared vision.</p>
+<div class="flex flex-wrap gap-md">
+<a class="bg-primary text-on-primary px-xl py-md rounded-lg font-label-lg text-label-lg hover:bg-on-primary-fixed-variant transition-colors inline-block" href="#register">Join The Circle</a>
+<a class="border border-outline text-on-surface-variant px-xl py-md rounded-lg font-label-lg text-label-lg hover:bg-surface-container transition-colors inline-block" href="#impact">Our Impact</a>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-outline-variant/20 shadow-sm transform md:translate-y-12">
+<img alt="Women Networking" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChqcdZ3d-JDZ1JkisfSjobwsk5FrhN2csYBoZ16D7BVgqDrQ6WwkA4FlC45sOVy6fy4-CguNjl-CNdOComYtaR5Bj4ofIQSM4mDPdqauL7Ufv77291Y7cb0WJn-pRTWuDSTyQj3LTr2x1npUYOozQntKOnY_VnOoOBuvXnQG8skQUwwbbOF_gZZ9iIqzexlIW4u3qaRRK867_SLXmEOB8N7fDkpKe8ylEZNzwDqpdREOJHxbkHk0zWsSylNkzuBBVcHCtxm3rO7EQ0"/>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-8 -left-8 w-48 h-48 bg-secondary-fixed-dim/30 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Networking Dinners -->
+<section class="bg-surface-container-low py-xxl">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
+<div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
+<div class="max-w-2xl">
+<h2 class="font-display-md text-display-md text-primary mb-md">Monthly Networking Dinners</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Intimate, curated evenings designed for genuine connection. No small talk—just profound conversations over exceptional Afro-Caribbean cuisine.</p>
+</div>
+<div class="flex space-x-sm">
+<span class="font-label-lg text-label-lg text-secondary underline decoration-secondary/30 underline-offset-8">View Calendar</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Feature 1 -->
+<div class="group bg-surface-container-lowest p-lg rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all duration-500">
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center mb-md group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm text-primary">Curated Gastronomy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A bespoke menu inspired by the season, served family-style to encourage sharing and storytelling.</p>
+</div>
+<!-- Feature 2 -->
+<div class="group bg-surface-container-lowest p-lg rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all duration-500">
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center mb-md group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">group_add</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm text-primary">Intentional Guest Lists</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We hand-select guests for each dinner to ensure diverse perspectives and complementary professional backgrounds.</p>
+</div>
+<!-- Feature 3 -->
+<div class="group bg-surface-container-lowest p-lg rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all duration-500">
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center mb-md group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">magic_button</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm text-primary">The Flow</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A structured yet organic evening starting with signature cocktails followed by deep-dive thematic discussions.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Business Spotlights (Bento Style) -->
+<section class="py-xxl">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
+<div class="text-center mb-xl">
+<h2 class="font-display-md text-display-md text-primary">Member Spotlights</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mt-sm">Celebrating the visionary entrepreneurs and creative leaders within the Bukahauz network.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-md h-auto md:h-[800px]">
+<!-- Large Spotlight -->
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A professional woman entrepreneur in a modern, light-filled office studio. She is dressed in a minimalist sage green blazer, looking confidently at the camera. The background is a clean, organized workspace with architectural sketches and lush indoor plants. Sophisticated editorial lighting with a bright and airy atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLcbSexR3khqRY7Z2Y0s9_WsUzbGBXY8RdtSsWS66R9DHao8sUxLQkUcBHaptmQIz5q9VBEDtRDyQPyq2wwOOJ-eUSnSCTPH2VH7c1kMGjDsNjhQhhdLsjiB9zR2p7ijpkUgGqqwUsQU2Tw09wkaEnWNJF-1RZ4tLUL15R00vtcDN_Yq7U4vs2V1XHzTHRAdL94SuTn9yaSBuF0Tge7CvgJx6x_9OdngkvBQ4a5ZkNfqCwUYP2GDRUhdBGJ2-5N3_79oFt0tUSCCaR"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg text-on-primary">
+<span class="bg-secondary px-sm py-xs font-label-sm text-label-sm rounded mb-sm inline-block">Founder Feature</span>
+<h3 class="font-headline-lg text-headline-lg mb-xs">Elena Vance</h3>
+<p class="font-body-md text-body-md opacity-90">Architect &amp; Urban Visionary</p>
+</div>
+</div>
+<!-- Small Spotlight 1 -->
+<div class="md:col-span-2 relative group overflow-hidden rounded-xl">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A woman artisan working in a pottery studio. She is focused on shaping a clay vase on a wheel. The studio is sun-drenched with large windows, soft linen curtains, and wooden shelves filled with organic-shaped ceramics. The color palette is warm stone, ivory, and soft terracotta. Quiet luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxl9ErvgIG8F3TdWVgb0w3YRAGDaQ66GBqwQSU1Ovk3WpQ3ouiK6qmOtwcfO92QLdnuVcIr1AuWNTsMWU7F-CPAF3E2M535bunrK9nHcNmAZSPmOL9UNG8WqErbKn7qnBps6yU519E1MR8yYDCHzmblEVuoSzpGpDmnzTWvp7rsRkmzn4sAcHErI2cug0ssidAUVI8sucgPixYgcvD7X_b6LV_wARIFJJFPqskq6xps0QlKWxG6w8CJulgUDxxIUN_uSIWHeFn932T"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute top-0 right-0 p-md">
+<span class="bg-surface/90 text-primary px-sm py-xs font-label-sm text-label-sm rounded-lg">Artisan</span>
+</div>
+<div class="absolute bottom-0 left-0 p-md text-white">
+<h4 class="font-headline-md text-headline-md">Sora Ceramics</h4>
+</div>
+</div>
+<!-- Small Spotlight 2 -->
+<div class="relative group overflow-hidden rounded-xl">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A woman tech leader giving a presentation in a sleek, modern conference room. She is using a digital screen displaying data visualizations. The lighting is crisp and professional. The room features high-end glass partitions and minimalist furniture. Sophisticated corporate leadership aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEpg3C3er_OSkSmRoL_gbfRmFFTboZSOFcaqANbOAXUYmMGCReXZUm0E4XxzktCnfyrinuEun3V9L8wDXW_wx6cS2WK6iUz8YRsfT__nGjzArfGVkEOXH4at4qH6XwFby7vO-ynnXLoOcXlt68znpunTi0fC_iko7R62-Wu-f8Znq4NVdWuWMIcVAHjb95jQqngO8iLiY9nC9O-smY0-jn_2d4n4hbaFWoSEzM9J1CNzhsjMYM_-W3tEbBKeqxAysa1pQVUzfVkCk4"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<p class="text-white font-label-lg text-label-lg border border-white px-md py-sm">Read Story</p>
+</div>
+</div>
+<!-- Small Spotlight 3 -->
+<div class="relative group overflow-hidden rounded-xl bg-secondary-fixed flex flex-col items-center justify-center p-lg text-center">
+<h4 class="font-headline-md text-headline-md text-on-secondary-fixed mb-sm">Your Venture Here?</h4>
+<p class="font-body-sm text-body-md text-on-secondary-fixed-variant mb-md">Join the directory and share your journey with our curated network of 500+ leaders.</p>
+<a class="text-on-secondary-fixed font-label-lg text-label-lg underline underline-offset-4" href="#">Apply for Feature</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Mentorship & Leadership -->
+<section class="bg-surface py-xxl relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div class="order-2 md:order-1">
+<h2 class="font-display-md text-display-md text-primary mb-lg">Mentorship &amp; The Leadership Circle</h2>
+<div class="space-y-lg">
+<div class="flex gap-md">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-md">1</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-xs">Peer Advisory Boards</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Monthly small-group sessions focused on tactical problem solving and leadership development.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-md">2</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-xs">Executive Matching</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">We facilitate high-impact pairings between emerging founders and seasoned C-suite executives.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-md">3</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-xs">Digital Resource Library</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Exclusive access to recorded masterclasses, legal templates, and financial frameworks.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<div class="bg-white p-lg rounded-xl shadow-sm border border-outline-variant/10">
+<div class="aspect-video bg-surface-container-high rounded mb-md overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Two professional women sitting in a plush cafe lounge, having a mentorship meeting. They are looking over a laptop and a notebook. The atmosphere is warm, featuring wooden textures, soft warm lighting, and minimalist decor. High-end lifestyle photography, human-centered and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4ihUtQNBCEPk3t8K-dD6DRQbE4FmTNOaTHIlUaqgwFJ7ij1lOGWN2OqaK2wcbWM_76MGRiXekPlhf8JIklBnekFx_PAo2itlyIdDZLEnK4ubN5UF9GqfasuDIoYuW8ZhXDp0CIS5Nhwp4szMom8Yku3mG9BquAJGAF4g0QLCYLQEiT-111hHVoVMv9rs4nN36fOBzVp9jbdTBOVOwrHrxpM3Kmh1D4YfKgVxFV5Rt3zyzWx_AGf3_sVU6ILooC-bPag8uZhmjkjJa"/>
+</div>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-xs">Upcoming Session</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Navigating Venture Capital as a Female Founder</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">A masterclass by Sarah Jenkins, Partner at Ascent Capital.</p>
+<button class="w-full border-2 border-primary text-primary py-sm font-label-lg text-label-lg rounded hover:bg-primary hover:text-on-primary transition-all">Reserve My Spot</button>
+</div>
+</div>
+</div>
+<!-- Decorative circle -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl -z-10"></div>
+</section>
+<!-- Community Stories -->
+<section class="py-xxl bg-surface-container-lowest" id="impact">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
+<div class="text-center mb-xl">
+<h2 class="font-display-md text-display-md text-primary">Voices of the Circle</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Testimonial 1 -->
+<div class="relative pt-lg">
+<span class="absolute top-0 left-0 text-secondary/20 font-display-lg text-[100px] leading-none">“</span>
+<div class="relative z-10">
+<p class="font-body-lg text-body-lg italic text-on-surface mb-lg">"Bukahauz has given me a network that feels more like a family. The connections I made at the Spring dinner directly led to our Series A funding."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling woman with a creative professional look. She has a warm expression and is set against a soft, out-of-focus studio background with warm natural light. Editorial quality, high-contrast, professional headshot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM-zYk7OfpdwGECSLMH2qsi4Deey67eSQfvVB1O8bBOgmAM9qn3pZswCDmrIO4lxCe0y4-4ZQIfHDFq6eh1DD29MEtU4F3z6-0D9gWr1JAQoKR5EXBllxjfLrFF3772ZMS4FqVAQ7YF8xmMZt8zgCH5UhSreTCNmdKVGe4ZmVbWtedUp_4SHp4JQBk-hQcIqy3KLrrFQa2jUjKcQI0s8_fw13hxhz3k4y638PRcL_jc2wsfWAzfb_1pImiCpqBKar2UxdBkJZrNmrL"/>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg text-primary">Maya Rodriguez</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">CEO, Bloom Digital</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="relative pt-lg">
+<span class="absolute top-0 left-0 text-secondary/20 font-display-lg text-[100px] leading-none">“</span>
+<div class="relative z-10">
+<p class="font-body-lg text-body-lg italic text-on-surface mb-lg">"The mentorship program isn't just about advice; it's about sponsorship. My mentor didn't just tell me what to do—she opened doors."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A portrait of a woman of color with a confident and kind expression. She is wearing professional attire in a bright, modern office setting. The photo is well-composed with a shallow depth of field, emphasizing her features. Bright and airy luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKQIil8JuhnudFhVl9iqLDIhwGt6jkpW7DC1Bm9QnqKKeS6b3dii8_TYllpNWf77-AefNdhjOMvL_50ERWFLR5MKto_kC3-LgbYMObUoc3RtnlY8fqxEKdEAZxbi8-RWwXiFJ3C2EoSbAHkx0QFySi1pSxzPCqIW84bfN-Y1EOqtLwoDNrewOZ86wwmM4Ax3dEPFq-p7fzKwY97Md_CnyfdYTAz4AcIJOlyDwUj4Fkl0Zc4RU-9TTb2BrniLpprR4t5qfAft0IUa0U"/>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg text-primary">Fatima Al-Sayed</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Strategic Advisor</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="relative pt-lg">
+<span class="absolute top-0 left-0 text-secondary/20 font-display-lg text-[100px] leading-none">“</span>
+<div class="relative z-10">
+<p class="font-body-lg text-body-lg italic text-on-surface mb-lg">"The Afro-Caribbean culinary theme adds such a rich layer to these events. It feels grounded in heritage while looking towards the future."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A portrait of a mature woman with an elegant, professional presence. She is in a gallery or minimalist restaurant setting with soft, ambient lighting. The overall mood is sophisticated and peaceful. High-end hospitality editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbMWc1vxKvO02lroTHlwZB-duYxl8h7epvRVT2cDa77Ok6VDQm0QKmRdN-b7pED6ZzaPtOkIvs9RG08_Je9H0FqLP-8E8ZXdHbtI5jcMUkbCfksT9ls28oKAbP9xvHoNhvhLgMAMxsM_9chb34bvLvlscK1cihIJ33z2BLoyURg9OPUiNHzEgpcH4Z4YxXuBiG5Wbyj7cI4eYpY-tH-xR64OiHwG2cCfReRbLiXVpoYNFJD5UNbXxeTofmof55Bu6naDUcxwedg4gn"/>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg text-primary">Isabella Chen</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Fine Arts Curator</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Membership & Registration -->
+<section class="py-xxl bg-secondary-fixed text-on-secondary-fixed" id="register">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl grid grid-cols-1 lg:grid-cols-2 gap-xl">
+<div>
+<h2 class="font-display-md text-display-md mb-lg">Join The Circle</h2>
+<p class="font-body-lg text-body-lg mb-xl opacity-90">Membership is more than a title—it's a commitment to shared growth. Apply to join our community and gain access to all private dinners and mentorship circles.</p>
+<div class="space-y-md mb-xl">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<p class="font-body-md text-body-md">Guaranteed seating at 4 flagship dinners per year</p>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<p class="font-body-md text-body-md">Personalized business spotlight features</p>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<p class="font-body-md text-body-md">Direct access to the Bukahauz member directory</p>
+</div>
+</div>
+<div class="bg-surface/10 backdrop-blur-md p-lg rounded-lg border border-white/20">
+<h4 class="font-headline-md text-headline-md mb-md">Upcoming Events</h4>
+<ul class="space-y-sm">
+<li class="flex justify-between border-b border-white/10 pb-sm">
+<span class="font-label-lg text-label-lg">Summer Equinox Dinner</span>
+<span class="font-label-sm text-label-sm opacity-80 text-secondary">June 21 • Sold Out</span>
+</li>
+<li class="flex justify-between border-b border-white/10 pb-sm">
+<span class="font-label-lg text-label-lg">Leadership Summit</span>
+<span class="font-label-sm text-label-sm opacity-80">July 14 • 12 Spots Left</span>
+</li>
+<li class="flex justify-between pb-sm">
+<span class="font-label-lg text-label-lg">Founder's Breakfast</span>
+<span class="font-label-sm text-label-sm opacity-80">Aug 05 • Open</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-surface p-lg md:p-xl rounded-xl shadow-xl text-on-surface">
+<form class="space-y-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-sm placeholder-outline-variant/50" placeholder="Jane Doe" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-sm placeholder-outline-variant/50" placeholder="jane@venture.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Organization / Project</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-sm placeholder-outline-variant/50" placeholder="Founder at..." type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Your Vision</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-sm placeholder-outline-variant/50 resize-none" placeholder="What impact are you looking to create within our circle?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-md font-label-lg text-label-lg rounded-lg hover:shadow-lg transition-all transform active:scale-[0.98]" type="submit">Submit Membership Inquiry</button>
+</form>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="py-xxl">
+<div class="max-w-3xl mx-auto px-margin-mobile md:px-xl">
+<h2 class="font-display-md text-display-md text-primary text-center mb-xl">Frequently Asked Questions</h2>
+<div class="space-y-md">
+<details class="group p-lg border-b border-outline-variant/20 cursor-pointer">
+<summary class="flex justify-between items-center font-headline-md text-headline-md text-primary list-none">
+                            Who is this circle for?
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-md font-body-md text-body-md text-on-surface-variant">The initiative is designed for women leaders, founders, and creatives who are committed to both their own growth and the elevation of others. We welcome diverse backgrounds across technology, art, finance, and social enterprise.</p>
+</details>
+<details class="group p-lg border-b border-outline-variant/20 cursor-pointer">
+<summary class="flex justify-between items-center font-headline-md text-headline-md text-primary list-none">
+                            Are dinners open to non-members?
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-md font-body-md text-body-md text-on-surface-variant">Occasionally we host open evenings, but the majority of our curated dinners are reserved exclusively for members to maintain the intimacy and depth of the connection.</p>
+</details>
+<details class="group p-lg border-b border-outline-variant/20 cursor-pointer">
+<summary class="flex justify-between items-center font-headline-md text-headline-md text-primary list-none">
+                            How are mentorship pairings decided?
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-md font-body-md text-body-md text-on-surface-variant">We use a combination of shared goals, complementary skills, and personality alignment to ensure mentorship pairs are mutually beneficial and highly effective.</p>
+</details>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-xxl bg-surface text-center">
+<div class="max-w-2xl mx-auto px-margin-mobile">
+<h2 class="font-display-lg text-display-lg text-primary mb-lg">Ready to find your circle?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl">Step into a room where you are heard, supported, and celebrated.</p>
+<a class="inline-block bg-primary text-on-primary px-xxl py-lg rounded-lg font-label-lg text-label-lg hover:bg-on-primary-fixed-variant transition-all hover:scale-105 transform" href="#register">Request Invitation</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface text-inverse-on-surface">
+
+  <!-- 5-Column main footer -->
+  <div class="max-w-container-max mx-auto px-lg pt-xxl pb-xl">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-xl">
+
+      <!-- Col 1: Brand -->
+      <div class="lg:col-span-1">
+        <a href="index.html" class="font-display-md text-display-md text-primary-fixed-dim tracking-tight block mb-md hover:opacity-80 transition-opacity">Bukahauz</a>
+        <p class="text-body-md text-inverse-on-surface/70 leading-relaxed mb-lg max-w-xs">
+          A sanctuary for those who appreciate the narrative behind the meal. Curating premium culinary experiences rooted in African heritage.
+        </p>
+        <div class="flex gap-md">
+          <a href="https://instagram.com/bukahauz" target="_blank" aria-label="Instagram"
+             class="w-10 h-10 border border-inverse-on-surface/20 flex items-center justify-center text-inverse-on-surface/60 hover:text-primary-fixed-dim hover:border-primary-fixed-dim transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://facebook.com/bukahauz" target="_blank" aria-label="Facebook"
+             class="w-10 h-10 border border-inverse-on-surface/20 flex items-center justify-center text-inverse-on-surface/60 hover:text-primary-fixed-dim hover:border-primary-fixed-dim transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/447000000000" target="_blank" aria-label="WhatsApp"
+             class="w-10 h-10 border border-inverse-on-surface/20 flex items-center justify-center text-inverse-on-surface/60 hover:text-primary-fixed-dim hover:border-primary-fixed-dim transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Experiences -->
+      <div>
+        <h3 class="font-label-lg text-label-lg uppercase tracking-widest text-secondary-fixed-dim mb-lg">Experiences</h3>
+        <ul class="space-y-sm">
+          <li><a href="private-dining.html"      class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Private Dining</a></li>
+          <li><a href="wine-tastings.html"        class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Wine Tastings</a></li>
+          <li><a href="experiences.html#chef"     class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Chef Experiences</a></li>
+          <li><a href="corporate-catering.html"   class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Corporate Catering</a></li>
+          <li><a href="event-food-planning.html"  class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Event Planning</a></li>
+          <li><a href="experiences.html#parties"  class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Private Parties</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Menus -->
+      <div>
+        <h3 class="font-label-lg text-label-lg uppercase tracking-widest text-secondary-fixed-dim mb-lg">Menus</h3>
+        <ul class="space-y-sm">
+          <li><a href="menus.html#afro-caribbean"   class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Afro-Caribbean</a></li>
+          <li><a href="menus.html#african"          class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">African</a></li>
+          <li><a href="menus.html#intercontinental" class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Intercontinental</a></li>
+          <li><a href="menus.html#private-dining"   class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Private Dining</a></li>
+          <li><a href="menus.html#wine-pairing"     class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Wine Pairings</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Shop -->
+      <div>
+        <h3 class="font-label-lg text-label-lg uppercase tracking-widest text-secondary-fixed-dim mb-lg">Shop</h3>
+        <ul class="space-y-sm">
+          <li><a href="shop.html#aprons"             class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Aprons</a></li>
+          <li><a href="shop.html#dining-serving"     class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Dining &amp; Serving</a></li>
+          <li><a href="shop.html#tableware"          class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Tableware</a></li>
+          <li><a href="shop.html#wine-dining"        class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Wine &amp; Dining</a></li>
+          <li><a href="shop.html#hosting-collection" class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">Hosting Collection</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Contact -->
+      <div>
+        <h3 class="font-label-lg text-label-lg uppercase tracking-widest text-secondary-fixed-dim mb-lg">Contact</h3>
+        <ul class="space-y-sm">
+          <li><a href="tel:+447000000000"        class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">+44 700 000 0000</a></li>
+          <li><a href="mailto:hello@bukahauz.com" class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">hello@bukahauz.com</a></li>
+          <li><a href="https://wa.me/447000000000" target="_blank" class="text-body-md text-inverse-on-surface/60 hover:text-primary-fixed-dim transition-colors">WhatsApp Us</a></li>
+          <li><span class="text-body-md text-inverse-on-surface/60">London, United Kingdom</span></li>
+          <li><span class="text-body-md text-inverse-on-surface/60">Mon–Sat: 10am – 9pm</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="border-t border-inverse-on-surface/10">
+    <div class="max-w-container-max mx-auto px-lg py-xl">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-lg">
+        <div>
+          <h4 class="font-headline-md text-headline-md text-primary-fixed-dim mb-sm">Join the Bukahauz Inner Circle</h4>
+          <p class="text-body-md text-inverse-on-surface/60">Early access to new experiences, seasonal menus &amp; artisan collaborations.</p>
+        </div>
+        <form class="flex gap-sm w-full md:w-auto" onsubmit="this.innerHTML='<p class=text-primary-fixed-dim>Thank you — you\'re on the list!</p>';return false;">
+          <input type="email" required placeholder="Your email address"
+            class="flex-1 md:w-72 bg-transparent border border-inverse-on-surface/20 px-md py-sm text-body-md text-inverse-on-surface placeholder-inverse-on-surface/40 focus:outline-none focus:border-primary-fixed-dim transition-colors"/>
+          <button type="submit" class="bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-widest px-lg py-sm hover:opacity-90 transition-opacity whitespace-nowrap">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-inverse-on-surface/10">
+    <div class="max-w-container-max mx-auto px-lg py-md flex flex-col md:flex-row items-center justify-between gap-sm">
+      <p class="font-label-sm text-label-sm text-inverse-on-surface/40">&copy; 2025 Bukahauz. All rights reserved.</p>
+      <nav class="flex flex-wrap gap-lg justify-center">
+        <a href="privacy.html"  class="font-label-sm text-label-sm text-inverse-on-surface/40 hover:text-primary-fixed-dim transition-colors">Privacy Policy</a>
+        <a href="terms.html"    class="font-label-sm text-label-sm text-inverse-on-surface/40 hover:text-primary-fixed-dim transition-colors">Terms &amp; Conditions</a>
+        <a href="refunds.html"  class="font-label-sm text-label-sm text-inverse-on-surface/40 hover:text-primary-fixed-dim transition-colors">Refund Policy</a>
+        <a href="cookies.html"  class="font-label-sm text-label-sm text-inverse-on-surface/40 hover:text-primary-fixed-dim transition-colors">Cookie Policy</a>
+      </nav>
+    </div>
+  </div>
+
+</footer>
+<script>
+        // Simple scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('reveal');
+            observer.observe(section);
+        });
+
+        // Interactive Header Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+</body></html>
