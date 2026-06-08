@@ -137,15 +137,10 @@
 
 <!-- Outer strip: subtle bg only for the bar itself -->
 <div style="background:rgba(250,249,247,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(193,200,194,0.2);">
-  <div style="max-width:1440px;margin:0 auto;padding:0 32px;height:112px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+  <div style="max-width:1440px;margin:0 auto;padding:0 32px;height:112px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;">
 
-    <!-- Logo -->
-    <a href="index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;">
-      <img src="bk-header-logo.png" alt="Bukahauz" style="height:104px;width:auto;object-fit:contain;" />
-    </a>
-
-    <!-- Desktop nav -->
-    <nav id="bk-desktop-nav" style="display:flex;align-items:center;gap:2px;flex:1;justify-content:center;flex-wrap:nowrap;">
+    <!-- Left: Desktop nav -->
+    <nav id="bk-desktop-nav" style="display:flex;align-items:center;gap:2px;justify-content:flex-start;flex-wrap:nowrap;">
 
       <a href="index.html" class="bk-nav-link">Home</a>
 
@@ -191,8 +186,13 @@
 
     </nav>
 
-    <!-- Right icons: Currency / Account / Cart -->
-    <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+    <!-- Centre: Logo -->
+    <a href="index.html" style="display:flex;align-items:center;justify-content:center;text-decoration:none;">
+      <img src="bk-header-logo.png" alt="Bukahauz" style="height:104px;width:auto;object-fit:contain;" />
+    </a>
+
+    <!-- Right: Currency / Account / Cart -->
+    <div style="display:flex;align-items:center;gap:6px;justify-content:flex-end;">
 
       <!-- Currency selector -->
       <div style="position:relative;">
@@ -337,8 +337,11 @@
 /* Responsive: hide desktop nav, show burger */
 @media (max-width: 1199px) {
   #bk-desktop-nav { display: none !important; }
-  #bk-desktop-nav + div { display: none !important; }
-  #bk-burger { display: block !important; }
+  #bk-burger { display: flex !important; align-items: center; justify-content: flex-start; }
+  /* On mobile: switch to flex, logo still centred */
+  #bk-header > div > div:first-child {
+    grid-template-columns: auto 1fr auto !important;
+  }
 }
 </style>
 
