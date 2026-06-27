@@ -265,9 +265,9 @@
       </a>
 
       <!-- Cart icon -->
-      <a href="shop.html" title="Cart" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;position:relative;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
+      <a href="cart.html" title="Cart" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;position:relative;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
-        <span style="position:absolute;top:4px;right:4px;width:8px;height:8px;background:#8f4c37;border-radius:50%;font-size:0;"></span>
+        <span class="bk-cart-badge" style="display:none;position:absolute;top:2px;right:2px;min-width:16px;height:16px;background:#8f4c37;border-radius:8px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;color:#fff;line-height:16px;text-align:center;padding:0 3px;"></span>
       </a>
 
     </div>
@@ -414,30 +414,131 @@ document.addEventListener('click', function(e) {
 });
 </script>
 </header>
+<style>
+:root{--ac:#8f4c37;--hf:'Bodoni Moda',serif;}
+.faq-wrap{display:grid;grid-template-columns:240px 1fr;gap:64px;max-width:1200px;margin:0 auto;padding:0 32px 100px;align-items:start;}
+.faq-sidebar{position:sticky;top:130px;}
+.faq-sidebar-label{font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#727974;margin:0 0 16px;}
+.faq-cat-link{display:block;font-family:Inter,sans-serif;font-size:13px;color:#424844;padding:8px 12px;border-left:2px solid transparent;text-decoration:none;transition:all .2s;margin-bottom:2px;}
+.faq-cat-link:hover,.faq-cat-link.active{color:var(--ac);border-left-color:var(--ac);background:rgba(143,76,55,.04);}
+.faq-section-title{font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);margin:0 0 24px;padding-bottom:12px;border-bottom:1px solid #e3e2e0;}
+.faq-item{border-bottom:1px solid #e3e2e0;}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;-webkit-user-select:none;user-select:none;}
+.faq-q-text{font-family:var(--hf);font-size:19px;font-weight:500;color:#1a1c1b;line-height:1.3;}
+.faq-icon{width:28px;height:28px;border:1px solid #c1c8c2;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;color:#466556;transition:transform .3s,border-color .2s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);border-color:#466556;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a-inner{font-family:Inter,sans-serif;font-size:15px;line-height:1.75;color:#424844;padding-bottom:20px;}
+.faq-a-inner a{color:#466556;}
+.faq-group{margin-bottom:56px;}
+@media(max-width:900px){.faq-wrap{grid-template-columns:1fr;gap:32px;}.faq-sidebar{position:static;display:flex;flex-wrap:wrap;gap:8px;}.faq-cat-link{border:1px solid #e3e2e0;border-left:2px solid transparent;padding:6px 14px;}}
+</style>
 <main style="padding-top:140px;">
-  <div style="max-width:800px;margin:0 auto;padding:60px 32px 0;">
-    <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 12px;">Help Centre</p>
-<h1 style="font-family:'Bodoni Moda',serif;font-size:48px;font-weight:500;line-height:1.1;color:#1a1c1b;margin:0 0 16px;">Frequently Asked Questions</h1>
-<p style="font-family:Inter,sans-serif;font-size:14px;color:#727974;margin:0 0 48px;">Everything you need to know about Bukahauz experiences and shop orders.</p>
-
-<h2 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid #e3e2e0;">Experiences & Bookings</h2>
-<div style="margin-bottom:40px;">
-  <details style="border-bottom:1px solid #e3e2e0;padding:20px 0;"><summary style="font-family:'Bodoni Moda',serif;font-size:18px;color:#1a1c1b;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">How do I make a booking?<span style="font-size:20px;color:#466556;">+</span></summary><p style="font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#424844;margin:16px 0 0;">Visit our <a href="book.html" style="color:#466556;">Booking page</a> or contact us via our <a href="contact.html" style="color:#466556;">enquiry form</a>. We will respond within 24 business hours to confirm availability and guide you through the process.</p></details>
-  <details style="border-bottom:1px solid #e3e2e0;padding:20px 0;"><summary style="font-family:'Bodoni Moda',serif;font-size:18px;color:#1a1c1b;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">What is your minimum guest number?<span style="font-size:20px;color:#466556;">+</span></summary><p style="font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#424844;margin:16px 0 0;">Our private dining experiences typically accommodate a minimum of 4 guests and a maximum of 30 guests. Corporate and large-format events can be arranged for larger groups — please enquire directly.</p></details>
-  <details style="border-bottom:1px solid #e3e2e0;padding:20px 0;"><summary style="font-family:'Bodoni Moda',serif;font-size:18px;color:#1a1c1b;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Can you accommodate dietary requirements?<span style="font-size:20px;color:#466556;">+</span></summary><p style="font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#424844;margin:16px 0 0;">Yes. We accommodate vegetarian, vegan, gluten-free, and most allergy requirements. Please inform us of all dietary needs at the time of booking and we will tailor the menu accordingly.</p></details>
-  <details style="border-bottom:1px solid #e3e2e0;padding:20px 0;"><summary style="font-family:'Bodoni Moda',serif;font-size:18px;color:#1a1c1b;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">How far in advance should I book?<span style="font-size:20px;color:#466556;">+</span></summary><p style="font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#424844;margin:16px 0 0;">We recommend booking at least 2–4 weeks in advance for private dining experiences and 6–8 weeks for large events or bespoke collaborations. Peak dates (weekends, holidays) book quickly.</p></details>
-</div>
-
-<h2 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid #e3e2e0;">Shop & Orders</h2>
-<div style="margin-bottom:40px;">
-  <details style="border-bottom:1px solid #e3e2e0;padding:20px 0;"><summary style="font-family:'Bodoni Moda',serif;font-size:18px;color:#1a1c1b;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">What payment methods do you accept?<span style="font-size:20px;color:#466556;">+</span></summary><p style="font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#424844;margin:16px 0 0;">We accept all major credit and debit cards (Visa, Mastercard, Amex), Apple Pay, Google Pay, and bank transfer for large event bookings.</p></details>
-  <details style="border-bottom:1px solid #e3e2e0;padding:20px 0;"><summary style="font-family:'Bodoni Moda',serif;font-size:18px;color:#1a1c1b;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">How long does delivery take?<span style="font-size:20px;color:#466556;">+</span></summary><p style="font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#424844;margin:16px 0 0;">Standard UK delivery takes 3–5 business days. Express delivery is 1–2 business days. See our <a href="shipping.html" style="color:#466556;">Shipping page</a> for full details including international rates.</p></details>
-  <details style="border-bottom:1px solid #e3e2e0;padding:20px 0;"><summary style="font-family:'Bodoni Moda',serif;font-size:18px;color:#1a1c1b;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">What is your returns policy?<span style="font-size:20px;color:#466556;">+</span></summary><p style="font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#424844;margin:16px 0 0;">Unused items in their original packaging may be returned within 14 days. Food and perishable items cannot be returned. See our <a href="refunds.html" style="color:#466556;">Refund Policy</a> for full details.</p></details>
-  <details style="padding:20px 0;"><summary style="font-family:'Bodoni Moda',serif;font-size:18px;color:#1a1c1b;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Can I send as a gift?<span style="font-size:20px;color:#466556;">+</span></summary><p style="font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#424844;margin:16px 0 0;">Absolutely. At checkout, select gift wrapping and add a personalised message. We will package your order in our signature kraft box with a handwritten note at no additional charge.</p></details>
-</div>
-
-<div style="margin-top:48px;padding:32px;background:#f4f4f1;border-left:3px solid #466556;"><p style="font-family:Inter,sans-serif;font-size:14px;color:#424844;margin:0 0 8px;font-weight:600;">Still have questions?</p><p style="font-family:Inter,sans-serif;font-size:14px;color:#424844;margin:0;">Our team is available Monday–Friday, 9am–6pm. <a href="contact.html" style="color:#466556;">Contact us here</a> or reach us on WhatsApp.</p></div>
+<!-- FAQ Hero -->
+<div style="background:#f4f4f1;border-bottom:1px solid #e3e2e0;padding:80px 32px;">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+    <div>
+      <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f4c37;margin:0 0 14px;">Help Centre</p>
+      <h1 style="font-family:'Bodoni Moda',serif;font-size:54px;font-weight:500;line-height:1.1;color:#1a1c1b;margin:0 0 20px;">Frequently<br><em style="font-style:italic;color:#8f4c37;">Asked</em> Questions</h1>
+      <p style="font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#727974;max-width:380px;margin:0;">Everything you need to know about Bukahauz experiences, shop orders, and more.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div style="background:#fff;border:1px solid #e3e2e0;padding:20px 24px;display:flex;align-items:center;gap:16px;">
+        <svg width="20" height="20" fill="none" stroke="#466556" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        <div><p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#1a1c1b;margin:0 0 3px;">Email Us</p><p style="font-family:Inter,sans-serif;font-size:13px;color:#727974;margin:0;">hello@bukahauz.com</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid #e3e2e0;padding:20px 24px;display:flex;align-items:center;gap:16px;">
+        <svg width="20" height="20" fill="none" stroke="#466556" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"/></svg>
+        <div><p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#1a1c1b;margin:0 0 3px;">WhatsApp</p><p style="font-family:Inter,sans-serif;font-size:13px;color:#727974;margin:0;">Mon–Fri, 9am–6pm</p></div>
+      </div>
+    </div>
   </div>
+</div>
+<!-- FAQ Body -->
+<div class="faq-wrap" style="padding-top:64px;">
+  <!-- Sidebar -->
+  <aside class="faq-sidebar">
+    <p class="faq-sidebar-label">Topics</p>
+    <a class="faq-cat-link active" href="#experiences" onclick="setActive(this)">Experiences & Bookings</a>
+    <a class="faq-cat-link" href="#shop" onclick="setActive(this)">Shop & Orders</a>
+    <a class="faq-cat-link" href="#payments" onclick="setActive(this)">Payments & Delivery</a>
+    <a class="faq-cat-link" href="#gifts" onclick="setActive(this)">Gifts & Special Requests</a>
+  </aside>
+  <!-- Accordion -->
+  <div>
+    <div class="faq-group" id="experiences">
+      <p class="faq-section-title">Experiences &amp; Bookings</p>
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)"><span class="faq-q-text">How do I make a booking?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Visit our <a href="book.html">Booking page</a> or contact us via our <a href="contact.html">enquiry form</a>. We will respond within 24 business hours to confirm availability and guide you through the process.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)"><span class="faq-q-text">What is your minimum guest number?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Our private dining experiences typically accommodate a minimum of 4 guests and a maximum of 30 guests. Corporate and large-format events can be arranged for larger groups — please enquire directly.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)"><span class="faq-q-text">Can you accommodate dietary requirements?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. We accommodate vegetarian, vegan, gluten-free, and most allergy requirements. Please inform us of all dietary needs at the time of booking and we will tailor the menu accordingly.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)"><span class="faq-q-text">How far in advance should I book?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">We recommend booking at least 2–4 weeks in advance for private dining experiences and 6–8 weeks for large events or bespoke collaborations. Peak dates (weekends, holidays) book quickly.</div></div>
+      </div>
+    </div>
+    <div class="faq-group" id="shop">
+      <p class="faq-section-title">Shop &amp; Orders</p>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)"><span class="faq-q-text">How do I place a shop order?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Browse our <a href="shop-collection.html">Shop Collection</a>, select your preferred colour variant and quantity, then add to bag. Checkout is processed securely through our payment system.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)"><span class="faq-q-text">What is your returns policy?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Unused items in their original packaging may be returned within 14 days of delivery. Food and perishable items cannot be returned. Please contact us at hello@bukahauz.com to initiate a return.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)"><span class="faq-q-text">Can I track my order?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Once your order has been dispatched you will receive a tracking number by email. You can also enter your order details on our <a href="tracking.html">Order Tracking page</a>.</div></div>
+      </div>
+    </div>
+    <div class="faq-group" id="payments">
+      <p class="faq-section-title">Payments &amp; Delivery</p>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)"><span class="faq-q-text">What payment methods do you accept?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">We accept all major credit and debit cards (Visa, Mastercard, Amex), Apple Pay, Google Pay, Klarna (buy now, pay later), and bank transfer for large event bookings.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)"><span class="faq-q-text">How long does delivery take?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Standard UK delivery takes 3–5 business days. Express delivery is 1–2 business days. See our <a href="shipping.html">Shipping page</a> for full details including international rates.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)"><span class="faq-q-text">Do you ship internationally?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. We ship to most countries worldwide. International delivery typically takes 7–14 business days depending on your location. Customs duties may apply and are the responsibility of the recipient.</div></div>
+      </div>
+    </div>
+    <div class="faq-group" id="gifts">
+      <p class="faq-section-title">Gifts &amp; Special Requests</p>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)"><span class="faq-q-text">Can I send as a gift?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely. At checkout, select gift wrapping and add a personalised message. We will package your order in our signature kraft box with a handwritten note at no additional charge.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)"><span class="faq-q-text">Can I arrange a bespoke collaboration?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. We work with brands, venues, and individuals on bespoke dining collaborations, pop-up events, and curated gifting programmes. Please <a href="contact.html">contact us</a> with your brief.</div></div>
+      </div>
+    </div>
+    <!-- CTA -->
+    <div style="margin-top:48px;padding:32px;background:#f4f4f1;border-left:3px solid #466556;">
+      <p style="font-family:Inter,sans-serif;font-size:14px;color:#1a1c1b;margin:0 0 8px;font-weight:600;">Still have questions?</p>
+      <p style="font-family:Inter,sans-serif;font-size:14px;color:#424844;margin:0;">Our team is available Monday–Friday, 9am–6pm. <a href="contact.html" style="color:#466556;">Contact us here</a> or reach us on WhatsApp.</p>
+    </div>
+  </div>
+</div>
+<script>
+function toggleFaq(item){item.classList.toggle('open');}
+function setActive(el){document.querySelectorAll('.faq-cat-link').forEach(function(a){a.classList.remove('active');});el.classList.add('active');}
+</script>
+
 </main>
 <footer style="background:#f4f4f1;">
   <div style="max-width:1440px;margin:0 auto;padding:80px 32px 48px;">
@@ -481,9 +582,7 @@ document.addEventListener('click', function(e) {
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Dining &amp; Serving</a></li>
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Tableware</a></li>
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine &amp; Dining</a></li>
-          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Gift Shop</a></li>
-          <li><a href="shop.html"            style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Best Sellers</a></li>
-        </ul>
+          </ul>
       </div>
 
       <!-- Col 4: Company (NEW) -->
@@ -493,7 +592,6 @@ document.addEventListener('click', function(e) {
           <li><a href="contact.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Contact Us</a></li>
           <li><a href="shipping.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Shipping</a></li>
           <li><a href="tracking.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Order Tracking</a></li>
-          <li><a href="refunds.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Refunds</a></li>
           <li><a href="faq.html"      style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">FAQ</a></li>
         </ul>
       </div>
@@ -514,11 +612,11 @@ document.addEventListener('click', function(e) {
   <!-- Bottom bar -->
   <div style="border-top:1px solid rgba(193,200,194,.4);background:#eeeeeb;">
     <div style="max-width:1440px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
-      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2025 Bukahauz. All rights reserved.</p>
+      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2026 Bukahauz. All rights reserved.</p>
       <nav style="display:flex;flex-wrap:wrap;gap:24px;">
         <a href="privacy.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Privacy Policy</a>
         <a href="terms.html"    style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Terms &amp; Conditions</a>
-        <a href="refunds.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Refund Policy</a>
+        
         <a href="cookies.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Cookie Policy</a>
       </nav>
     </div>
@@ -530,4 +628,27 @@ document.addEventListener('click', function(e) {
   </style>
 
 </footer>
-<script src="cart.js"></script></body></html>
+<script src="cart.js"></script><!-- Cookie Consent Popup -->
+<div id="bk-cookie-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1c1b;color:#f4f4f1;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;box-shadow:0 -4px 24px rgba(0,0,0,.18);">
+  <div style="flex:1;min-width:260px;">
+    <p style="font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#f4f4f1;margin:0 0 4px;letter-spacing:.02em;">We use cookies</p>
+    <p style="font-family:Inter,sans-serif;font-size:12px;color:#c1c8c2;margin:0;line-height:1.5;">We use essential and optional cookies to improve your experience. <a href="cookies.html" style="color:#adcebc;text-decoration:underline;">Cookie Policy</a></p>
+  </div>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button onclick="bkCookieAccept('essential')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:#c1c8c2;border:1px solid #424844;padding:10px 20px;cursor:pointer;transition:all .2s;" onmouseover="this.style.borderColor='#c1c8c2';" onmouseout="this.style.borderColor='#424844';">Essential Only</button>
+    <button onclick="bkCookieAccept('all')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#466556;color:#fff;border:1px solid #466556;padding:10px 20px;cursor:pointer;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Accept All</button>
+  </div>
+</div>
+<script>
+(function(){
+  if(!localStorage.getItem('bk_cookies_accepted')){
+    var bar=document.getElementById('bk-cookie-bar');
+    if(bar){bar.style.display='flex';}
+  }
+})();
+function bkCookieAccept(type){
+  localStorage.setItem('bk_cookies_accepted',type);
+  var bar=document.getElementById('bk-cookie-bar');
+  if(bar){bar.style.opacity='0';bar.style.transition='opacity .3s';setTimeout(function(){bar.style.display='none';},300);}
+}
+</script></body></html>

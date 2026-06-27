@@ -172,22 +172,48 @@ function bkToggle(btn){var dd=btn.nextElementSibling;var isOpen=dd.classList.con
 document.addEventListener('click',function(e){if(!e.target.closest('.bk-dropdown-wrap')){document.querySelectorAll('.bk-dropdown.bk-open').forEach(function(el){el.classList.remove('bk-open');});}});
 </script>
 </header>
+<style>
+.pol-wrap{display:grid;grid-template-columns:220px 1fr;gap:64px;max-width:1100px;margin:0 auto;padding:64px 32px 100px;align-items:start;}
+.pol-sidebar{position:sticky;top:130px;}
+.pol-nav-link{display:block;font-family:Inter,sans-serif;font-size:13px;color:#727974;padding:7px 12px;border-left:2px solid transparent;text-decoration:none;transition:all .2s;margin-bottom:2px;}
+.pol-nav-link:hover,.pol-nav-link.active{color:#8f4c37;border-left-color:#8f4c37;}
+.pol-section{margin-bottom:48px;scroll-margin-top:150px;}
+.pol-section h2{font-family:'Bodoni Moda',serif;font-size:26px;font-weight:500;color:#1a1c1b;margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid #e3e2e0;}
+.pol-section p{font-family:Inter,sans-serif;font-size:15px;line-height:1.8;color:#424844;margin:0;}
+@media(max-width:900px){.pol-wrap{grid-template-columns:1fr;gap:32px;}.pol-sidebar{position:static;}}
+</style>
 <main style="padding-top:140px;">
-  <div style="max-width:800px;margin:0 auto;padding:60px 32px 0;" class="policy-content">
-    <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 12px;">Legal</p>
-    <h1 style="font-family:'Bodoni Moda',serif;font-size:48px;font-weight:500;line-height:1.1;color:#1a1c1b;margin:0 0 16px;">Privacy Policy</h1>
-    <p style="font-family:Inter,sans-serif;font-size:14px;color:#727974;margin:0 0 48px;">Last updated: June 2025</p>
-    <div style='margin-bottom:36px;'><h2 style='font-family:Bodoni Moda,serif;font-size:24px;font-weight:500;color:#1a1c1b;margin:0 0 12px;'>Information We Collect</h2><p style='font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#424844;margin:0;'>We collect information you provide directly, including your name, email address, phone number, and event details when you make a booking or enquiry. We also collect usage data through analytics to improve our services.</p></div>
-    <div style='margin-bottom:36px;'><h2 style='font-family:Bodoni Moda,serif;font-size:24px;font-weight:500;color:#1a1c1b;margin:0 0 12px;'>How We Use Your Information</h2><p style='font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#424844;margin:0;'>Your information is used to process bookings, respond to enquiries, send event confirmations, and occasionally share curated updates about Bukahauz experiences. We never sell your personal data to third parties.</p></div>
-    <div style='margin-bottom:36px;'><h2 style='font-family:Bodoni Moda,serif;font-size:24px;font-weight:500;color:#1a1c1b;margin:0 0 12px;'>Data Sharing</h2><p style='font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#424844;margin:0;'>We may share your information with trusted service partners (payment processors, event staff) solely to fulfil your booking. All partners are bound by confidentiality agreements and GDPR-compliant data practices.</p></div>
-    <div style='margin-bottom:36px;'><h2 style='font-family:Bodoni Moda,serif;font-size:24px;font-weight:500;color:#1a1c1b;margin:0 0 12px;'>Your Rights (GDPR)</h2><p style='font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#424844;margin:0;'>You have the right to access, rectify, or erase your personal data at any time. You may also object to processing or request data portability. To exercise these rights, contact us at hello@bukahauz.com.</p></div>
-    <div style='margin-bottom:36px;'><h2 style='font-family:Bodoni Moda,serif;font-size:24px;font-weight:500;color:#1a1c1b;margin:0 0 12px;'>Data Retention</h2><p style='font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#424844;margin:0;'>Booking records are retained for 7 years to comply with UK financial regulations. Marketing preferences are retained until you unsubscribe. All other data is deleted within 12 months of your last interaction.</p></div>
-    <div style='margin-bottom:36px;'><h2 style='font-family:Bodoni Moda,serif;font-size:24px;font-weight:500;color:#1a1c1b;margin:0 0 12px;'>Cookies</h2><p style='font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#424844;margin:0;'>We use essential cookies to operate our website and optional analytics cookies to understand how visitors use our site. See our Cookie Policy for full details.</p></div>
-    <div style='margin-bottom:36px;'><h2 style='font-family:Bodoni Moda,serif;font-size:24px;font-weight:500;color:#1a1c1b;margin:0 0 12px;'>Contact</h2><p style='font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#424844;margin:0;'>Bukahauz is registered in England and Wales. For privacy-related queries, contact our Data Controller at hello@bukahauz.com.</p></div>
-    <div style="margin-top:48px;padding:32px;background:#f4f4f1;border-left:3px solid #466556;">
-      <p style="font-family:Inter,sans-serif;font-size:14px;color:#424844;margin:0;">Questions? Contact us at <a href="mailto:hello@bukahauz.com" style="color:#466556;">hello@bukahauz.com</a> or visit our <a href="contact.html" style="color:#466556;">Contact page</a>.</p>
+<div style="background:#f4f4f1;border-bottom:1px solid #e3e2e0;padding:64px 32px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f4c37;margin:0 0 12px;">Legal</p>
+    <h1 style="font-family:'Bodoni Moda',serif;font-size:52px;font-weight:500;line-height:1.1;color:#1a1c1b;margin:0 0 16px;">Privacy <em style="font-style:italic;color:#8f4c37;">Policy</em></h1>
+    <p style="font-family:Inter,sans-serif;font-size:14px;color:#727974;margin:0;">Last updated: June 2026 &nbsp;&middot;&nbsp; Bukahauz, registered in England and Wales</p>
+  </div>
+</div>
+<div class="pol-wrap">
+  <aside class="pol-sidebar">
+    <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#727974;margin:0 0 12px;">Contents</p>
+    <a class="pol-nav-link active" href="#collect">Information We Collect</a>
+    <a class="pol-nav-link" href="#use">How We Use It</a>
+    <a class="pol-nav-link" href="#sharing">Data Sharing</a>
+    <a class="pol-nav-link" href="#rights">Your Rights (GDPR)</a>
+    <a class="pol-nav-link" href="#retention">Data Retention</a>
+    <a class="pol-nav-link" href="#cookies">Cookies</a>
+    <a class="pol-nav-link" href="#contact-pol">Contact</a>
+  </aside>
+  <div>
+    <div class="pol-section" id="collect"><h2>Information We Collect</h2><p>We collect information you provide directly, including your name, email address, phone number, and event details when you make a booking or enquiry. We also collect usage data through analytics to improve our services.</p></div>
+    <div class="pol-section" id="use"><h2>How We Use Your Information</h2><p>Your information is used to process bookings, respond to enquiries, send event confirmations, and occasionally share curated updates about Bukahauz experiences. We never sell your personal data to third parties.</p></div>
+    <div class="pol-section" id="sharing"><h2>Data Sharing</h2><p>We may share your information with trusted service partners (payment processors, event staff) solely to fulfil your booking. All partners are bound by confidentiality agreements and GDPR-compliant data practices.</p></div>
+    <div class="pol-section" id="rights"><h2>Your Rights (GDPR)</h2><p>You have the right to access, rectify, or erase your personal data at any time. You may also object to processing or request data portability. To exercise these rights, contact us at <a href="mailto:hello@bukahauz.com" style="color:#466556;">hello@bukahauz.com</a>.</p></div>
+    <div class="pol-section" id="retention"><h2>Data Retention</h2><p>Booking records are retained for 7 years to comply with UK financial regulations. Marketing preferences are retained until you unsubscribe. All other data is deleted within 12 months of your last interaction.</p></div>
+    <div class="pol-section" id="cookies"><h2>Cookies</h2><p>We use essential cookies to operate our website and optional analytics cookies to understand how visitors use our site. See our <a href="cookies.html" style="color:#466556;">Cookie Policy</a> for full details.</p></div>
+    <div class="pol-section" id="contact-pol"><h2>Contact</h2><p>Bukahauz is registered in England and Wales. For privacy-related queries, contact our Data Controller at <a href="mailto:hello@bukahauz.com" style="color:#466556;">hello@bukahauz.com</a>.</p></div>
+    <div style="padding:28px 32px;background:#f4f4f1;border-left:3px solid #466556;">
+      <p style="font-family:Inter,sans-serif;font-size:14px;color:#424844;margin:0;">Questions? <a href="mailto:hello@bukahauz.com" style="color:#466556;">hello@bukahauz.com</a> &nbsp;&middot;&nbsp; <a href="contact.html" style="color:#466556;">Contact page</a></p>
     </div>
   </div>
+</div>
 </main><footer style="background:#f4f4f1;">
   <div style="max-width:1440px;margin:0 auto;padding:80px 32px 48px;">
     <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:40px;">
@@ -230,9 +256,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('.bk-dropdown
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Dining &amp; Serving</a></li>
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Tableware</a></li>
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine &amp; Dining</a></li>
-          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Gift Shop</a></li>
-          <li><a href="shop.html"            style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Best Sellers</a></li>
-        </ul>
+          </ul>
       </div>
 
       <!-- Col 4: Company (NEW) -->
@@ -242,7 +266,6 @@ document.addEventListener('click',function(e){if(!e.target.closest('.bk-dropdown
           <li><a href="contact.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Contact Us</a></li>
           <li><a href="shipping.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Shipping</a></li>
           <li><a href="tracking.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Order Tracking</a></li>
-          <li><a href="refunds.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Refunds</a></li>
           <li><a href="faq.html"      style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">FAQ</a></li>
         </ul>
       </div>
@@ -263,11 +286,11 @@ document.addEventListener('click',function(e){if(!e.target.closest('.bk-dropdown
   <!-- Bottom bar -->
   <div style="border-top:1px solid rgba(193,200,194,.4);background:#eeeeeb;">
     <div style="max-width:1440px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
-      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2025 Bukahauz. All rights reserved.</p>
+      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2026 Bukahauz. All rights reserved.</p>
       <nav style="display:flex;flex-wrap:wrap;gap:24px;">
         <a href="privacy.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Privacy Policy</a>
         <a href="terms.html"    style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Terms &amp; Conditions</a>
-        <a href="refunds.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Refund Policy</a>
+        
         <a href="cookies.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Cookie Policy</a>
       </nav>
     </div>
@@ -279,5 +302,28 @@ document.addEventListener('click',function(e){if(!e.target.closest('.bk-dropdown
   </style>
 
 </footer>
-<script src="cart.js"></script></body></html>
+<script src="cart.js"></script><!-- Cookie Consent Popup -->
+<div id="bk-cookie-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1c1b;color:#f4f4f1;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;box-shadow:0 -4px 24px rgba(0,0,0,.18);">
+  <div style="flex:1;min-width:260px;">
+    <p style="font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#f4f4f1;margin:0 0 4px;letter-spacing:.02em;">We use cookies</p>
+    <p style="font-family:Inter,sans-serif;font-size:12px;color:#c1c8c2;margin:0;line-height:1.5;">We use essential and optional cookies to improve your experience. <a href="cookies.html" style="color:#adcebc;text-decoration:underline;">Cookie Policy</a></p>
+  </div>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button onclick="bkCookieAccept('essential')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:#c1c8c2;border:1px solid #424844;padding:10px 20px;cursor:pointer;transition:all .2s;" onmouseover="this.style.borderColor='#c1c8c2';" onmouseout="this.style.borderColor='#424844';">Essential Only</button>
+    <button onclick="bkCookieAccept('all')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#466556;color:#fff;border:1px solid #466556;padding:10px 20px;cursor:pointer;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Accept All</button>
+  </div>
+</div>
+<script>
+(function(){
+  if(!localStorage.getItem('bk_cookies_accepted')){
+    var bar=document.getElementById('bk-cookie-bar');
+    if(bar){bar.style.display='flex';}
+  }
+})();
+function bkCookieAccept(type){
+  localStorage.setItem('bk_cookies_accepted',type);
+  var bar=document.getElementById('bk-cookie-bar');
+  if(bar){bar.style.opacity='0';bar.style.transition='opacity .3s';setTimeout(function(){bar.style.display='none';},300);}
+}
+</script></body></html>
 

@@ -265,9 +265,9 @@
       </a>
 
       <!-- Cart icon -->
-      <a href="shop.html" title="Cart" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;position:relative;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
+      <a href="cart.html" title="Cart" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;position:relative;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
-        <span style="position:absolute;top:4px;right:4px;width:8px;height:8px;background:#8f4c37;border-radius:50%;font-size:0;"></span>
+        <span class="bk-cart-badge" style="display:none;position:absolute;top:2px;right:2px;min-width:16px;height:16px;background:#8f4c37;border-radius:8px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;color:#fff;line-height:16px;text-align:center;padding:0 3px;"></span>
       </a>
 
     </div>
@@ -426,10 +426,13 @@ document.addEventListener('click', function(e) {
 
 <!-- Category Tabs -->
 <section style="background:#fff;border-bottom:1px solid #e3e2e0;position:sticky;top:112px;z-index:40;">
-  <div style="max-width:1440px;margin:0 auto;padding:0 32px;display:flex;gap:0;overflow-x:auto;">
+  <div style="max-width:1440px;margin:0 auto;padding:0 32px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;">
     <button class="bk-tab active" onclick="filterCat('all',this)">All (26)</button>
     <button class="bk-tab" onclick="filterCat('tableware',this)">Tableware</button>
     <button class="bk-tab" onclick="filterCat('dining',this)">Dining &amp; Serving</button>
+    <button class="bk-tab" onclick="filterCat('wine',this)">Wine &amp; Dining</button>
+    <button class="bk-tab" onclick="filterCat('linens',this)">Linens &amp; Aprons</button>
+    <button class="bk-tab" onclick="filterCat('gift',this)">Gift Shop</button>
   </div>
 </section>
 
@@ -448,294 +451,548 @@ document.addEventListener('click', function(e) {
   <div class="bk-shop-grid" id="bk-grid">
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/1.jpg" alt="Spiral Groove Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p1','Spiral Groove Plate','£68','shop-images/1.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £68',1600)">Add to Bag — £68</button>
+    <img src="shop-images/1.jpg" id="img-p1" alt="Spiral Groove Plate" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p1',-1)">−</button><span class="bk-qty-val" id="qty-p1">1</span><button class="bk-qty-btn" onclick="bkQty('p1',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p1','Spiral Groove Plate',68,'shop-images/1.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Spiral Groove Plate</h3>
     <p class="bk-prod-sub">White Ribbed Ceramic</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#d8d0c0" onclick="bkVar('p1','shop-images/1.jpg',this)" title="Natural"></button>
+      <button class="bk-sw" style="background:#8c9898" onclick="bkVar('p1','shop-images/1A.jpg',this)" title="Slate"></button>
+      <button class="bk-sw" style="background:#f0e8d4" onclick="bkVar('p1','shop-images/1C.jpg',this)" title="Ivory"></button>
+      <button class="bk-sw" style="background:#b0a890" onclick="bkVar('p1','shop-images/1D.jpg',this)" title="Stone"></button>
+    </div>
     <p class="bk-prod-price">£68</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/2.jpg" alt="Black Pillow Platter" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p2','Black Pillow Platter','£85','shop-images/2.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £85',1600)">Add to Bag — £85</button>
+    <img src="shop-images/2.jpg" id="img-p2" alt="Black Pillow Platter" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p2',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p2">1</span><button class="bk-qty-btn" onclick="bkQty('p2',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p2','Black Pillow Platter',85,'shop-images/2.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Black Pillow Platter</h3>
     <p class="bk-prod-sub">Quilted Gloss Ceramic</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#2c2c2c" onclick="bkVar('p2','shop-images/2.jpg',this)" title="Ebony"></button>
+      <button class="bk-sw" style="background:#8c9898" onclick="bkVar('p2','shop-images/2A.jpg',this)" title="Slate"></button>
+      <button class="bk-sw" style="background:#9ca8a4" onclick="bkVar('p2','shop-images/2C.jpg',this)" title="Smoke"></button>
+      <button class="bk-sw" style="background:#3c3c3c" onclick="bkVar('p2','shop-images/2D.jpg',this)" title="Onyx"></button>
+      <button class="bk-sw" style="background:#c8c4bc" onclick="bkVar('p2','shop-images/2E.jpg',this)" title="Ash"></button>
+    </div>
     <p class="bk-prod-price">£85</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="dining">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/3.jpg" alt="Deep Stone Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p3','Deep Stone Bowl','£72','shop-images/3.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £72',1600)">Add to Bag — £72</button>
+    <img src="shop-images/3.jpg" id="img-p3" alt="Deep Stone Bowl" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p3',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p3">1</span><button class="bk-qty-btn" onclick="bkQty('p3',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p3','Deep Stone Bowl',72,'shop-images/3.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Deep Stone Bowl</h3>
     <p class="bk-prod-sub">Speckled Grey Stoneware</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#b0a890" onclick="bkVar('p3','shop-images/3.jpg',this)" title="Stone"></button>
+      <button class="bk-sw" style="background:#c8c0b0" onclick="bkVar('p3','shop-images/3A.jpg',this)" title="Speckle"></button>
+      <button class="bk-sw" style="background:#d8d4cc" onclick="bkVar('p3','shop-images/3B.jpg',this)" title="Marble"></button>
+      <button class="bk-sw" style="background:#9c9888" onclick="bkVar('p3','shop-images/3C.jpg',this)" title="Pebble"></button>
+      <button class="bk-sw" style="background:#d0c4a8" onclick="bkVar('p3','shop-images/3D.jpg',this)" title="Sand"></button>
+    </div>
     <p class="bk-prod-price">£72</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/4.jpg" alt="Coupe Dinner Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p4','Coupe Dinner Plate','£58','shop-images/4.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £58',1600)">Add to Bag — £58</button>
+    <img src="shop-images/4.jpg" id="img-p4" alt="Coupe Dinner Plate" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p4',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p4">1</span><button class="bk-qty-btn" onclick="bkQty('p4',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p4','Coupe Dinner Plate',58,'shop-images/4.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Coupe Dinner Plate</h3>
     <p class="bk-prod-sub">Matte White, Wide Rim</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#f4f0e8" onclick="bkVar('p4','shop-images/4.jpg',this)" title="White"></button>
+      <button class="bk-sw" style="background:#ede4d0" onclick="bkVar('p4','shop-images/4A.jpg',this)" title="Cream"></button>
+      <button class="bk-sw" style="background:#e0d8cc" onclick="bkVar('p4','shop-images/4B.jpg',this)" title="Dove"></button>
+      <button class="bk-sw" style="background:#d8cfc0" onclick="bkVar('p4','shop-images/4C.jpg',this)" title="Linen"></button>
+    </div>
     <p class="bk-prod-price">£58</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="dining">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/5.jpg" alt="Lava Deep Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p5','Lava Deep Bowl','£92','shop-images/5.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £92',1600)">Add to Bag — £92</button>
+    <img src="shop-images/5.jpg" id="img-p5" alt="Lava Deep Bowl" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p5',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p5">1</span><button class="bk-qty-btn" onclick="bkQty('p5',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p5','Lava Deep Bowl',92,'shop-images/5.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Lava Deep Bowl</h3>
     <p class="bk-prod-sub">Volcanic Texture, Black Glaze</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#2c2c2c" onclick="bkVar('p5','shop-images/5.jpg',this)" title="Lava"></button>
+      <button class="bk-sw" style="background:#b85840" onclick="bkVar('p5','shop-images/5A.jpg',this)" title="Ember"></button>
+    </div>
     <p class="bk-prod-price">£92</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/6.jpg" alt="Midnight Oval Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p6','Midnight Oval Plate','£75','shop-images/6.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £75',1600)">Add to Bag — £75</button>
+    <img src="shop-images/6.jpg" id="img-p6" alt="Midnight Oval Plate" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p6',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p6">1</span><button class="bk-qty-btn" onclick="bkQty('p6',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p6','Midnight Oval Plate',75,'shop-images/6.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Midnight Oval Plate</h3>
     <p class="bk-prod-sub">Dark Granite, Elongated Form</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#2c3440" onclick="bkVar('p6','shop-images/6.jpg',this)" title="Midnight"></button>
+      <button class="bk-sw" style="background:#7c8890" onclick="bkVar('p6','shop-images/6A.jpg',this)" title="Dusk"></button>
+      <button class="bk-sw" style="background:#504848" onclick="bkVar('p6','shop-images/6B.jpg',this)" title="Charcoal"></button>
+      <button class="bk-sw" style="background:#6c7880" onclick="bkVar('p6','shop-images/6C.jpg',this)" title="Storm"></button>
+    </div>
     <p class="bk-prod-price">£75</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/7.jpg" alt="Raw Edge Charger Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p7','Raw Edge Charger Plate','£64','shop-images/7.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £64',1600)">Add to Bag — £64</button>
+    <img src="shop-images/7.jpg" id="img-p7" alt="Raw Edge Charger Plate" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p7',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p7">1</span><button class="bk-qty-btn" onclick="bkQty('p7',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p7','Raw Edge Charger Plate',64,'shop-images/7.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Raw Edge Charger Plate</h3>
     <p class="bk-prod-sub">Organic Rim, Charcoal Clay</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#d8d0c0" onclick="bkVar('p7','shop-images/7.jpg',this)" title="Natural"></button>
+      <button class="bk-sw" style="background:#6a9070" onclick="bkVar('p7','shop-images/7A.jpg',this)" title="Sage"></button>
+      <button class="bk-sw" style="background:#b0a890" onclick="bkVar('p7','shop-images/7B.jpg',this)" title="Stone"></button>
+      <button class="bk-sw" style="background:#2c2c2c" onclick="bkVar('p7','shop-images/7C.jpg',this)" title="Ebony"></button>
+      <button class="bk-sw" style="background:#f0e8d4" onclick="bkVar('p7','shop-images/7D.jpg',this)" title="Cream"></button>
+      <button class="bk-sw" style="background:#d4b888" onclick="bkVar('p7','shop-images/7E.jpg',this)" title="Wheat"></button>
+    </div>
     <p class="bk-prod-price">£64</p>
   </div>
 </div>
-<div class="bk-prod-card" data-cat="dining">
+<div class="bk-prod-card" data-cat="wine">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/8.jpg" alt="Cloud Pasta Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p8','Cloud Pasta Bowl','£52','shop-images/8.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £52',1600)">Add to Bag — £52</button>
+    <img src="shop-images/8.jpg" id="img-p8" alt="Cloud Pasta Bowl" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p8',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p8">1</span><button class="bk-qty-btn" onclick="bkQty('p8',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p8','Cloud Pasta Bowl',52,'shop-images/8.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Cloud Pasta Bowl</h3>
     <p class="bk-prod-sub">Soft White, Deep Well</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#f4f0e8" onclick="bkVar('p8','shop-images/8.jpg',this)" title="White"></button>
+      <button class="bk-sw" style="background:#e8e4dc" onclick="bkVar('p8','shop-images/8A.jpg',this)" title="Pearl"></button>
+      <button class="bk-sw" style="background:#e0d8cc" onclick="bkVar('p8','shop-images/8B.jpg',this)" title="Dove"></button>
+      <button class="bk-sw" style="background:#ede4d0" onclick="bkVar('p8','shop-images/8C.jpg',this)" title="Cream"></button>
+      <button class="bk-sw" style="background:#dce4e4" onclick="bkVar('p8','shop-images/8D.jpg',this)" title="Frost"></button>
+    </div>
     <p class="bk-prod-price">£52</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/9.jpg" alt="Bronze Lustre Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p9','Bronze Lustre Plate','£88','shop-images/9.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £88',1600)">Add to Bag — £88</button>
+    <img src="shop-images/9.jpg" id="img-p9" alt="Bronze Lustre Plate" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p9',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p9">1</span><button class="bk-qty-btn" onclick="bkQty('p9',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p9','Bronze Lustre Plate',88,'shop-images/9.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Bronze Lustre Plate</h3>
     <p class="bk-prod-sub">Metallic Reactive Glaze</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#a86840" onclick="bkVar('p9','shop-images/9.jpg',this)" title="Bronze"></button>
+      <button class="bk-sw" style="background:#b07050" onclick="bkVar('p9','shop-images/9A.jpg',this)" title="Copper"></button>
+      <button class="bk-sw" style="background:#c4a060" onclick="bkVar('p9','shop-images/9B.jpg',this)" title="Gold"></button>
+      <button class="bk-sw" style="background:#d0c4a8" onclick="bkVar('p9','shop-images/9C.jpg',this)" title="Sand"></button>
+      <button class="bk-sw" style="background:#b0a890" onclick="bkVar('p9','shop-images/9D.jpg',this)" title="Stone"></button>
+    </div>
     <p class="bk-prod-price">£88</p>
   </div>
 </div>
-<div class="bk-prod-card" data-cat="dining">
+<div class="bk-prod-card" data-cat="wine">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/10.jpg" alt="Ivory Deep Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p10','Ivory Deep Bowl','£65','shop-images/10.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £65',1600)">Add to Bag — £65</button>
+    <img src="shop-images/10.jpg" id="img-p10" alt="Ivory Deep Bowl" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p10',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p10">1</span><button class="bk-qty-btn" onclick="bkQty('p10',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p10','Ivory Deep Bowl',65,'shop-images/10.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Ivory Deep Bowl</h3>
     <p class="bk-prod-sub">Creamy Smooth Porcelain</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#f0e8d4" onclick="bkVar('p10','shop-images/10.jpg',this)" title="Ivory"></button>
+      <button class="bk-sw" style="background:#ede4d0" onclick="bkVar('p10','shop-images/10A.jpg',this)" title="Cream"></button>
+      <button class="bk-sw" style="background:#e8e4dc" onclick="bkVar('p10','shop-images/10B.jpg',this)" title="Pearl"></button>
+      <button class="bk-sw" style="background:#f4f0e8" onclick="bkVar('p10','shop-images/10C.jpg',this)" title="White"></button>
+    </div>
     <p class="bk-prod-price">£65</p>
   </div>
 </div>
-<div class="bk-prod-card" data-cat="dining">
+<div class="bk-prod-card" data-cat="wine">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/11.jpg" alt="Obsidian Ramen Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p11','Obsidian Ramen Bowl','£78','shop-images/11.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £78',1600)">Add to Bag — £78</button>
+    <img src="shop-images/11.jpg" id="img-p11" alt="Obsidian Ramen Bowl" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p11',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p11">1</span><button class="bk-qty-btn" onclick="bkQty('p11',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p11','Obsidian Ramen Bowl',78,'shop-images/11.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Obsidian Ramen Bowl</h3>
     <p class="bk-prod-sub">Gunmetal Dark Stoneware</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#2c2c2c" onclick="bkVar('p11','shop-images/11.jpg',this)" title="Obsidian"></button>
+      <button class="bk-sw" style="background:#8c9898" onclick="bkVar('p11','shop-images/11A.jpg',this)" title="Slate"></button>
+      <button class="bk-sw" style="background:#484848" onclick="bkVar('p11','shop-images/11B.jpg',this)" title="Gunmetal"></button>
+      <button class="bk-sw" style="background:#9ca8a4" onclick="bkVar('p11','shop-images/11C.jpg',this)" title="Smoke"></button>
+    </div>
     <p class="bk-prod-price">£78</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/12.jpg" alt="Ash Grey Dinner Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p12','Ash Grey Dinner Plate','£60','shop-images/12.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £60',1600)">Add to Bag — £60</button>
+    <img src="shop-images/12.jpg" id="img-p12" alt="Ash Grey Dinner Plate" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p12',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p12">1</span><button class="bk-qty-btn" onclick="bkQty('p12',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p12','Ash Grey Dinner Plate',60,'shop-images/12.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Ash Grey Dinner Plate</h3>
     <p class="bk-prod-sub">Speckled Matte Finish</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#c8c4bc" onclick="bkVar('p12','shop-images/12.jpg',this)" title="Ash"></button>
+      <button class="bk-sw" style="background:#b0a890" onclick="bkVar('p12','shop-images/12A.jpg',this)" title="Stone"></button>
+      <button class="bk-sw" style="background:#8c9898" onclick="bkVar('p12','shop-images/12B.jpg',this)" title="Slate"></button>
+      <button class="bk-sw" style="background:#9c9888" onclick="bkVar('p12','shop-images/12C.jpg',this)" title="Pebble"></button>
+      <button class="bk-sw" style="background:#d0c4a8" onclick="bkVar('p12','shop-images/12D.jpg',this)" title="Sand"></button>
+    </div>
     <p class="bk-prod-price">£60</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/13.jpg" alt="Terracotta Side Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p13','Terracotta Side Plate','£38','shop-images/13.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £38',1600)">Add to Bag — £38</button>
+    <img src="shop-images/13.jpg" id="img-p13" alt="Terracotta Side Plate" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p13',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p13">1</span><button class="bk-qty-btn" onclick="bkQty('p13',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p13','Terracotta Side Plate',38,'shop-images/13.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Terracotta Side Plate</h3>
     <p class="bk-prod-sub">Warm Earth-Tone Ceramic</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#c06848" onclick="bkVar('p13','shop-images/13.jpg',this)" title="Terracotta"></button>
+      <button class="bk-sw" style="background:#c08860" onclick="bkVar('p13','shop-images/13A.jpg',this)" title="Clay"></button>
+      <button class="bk-sw" style="background:#b05040" onclick="bkVar('p13','shop-images/13B.jpg',this)" title="Rust"></button>
+      <button class="bk-sw" style="background:#c49048" onclick="bkVar('p13','shop-images/13C.jpg',this)" title="Ochre"></button>
+      <button class="bk-sw" style="background:#c8b898" onclick="bkVar('p13','shop-images/13D.jpg',this)" title="Dune"></button>
+    </div>
     <p class="bk-prod-price">£38</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="dining">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/14.jpg" alt="Salt & Pepper Bowl Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p14','Salt & Pepper Bowl Set','£55','shop-images/14.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £55',1600)">Add to Bag — £55</button>
+    <img src="shop-images/14.jpg" id="img-p14" alt="Salt &amp; Pepper Bowl Set" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p14',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p14">1</span><button class="bk-qty-btn" onclick="bkQty('p14',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p14','Salt and Pepper Bowl Set',55,'shop-images/14.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Salt & Pepper Bowl Set</h3>
+    <h3 class="bk-prod-name">Salt &amp; Pepper Bowl Set</h3>
     <p class="bk-prod-sub">Set of 2, Contrast Glaze</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#d8d0c0" onclick="bkVar('p14','shop-images/14.jpg',this)" title="Natural"></button>
+      <button class="bk-sw" style="background:#e8e4d8" onclick="bkVar('p14','shop-images/14A.jpg',this)" title="Linen"></button>
+      <button class="bk-sw" style="background:#9ca8a4" onclick="bkVar('p14','shop-images/14B.jpg',this)" title="Smoke"></button>
+      <button class="bk-sw" style="background:#9c9888" onclick="bkVar('p14','shop-images/14C.jpg',this)" title="Pebble"></button>
+      <button class="bk-sw" style="background:#b0a890" onclick="bkVar('p14','shop-images/14D.jpg',this)" title="Stone"></button>
+    </div>
     <p class="bk-prod-price">£55</p>
   </div>
 </div>
-<div class="bk-prod-card" data-cat="tableware">
+<div class="bk-prod-card" data-cat="wine">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/15.jpg" alt="Heritage Mug & Saucer" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p15','Heritage Mug & Saucer','£48','shop-images/15.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £48',1600)">Add to Bag — £48</button>
+    <img src="shop-images/15.jpg" id="img-p15" alt="Heritage Mug &amp; Saucer" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p15',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p15">1</span><button class="bk-qty-btn" onclick="bkQty('p15',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p15','Heritage Mug and Saucer',48,'shop-images/15.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Heritage Mug & Saucer</h3>
+    <h3 class="bk-prod-name">Heritage Mug &amp; Saucer</h3>
     <p class="bk-prod-sub">Reactive Glaze, Handthrown</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#d8d0c0" onclick="bkVar('p15','shop-images/15.jpg',this)" title="Natural"></button>
+      <button class="bk-sw" style="background:#6a9070" onclick="bkVar('p15','shop-images/15A.jpg',this)" title="Sage"></button>
+      <button class="bk-sw" style="background:#8c9898" onclick="bkVar('p15','shop-images/15B.jpg',this)" title="Slate"></button>
+      <button class="bk-sw" style="background:#b0a890" onclick="bkVar('p15','shop-images/15C.jpg',this)" title="Stone"></button>
+    </div>
     <p class="bk-prod-price">£48</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/16.jpg" alt="Sage Rim Dinner Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p16','Sage Rim Dinner Plate','£62','shop-images/16.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £62',1600)">Add to Bag — £62</button>
+    <img src="shop-images/16.jpg" id="img-p16" alt="Sage Rim Dinner Plate" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p16',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p16">1</span><button class="bk-qty-btn" onclick="bkQty('p16',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p16','Sage Rim Dinner Plate',62,'shop-images/16.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Sage Rim Dinner Plate</h3>
     <p class="bk-prod-sub">Speckled Stone, Earth Edge</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#6a9070" onclick="bkVar('p16','shop-images/16.jpg',this)" title="Sage"></button>
+      <button class="bk-sw" style="background:#b0a890" onclick="bkVar('p16','shop-images/16A.jpg',this)" title="Stone"></button>
+      <button class="bk-sw" style="background:#9c8870" onclick="bkVar('p16','shop-images/16B.jpg',this)" title="Earth"></button>
+      <button class="bk-sw" style="background:#d8d0c0" onclick="bkVar('p16','shop-images/16C.jpg',this)" title="Natural"></button>
+    </div>
     <p class="bk-prod-price">£62</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/17.jpg" alt="Wabi-Sabi Side Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p17','Wabi-Sabi Side Plate','£42','shop-images/17.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £42',1600)">Add to Bag — £42</button>
+    <img src="shop-images/17.jpg" id="img-p17" alt="Wabi-Sabi Side Plate" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p17',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p17">1</span><button class="bk-qty-btn" onclick="bkQty('p17',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p17','Wabi-Sabi Side Plate',42,'shop-images/17.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Wabi-Sabi Side Plate</h3>
     <p class="bk-prod-sub">Imperfect Form, White Clay</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#f4f0e8" onclick="bkVar('p17','shop-images/17.jpg',this)" title="White"></button>
+      <button class="bk-sw" style="background:#c08860" onclick="bkVar('p17','shop-images/17A.jpg',this)" title="Clay"></button>
+      <button class="bk-sw" style="background:#ede4d0" onclick="bkVar('p17','shop-images/17B.jpg',this)" title="Cream"></button>
+      <button class="bk-sw" style="background:#b0a890" onclick="bkVar('p17','shop-images/17C.jpg',this)" title="Stone"></button>
+      <button class="bk-sw" style="background:#9ca8a4" onclick="bkVar('p17','shop-images/17D.jpg',this)" title="Smoke"></button>
+    </div>
     <p class="bk-prod-price">£42</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="dining">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/18.jpg" alt="Smoked Pearl Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p18','Smoked Pearl Bowl','£70','shop-images/18.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £70',1600)">Add to Bag — £70</button>
+    <img src="shop-images/18.jpg" id="img-p18" alt="Smoked Pearl Bowl" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p18',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p18">1</span><button class="bk-qty-btn" onclick="bkQty('p18',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p18','Smoked Pearl Bowl',70,'shop-images/18.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Smoked Pearl Bowl</h3>
     <p class="bk-prod-sub">Gradient Grey Ceramic</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#e8e4dc" onclick="bkVar('p18','shop-images/18.jpg',this)" title="Pearl"></button>
+      <button class="bk-sw" style="background:#9ca8a4" onclick="bkVar('p18','shop-images/18A.jpg',this)" title="Smoke"></button>
+      <button class="bk-sw" style="background:#b0bab8" onclick="bkVar('p18','shop-images/18B.jpg',this)" title="Mist"></button>
+      <button class="bk-sw" style="background:#909898" onclick="bkVar('p18','shop-images/18C.jpg',this)" title="Grey"></button>
+      <button class="bk-sw" style="background:#8c9898" onclick="bkVar('p18','shop-images/18D.jpg',this)" title="Slate"></button>
+    </div>
     <p class="bk-prod-price">£70</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="dining">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/19.jpg" alt="Artisan Soup Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p19','Artisan Soup Bowl','£58','shop-images/19.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £58',1600)">Add to Bag — £58</button>
+    <img src="shop-images/19.jpg" id="img-p19" alt="Artisan Soup Bowl" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p19',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p19">1</span><button class="bk-qty-btn" onclick="bkQty('p19',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p19','Artisan Soup Bowl',58,'shop-images/19.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Artisan Soup Bowl</h3>
     <p class="bk-prod-sub">Handcrafted, Wide Lip</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#d8d0c0" onclick="bkVar('p19','shop-images/19.jpg',this)" title="Natural"></button>
+      <button class="bk-sw" style="background:#ede4d0" onclick="bkVar('p19','shop-images/19A.jpg',this)" title="Cream"></button>
+      <button class="bk-sw" style="background:#b0a890" onclick="bkVar('p19','shop-images/19B.jpg',this)" title="Stone"></button>
+      <button class="bk-sw" style="background:#6a9070" onclick="bkVar('p19','shop-images/19C.jpg',this)" title="Sage"></button>
+      <button class="bk-sw" style="background:#d4b888" onclick="bkVar('p19','shop-images/19D.jpg',this)" title="Wheat"></button>
+    </div>
     <p class="bk-prod-price">£58</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/20.jpg" alt="Square White Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p20','Square White Plate','£72','shop-images/20.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £72',1600)">Add to Bag — £72</button>
+    <img src="shop-images/20.jpg" id="img-p20" alt="Square White Plate" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p20',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p20">1</span><button class="bk-qty-btn" onclick="bkQty('p20',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p20','Square White Plate',72,'shop-images/20.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Square White Plate</h3>
     <p class="bk-prod-sub">Modern Restaurant Style</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#f4f0e8" onclick="bkVar('p20','shop-images/20.jpg',this)" title="White"></button>
+      <button class="bk-sw" style="background:#ede4d0" onclick="bkVar('p20','shop-images/20A.jpg',this)" title="Cream"></button>
+      <button class="bk-sw" style="background:#e8e4dc" onclick="bkVar('p20','shop-images/20B.jpg',this)" title="Pearl"></button>
+      <button class="bk-sw" style="background:#f0e8d4" onclick="bkVar('p20','shop-images/20C.jpg',this)" title="Ivory"></button>
+      <button class="bk-sw" style="background:#e0d8cc" onclick="bkVar('p20','shop-images/20D.jpg',this)" title="Dove"></button>
+    </div>
     <p class="bk-prod-price">£72</p>
   </div>
 </div>
-<div class="bk-prod-card" data-cat="tableware">
+<div class="bk-prod-card" data-cat="gift">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/21.jpg" alt="Organic Freeform Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p21','Organic Freeform Plate','£88','shop-images/21.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £88',1600)">Add to Bag — £88</button>
+    <img src="shop-images/21.jpg" id="img-p21" alt="Organic Freeform Plate" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p21',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p21">1</span><button class="bk-qty-btn" onclick="bkQty('p21',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p21','Organic Freeform Plate',88,'shop-images/21.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Organic Freeform Plate</h3>
     <p class="bk-prod-sub">Sculptural White Porcelain</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#f4f0e8" onclick="bkVar('p21','shop-images/21.jpg',this)" title="White"></button>
+      <button class="bk-sw" style="background:#ede4d0" onclick="bkVar('p21','shop-images/21A.jpg',this)" title="Cream"></button>
+      <button class="bk-sw" style="background:#e8e4dc" onclick="bkVar('p21','shop-images/21B.jpg',this)" title="Pearl"></button>
+      <button class="bk-sw" style="background:#b0a890" onclick="bkVar('p21','shop-images/21C.jpg',this)" title="Stone"></button>
+      <button class="bk-sw" style="background:#f0e8d4" onclick="bkVar('p21','shop-images/21D.jpg',this)" title="Ivory"></button>
+      <button class="bk-sw" style="background:#d8d0c0" onclick="bkVar('p21','shop-images/21E.jpg',this)" title="Natural"></button>
+    </div>
     <p class="bk-prod-price">£88</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="dining">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/22.jpg" alt="Hammered Copper Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p22','Hammered Copper Bowl','£95','shop-images/22.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £95',1600)">Add to Bag — £95</button>
+    <img src="shop-images/22.jpg" id="img-p22" alt="Hammered Copper Bowl" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p22',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p22">1</span><button class="bk-qty-btn" onclick="bkQty('p22',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p22','Hammered Copper Bowl',95,'shop-images/22.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Hammered Copper Bowl</h3>
     <p class="bk-prod-sub">Hand-Beaten Copper Interior</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#b07050" onclick="bkVar('p22','shop-images/22.jpg',this)" title="Copper"></button>
+      <button class="bk-sw" style="background:#a86840" onclick="bkVar('p22','shop-images/22A.jpg',this)" title="Bronze"></button>
+      <button class="bk-sw" style="background:#c4a060" onclick="bkVar('p22','shop-images/22B.jpg',this)" title="Gold"></button>
+      <button class="bk-sw" style="background:#b05040" onclick="bkVar('p22','shop-images/22C.jpg',this)" title="Rust"></button>
+      <button class="bk-sw" style="background:#c06040" onclick="bkVar('p22','shop-images/22D.jpg',this)" title="Ember"></button>
+    </div>
     <p class="bk-prod-price">£95</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="dining">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/23.jpg" alt="Midnight Coupe Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p23','Midnight Coupe Bowl','£68','shop-images/23.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £68',1600)">Add to Bag — £68</button>
+    <img src="shop-images/23.jpg" id="img-p23" alt="Midnight Coupe Bowl" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p23',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p23">1</span><button class="bk-qty-btn" onclick="bkQty('p23',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p23','Midnight Coupe Bowl',68,'shop-images/23.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Midnight Coupe Bowl</h3>
     <p class="bk-prod-sub">Deep Black, Smooth Finish</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#2c2c2c" onclick="bkVar('p23','shop-images/23.jpg',this)" title="Midnight"></button>
+      <button class="bk-sw" style="background:#8c9898" onclick="bkVar('p23','shop-images/23A.jpg',this)" title="Slate"></button>
+      <button class="bk-sw" style="background:#1c1c2c" onclick="bkVar('p23','shop-images/23B.jpg',this)" title="Obsidian"></button>
+      <button class="bk-sw" style="background:#9ca8a4" onclick="bkVar('p23','shop-images/23C.jpg',this)" title="Smoke"></button>
+      <button class="bk-sw" style="background:#504848" onclick="bkVar('p23','shop-images/23D.jpg',this)" title="Charcoal"></button>
+      <button class="bk-sw" style="background:#6c7880" onclick="bkVar('p23','shop-images/23E.jpg',this)" title="Storm"></button>
+    </div>
     <p class="bk-prod-price">£68</p>
   </div>
 </div>
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/24.jpg" alt="Stone Grey Pasta Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p24','Stone Grey Pasta Plate','£64','shop-images/24.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £64',1600)">Add to Bag — £64</button>
+    <img src="shop-images/24.jpg" id="img-p24" alt="Stone Grey Pasta Plate" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p24',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p24">1</span><button class="bk-qty-btn" onclick="bkQty('p24',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p24','Stone Grey Pasta Plate',64,'shop-images/24.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Stone Grey Pasta Plate</h3>
     <p class="bk-prod-sub">Flat-Rim, Neutral Glaze</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#b0a890" onclick="bkVar('p24','shop-images/24.jpg',this)" title="Stone"></button>
+      <button class="bk-sw" style="background:#909898" onclick="bkVar('p24','shop-images/24A.jpg',this)" title="Grey"></button>
+      <button class="bk-sw" style="background:#9c9888" onclick="bkVar('p24','shop-images/24B.jpg',this)" title="Pebble"></button>
+      <button class="bk-sw" style="background:#c8c4bc" onclick="bkVar('p24','shop-images/24C.jpg',this)" title="Ash"></button>
+      <button class="bk-sw" style="background:#8c9898" onclick="bkVar('p24','shop-images/24D.jpg',this)" title="Slate"></button>
+      <button class="bk-sw" style="background:#d0c4a8" onclick="bkVar('p24','shop-images/24E.jpg',this)" title="Sand"></button>
+    </div>
     <p class="bk-prod-price">£64</p>
   </div>
 </div>
-<div class="bk-prod-card" data-cat="dining">
+<div class="bk-prod-card" data-cat="gift">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/25.jpg" alt="Egg Shell Vessel" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p25','Egg Shell Vessel','£95','shop-images/25.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £95',1600)">Add to Bag — £95</button>
+    <img src="shop-images/25.jpg" id="img-p25" alt="Egg Shell Vessel" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p25',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p25">1</span><button class="bk-qty-btn" onclick="bkQty('p25',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p25','Egg Shell Vessel',95,'shop-images/25.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
     <h3 class="bk-prod-name">Egg Shell Vessel</h3>
     <p class="bk-prod-sub">Cracked Ceramic, Sculptural</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#f0ead8" onclick="bkVar('p25','shop-images/25.jpg',this)" title="Eggshell"></button>
+      <button class="bk-sw" style="background:#ede4d0" onclick="bkVar('p25','shop-images/25A.jpg',this)" title="Cream"></button>
+      <button class="bk-sw" style="background:#e8e4dc" onclick="bkVar('p25','shop-images/25B.jpg',this)" title="Pearl"></button>
+      <button class="bk-sw" style="background:#f0e8d4" onclick="bkVar('p25','shop-images/25C.jpg',this)" title="Ivory"></button>
+    </div>
     <p class="bk-prod-price">£95</p>
   </div>
 </div>
-<div class="bk-prod-card" data-cat="dining">
+<div class="bk-prod-card" data-cat="gift">
   <div class="bk-prod-img-wrap">
-    <img src="shop-images/26.jpg" alt="Rust & Clay Side Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="bkAddToCart('p26','Rust & Clay Side Bowl','£52','shop-images/26.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £52',1600)">Add to Bag — £52</button>
+    <img src="shop-images/26.jpg" id="img-p26" alt="Rust &amp; Clay Side Bowl" class="bk-prod-img" loading="lazy"/>
+    <div class="bk-add-wrap">
+      <div class="bk-qty-row"><button class="bk-qty-btn" onclick="bkQty('p26',-1)">&#8722;</button><span class="bk-qty-val" id="qty-p26">1</span><button class="bk-qty-btn" onclick="bkQty('p26',1)">+</button></div>
+      <button class="bk-add-btn" onclick="bkBag('p26','Rust and Clay Side Bowl',52,'shop-images/26.jpg')">Add to Bag</button>
+    </div>
   </div>
   <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Rust & Clay Side Bowl</h3>
+    <h3 class="bk-prod-name">Rust &amp; Clay Side Bowl</h3>
     <p class="bk-prod-sub">Ochre Earth Tones, Handmade</p>
+    <div class="bk-swatches">
+      <button class="bk-sw active" style="background:#b05040" onclick="bkVar('p26','shop-images/26.jpg',this)" title="Rust"></button>
+      <button class="bk-sw" style="background:#c08860" onclick="bkVar('p26','shop-images/26A.jpg',this)" title="Clay"></button>
+      <button class="bk-sw" style="background:#c49048" onclick="bkVar('p26','shop-images/26B.jpg',this)" title="Ochre"></button>
+      <button class="bk-sw" style="background:#c06848" onclick="bkVar('p26','shop-images/26C.jpg',this)" title="Terracotta"></button>
+      <button class="bk-sw" style="background:#c06040" onclick="bkVar('p26','shop-images/26D.jpg',this)" title="Ember"></button>
+      <button class="bk-sw" style="background:#c8b898" onclick="bkVar('p26','shop-images/26E.jpg',this)" title="Dune"></button>
+    </div>
     <p class="bk-prod-price">£52</p>
   </div>
 </div>
-  </div>
-  <p id="bk-empty" style="display:none;text-align:center;padding:80px 0;font-family:'Bodoni Moda',serif;font-size:24px;color:#727974;">No products in this category.</p>
-</section>
 
+  </div>
+  <p id="bk-empty" style="display:none;text-align:center;padding:80px 0;font-family:'Bodoni Moda',serif;font-size:24px;color:#727974;">No products in this category yet.</p>
+</section>
 </main>
 
 <style>
@@ -750,18 +1007,25 @@ document.addEventListener('click', function(e) {
 .bk-prod-img-wrap{position:relative;aspect-ratio:1/1;overflow:hidden;background:#eeeeeb;margin-bottom:12px;}
 .bk-prod-img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .6s ease,transform .6s ease;}
 .bk-prod-card:hover .bk-prod-img{filter:grayscale(0);transform:scale(1.05);}
-.bk-add-btn{position:absolute;bottom:12px;left:12px;right:12px;background:rgba(255,255,255,.94);backdrop-filter:blur(4px);font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#1a1c1b;border:none;padding:11px 8px;cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s,background .2s;}
-.bk-prod-card:hover .bk-add-btn{opacity:1;transform:translateY(0);}
+.bk-add-wrap{position:absolute;bottom:0;left:0;right:0;padding:10px;display:flex;flex-direction:column;gap:6px;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s;background:linear-gradient(transparent,rgba(0,0,0,.18));}
+.bk-prod-card:hover .bk-add-wrap{opacity:1;transform:translateY(0);}
+.bk-qty-row{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.92);backdrop-filter:blur(4px);}
+.bk-qty-btn{background:none;border:none;width:32px;height:32px;font-family:Inter,sans-serif;font-size:16px;color:#1a1c1b;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;}
+.bk-qty-btn:hover{background:#f4f4f1;}
+.bk-qty-val{font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#1a1c1b;min-width:28px;text-align:center;line-height:32px;}
+.bk-add-btn{background:rgba(255,255,255,.94);backdrop-filter:blur(4px);font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#1a1c1b;border:none;padding:11px 8px;cursor:pointer;width:100%;transition:background .2s,color .2s;}
 .bk-add-btn:hover{background:#466556;color:#fff;}
-.bk-prod-name{font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#1a1c1b;margin:0 0 4px;}
-.bk-prod-sub{font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0 0 6px;}
-.bk-prod-price{font-family:'Bodoni Moda',serif;font-size:16px;color:#466556;margin:0;}
+.bk-swatches{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0;}
+.bk-sw{width:18px;height:18px;border:2px solid transparent;border-radius:2px;cursor:pointer;transition:border-color .2s,transform .15s;padding:0;outline:none;}
+.bk-sw:hover{transform:scale(1.2);}
+.bk-sw.active{border-color:#466556;transform:scale(1.15);}
+.bk-prod-name{font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#1a1c1b;margin:0 0 3px;}
+.bk-prod-sub{font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;}
+.bk-prod-price{font-family:'Bodoni Moda',serif;font-size:16px;color:#466556;margin:4px 0 0;}
 </style>
 
 <script>
-var allCat = 'all';
 function filterCat(cat,btn){
-  allCat=cat;
   document.querySelectorAll('.bk-tab').forEach(function(t){t.classList.remove('active');});
   btn.classList.add('active');
   var v=0;
@@ -783,8 +1047,22 @@ function sortProducts(val){
   });
   cards.forEach(function(c){grid.appendChild(c);});
 }
+function bkVar(id,src,btn){
+  document.getElementById('img-'+id).src=src;
+  btn.closest('.bk-swatches').querySelectorAll('.bk-sw').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+}
+function bkQty(id,delta){
+  var el=document.getElementById('qty-'+id);
+  var v=parseInt(el.textContent)+delta;
+  if(v<1)v=1;
+  el.textContent=v;
+}
+function bkBag(id,name,price,img){
+  var qty=parseInt(document.getElementById('qty-'+id).textContent);
+  bkAddToCart(id,name,'£'+price,img,qty);
+}
 </script>
-
 <footer style="background:#f4f4f1;">
   <div style="max-width:1440px;margin:0 auto;padding:80px 32px 48px;">
     <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:40px;">
@@ -827,9 +1105,7 @@ function sortProducts(val){
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Dining &amp; Serving</a></li>
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Tableware</a></li>
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine &amp; Dining</a></li>
-          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Gift Shop</a></li>
-          <li><a href="shop.html"            style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Best Sellers</a></li>
-        </ul>
+          </ul>
       </div>
 
       <!-- Col 4: Company (NEW) -->
@@ -839,7 +1115,6 @@ function sortProducts(val){
           <li><a href="contact.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Contact Us</a></li>
           <li><a href="shipping.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Shipping</a></li>
           <li><a href="tracking.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Order Tracking</a></li>
-          <li><a href="refunds.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Refunds</a></li>
           <li><a href="faq.html"      style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">FAQ</a></li>
         </ul>
       </div>
@@ -860,11 +1135,11 @@ function sortProducts(val){
   <!-- Bottom bar -->
   <div style="border-top:1px solid rgba(193,200,194,.4);background:#eeeeeb;">
     <div style="max-width:1440px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
-      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2025 Bukahauz. All rights reserved.</p>
+      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2026 Bukahauz. All rights reserved.</p>
       <nav style="display:flex;flex-wrap:wrap;gap:24px;">
         <a href="privacy.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Privacy Policy</a>
         <a href="terms.html"    style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Terms &amp; Conditions</a>
-        <a href="refunds.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Refund Policy</a>
+        
         <a href="cookies.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Cookie Policy</a>
       </nav>
     </div>
@@ -876,4 +1151,27 @@ function sortProducts(val){
   </style>
 
 </footer>
-</body></html>
+<!-- Cookie Consent Popup -->
+<div id="bk-cookie-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1c1b;color:#f4f4f1;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;box-shadow:0 -4px 24px rgba(0,0,0,.18);">
+  <div style="flex:1;min-width:260px;">
+    <p style="font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#f4f4f1;margin:0 0 4px;letter-spacing:.02em;">We use cookies</p>
+    <p style="font-family:Inter,sans-serif;font-size:12px;color:#c1c8c2;margin:0;line-height:1.5;">We use essential and optional cookies to improve your experience. <a href="cookies.html" style="color:#adcebc;text-decoration:underline;">Cookie Policy</a></p>
+  </div>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button onclick="bkCookieAccept('essential')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:#c1c8c2;border:1px solid #424844;padding:10px 20px;cursor:pointer;transition:all .2s;" onmouseover="this.style.borderColor='#c1c8c2';" onmouseout="this.style.borderColor='#424844';">Essential Only</button>
+    <button onclick="bkCookieAccept('all')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#466556;color:#fff;border:1px solid #466556;padding:10px 20px;cursor:pointer;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Accept All</button>
+  </div>
+</div>
+<script>
+(function(){
+  if(!localStorage.getItem('bk_cookies_accepted')){
+    var bar=document.getElementById('bk-cookie-bar');
+    if(bar){bar.style.display='flex';}
+  }
+})();
+function bkCookieAccept(type){
+  localStorage.setItem('bk_cookies_accepted',type);
+  var bar=document.getElementById('bk-cookie-bar');
+  if(bar){bar.style.opacity='0';bar.style.transition='opacity .3s';setTimeout(function(){bar.style.display='none';},300);}
+}
+</script></body></html>

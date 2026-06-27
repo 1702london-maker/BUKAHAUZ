@@ -272,9 +272,9 @@
       </a>
 
       <!-- Cart icon -->
-      <a href="shop.html" title="Cart" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;position:relative;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
+      <a href="cart.html" title="Cart" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;position:relative;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
-        <span style="position:absolute;top:4px;right:4px;width:8px;height:8px;background:#8f4c37;border-radius:50%;font-size:0;"></span>
+        <span class="bk-cart-badge" style="display:none;position:absolute;top:2px;right:2px;min-width:16px;height:16px;background:#8f4c37;border-radius:8px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;color:#fff;line-height:16px;text-align:center;padding:0 3px;"></span>
       </a>
 
     </div>
@@ -482,31 +482,32 @@ document.addEventListener('click', function(e) {
 <div class="lg:col-span-7">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] mb-sm block">Send An Enquiry</span>
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-xl">Tell us about your needs.</h2>
-<form class="space-y-lg" onsubmit="this.innerHTML='<div style=\'padding:32px 0;\'><p style=\'font-family:Bodoni Moda,serif;font-size:24px;color:#466556;margin-bottom:8px;\'>Thank you.</p><p style=\'font-family:Inter,sans-serif;font-size:16px;color:#424844;\'>We\'ll be in touch within 24 hours.</p></div>';return false;">
+<div style="background:#fff;border:1px solid #e3e2e0;padding:40px 48px;box-shadow:0 2px 24px rgba(0,0,0,.04);">
+<form class="space-y-lg" style="display:flex;flex-direction:column;gap:20px;" onsubmit="this.innerHTML='<div style=\'padding:32px 0;\'><p style=\'font-family:Bodoni Moda,serif;font-size:24px;color:#466556;margin-bottom:8px;\'>Thank you.</p><p style=\'font-family:Inter,sans-serif;font-size:16px;color:#424844;\'>We\'ll be in touch within 24 hours.</p></div>';return false;">
 
   <!-- Row 1: Name + Phone -->
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-lg">
     <div class="flex flex-col gap-xs">
       <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Full Name *</label>
-      <input required class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md text-on-surface w-full" placeholder="Your full name" type="text"/>
+      <input required style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;color:#1a1c1b;background:#faf9f7;border:1px solid #c1c8c2;padding:14px 16px;outline:none;transition:border-color .2s,box-shadow .2s;border-radius:0;" onfocus="this.style.borderColor='#466556';this.style.boxShadow='0 0 0 3px rgba(70,101,86,.08)';" onblur="this.style.borderColor='#c1c8c2';this.style.boxShadow='none';" placeholder="Your full name" type="text"/>
     </div>
     <div class="flex flex-col gap-xs">
       <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Phone Number</label>
-      <input class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md text-on-surface w-full" placeholder="+44 7000 000000" type="tel"/>
+      <input style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;color:#1a1c1b;background:#faf9f7;border:1px solid #c1c8c2;padding:14px 16px;outline:none;transition:border-color .2s,box-shadow .2s;border-radius:0;" onfocus="this.style.borderColor='#466556';this.style.boxShadow='0 0 0 3px rgba(70,101,86,.08)';" onblur="this.style.borderColor='#c1c8c2';this.style.boxShadow='none';" placeholder="+44 7000 000000" type="tel"/>
     </div>
   </div>
 
   <!-- Row 2: Email -->
   <div class="flex flex-col gap-xs">
     <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Email Address *</label>
-    <input required class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md text-on-surface w-full" placeholder="hello@yourcompany.com" type="email"/>
+    <input required style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;color:#1a1c1b;background:#faf9f7;border:1px solid #c1c8c2;padding:14px 16px;outline:none;transition:border-color .2s,box-shadow .2s;border-radius:0;" onfocus="this.style.borderColor='#466556';this.style.boxShadow='0 0 0 3px rgba(70,101,86,.08)';" onblur="this.style.borderColor='#c1c8c2';this.style.boxShadow='none';" placeholder="hello@yourcompany.com" type="email"/>
   </div>
 
   <!-- Row 3: Enquiry Type + Date -->
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-lg">
     <div class="flex flex-col gap-xs">
       <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Nature of Enquiry *</label>
-      <select required class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 text-on-surface-variant transition-all font-body-md w-full">
+      <select required style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;color:#424844;background:#faf9f7;border:1px solid #c1c8c2;padding:14px 16px;outline:none;transition:border-color .2s;-webkit-appearance:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';">
         <option value="" disabled selected>Select one...</option>
         <option>Private Dining</option>
         <option>Corporate Event</option>
@@ -518,7 +519,7 @@ document.addEventListener('click', function(e) {
     </div>
     <div class="flex flex-col gap-xs">
       <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Preferred Date</label>
-      <input class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 text-on-surface-variant transition-all font-body-md w-full" type="date"/>
+      <input style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;color:#424844;background:#faf9f7;border:1px solid #c1c8c2;padding:14px 16px;outline:none;transition:border-color .2s;-webkit-appearance:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';" type="date"/>
     </div>
   </div>
 
@@ -526,11 +527,11 @@ document.addEventListener('click', function(e) {
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-lg">
     <div class="flex flex-col gap-xs">
       <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Number of Guests</label>
-      <input class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md text-on-surface w-full" placeholder="e.g. 20" type="number" min="1"/>
+      <input style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;color:#1a1c1b;background:#faf9f7;border:1px solid #c1c8c2;padding:14px 16px;outline:none;transition:border-color .2s,box-shadow .2s;border-radius:0;" onfocus="this.style.borderColor='#466556';this.style.boxShadow='0 0 0 3px rgba(70,101,86,.08)';" onblur="this.style.borderColor='#c1c8c2';this.style.boxShadow='none';" placeholder="e.g. 20" type="number" min="1"/>
     </div>
     <div class="flex flex-col gap-xs">
       <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Approximate Budget</label>
-      <select class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 text-on-surface-variant transition-all font-body-md w-full">
+      <select style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;color:#424844;background:#faf9f7;border:1px solid #c1c8c2;padding:14px 16px;outline:none;transition:border-color .2s;-webkit-appearance:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';">
         <option value="" disabled selected>Select range...</option>
         <option>Under £500</option>
         <option>£500 – £1,000</option>
@@ -544,7 +545,7 @@ document.addEventListener('click', function(e) {
   <!-- Row 5: Message -->
   <div class="flex flex-col gap-xs">
     <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Your Message *</label>
-    <textarea required class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md resize-none text-on-surface w-full" placeholder="Tell us about your vision — the occasion, dietary needs, or anything that will help us curate the perfect experience." rows="5"></textarea>
+    <textarea required style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;color:#1a1c1b;background:#faf9f7;border:1px solid #c1c8c2;padding:14px 16px;outline:none;transition:border-color .2s;resize:vertical;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';" placeholder="Tell us about your vision — the occasion, dietary needs, or anything that will help us curate the perfect experience." rows="5"></textarea>
   </div>
 
   <!-- Submit -->
@@ -701,9 +702,7 @@ document.addEventListener('click', function(e) {
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Dining &amp; Serving</a></li>
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Tableware</a></li>
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine &amp; Dining</a></li>
-          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Gift Shop</a></li>
-          <li><a href="shop.html"            style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Best Sellers</a></li>
-        </ul>
+          </ul>
       </div>
 
       <!-- Col 4: Company (NEW) -->
@@ -713,7 +712,6 @@ document.addEventListener('click', function(e) {
           <li><a href="contact.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Contact Us</a></li>
           <li><a href="shipping.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Shipping</a></li>
           <li><a href="tracking.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Order Tracking</a></li>
-          <li><a href="refunds.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Refunds</a></li>
           <li><a href="faq.html"      style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">FAQ</a></li>
         </ul>
       </div>
@@ -734,11 +732,11 @@ document.addEventListener('click', function(e) {
   <!-- Bottom bar -->
   <div style="border-top:1px solid rgba(193,200,194,.4);background:#eeeeeb;">
     <div style="max-width:1440px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
-      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2025 Bukahauz. All rights reserved.</p>
+      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2026 Bukahauz. All rights reserved.</p>
       <nav style="display:flex;flex-wrap:wrap;gap:24px;">
         <a href="privacy.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Privacy Policy</a>
         <a href="terms.html"    style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Terms &amp; Conditions</a>
-        <a href="refunds.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Refund Policy</a>
+        
         <a href="cookies.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Cookie Policy</a>
       </nav>
     </div>
@@ -774,4 +772,27 @@ document.addEventListener('click', function(e) {
             });
         }
     </script>
-<script src="cart.js"></script></body></html>
+<script src="cart.js"></script><!-- Cookie Consent Popup -->
+<div id="bk-cookie-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1c1b;color:#f4f4f1;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;box-shadow:0 -4px 24px rgba(0,0,0,.18);">
+  <div style="flex:1;min-width:260px;">
+    <p style="font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#f4f4f1;margin:0 0 4px;letter-spacing:.02em;">We use cookies</p>
+    <p style="font-family:Inter,sans-serif;font-size:12px;color:#c1c8c2;margin:0;line-height:1.5;">We use essential and optional cookies to improve your experience. <a href="cookies.html" style="color:#adcebc;text-decoration:underline;">Cookie Policy</a></p>
+  </div>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button onclick="bkCookieAccept('essential')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:#c1c8c2;border:1px solid #424844;padding:10px 20px;cursor:pointer;transition:all .2s;" onmouseover="this.style.borderColor='#c1c8c2';" onmouseout="this.style.borderColor='#424844';">Essential Only</button>
+    <button onclick="bkCookieAccept('all')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#466556;color:#fff;border:1px solid #466556;padding:10px 20px;cursor:pointer;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Accept All</button>
+  </div>
+</div>
+<script>
+(function(){
+  if(!localStorage.getItem('bk_cookies_accepted')){
+    var bar=document.getElementById('bk-cookie-bar');
+    if(bar){bar.style.display='flex';}
+  }
+})();
+function bkCookieAccept(type){
+  localStorage.setItem('bk_cookies_accepted',type);
+  var bar=document.getElementById('bk-cookie-bar');
+  if(bar){bar.style.opacity='0';bar.style.transition='opacity .3s';setTimeout(function(){bar.style.display='none';},300);}
+}
+</script></body></html>
