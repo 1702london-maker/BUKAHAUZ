@@ -1,0 +1,854 @@
+﻿<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bukahauz | Wine Cellar &mdash; France</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "secondary": "#8f4c37",
+                    "on-primary-container": "#163427",
+                    "on-error": "#ffffff",
+                    "surface": "#faf9f7",
+                    "primary-container": "#7d9d8c",
+                    "secondary-fixed-dim": "#ffb59e",
+                    "surface-container": "#eeeeeb",
+                    "on-tertiary-fixed-variant": "#623d3d",
+                    "on-surface-variant": "#424844",
+                    "inverse-surface": "#2f312f",
+                    "on-tertiary-container": "#462526",
+                    "secondary-fixed": "#ffdbd0",
+                    "outline": "#727974",
+                    "tertiary-fixed": "#ffdad9",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e3e2e0",
+                    "tertiary": "#7c5454",
+                    "surface-variant": "#e3e2e0",
+                    "on-surface": "#1a1c1b",
+                    "surface-container-low": "#f4f4f1",
+                    "primary": "#466556",
+                    "on-primary-fixed-variant": "#2f4d3f",
+                    "on-secondary-container": "#7a3b27",
+                    "outline-variant": "#c1c8c2",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#eebaba",
+                    "background": "#faf9f7",
+                    "tertiary-container": "#b98a8a",
+                    "on-background": "#1a1c1b",
+                    "surface-container-high": "#e9e8e5",
+                    "on-primary-fixed": "#022115",
+                    "surface-tint": "#466556",
+                    "surface-dim": "#dadad7",
+                    "secondary-container": "#ffa98f",
+                    "on-tertiary-fixed": "#301314",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#adcebc",
+                    "on-secondary-fixed": "#3a0b00",
+                    "inverse-on-surface": "#f1f1ee",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#723522",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#faf9f7",
+                    "primary-fixed": "#c8ead7",
+                    "primary-fixed-dim": "#adcebc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "xs": "4px",
+                    "unit": "4px",
+                    "gutter": "24px",
+                    "xxl": "128px",
+                    "xl": "64px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px",
+                    "md": "16px",
+                    "lg": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Bodoni Moda"],
+                    "display-lg": ["Bodoni Moda"],
+                    "headline-md": ["Bodoni Moda"],
+                    "display-md": ["Bodoni Moda"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "headline-lg-mobile": ["Bodoni Moda"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "display-md": ["48px", {"lineHeight": "1.1", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .grain-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: 100;
+      }
+      .asymmetric-border {
+        border-radius: 4px 64px 4px 4px;
+      }
+    </style>
+<style id="bk-form-style">
+/* Professional form styling */
+.bk-form-field { margin-bottom: 20px; }
+.bk-form-field label {
+  display: block;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #424844;
+  margin-bottom: 8px;
+}
+.bk-form-field input,
+.bk-form-field select,
+.bk-form-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  color: #1a1c1b;
+  background: #faf9f7;
+  border: 1px solid #c1c8c2;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.bk-form-field input:focus,
+.bk-form-field select:focus,
+.bk-form-field textarea:focus {
+  border-color: #466556;
+  box-shadow: 0 0 0 3px rgba(70,101,86,.08);
+}
+.bk-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 640px) { .bk-form-row { grid-template-columns: 1fr; } }
+.bk-form-submit {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: #466556;
+  color: #fff;
+  border: none;
+  padding: 16px 40px;
+  cursor: pointer;
+  transition: background .2s;
+  width: 100%;
+}
+.bk-form-submit:hover { background: #2f4d3f; }
+.bk-form-wrap {
+  background: #fff;
+  border: 1px solid #e3e2e0;
+  padding: 48px;
+  box-shadow: 0 2px 24px rgba(0,0,0,.04);
+}
+@media (max-width: 640px) { .bk-form-wrap { padding: 28px 20px; } }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden selection:bg-primary/20">
+<div class="grain-overlay"></div>
+<!-- Navigation -->
+<header id="bk-header" style="position:fixed;top:0;left:0;right:0;z-index:50;">
+
+<!-- Outer strip: subtle bg only for the bar itself -->
+<div style="background:rgba(250,249,247,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(193,200,194,0.2);">
+  <div style="max-width:1440px;margin:0 auto;padding:0 32px;height:112px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;">
+
+    <!-- Left: Desktop nav -->
+    <nav id="bk-desktop-nav" style="display:flex;align-items:center;gap:2px;justify-content:flex-start;flex-wrap:nowrap;">
+
+      <a href="index.html" class="bk-nav-link">Home</a>
+
+      <a href="about.html" class="bk-nav-link">About</a>
+
+      <!-- Experiences -->
+      <div class="bk-dropdown-wrap">
+        <button class="bk-nav-link bk-has-dropdown" onclick="bkToggle(this)">
+          Experiences <span style="font-size:10px;opacity:0.6;">&#9660;</span>
+        </button>
+        <div class="bk-dropdown">
+          <a href="private-dining.html"      class="bk-dd-item">Private Dining</a>
+          <a href="chef-experiences.html"    class="bk-dd-item">Chef Experiences</a>
+          <a href="wine-tastings.html"       class="bk-dd-item">Wine Tastings</a>
+          <a href="wine-cellar.html"       class="bk-dd-item">Wine Cellar</a>
+          <a href="private-parties.html"     class="bk-dd-item">Private Parties</a>
+          <a href="corporate-catering.html"  class="bk-dd-item">Corporate Catering</a>
+          <a href="event-food-planning.html" class="bk-dd-item">Event Food Planning</a>
+          <a href="takeaway.html"            class="bk-dd-item">Takeaway</a>
+        </div>
+      </div>
+
+      <!-- Menus -->
+      <div class="bk-dropdown-wrap">
+        <button class="bk-nav-link bk-has-dropdown" onclick="bkToggle(this)">
+          Menus <span style="font-size:10px;opacity:0.6;">&#9660;</span>
+        </button>
+        <div class="bk-dropdown">
+                    <a href="afro-continental-menu.html" class="bk-dd-item">Afro Continental Menu</a>
+          <a href="afro-fusion.html" class="bk-dd-item">Afro Fusion Menu</a>
+                    <a href="menus.html"                class="bk-dd-item">Private Dining Menu</a>
+          <a href="wine-pairing-menu.html"    class="bk-dd-item">Wine Pairing Menu</a>
+        </div>
+      </div>
+
+      <a href="networking.html" class="bk-nav-link">Networking</a>
+
+      <a href="shop-collection.html" class="bk-nav-link">Shop</a>
+
+      <a href="food-truck.html" class="bk-nav-link">Food Truck</a>
+      <a href="gallery.html" class="bk-nav-link">Gallery</a>
+      <a href="contact.html" class="bk-nav-link">Contact</a>
+      <a href="book.html" style="background:#466556;color:#fff;padding:8px 18px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;margin-left:8px;white-space:nowrap;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Book Now</a>
+
+    </nav>
+
+    <!-- Centre: Logo -->
+    <a href="index.html" style="display:flex;align-items:center;justify-content:center;text-decoration:none;">
+      <img src="bk-header-logo.png" alt="Bukahauz" style="height:104px;width:auto;object-fit:contain;" />
+    </a>
+
+    <!-- Right: Currency / Account / Cart -->
+    <div style="display:flex;align-items:center;gap:6px;justify-content:flex-end;">
+
+      <!-- Currency selector -->
+      <div style="position:relative;">
+        <select onchange="" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.05em;color:#424844;background:transparent;border:1px solid #c1c8c2;padding:6px 8px;cursor:pointer;appearance:none;-webkit-appearance:none;outline:none;transition:border-color .2s;min-width:60px;"
+          onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';">
+          <option>GBP</option>
+          <option>USD</option>
+          <option>EUR</option>
+          <option>NGN</option>
+        </select>
+      </div>
+
+      <!-- Account icon -->
+      <a href="account.html" title="Account" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></a><!--old-account-removed
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+      </a>
+
+      <!-- Cart icon -->
+      <a href="cart.html" title="Cart" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;position:relative;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
+        <span class="bk-cart-badge" style="display:none;position:absolute;top:2px;right:2px;min-width:16px;height:16px;background:#8f4c37;border-radius:8px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;color:#fff;line-height:16px;text-align:center;padding:0 3px;"></span>
+      </a>
+
+    </div>
+
+    <!-- Mobile burger -->
+    <button onclick="document.getElementById('bk-mobile-menu').classList.toggle('bk-open');" style="display:none;background:none;border:none;cursor:pointer;padding:4px;" id="bk-burger" aria-label="Menu">
+      <svg width="22" height="22" fill="none" stroke="#1a1c1b" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+
+  </div>
+</div>
+
+<!-- Mobile menu -->
+<div id="bk-mobile-menu" style="display:none;background:#faf9f7;border-top:1px solid #e3e2e0;max-height:80vh;overflow-y:auto;">
+  <div style="padding:12px 20px;">
+    <a href="index.html" class="bk-mob-link">Home</a>
+    <a href="about.html" class="bk-mob-link">About</a>
+    <a href="experiences.html" class="bk-mob-link">Experiences</a>
+    <div style="padding-left:16px;border-left:2px solid rgba(70,101,86,0.2);margin-left:8px;">
+      <a href="private-dining.html"      class="bk-mob-sub">Private Dining</a>
+      <a href="chef-experiences.html"    class="bk-mob-sub">Chef Experiences</a>
+      <a href="wine-tastings.html"       class="bk-mob-sub">Wine Tastings</a>
+      <a href="private-parties.html"     class="bk-mob-sub">Private Parties</a>
+      <a href="corporate-catering.html"  class="bk-mob-sub">Corporate Catering</a>
+      <a href="event-food-planning.html" class="bk-mob-sub">Event Food Planning</a>
+      <a href="takeaway.html"            class="bk-mob-sub">Takeaway</a>
+    </div>
+    <a href="menus.html" class="bk-mob-link">Menus</a>
+    <div style="padding-left:16px;border-left:2px solid rgba(70,101,86,0.2);margin-left:8px;">
+      <a href="afro-continental-menu.html" class="bk-mob-sub">Afro Continental Menu</a>
+      <a href="menus.html"                 class="bk-mob-sub">Private Dining Menu</a>
+      <a href="wine-pairing-menu.html"     class="bk-mob-sub">Wine Pairing Menu</a>
+    </div>
+    <a href="networking.html" class="bk-mob-link">Networking</a>
+    <a href="shop-collection.html" class="bk-mob-link">Shop</a>
+    <a href="food-truck.html" class="bk-mob-link">Food Truck</a>
+    <a href="gallery.html" class="bk-mob-link">Gallery</a>
+    <a href="contact.html" class="bk-mob-link">Contact</a>
+    <a href="book.html" style="display:block;margin:12px 8px 4px;background:#466556;color:#fff;padding:10px 16px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;text-align:center;">Book Now</a>
+  </div>
+</div>
+
+<style>
+/* Nav link base */
+.bk-nav-link {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #424844;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+  display: inline-block;
+}
+.bk-nav-link:hover { color: #466556; }
+
+/* Dropdown wrapper */
+.bk-dropdown-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown panel — hidden by default */
+.bk-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: #faf9f7;
+  border: 1px solid rgba(193,200,194,0.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  min-width: 200px;
+  z-index: 100;
+}
+.bk-dropdown.bk-open { display: block; }
+
+.bk-dd-item {
+  display: block;
+  padding: 10px 16px;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  color: #424844;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.bk-dd-item:hover { background: #f4f4f1; color: #466556; }
+
+/* Mobile links */
+.bk-mob-link {
+  display: block;
+  padding: 10px 8px;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #424844;
+  text-decoration: none;
+}
+.bk-mob-sub {
+  display: block;
+  padding: 7px 8px;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  color: #424844;
+  text-decoration: none;
+}
+.bk-mob-link:hover, .bk-mob-sub:hover { color: #466556; }
+
+/* Mobile open state */
+#bk-mobile-menu.bk-open { display: block !important; }
+
+/* Responsive: hide desktop nav, show burger */
+@media (max-width: 1199px) {
+  #bk-desktop-nav { display: none !important; }
+  #bk-burger { display: flex !important; align-items: center; justify-content: flex-start; }
+  /* On mobile: switch to flex, logo still centred */
+  #bk-header > div > div:first-child {
+    grid-template-columns: auto 1fr auto !important;
+  }
+}
+</style>
+
+<script>
+// Toggle dropdown open/close
+function bkToggle(btn) {
+  var dd = btn.nextElementSibling;
+  var isOpen = dd.classList.contains('bk-open');
+  // Close all dropdowns
+  document.querySelectorAll('.bk-dropdown.bk-open').forEach(function(el){ el.classList.remove('bk-open'); });
+  if (!isOpen) dd.classList.add('bk-open');
+}
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.bk-dropdown-wrap')) {
+    document.querySelectorAll('.bk-dropdown.bk-open').forEach(function(el){ el.classList.remove('bk-open'); });
+  }
+});
+</script>
+</header>
+<main style="padding-top:112px;">
+<!-- Hero -->
+<div style="background:#1a1c1b;padding:80px 32px;text-align:center;">
+  <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#adcebc;margin:0 0 12px;">Wine Cellar</p>
+  <h1 style="font-family:'Bodoni Moda',serif;font-size:56px;font-weight:500;color:#faf9f7;margin:0 0 16px;line-height:1.1;">Exploring <em style="font-style:italic;color:#adcebc;">France</em></h1>
+  <p style="font-family:Inter,sans-serif;font-size:16px;color:rgba(250,249,247,.65);max-width:560px;margin:0 auto 32px;line-height:1.7;">We begin our cellar journey in France — the heartland of wine. From the terraced vineyards of Burgundy to the sun-drenched slopes of Bordeaux, each bottle tells a story of terroir and time.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="wine-tastings.html" style="display:inline-block;background:#466556;color:#fff;padding:14px 36px;font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;">Book a Tasting</a>
+    <span style="font-family:Inter,sans-serif;font-size:13px;color:rgba(250,249,247,.4);align-self:center;">Italy & Spain coming soon</span>
+  </div>
+</div>
+
+<!-- Country Nav -->
+<div style="background:#f4f4f1;border-bottom:1px solid #e3e2e0;padding:0 32px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;gap:0;">
+    <button style="font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 24px;border:none;border-bottom:2px solid #466556;color:#466556;background:none;cursor:pointer;">France</button>
+    <button style="font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 24px;border:none;border-bottom:2px solid transparent;color:#727974;background:none;cursor:pointer;opacity:.5;" disabled>Italy (Coming Soon)</button>
+    <button style="font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 24px;border:none;border-bottom:2px solid transparent;color:#727974;background:none;cursor:pointer;opacity:.5;" disabled>Spain (Coming Soon)</button>
+  </div>
+</div>
+
+<!-- Wine Grid -->
+<section style="background:#faf9f7;padding:80px 32px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="margin-bottom:48px;">
+      <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f4c37;margin:0 0 8px;">Region Showcase</p>
+      <h2 style="font-family:'Bodoni Moda',serif;font-size:40px;font-weight:500;color:#1a1c1b;margin:0;">French Wine Collection</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:32px;">      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU5xJtHE7Pa5Cb8FwueF6UkJbA3gva631D2XYA3YEUeF3J17bRDywVWEBAyrPBFt1sYVVOmH2ZHm-B3ewF3wCPEzfMhBgCCPW6xQeFw5OjE_EiuIuWkdhvI3Wfuc6xS4OqFUnN8lAfV2PIIKHwBhaUQD2iWJfFoY3fnUO1zlqPdElxAn5KlCtftuFG2gP96aJibedO2mJx97WV6R9eCuOlOZ6oVrcqpTbggxenERl-ur4zlEz_j0B42bz6vGXUmtBNp5mzUa-o1GH1" alt="Château Margaux 2018" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Bordeaux</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Red — Cabernet Sauvignon Blend</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Château Margaux 2018</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">The jewel of the Médoc. Full-bodied with notes of dark cherry, graphite and violets. A structured tannin profile with an extraordinarily long finish. Pairs beautifully with our Seared Suya Ribeye.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£420</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjRflBgr6LJLLM8aytEq1iIlOwoXhLroLcXFUgGlpN_urxeEos4tvNWELK7s0x644Cc5WKvZFQRG150QRZrwSTySdb4yOd6hTPEJPJoWYjxfiNwKqsh8MWzhnGfX7mPrQMD2uXrgj7H6M2PZrM1i2TVYMOCYbiTTNySilshMA85xZAjum9wjE0R1b5LqGKFr4A1fLqqZHYLaUeUU2BNe-t_Mv2s82u6J9LmgXLM7D7PNxFERWD_4RfN36F" alt="Domaine de la Romanée-Conti 2019" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Burgundy</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Red — Pinot Noir</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Domaine de la Romanée-Conti 2019</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">The most revered name in Burgundy. Ethereal and complex with strawberry, truffle and forest floor. The silky texture and precision of this wine is unmatched anywhere on earth.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£2,800</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS9FktwpwYL8UU4qgSo1OpjHp2eq9F5Hkr_hjTHQx9px8PSa1TLvr7iMWikJ6tHu3IwJMx8U0RYxrnuIpu6oF_E388NX5achjUQkO4cr9Em6FFGqNjnCeOP3iyYeljeVG7S_4_g4agn9jdGbu-yhZ_YpVmYmwgqZZXTlSurdlWEK4QP3bGGagy9gkECFDGUDpaWCCdY7HTI5gvV2Z0wCgYZTlkDjyuc02Lx9a_zZVYL5VbtuWB2nXqx62vmWkjaI19EkZwnbjSYJeD" alt="Krug Grande Cuvée NV" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Champagne</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Sparkling — Chardonnay, Pinot Noir, Meunier</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Krug Grande Cuvée NV</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">The pinnacle of non-vintage Champagne. Toasty brioche, dried apricot and honey in perfect harmony. Effortlessly celebratory — the ideal aperitif for any Bukahauz experience.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£180</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHHfPrkda6FTwjDU6PIbys7Sse-U4As1E0-HcK9m6KtycTB6QmvXFwZ6fetarHp3NILCFIiqoxKRQm46TcFIz7g01UQp6EUt__USsORbcZBwvSbe4E4wNdQSBU5bMW9LCHes08U-dnjJXRjJXE_VH9RzATEQ9blWe1ivGkpaM3QJFvLkexxHClrCyay3Rj_OG2s7R_i46aN-DuDUWLWuxCGHa1G88j_TeaZIQQTcuYRUIY5mJzGjAOwjoe4rvfS2xL-OkMVabJQtfU" alt="Château Rayas Châteauneuf-du-Pape 2017" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Rhône Valley</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Red — Grenache</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Château Rayas Châteauneuf-du-Pape 2017</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">Old-vine Grenache at its finest. Kirsch, lavender, and garrigue with remarkable freshness and longevity. A wine that challenges convention and rewards patience.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£380</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEBFHO4FfzPtEUr-xajFn99iR6AkMrlt3WLlYE5dq1aBv5uWPeSPCw1rJiHyjRI46WdG-GwlTP79pv96t35tOR8ps-G3_hF8ljvu0BXybi5wPG92fj90Mu_ZswO3WFFwOP5W8Q33NBfMSaH4bBjI0tuAPkKNS1d8bLpPg_nPIMVuqVeXC60qa1Ty0a-HbW3O4UT_yR58KWZGZ5lz3IMXWdTPklRTHUb7dCXRYmsDlTPd-hrANpHqKh-YyUdnYg2SPT-yEMhRIco4E6" alt="Domaine Dagueneau Pouilly-Fumé 2020" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Loire Valley</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">White — Sauvignon Blanc</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Domaine Dagueneau Pouilly-Fumé 2020</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">The benchmark for Sauvignon Blanc. Flinty mineral intensity with elderflower, lime and white peach. Exceptional with our Catfish Pepper Soup or light seafood dishes.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£95</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVKub0nzyKN7DJi_pSZSCOSOgiwRtZvT8YYfu82wrtwx13zcGo4rS6-ey-DeJmKUw-5H_G-Mz470xUsFTgRSWqDcyBk_0NR0HpAdrrq5Z1PNro_4UCa63d6qbf76YgAxvXIvwEKeAl-V5H49KMs8y_0q8H6Uu8NbH5COLH74AUeEztKM5jjU6vTE_4RltJYvBV9d-L-sv3hsi0_v9Krq_aMRey07lzxZrTlWnumIFoS33b1k4jia6FI4_XEh48IEhGBCVUqA3WWPKF" alt="Trimbach Riesling Clos Sainte Hune 2016" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Alsace</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">White — Riesling</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Trimbach Riesling Clos Sainte Hune 2016</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">Alsace's most celebrated Riesling. Steely and precise with white flower, citrus zest and petrol minerality. This wine ages magnificently for decades.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£210</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvfvoOIsrG5jywiUDTr3hM22NF0pES438URlQHTVj7dH9i0ZqUO7DovVWRA_sk3awgSQ7y3_o7A2j8pNPjUyppLbT2ramc6eqB9GgIGM5kmgCInkEVDqn9UXOXn8bXmW5s7rdczn8bVq6IKIOdGz5_Fy43VejAHKjqY-qj1i4dYOhJHkuijlRGki1X0UpjGACQI9XWtcXZPZpz28QhnzonTO3z-fgzJu1-XpfNnNyO1IvvEEuPz5dZjiaLxLMD6cUYB5tohh5Bh4V8" alt="Pétrus 2015" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Bordeaux</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Red — Merlot</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Pétrus 2015</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">The undisputed king of Pomerol. Lush black plum, mocha and truffle with a velvet texture that coats the palate. Exceptional with braised beef or our slow-cooked goat dishes.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£3,400</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUxPHQZ1mIFISpzeCTr-l10jIlyDSolu_vGjlzm-Qtx2ZY72YLWpwYSFhhKw9e8ijlMPvu7aODaAN6Gf_6757uA8LW-zJNPbtQL9fKv1zJ5GIELa4_9GtNMJS6BIDY6vhV5TCv3IBtLGbxf42Q3ZHm8X69hh8M6rB2Gp2" alt="Coche-Dury Meursault 2018" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Burgundy</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">White — Chardonnay</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Coche-Dury Meursault 2018</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">Perhaps the greatest white Burgundy producer. Rich hazelnut, toasted brioche and honey with extraordinary tension and precision. A once-in-a-lifetime white wine experience.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£650</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPXu54oHoFCe-zhOP5y-7AyzM1dTn_jYTJH_1K2FBpDdD--fjnF2HTYt26-18BZoh95jRT76Ind4tE_kbCoEOUNEKCsRtTvtkuAq6s_i1vG154LWpLCVRUaKVCaOstafZzQw5AfVU1GUqhdhOMvcN5YEQA6WoX8kqwwNI2G9d4MM1EsAQ5-ML2sx_IGtNm22TsXw-S_3A7qBDMoB6FcOy3d-agvK7iQ-LT6-XyqTio89sqnkSHzHvkfuuxP0pfTKSEovebyXoaj43V" alt="Domaine Ott Clos Mireille Rosé 2022" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Provence</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Rosé — Grenache, Cinsault</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Domaine Ott Clos Mireille Rosé 2022</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">The benchmark for serious Provençal rosé. Pale copper with wild strawberry, peach and subtle spice. Perfect for warm evenings and our lighter Afro-fusion dishes.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£85</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6yZsCoxPFFIZx2kCkK0GbPHZhodSzTKUb7rInVEsP86PzkNrpiV7prBPByXrtaS6J6EnQBS4nf_fw9daIE257qlE494xIa1Caxz-8oA83MVoupK7ITdqwsHrGXSM54VaYgXiwS_rS9w_b6t2Vwtz6oAsp1rzhti2kWSFkoWu6Cbku5e0iJRfpYC7d1CW3ruNPn6AGYYnFHj7_DIDuGFxPFS32_ddh1X4ggtvHvhzaqmAS3jsKXPzltSkreYErnY3ulkNEl3fyvi_F" alt="Château d'Yquem 2016" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Sauternes</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Sweet — Sémillon, Sauvignon Blanc</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Château d'Yquem 2016</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">The world's greatest dessert wine. Golden amber with apricot jam, honey, vanilla and saffron. Extraordinarily complex and capable of ageing for over a century.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£340 per half</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEuRix_v1xdMxx35u8g9isAiclrFVAOPfX3ssY3AKYOIp-n6UaJCCQrs-lEfK9EII9rDA4zm149oDcKRc3jCIVfLQ5gT7v4yOC5wJSfy3X_VMrBK-P85F9RjaZfNrYjSzPTh-7gganF1iP4uFjK9HVaoXTqGvs2OeVtMtUDI4Y6i8x8W3Y3KHrFIHMYhWBCGbESI1ArmTqKjSlvBwFpTGf29yzCdgCHqUmdpSVBwvOA81Ta5z5gIY4wAZKGDopxvOpxtGb6doGZyaN" alt="Henri Jayer Richebourg 2001" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Burgundy</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Red — Pinot Noir</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Henri Jayer Richebourg 2001</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">A legendary producer whose wines now fetch extraordinary prices. This Richebourg is a testament to pure Pinot Noir — red berry purity, floral elegance and seamless integration.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£4,200</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ1UToRqhvjKY6Z1DZTivPwC11E5RQ_9-TymEn7iV1ccRmK4TIRiLxhEKDkT5Gy_YW8EhnkgJrZuntkJkHN6A2hCxz5GRMWSoj4rZ79dkLW84fxoIPzjnF_R7aMKE59bK7vS3WYIn9kPOeFG4mCSR4btm2YZ29Pqk5hPAZ-mh49H3jtBiraZ9ewTWpByRhxRmaH250VvBmMRC-zxjhcoTULu7B9QuUCdBmBeJOBXbtrq7JXqyIbBc4Ku5jwRi0B7BDEqBUabpL8uaD" alt="Mas de Daumas Gassac 2019" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Languedoc</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Red — Cabernet Sauvignon Blend</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Mas de Daumas Gassac 2019</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">The Grand Cru of the Languedoc. An unconventional blend with remarkable concentration and complexity. Dark fruit, garrigue and spice with a long, warming finish.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£65</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtCiVLP-N6Ma3GVARn87qO92wOr9p9SMy7GT4ELLZmIXmDwmqnB35hC_1FYKjfHmmCu8b15RFtPUOLgON4ZwoNGeeW1DqxZ_ISDPkgXMrqoohhwe1YfNjLs12blDmdbSlgd5bAryyZ0pYk0Xd2jjFZGDlTwEnLuADFsoY3u0oePPRwOyOb_Nu-CiMqBx0PuyUt7GoWOc6NyqSoLJUR3mBUN0miyEZ4QMgv5CyYjkTnOBW94YtwQMnnlqUCY3JKVWOL7OxPfBBeYWSh" alt="Dom Pérignon Vintage 2013" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Champagne</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Sparkling — Chardonnay, Pinot Noir</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Dom Pérignon Vintage 2013</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">The iconic Champagne house's finest expression. Citrus, white peach and almond with a fine, persistent mousse. Dom Pérignon is inseparable from celebration.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£195</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsC4EPXP2b39hElg8e0wxvwcenp0QDekrOiOErmBiZiws52UfKWaztNrWMKwocJdMCmmgEjaDux_TPMmPjBCeRsd9JZDOtdCDpKciqCkI9Dh6IYxV1jhUHb89Swz7TwV0t9c8_x-deKCPW5X02Et0DIUL5s3A-Pff3VimlId6T7a0XsGjpXwwRIesxPr0ojvXqn45DsCrIhiSC80kmtNGc0nkBzWZi-KihRvZS0UlUhEQnK3NaWbHp4eUYCsMFfpDlreXJcqAGBErl" alt="Leflaive Bâtard-Montrachet 2019" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Burgundy</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">White — Chardonnay</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Leflaive Bâtard-Montrachet 2019</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">One of Burgundy's greatest white Grand Crus from the most celebrated biodynamic estate. Creamy, mineral and complex with white flower, hazelnut and citrus.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£480</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuArW62SqeKqgUJMAygVCx3Bso0wN1YgVrT3mtGG8URRLnFw5fy8TypA4X5npU4pEnT3UcTW1MZHyoQi--wQUSAjuMEkOzmw9mN_3noQdxr3Rk9FdMyW6J_qwGtfgq5jQKDMSpmM2MymWSHglo1csvD_BuiMpPPf-2BORDw9dmLb0g1D9OGehSUY2G6AwL9K6zP6tNqGYnqKSAJzyIFUbVc2i0sQJBEYDXgCZhTPUrJQvxE2FnCA3KnydPW-NYg7RUtgTSe05cr-4-r1" alt="Guigal La Mouline 2017" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Rhône Valley</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Red — Syrah</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Guigal La Mouline 2017</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">From the steep Côte-Rôtie slopes above the Rhône. Intensely aromatic with violets, smoked meat and black olive. Silky and concentrated — one of France's great Syrahs.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£320</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD0PJpDg9wkqXxla35G-L5rU4MU0rsPvNKP3AtnSw9duyR1y0YIKWAUXBfL2RAd5Lm1ZYDzWTnhPhrzUfkSGnJrFeLjD8-MTHXp5QZsRjvBG5M7Ysdw6EMPjYgq0ZaCWw_Tce8WEV1WorThDuWPHpgZZgNNtioOBLC_rPpWljAcVTWfuyyb65lSP738mDXKWcw-K1Cau4U1tZckdJCMAhrduBlotK4h-B_5eVr2YtM6UHZ3nA5UlPGrOkBIOOETx8ZrKAmJJNEZDns" alt="Coulée de Serrant 2018" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Loire Valley</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">White — Chenin Blanc</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Coulée de Serrant 2018</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">Nicolas Joly's biodynamic masterpiece from the Savennières appellation. Intense and otherworldly — beeswax, quince and honeysuckle with a nervy, electric mineral finish.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£145</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpI5EeHZAOufM_jOnX-QoTYrtmFI4IswNTPnSdpfkS3EvapbRhwwqDf7UUG1KcZyls2-u5lG6bd5EHsq2GfsIuYfMLX_CKJUCAAGfiAFrqqPSZ07SgtcvxIh14yYQCFMcm_KehflnXJ-hrWfTmoDBHJiBVOPwKogGnXFXZLdBhmUtaUcIYV3Mm_pNYnyF3WTXElK839MpWa4ZZo6Rn8cvFNwD6kyyjO5aj7AE1EU3WNBcEkMfDgEqqgU5U1qZd9C2XsnHUanP7Gc5Y" alt="Lynch-Bages 2016" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Bordeaux</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Red — Cabernet Sauvignon Blend</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Lynch-Bages 2016</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">One of the best-value Fifth Growths in Pauillac. Cassis, cedar and tobacco with well-integrated tannins and a long finish. An excellent pairing with our Egusi Dumplings.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£120</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5z380JVv92MQ_a7jnYfdzt2kiNW-t2WDuMhINcj37MA8aNRd_QOyTOtzsZES7Kc1ze10wUmqMiQBn5eyGkpD5-AEBEe-chYg4RJhToz9pSTjOR5aqYk4bYj95K1K0eACuyvojtZ7U859KX9mkH8npuDUjILaRdyFGVdxXbIunw4F5nQEexaYdAq1WwfHaFQrF7KBGCvLs93Fl3MvbJFVVtW_Ehf0QPb_lgEsjqY0wz4Bx9iuxBl5oHOthQqEvs2qOY7tcOxzbLrqF" alt="Rousseau Chambertin 2015" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Burgundy</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Red — Pinot Noir</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Rousseau Chambertin 2015</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">The finest expression of the Chambertin Grand Cru from Domaine Rousseau. Deep, brooding and majestic with dried rose, earth, dark berry and formidable structure.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£580</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnbyta5hve4eAs9lre5h8hIYFnAUzLkWmgV0ZzKO9Fcuga2K0LQVwU_vn1AF_fKbmWHtKjZAY1XEgNviGDMMD3pOt7xm5tspHqai_vsLR4M8FeVb4PlZUvqiTSZhHSLbwweeGsLh6NetkPKDjKZZJEd6It4GxM5s2kqo-Cbj-ln3u5Nuq4JMl2TFUdmBX0kLuzogb0i7TTfFyvA6OHx8CI_iebdZ9s031gAPB-4pXScaT-n8yE4Am-3hiHZGU338GJLB_AUj48b7v2" alt="Zind-Humbrecht Gewurztraminer Rangen 2017" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Alsace</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">White — Gewurztraminer</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Zind-Humbrecht Gewurztraminer Rangen 2017</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">From the finest Grand Cru in Alsace. Explosive lychee, rose petal and ginger spice with a rich, almost oily texture. A natural partner for our spiced Afro-fusion dishes.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£185</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>      <div style="background:#fff;border:1px solid #e3e2e0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:200px;overflow:hidden;position:relative;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKSNfvaAIGOMXA74GtXhLEMHaghWYPlxJ77OSptoSk7aS5VQ4iI6Ji3ETj8E8PZJTSnw9Y_GyT4LhW4UlpDHXD5vCxJMrM6IA_H0GlgP8d8G6-xA9VEtSGuVkHGF8lrFIUFlO7WiyanFDPV9etqDhO5F0sonw6Eqld-_nwsbj0xpMY83iA_wlGVEWggJ1Aj_G_ezQp85eRtJX-vwfR7s6QsRNJmNcxpite27I9aaD0RKUljgU5gLUlSxJRpeEi5Jd7dw12NJk0--_5" alt="Salon Le Mesnil Blanc de Blancs 2012" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          <span style="position:absolute;top:12px;left:12px;background:#1a1c1b;color:#adcebc;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;">Champagne</span>
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Sparkling — Chardonnay</p>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:0 0 10px;line-height:1.2;">Salon Le Mesnil Blanc de Blancs 2012</h3>
+          <p style="font-family:Inter,sans-serif;font-size:13px;line-height:1.7;color:#424844;margin:0 0 16px;flex:1;font-style:italic;">Only produced in the finest years, Salon is the rarest and most sought-after Champagne. Steely, linear and electric with unmatched aging potential — chalk, lemon curd and oyster shell.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e3e2e0;padding-top:14px;">
+            <span style="font-family:'Bodoni Moda',serif;font-size:20px;font-weight:500;color:#8f4c37;">£1,200</span>
+            <a href="book.html" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;text-decoration:none;">Book Tasting &rarr;</a>
+          </div>
+        </div>
+      </div>    </div>
+    <div style="text-align:center;margin-top:64px;padding:40px;background:#f4f4f1;border:1px solid #e3e2e0;">
+      <p style="font-family:'Bodoni Moda',serif;font-size:28px;font-weight:500;color:#1a1c1b;margin:0 0 8px;">Ready to explore our cellar in person?</p>
+      <p style="font-family:Inter,sans-serif;font-size:14px;color:#727974;margin:0 0 24px;">Book a private wine tasting with our sommelier at Bukahauz.</p>
+      <a href="book.html" style="display:inline-block;background:#466556;color:#fff;padding:16px 48px;font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;">Book a Tasting</a>
+    </div>
+  </div>
+</section>
+</main>
+<!-- Footer -->
+<footer style="background:#f4f4f1;">
+  <div style="max-width:1440px;margin:0 auto;padding:80px 32px 48px;">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:40px;">
+
+      <!-- Col 1: Brand -->
+      <div>
+        <a href="index.html" style="display:inline-block;margin-bottom:14px;">
+          <img src="bk-footer-logo.png" alt="Bukahauz" style="height:60px;width:auto;object-fit:contain;"/>
+        </a>
+        <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.7;color:#424844;max-width:200px;margin-bottom:20px;">A sanctuary for those who appreciate the narrative behind the meal.</p>
+        <div style="display:flex;gap:10px;">
+          <a href="https://instagram.com/bukahauz" target="_blank" aria-label="Instagram" style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;" onmouseover="this.style.borderColor='#466556';this.style.color='#466556';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://facebook.com/bukahauz" target="_blank" aria-label="Facebook" style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;" onmouseover="this.style.borderColor='#466556';this.style.color='#466556';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/447000000000" target="_blank" aria-label="WhatsApp" style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;" onmouseover="this.style.borderColor='#466556';this.style.color='#466556';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Experiences (trimmed) -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Experiences</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="private-dining.html"   style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Private Dining</a></li>
+          <li><a href="chef-experiences.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Chef Experiences</a></li>
+          <li><a href="wine-tastings.html"    style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine Tastings</a></li>
+          <li><a href="food-truck.html"       style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Food Truck</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Shop (was column 4, now moved to column 3) -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Shop</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">All Collections</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Dining &amp; Serving</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Tableware</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine &amp; Dining</a></li>
+          </ul>
+      </div>
+
+      <!-- Col 4: Company (NEW) -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Company</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="contact.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Contact Us</a></li>
+          <li><a href="shipping.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Shipping</a></li>
+          <li><a href="tracking.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Order Tracking</a></li>
+          <li><a href="faq.html"      style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Newsletter -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Stay in the Loop</h3>
+        <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#424844;margin:0 0 18px;">Early access to new experiences, seasonal menus and artisan collaborations.</p>
+        <form onsubmit="this.innerHTML='<p style=font-family:Inter,sans-serif;font-size:14px;color:#466556;margin:0>Thank you — you are on the list!</p>';return false;" style="display:flex;flex-direction:column;gap:8px;">
+          <input type="email" required placeholder="Your email address" style="font-family:Inter,sans-serif;font-size:14px;border:none;border-bottom:1px solid #c1c8c2;background:transparent;padding:8px 0;color:#1a1c1b;outline:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+          <button type="submit" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:10px 16px;cursor:pointer;margin-top:4px;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div style="border-top:1px solid rgba(193,200,194,.4);background:#eeeeeb;">
+    <div style="max-width:1440px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
+      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2026 Bukahauz. All rights reserved.</p>
+      <nav style="display:flex;flex-wrap:wrap;gap:24px;">
+        <a href="privacy.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Privacy Policy</a>
+        <a href="terms.html"    style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Terms &amp; Conditions</a>
+        
+        <a href="cookies.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Cookie Policy</a>
+      </nav>
+    </div>
+  </div>
+
+  <style>
+  @media(max-width:1023px){footer>div:first-child>div{grid-template-columns:repeat(2,1fr)!important;}}
+  @media(max-width:639px){footer>div:first-child>div{grid-template-columns:1fr!important;}footer>div:first-child{padding:48px 20px 32px!important;}}
+  </style>
+
+</footer>
+<script>
+        // Smooth reveal on scroll for items
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-10');
+                    entry.target.classList.remove('opacity-0');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'translate-y-10', 'opacity-0');
+            observer.observe(section);
+        });
+
+        // Toggle FAQ answers
+        function toggleFaq(el) {
+            const content = el.querySelector('.faq-content');
+            const icon = el.querySelector('.material-symbols-outlined');
+            content.classList.toggle('hidden');
+            icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+    </script>
+<script src="cart.js"></script></body></html>
