@@ -234,7 +234,7 @@
       <a href="food-truck.html" class="bk-nav-link">Food Truck</a>
       <a href="gallery.html" class="bk-nav-link">Gallery</a>
       <a href="contact.html" class="bk-nav-link">Contact</a>
-      <a href="book.html" style="background:#466556;color:#fff;padding:8px 18px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;margin-left:8px;white-space:nowrap;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Book Now</a>
+      
 
     </nav>
 
@@ -246,6 +246,7 @@
     <!-- Right: Currency / Account / Cart -->
     <div style="display:flex;align-items:center;gap:6px;justify-content:flex-end;">
 
+      <a href="book.html" style="background:#466556;color:#fff;padding:8px 18px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap;margin-right:8px;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Book Now</a>
       <!-- Currency selector -->
       <div style="position:relative;">
         <select onchange="" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.05em;color:#424844;background:transparent;border:1px solid #c1c8c2;padding:6px 8px;cursor:pointer;appearance:none;-webkit-appearance:none;outline:none;transition:border-color .2s;min-width:60px;"
@@ -722,7 +723,20 @@ document.addEventListener('click', function(e) {
   <!-- Bottom bar -->
   <div style="border-top:1px solid rgba(193,200,194,.4);background:#eeeeeb;">
     <div style="max-width:1440px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
-      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2026 Bukahauz. All rights reserved.</p>
+      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2026 Bukahauz. All rights reserved.</p>      <div class="bk-pay-cards" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        <!-- Visa -->
+        <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e3e2e0;border-radius:3px;background:#fff;"><rect width="38" height="24" rx="3" fill="#fff"/><text x="5" y="16" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#1a1f71" letter-spacing="0">VISA</text></svg>
+        <!-- Mastercard -->
+        <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e3e2e0;border-radius:3px;background:#fff;"><rect width="38" height="24" rx="3" fill="#fff"/><circle cx="14" cy="12" r="7" fill="#EB001B"/><circle cx="24" cy="12" r="7" fill="#F79E1B"/><path d="M19 6.8a7 7 0 010 10.4A7 7 0 0119 6.8z" fill="#FF5F00"/></svg>
+        <!-- Amex -->
+        <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e3e2e0;border-radius:3px;"><rect width="38" height="24" rx="3" fill="#2E77BC"/><text x="4" y="16" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#fff" letter-spacing="0">AMEX</text></svg>
+        <!-- Klarna -->
+        <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e3e2e0;border-radius:3px;background:#FFB3C7;"><rect width="38" height="24" rx="3" fill="#FFB3C7"/><text x="4" y="16" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#17120e" letter-spacing="0">Klarna</text></svg>
+        <!-- PayPal -->
+        <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e3e2e0;border-radius:3px;background:#fff;"><rect width="38" height="24" rx="3" fill="#fff"/><text x="3" y="16" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#003087" letter-spacing="0">Pay</text><text x="17" y="16" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#009CDE" letter-spacing="0">Pal</text></svg>
+        <!-- Apple Pay -->
+        <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e3e2e0;border-radius:3px;background:#000;"><rect width="38" height="24" rx="3" fill="#000"/><text x="3" y="16" font-family="Arial,sans-serif" font-size="7.5" font-weight="500" fill="#fff" letter-spacing="0">Apple Pay</text></svg>
+      </div>
       <nav style="display:flex;flex-wrap:wrap;gap:24px;">
         <a href="privacy.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Privacy Policy</a>
         <a href="terms.html"    style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Terms &amp; Conditions</a>
