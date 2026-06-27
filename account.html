@@ -1,0 +1,616 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Account | Bukahauz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-panel {
+            background: rgba(250, 249, 247, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+        }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        body { scroll-behavior: smooth; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "secondary": "#8f4c37",
+                        "on-primary-container": "#163427",
+                        "on-error": "#ffffff",
+                        "surface": "#faf9f7",
+                        "primary-container": "#7d9d8c",
+                        "secondary-fixed-dim": "#ffb59e",
+                        "surface-container": "#eeeeeb",
+                        "on-tertiary-fixed-variant": "#623d3d",
+                        "on-surface-variant": "#424844",
+                        "inverse-surface": "#2f312f",
+                        "on-tertiary-container": "#462526",
+                        "secondary-fixed": "#ffdbd0",
+                        "outline": "#727974",
+                        "tertiary-fixed": "#ffdad9",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e3e2e0",
+                        "tertiary": "#7c5454",
+                        "surface-variant": "#e3e2e0",
+                        "on-surface": "#1a1c1b",
+                        "surface-container-low": "#f4f4f1",
+                        "primary": "#466556",
+                        "on-primary-fixed-variant": "#2f4d3f",
+                        "on-secondary-container": "#7a3b27",
+                        "outline-variant": "#c1c8c2",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#eebaba",
+                        "background": "#faf9f7",
+                        "tertiary-container": "#b98a8a",
+                        "on-background": "#1a1c1b",
+                        "surface-container-high": "#e9e8e5",
+                        "on-primary-fixed": "#022115",
+                        "surface-tint": "#466556",
+                        "surface-dim": "#dadad7",
+                        "secondary-container": "#ffa98f",
+                        "on-tertiary-fixed": "#301314",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#adcebc",
+                        "on-secondary-fixed": "#3a0b00",
+                        "inverse-on-surface": "#f1f1ee",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#723522",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#faf9f7",
+                        "primary-fixed": "#c8ead7",
+                        "primary-fixed-dim": "#adcebc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "xxl": "128px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "md": "16px",
+                        "lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Bodoni Moda"],
+                        "display-lg": ["Bodoni Moda"],
+                        "headline-md": ["Bodoni Moda"],
+                        "display-md": ["Bodoni Moda"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "display-md": ["48px", {"lineHeight": "1.1", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style id="bk-form-style">
+/* Professional form styling */
+.bk-form-field { margin-bottom: 20px; }
+.bk-form-field label {
+  display: block;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #424844;
+  margin-bottom: 8px;
+}
+.bk-form-field input,
+.bk-form-field select,
+.bk-form-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  color: #1a1c1b;
+  background: #faf9f7;
+  border: 1px solid #c1c8c2;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.bk-form-field input:focus,
+.bk-form-field select:focus,
+.bk-form-field textarea:focus {
+  border-color: #466556;
+  box-shadow: 0 0 0 3px rgba(70,101,86,.08);
+}
+.bk-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 640px) { .bk-form-row { grid-template-columns: 1fr; } }
+.bk-form-submit {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: #466556;
+  color: #fff;
+  border: none;
+  padding: 16px 40px;
+  cursor: pointer;
+  transition: background .2s;
+  width: 100%;
+}
+.bk-form-submit:hover { background: #2f4d3f; }
+.bk-form-wrap {
+  background: #fff;
+  border: 1px solid #e3e2e0;
+  padding: 48px;
+  box-shadow: 0 2px 24px rgba(0,0,0,.04);
+}
+@media (max-width: 640px) { .bk-form-wrap { padding: 28px 20px; } }
+</style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<div class="grain-overlay"></div>
+<!-- TopNavBar -->
+<header id="bk-header" style="position:fixed;top:0;left:0;right:0;z-index:50;">
+
+<!-- Outer strip: subtle bg only for the bar itself -->
+<div style="background:rgba(250,249,247,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(193,200,194,0.2);">
+  <div style="max-width:1440px;margin:0 auto;padding:0 32px;height:112px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;">
+
+    <!-- Left: Desktop nav -->
+    <nav id="bk-desktop-nav" style="display:flex;align-items:center;gap:2px;justify-content:flex-start;flex-wrap:nowrap;">
+
+      <a href="index.html" class="bk-nav-link">Home</a>
+
+      <a href="about.html" class="bk-nav-link">About</a>
+
+      <!-- Experiences -->
+      <div class="bk-dropdown-wrap">
+        <button class="bk-nav-link bk-has-dropdown" onclick="bkToggle(this)">
+          Experiences <span style="font-size:10px;opacity:0.6;">&#9660;</span>
+        </button>
+        <div class="bk-dropdown">
+          <a href="private-dining.html"      class="bk-dd-item">Private Dining</a>
+          <a href="chef-experiences.html"    class="bk-dd-item">Chef Experiences</a>
+          <a href="wine-tastings.html"       class="bk-dd-item">Wine Tastings</a>
+          <a href="private-parties.html"     class="bk-dd-item">Private Parties</a>
+          <a href="corporate-catering.html"  class="bk-dd-item">Corporate Catering</a>
+          <a href="event-food-planning.html" class="bk-dd-item">Event Food Planning</a>
+          <a href="takeaway.html"            class="bk-dd-item">Takeaway</a>
+        </div>
+      </div>
+
+      <!-- Menus -->
+      <div class="bk-dropdown-wrap">
+        <button class="bk-nav-link bk-has-dropdown" onclick="bkToggle(this)">
+          Menus <span style="font-size:10px;opacity:0.6;">&#9660;</span>
+        </button>
+        <div class="bk-dropdown">
+                    <a href="afro-continental-menu.html" class="bk-dd-item">Afro Continental Menu</a>
+                    <a href="menus.html"                class="bk-dd-item">Private Dining Menu</a>
+          <a href="wine-pairing-menu.html"    class="bk-dd-item">Wine Pairing Menu</a>
+        </div>
+      </div>
+
+      <a href="networking.html" class="bk-nav-link">Networking</a>
+
+      <a href="shop.html" class="bk-nav-link">Shop</a>
+
+      <a href="food-truck.html" class="bk-nav-link">Food Truck</a>
+      <a href="gallery.html" class="bk-nav-link">Gallery</a>
+      <a href="contact.html" class="bk-nav-link">Contact</a>
+      <a href="book.html" style="background:#466556;color:#fff;padding:8px 18px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;margin-left:8px;white-space:nowrap;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Book Now</a>
+
+    </nav>
+
+    <!-- Centre: Logo -->
+    <a href="index.html" style="display:flex;align-items:center;justify-content:center;text-decoration:none;">
+      <img src="bk-header-logo.png" alt="Bukahauz" style="height:104px;width:auto;object-fit:contain;" />
+    </a>
+
+    <!-- Right: Currency / Account / Cart -->
+    <div style="display:flex;align-items:center;gap:6px;justify-content:flex-end;">
+
+      <!-- Currency selector -->
+      <div style="position:relative;">
+        <select onchange="" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.05em;color:#424844;background:transparent;border:1px solid #c1c8c2;padding:6px 8px;cursor:pointer;appearance:none;-webkit-appearance:none;outline:none;transition:border-color .2s;min-width:60px;"
+          onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';">
+          <option>GBP</option>
+          <option>USD</option>
+          <option>EUR</option>
+          <option>NGN</option>
+        </select>
+      </div>
+
+      <!-- Account icon -->
+      <a href="account.html" title="Account" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></a><!--old-account-removed
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+      </a>
+
+      <!-- Cart icon -->
+      <a href="shop.html" title="Cart" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;position:relative;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
+        <span style="position:absolute;top:4px;right:4px;width:8px;height:8px;background:#8f4c37;border-radius:50%;font-size:0;"></span>
+      </a>
+
+    </div>
+
+    <!-- Mobile burger -->
+    <button onclick="document.getElementById('bk-mobile-menu').classList.toggle('bk-open');" style="display:none;background:none;border:none;cursor:pointer;padding:4px;" id="bk-burger" aria-label="Menu">
+      <svg width="22" height="22" fill="none" stroke="#1a1c1b" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+
+  </div>
+</div>
+
+<!-- Mobile menu -->
+<div id="bk-mobile-menu" style="display:none;background:#faf9f7;border-top:1px solid #e3e2e0;max-height:80vh;overflow-y:auto;">
+  <div style="padding:12px 20px;">
+    <a href="index.html" class="bk-mob-link">Home</a>
+    <a href="about.html" class="bk-mob-link">About</a>
+    <a href="experiences.html" class="bk-mob-link">Experiences</a>
+    <div style="padding-left:16px;border-left:2px solid rgba(70,101,86,0.2);margin-left:8px;">
+      <a href="private-dining.html"      class="bk-mob-sub">Private Dining</a>
+      <a href="chef-experiences.html"    class="bk-mob-sub">Chef Experiences</a>
+      <a href="wine-tastings.html"       class="bk-mob-sub">Wine Tastings</a>
+      <a href="private-parties.html"     class="bk-mob-sub">Private Parties</a>
+      <a href="corporate-catering.html"  class="bk-mob-sub">Corporate Catering</a>
+      <a href="event-food-planning.html" class="bk-mob-sub">Event Food Planning</a>
+      <a href="takeaway.html"            class="bk-mob-sub">Takeaway</a>
+    </div>
+    <a href="menus.html" class="bk-mob-link">Menus</a>
+    <div style="padding-left:16px;border-left:2px solid rgba(70,101,86,0.2);margin-left:8px;">
+      <a href="afro-continental-menu.html" class="bk-mob-sub">Afro Continental Menu</a>
+      <a href="menus.html"                 class="bk-mob-sub">Private Dining Menu</a>
+      <a href="wine-pairing-menu.html"     class="bk-mob-sub">Wine Pairing Menu</a>
+    </div>
+    <a href="networking.html" class="bk-mob-link">Networking</a>
+    <a href="shop.html" class="bk-mob-link">Shop</a>
+    <a href="food-truck.html" class="bk-mob-link">Food Truck</a>
+    <a href="gallery.html" class="bk-mob-link">Gallery</a>
+    <a href="contact.html" class="bk-mob-link">Contact</a>
+    <a href="book.html" style="display:block;margin:12px 8px 4px;background:#466556;color:#fff;padding:10px 16px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;text-align:center;">Book Now</a>
+  </div>
+</div>
+
+<style>
+/* Nav link base */
+.bk-nav-link {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #424844;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+  display: inline-block;
+}
+.bk-nav-link:hover { color: #466556; }
+
+/* Dropdown wrapper */
+.bk-dropdown-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown panel — hidden by default */
+.bk-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: #faf9f7;
+  border: 1px solid rgba(193,200,194,0.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  min-width: 200px;
+  z-index: 100;
+}
+.bk-dropdown.bk-open { display: block; }
+
+.bk-dd-item {
+  display: block;
+  padding: 10px 16px;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  color: #424844;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.bk-dd-item:hover { background: #f4f4f1; color: #466556; }
+
+/* Mobile links */
+.bk-mob-link {
+  display: block;
+  padding: 10px 8px;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #424844;
+  text-decoration: none;
+}
+.bk-mob-sub {
+  display: block;
+  padding: 7px 8px;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  color: #424844;
+  text-decoration: none;
+}
+.bk-mob-link:hover, .bk-mob-sub:hover { color: #466556; }
+
+/* Mobile open state */
+#bk-mobile-menu.bk-open { display: block !important; }
+
+/* Responsive: hide desktop nav, show burger */
+@media (max-width: 1199px) {
+  #bk-desktop-nav { display: none !important; }
+  #bk-burger { display: flex !important; align-items: center; justify-content: flex-start; }
+  /* On mobile: switch to flex, logo still centred */
+  #bk-header > div > div:first-child {
+    grid-template-columns: auto 1fr auto !important;
+  }
+}
+</style>
+
+<script>
+// Toggle dropdown open/close
+function bkToggle(btn) {
+  var dd = btn.nextElementSibling;
+  var isOpen = dd.classList.contains('bk-open');
+  // Close all dropdowns
+  document.querySelectorAll('.bk-dropdown.bk-open').forEach(function(el){ el.classList.remove('bk-open'); });
+  if (!isOpen) dd.classList.add('bk-open');
+}
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.bk-dropdown-wrap')) {
+    document.querySelectorAll('.bk-dropdown.bk-open').forEach(function(el){ el.classList.remove('bk-open'); });
+  }
+});
+</script>
+</header>
+<script src="cart.js"></script>
+<main style="padding-top:140px;min-height:75vh;">
+<div style="max-width:500px;margin:0 auto;padding:48px 32px 100px;">
+
+  <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 10px;text-align:center;">Welcome</p>
+  <h1 style="font-family:'Bodoni Moda',serif;font-size:40px;font-weight:500;color:#1a1c1b;margin:0 0 8px;text-align:center;">My Account</h1>
+  <p style="font-family:Inter,sans-serif;font-size:15px;color:#727974;margin:0 0 40px;text-align:center;">Sign in or create your Bukahauz account.</p>
+
+  <!-- Tabs -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid #e3e2e0;margin-bottom:36px;">
+    <button id="tab-login" onclick="switchTab('login')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;border:none;border-bottom:2px solid #466556;background:none;padding:14px;cursor:pointer;margin-bottom:-2px;">Sign In</button>
+    <button id="tab-register" onclick="switchTab('register')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#727974;border:none;border-bottom:2px solid transparent;background:none;padding:14px;cursor:pointer;margin-bottom:-2px;transition:color .2s,border-color .2s;">Create Account</button>
+  </div>
+
+  <!-- Login Form -->
+  <div id="form-login">
+    <form onsubmit="handleLogin(event)" style="background:#fff;border:1px solid #e3e2e0;padding:40px;">
+      <div style="margin-bottom:20px;">
+        <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Email Address</label>
+        <input type="email" required placeholder="hello@example.com" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+      </div>
+      <div style="margin-bottom:28px;">
+        <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Password</label>
+        <input type="password" required placeholder="Your password" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+        <a href="#" style="display:block;font-family:Inter,sans-serif;font-size:12px;color:#466556;text-decoration:none;margin-top:8px;">Forgot your password?</a>
+      </div>
+      <button type="submit" style="width:100%;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:16px;cursor:pointer;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Sign In</button>
+    </form>
+    <p style="font-family:Inter,sans-serif;font-size:13px;color:#727974;text-align:center;margin-top:20px;">Don't have an account? <a href="#" onclick="switchTab('register');return false;" style="color:#466556;">Create one</a></p>
+  </div>
+
+  <!-- Register Form -->
+  <div id="form-register" style="display:none;">
+    <form onsubmit="handleRegister(event)" style="background:#fff;border:1px solid #e3e2e0;padding:40px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+        <div>
+          <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">First Name</label>
+          <input type="text" required placeholder="First name" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+        </div>
+        <div>
+          <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Last Name</label>
+          <input type="text" required placeholder="Last name" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+        </div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Email Address</label>
+        <input type="email" required placeholder="hello@example.com" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+      </div>
+      <div style="margin-bottom:20px;">
+        <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Password</label>
+        <input type="password" required placeholder="At least 8 characters" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+      </div>
+      <div style="margin-bottom:28px;">
+        <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
+          <input type="checkbox" style="margin-top:3px;accent-color:#466556;"/>
+          <span style="font-family:Inter,sans-serif;font-size:13px;color:#424844;line-height:1.5;">I agree to the <a href="terms.html" style="color:#466556;">Terms &amp; Conditions</a> and <a href="privacy.html" style="color:#466556;">Privacy Policy</a></span>
+        </label>
+      </div>
+      <button type="submit" style="width:100%;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:16px;cursor:pointer;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Create Account</button>
+    </form>
+    <p style="font-family:Inter,sans-serif;font-size:13px;color:#727974;text-align:center;margin-top:20px;">Already have an account? <a href="#" onclick="switchTab('login');return false;" style="color:#466556;">Sign in</a></p>
+  </div>
+
+  <!-- Benefits strip -->
+  <div style="margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center;">
+    <div style="padding:20px 12px;border:1px solid #e3e2e0;">
+      <p style="font-family:'Bodoni Moda',serif;font-size:20px;color:#466556;margin:0 0 6px;">★</p>
+      <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#424844;margin:0;">Order History</p>
+    </div>
+    <div style="padding:20px 12px;border:1px solid #e3e2e0;">
+      <p style="font-family:'Bodoni Moda',serif;font-size:20px;color:#466556;margin:0 0 6px;">♡</p>
+      <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#424844;margin:0;">Wishlist</p>
+    </div>
+    <div style="padding:20px 12px;border:1px solid #e3e2e0;">
+      <p style="font-family:'Bodoni Moda',serif;font-size:20px;color:#466556;margin:0 0 6px;">◎</p>
+      <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#424844;margin:0;">Early Access</p>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<script>
+function switchTab(tab) {
+  document.getElementById('form-login').style.display = tab==='login' ? 'block' : 'none';
+  document.getElementById('form-register').style.display = tab==='register' ? 'block' : 'none';
+  var tl = document.getElementById('tab-login');
+  var tr = document.getElementById('tab-register');
+  if (tab==='login') {
+    tl.style.color='#466556'; tl.style.borderBottomColor='#466556';
+    tr.style.color='#727974'; tr.style.borderBottomColor='transparent';
+  } else {
+    tr.style.color='#466556'; tr.style.borderBottomColor='#466556';
+    tl.style.color='#727974'; tl.style.borderBottomColor='transparent';
+  }
+}
+function handleLogin(e) {
+  e.preventDefault();
+  bkShowToast('Sign in successful — welcome back!');
+  setTimeout(function(){ window.location.href='index.html'; }, 1800);
+}
+function handleRegister(e) {
+  e.preventDefault();
+  bkShowToast('Account created — welcome to Bukahauz!');
+  setTimeout(function(){ window.location.href='index.html'; }, 1800);
+}
+</script>
+
+<footer style="background:#f4f4f1;">
+  <div style="max-width:1440px;margin:0 auto;padding:80px 32px 48px;">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:40px;">
+
+      <!-- Col 1: Brand -->
+      <div>
+        <a href="index.html" style="display:inline-block;margin-bottom:14px;">
+          <img src="bk-footer-logo.png" alt="Bukahauz" style="height:60px;width:auto;object-fit:contain;"/>
+        </a>
+        <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.7;color:#424844;max-width:200px;margin-bottom:20px;">A sanctuary for those who appreciate the narrative behind the meal.</p>
+        <div style="display:flex;gap:10px;">
+          <a href="https://instagram.com/bukahauz" target="_blank" aria-label="Instagram" style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;" onmouseover="this.style.borderColor='#466556';this.style.color='#466556';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://facebook.com/bukahauz" target="_blank" aria-label="Facebook" style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;" onmouseover="this.style.borderColor='#466556';this.style.color='#466556';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/447000000000" target="_blank" aria-label="WhatsApp" style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;" onmouseover="this.style.borderColor='#466556';this.style.color='#466556';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Experiences (trimmed) -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Experiences</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="private-dining.html"   style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Private Dining</a></li>
+          <li><a href="chef-experiences.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Chef Experiences</a></li>
+          <li><a href="wine-tastings.html"    style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine Tastings</a></li>
+          <li><a href="food-truck.html"       style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Food Truck</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Shop (was column 4, now moved to column 3) -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Shop</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">All Collections</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Dining &amp; Serving</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Tableware</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine &amp; Dining</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Gift Shop</a></li>
+          <li><a href="shop.html"            style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Best Sellers</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Company (NEW) -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Company</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="contact.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Contact Us</a></li>
+          <li><a href="shipping.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Shipping</a></li>
+          <li><a href="tracking.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Order Tracking</a></li>
+          <li><a href="refunds.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Refunds</a></li>
+          <li><a href="faq.html"      style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Newsletter -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Stay in the Loop</h3>
+        <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#424844;margin:0 0 18px;">Early access to new experiences, seasonal menus and artisan collaborations.</p>
+        <form onsubmit="this.innerHTML='<p style=font-family:Inter,sans-serif;font-size:14px;color:#466556;margin:0>Thank you — you are on the list!</p>';return false;" style="display:flex;flex-direction:column;gap:8px;">
+          <input type="email" required placeholder="Your email address" style="font-family:Inter,sans-serif;font-size:14px;border:none;border-bottom:1px solid #c1c8c2;background:transparent;padding:8px 0;color:#1a1c1b;outline:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+          <button type="submit" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:10px 16px;cursor:pointer;margin-top:4px;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div style="border-top:1px solid rgba(193,200,194,.4);background:#eeeeeb;">
+    <div style="max-width:1440px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
+      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2025 Bukahauz. All rights reserved.</p>
+      <nav style="display:flex;flex-wrap:wrap;gap:24px;">
+        <a href="privacy.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Privacy Policy</a>
+        <a href="terms.html"    style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Terms &amp; Conditions</a>
+        <a href="refunds.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Refund Policy</a>
+        <a href="cookies.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Cookie Policy</a>
+      </nav>
+    </div>
+  </div>
+
+  <style>
+  @media(max-width:1023px){footer>div:first-child>div{grid-template-columns:repeat(2,1fr)!important;}}
+  @media(max-width:639px){footer>div:first-child>div{grid-template-columns:1fr!important;}footer>div:first-child{padding:48px 20px 32px!important;}}
+  </style>
+
+</footer>
+</body></html>

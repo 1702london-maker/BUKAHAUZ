@@ -260,7 +260,7 @@
       </div>
 
       <!-- Account icon -->
-      <a href="contact.html" title="Account" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
+      <a href="account.html" title="Account" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></a><!--old-account-removed
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
       </a>
 
@@ -414,691 +414,374 @@ document.addEventListener('click', function(e) {
 });
 </script>
 </header>
+<script src="cart.js"></script>
 <main style="padding-top:130px;">
 
-<!-- Page Header -->
 <section style="background:#f4f4f1;padding:48px 32px 40px;text-align:center;border-bottom:1px solid #e3e2e0;">
   <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 10px;">Bukahauz Shop</p>
   <h1 style="font-family:'Bodoni Moda',serif;font-size:48px;font-weight:500;line-height:1.1;color:#1a1c1b;margin:0 0 12px;">All Collections</h1>
-  <p style="font-family:Inter,sans-serif;font-size:16px;color:#424844;margin:0;">Artisan homeware for those who live and entertain beautifully.</p>
+  <p style="font-family:Inter,sans-serif;font-size:16px;color:#424844;margin:0 0 20px;">Artisan ceramic and tableware for those who live and entertain beautifully.</p>
+  <p style="font-family:Inter,sans-serif;font-size:13px;color:#727974;margin:0;">Free UK delivery on orders over £75</p>
 </section>
 
-<!-- Category Filter Tabs -->
+<!-- Category Tabs -->
 <section style="background:#fff;border-bottom:1px solid #e3e2e0;position:sticky;top:112px;z-index:40;">
   <div style="max-width:1440px;margin:0 auto;padding:0 32px;display:flex;gap:0;overflow-x:auto;">
-    <button class="bk-tab active" onclick="filterCat('all',this)">All Products</button>
-    <button class="bk-tab" onclick="filterCat('dining',this)">Dining &amp; Serving</button>
+    <button class="bk-tab active" onclick="filterCat('all',this)">All (26)</button>
     <button class="bk-tab" onclick="filterCat('tableware',this)">Tableware</button>
-    <button class="bk-tab" onclick="filterCat('wine',this)">Wine &amp; Dining</button>
-    <button class="bk-tab" onclick="filterCat('cutlery',this)">Cutlery</button>
-    <button class="bk-tab" onclick="filterCat('linens',this)">Linens &amp; Aprons</button>
-    <button class="bk-tab" onclick="filterCat('gift',this)">Gift Shop</button>
+    <button class="bk-tab" onclick="filterCat('dining',this)">Dining &amp; Serving</button>
   </div>
 </section>
 
-<!-- Sort + Count Bar -->
-<div style="max-width:1440px;margin:0 auto;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;">
-  <p id="bk-count" style="font-family:Inter,sans-serif;font-size:14px;color:#727974;margin:0;">50 products</p>
-  <select onchange="" style="font-family:Inter,sans-serif;font-size:13px;border:1px solid #c1c8c2;padding:8px 12px;color:#424844;background:#fff;cursor:pointer;outline:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';">
-    <option>Sort: Featured</option>
-    <option>Price: Low to High</option>
-    <option>Price: High to Low</option>
-    <option>Newest First</option>
+<!-- Sort bar -->
+<div style="max-width:1440px;margin:0 auto;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+  <p id="bk-count" style="font-family:Inter,sans-serif;font-size:14px;color:#727974;margin:0;">26 products</p>
+  <select onchange="sortProducts(this.value)" style="font-family:Inter,sans-serif;font-size:13px;border:1px solid #c1c8c2;padding:8px 14px;color:#424844;background:#fff;cursor:pointer;outline:none;">
+    <option value="featured">Sort: Featured</option>
+    <option value="low">Price: Low to High</option>
+    <option value="high">Price: High to Low</option>
   </select>
 </div>
 
 <!-- Product Grid -->
-<section style="max-width:1440px;margin:0 auto;padding:0 32px 80px;">
+<section style="max-width:1440px;margin:0 auto;padding:0 32px 100px;">
   <div class="bk-shop-grid" id="bk-grid">
-<div class="bk-prod-card" data-cat="dining">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV" alt="The Ember Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £48',1500)">Add to Bag — £48</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">The Ember Bowl</h3>
-    <p class="bk-prod-sub">Smoked Terracotta Stone</p>
-    <p class="bk-prod-price">£48</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="dining">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSVtUdGUeQ47RM3tghAlQoXZ0d9C2a47FPdsZu66PNy5-A0k7N7sbGmYHMb0FG6bdCSxqGgX6LW5AIcIUVQXBD1BePP_YuxJ-shY8tkdYjFhq4TqxygiNRY3IekKv28yeYPVm4D9SrnlRNT9reOjFhxs7ylyq6uCTZVlUQ2mWmSmjYCJbm3yuh-Fg2BObGEnpoXiupoYGOucl7o4IbyoIxfZ43tj0M6me-qDcTWj3yLkVCWDSwGS83ePyfpWPja9IgSmMJme5tKnK" alt="Obsidian Serving Platter" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £95',1500)">Add to Bag — £95</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Obsidian Serving Platter</h3>
-    <p class="bk-prod-sub">Hand-finished Black Stone</p>
-    <p class="bk-prod-price">£95</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="dining">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfMAGl5p2VmZNHEw4TfJ7GpmqECz_Z5bKKRhKro52RBWQpgwiFBEfSi-I14IFD9euJWrG1HGZ7qSxv5eKMEVKOTsTczjs2JXmZasjxUY0AFcI4F5m_DU9t250VbJHC365r9VATTCvnEw3_b2MoKLGf7-By9-bmJNzhQEN1yXRkIamPHR0PNj97knNRm5d_8ZQ-0yWwbx_MrRef4DCe3xo_zHXsoMJnrcs63d9Ii13ai_UzJfEcqcv-by5tnX1dhsNgA7dDJ1Y4mQVP" alt="Heritage Wooden Board" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £65',1500)">Add to Bag — £65</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Heritage Wooden Board</h3>
-    <p class="bk-prod-sub">Reclaimed Olive Wood</p>
-    <p class="bk-prod-price">£65</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="dining">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV" alt="Artisan Dipping Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £32',1500)">Add to Bag — £32</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Artisan Dipping Plate</h3>
-    <p class="bk-prod-sub">Coastal Sand Ceramic</p>
-    <p class="bk-prod-price">£32</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="dining">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs" alt="The Host Tray" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £78',1500)">Add to Bag — £78</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">The Host Tray</h3>
-    <p class="bk-prod-sub">Brushed Walnut with Handles</p>
-    <p class="bk-prod-price">£78</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="dining">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSVtUdGUeQ47RM3tghAlQoXZ0d9C2a47FPdsZu66PNy5-A0k7N7sbGmYHMb0FG6bdCSxqGgX6LW5AIcIUVQXBD1BePP_YuxJ-shY8tkdYjFhq4TqxygiNRY3IekKv28yeYPVm4D9SrnlRNT9reOjFhxs7ylyq6uCTZVlUQ2mWmSmjYCJbm3yuh-Fg2BObGEnpoXiupoYGOucl7o4IbyoIxfZ43tj0M6me-qDcTWj3yLkVCWDSwGS83ePyfpWPja9IgSmMJme5tKnK" alt="Carved Serving Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £55',1500)">Add to Bag — £55</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Carved Serving Bowl</h3>
-    <p class="bk-prod-sub">Mango Wood & Resin</p>
-    <p class="bk-prod-price">£55</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="dining">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV" alt="Slate Cheese Board Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £42',1500)">Add to Bag — £42</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Slate Cheese Board Set</h3>
-    <p class="bk-prod-sub">Natural Slate with Chalk</p>
-    <p class="bk-prod-price">£42</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="dining">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfMAGl5p2VmZNHEw4TfJ7GpmqECz_Z5bKKRhKro52RBWQpgwiFBEfSi-I14IFD9euJWrG1HGZ7qSxv5eKMEVKOTsTczjs2JXmZasjxUY0AFcI4F5m_DU9t250VbJHC365r9VATTCvnEw3_b2MoKLGf7-By9-bmJNzhQEN1yXRkIamPHR0PNj97knNRm5d_8ZQ-0yWwbx_MrRef4DCe3xo_zHXsoMJnrcs63d9Ii13ai_UzJfEcqcv-by5tnX1dhsNgA7dDJ1Y4mQVP" alt="Rattan Bread Basket" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £28',1500)">Add to Bag — £28</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Rattan Bread Basket</h3>
-    <p class="bk-prod-sub">Hand-Woven Seagrass</p>
-    <p class="bk-prod-price">£28</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="dining">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs" alt="Copper Serving Spoon Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £52',1500)">Add to Bag — £52</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Copper Serving Spoon Set</h3>
-    <p class="bk-prod-sub">Hammered Copper, Set of 3</p>
-    <p class="bk-prod-price">£52</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="dining">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="Marble Lazy Susan" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £110',1500)">Add to Bag — £110</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Marble Lazy Susan</h3>
-    <p class="bk-prod-sub">White Carrara Marble</p>
-    <p class="bk-prod-price">£110</p>
-  </div>
-</div>
 <div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfMAGl5p2VmZNHEw4TfJ7GpmqECz_Z5bKKRhKro52RBWQpgwiFBEfSi-I14IFD9euJWrG1HGZ7qSxv5eKMEVKOTsTczjs2JXmZasjxUY0AFcI4F5m_DU9t250VbJHC365r9VATTCvnEw3_b2MoKLGf7-By9-bmJNzhQEN1yXRkIamPHR0PNj97knNRm5d_8ZQ-0yWwbx_MrRef4DCe3xo_zHXsoMJnrcs63d9Ii13ai_UzJfEcqcv-by5tnX1dhsNgA7dDJ1Y4mQVP" alt="Stone Dinner Plates" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £88',1500)">Add to Bag — £88</button>
+    <img src="shop-images/1.jpg" alt="Spiral Groove Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p1','Spiral Groove Plate','£68','shop-images/1.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £68',1600)">Add to Bag — £68</button>
   </div>
   <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Stone Dinner Plates</h3>
-    <p class="bk-prod-sub">Earthy Matte Glaze, Set of 4</p>
-    <p class="bk-prod-price">£88</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="tableware">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFIwbIPGrmTsPzc_oouazKTh6946Ia0BRtx-K6uXYcMas6p-rHoWSoJ0cEn8GuimGXcUHN2wL9t4az9NEiPTb2ybqMmCaMihWT8m0Ht647Uw9pFKboNRzZGIkxGRJO7De3L4PRMBYUDl71SCEJ3NjbqLPzblTqknvQMJGhJIg7z03hnqzRHwuwSamiTU8MxXCJC_EG_Big5SRp8soQsxnakaqOPr1C3ctSoFJ1faVk95fPPw5J7M-HrAJ5OrRmui3HmmGrHtshNFo5" alt="Ivory Porcelain Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £145',1500)">Add to Bag — £145</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Ivory Porcelain Set</h3>
-    <p class="bk-prod-sub">12-piece Fine Porcelain</p>
-    <p class="bk-prod-price">£145</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="tableware">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV" alt="Brushstroke Bowl Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £62',1500)">Add to Bag — £62</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Brushstroke Bowl Set</h3>
-    <p class="bk-prod-sub">Artisan-painted, Set of 2</p>
-    <p class="bk-prod-price">£62</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="tableware">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9RFQyVigqeG1tgW7FV2kpVbc4DV8MKugDb7jhmBpPfsSR_wpTUmmEwsW6U_shbv6fTZ_ykEg12UQzWWuNH3JDasrmrh4kDKak9k6pSeoBeGdm0qGy9_O6YhZD8uAXKSCYL2SDOCuu1NKWF5yI9BbCWq-OBd39GHupCAhHUiBKqU9ApGzqqSebvnrRFg3JX2IDJfCYKVGpencFwtTY7xg1pqoJRlVWhiXJFIsV6lNt2Dv54OyeOw0vDijSy9Jp954ccMjDCgcWRXA" alt="Midnight Side Plates" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £55',1500)">Add to Bag — £55</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Midnight Side Plates</h3>
-    <p class="bk-prod-sub">Deep Blue Ceramic, Set of 4</p>
-    <p class="bk-prod-price">£55</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="tableware">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="Terracotta Soup Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £38',1500)">Add to Bag — £38</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Terracotta Soup Bowl</h3>
-    <p class="bk-prod-sub">Handthrown Earthenware</p>
-    <p class="bk-prod-price">£38</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="tableware">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXl6XUmq9s-m8_r-MDyqSXENucOwXg-X7--b0PFhvOj2tH3fPVwCr6eNc7krSu2_FyJvnwtC-nmoI7SLvhtW87T3INe7znrBjVHkGrm_FRZgG7H28wJ9y3hVqW0zJiS1qp6MlxSfredemZ1CRHE7_G3ivqj4U-hoT7I1MTZ3U-VX3mTbbvyFC7bxe2IP7uChkgVybFO0bXwaUuwuRG28Q5365RdFk7xcMCc7qSPy6txGsk09OmyOt7eyUUk0SC8SeXRHMO-dY88nJv" alt="The Everyday Mug" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £24',1500)">Add to Bag — £24</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">The Everyday Mug</h3>
-    <p class="bk-prod-sub">Stoneware with Speckled Glaze</p>
-    <p class="bk-prod-price">£24</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="tableware">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV" alt="Salad Bowl Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £72',1500)">Add to Bag — £72</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Salad Bowl Set</h3>
-    <p class="bk-prod-sub">Glazed Celadon, Large + Small</p>
-    <p class="bk-prod-price">£72</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="tableware">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfMAGl5p2VmZNHEw4TfJ7GpmqECz_Z5bKKRhKro52RBWQpgwiFBEfSi-I14IFD9euJWrG1HGZ7qSxv5eKMEVKOTsTczjs2JXmZasjxUY0AFcI4F5m_DU9t250VbJHC365r9VATTCvnEw3_b2MoKLGf7-By9-bmJNzhQEN1yXRkIamPHR0PNj97knNRm5d_8ZQ-0yWwbx_MrRef4DCe3xo_zHXsoMJnrcs63d9Ii13ai_UzJfEcqcv-by5tnX1dhsNgA7dDJ1Y4mQVP" alt="Flat Pasta Plate" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £44',1500)">Add to Bag — £44</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Flat Pasta Plate</h3>
-    <p class="bk-prod-sub">Sage Rim Ceramic, Set of 2</p>
-    <p class="bk-prod-price">£44</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="tableware">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs" alt="Breakfast Bowl" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £29',1500)">Add to Bag — £29</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Breakfast Bowl</h3>
-    <p class="bk-prod-sub">Sandy Beige Handcrafted</p>
-    <p class="bk-prod-price">£29</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="tableware">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXl6XUmq9s-m8_r-MDyqSXENucOwXg-X7--b0PFhvOj2tH3fPVwCr6eNc7krSu2_FyJvnwtC-nmoI7SLvhtW87T3INe7znrBjVHkGrm_FRZgG7H28wJ9y3hVqW0zJiS1qp6MlxSfredemZ1CRHE7_G3ivqj4U-hoT7I1MTZ3U-VX3mTbbvyFC7bxe2IP7uChkgVybFO0bXwaUuwuRG28Q5365RdFk7xcMCc7qSPy6txGsk09OmyOt7eyUUk0SC8SeXRHMO-dY88nJv" alt="Dessert Coupe Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £65',1500)">Add to Bag — £65</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Dessert Coupe Set</h3>
-    <p class="bk-prod-sub">Crystal-clear Glass, Set of 4</p>
-    <p class="bk-prod-price">£65</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="wine">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXl6XUmq9s-m8_r-MDyqSXENucOwXg-X7--b0PFhvOj2tH3fPVwCr6eNc7krSu2_FyJvnwtC-nmoI7SLvhtW87T3INe7znrBjVHkGrm_FRZgG7H28wJ9y3hVqW0zJiS1qp6MlxSfredemZ1CRHE7_G3ivqj4U-hoT7I1MTZ3U-VX3mTbbvyFC7bxe2IP7uChkgVybFO0bXwaUuwuRG28Q5365RdFk7xcMCc7qSPy6txGsk09OmyOt7eyUUk0SC8SeXRHMO-dY88nJv" alt="Verge Decanter" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £120',1500)">Add to Bag — £120</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Verge Decanter</h3>
-    <p class="bk-prod-sub">Hand-Blown Crystal</p>
-    <p class="bk-prod-price">£120</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="wine">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9RFQyVigqeG1tgW7FV2kpVbc4DV8MKugDb7jhmBpPfsSR_wpTUmmEwsW6U_shbv6fTZ_ykEg12UQzWWuNH3JDasrmrh4kDKak9k6pSeoBeGdm0qGy9_O6YhZD8uAXKSCYL2SDOCuu1NKWF5yI9BbCWq-OBd39GHupCAhHUiBKqU9ApGzqqSebvnrRFg3JX2IDJfCYKVGpencFwtTY7xg1pqoJRlVWhiXJFIsV6lNt2Dv54OyeOw0vDijSy9Jp954ccMjDCgcWRXA" alt="Red Wine Glass Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £85',1500)">Add to Bag — £85</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Red Wine Glass Set</h3>
-    <p class="bk-prod-sub">Thin-Rim Bordeaux, Set of 4</p>
-    <p class="bk-prod-price">£85</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="wine">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXl6XUmq9s-m8_r-MDyqSXENucOwXg-X7--b0PFhvOj2tH3fPVwCr6eNc7krSu2_FyJvnwtC-nmoI7SLvhtW87T3INe7znrBjVHkGrm_FRZgG7H28wJ9y3hVqW0zJiS1qp6MlxSfredemZ1CRHE7_G3ivqj4U-hoT7I1MTZ3U-VX3mTbbvyFC7bxe2IP7uChkgVybFO0bXwaUuwuRG28Q5365RdFk7xcMCc7qSPy6txGsk09OmyOt7eyUUk0SC8SeXRHMO-dY88nJv" alt="Champagne Flutes" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £68',1500)">Add to Bag — £68</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Champagne Flutes</h3>
-    <p class="bk-prod-sub">Elongated Crystal, Set of 2</p>
+    <h3 class="bk-prod-name">Spiral Groove Plate</h3>
+    <p class="bk-prod-sub">White Ribbed Ceramic</p>
     <p class="bk-prod-price">£68</p>
   </div>
 </div>
-<div class="bk-prod-card" data-cat="wine">
+<div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA175vmsCAhlv0aEDr_QEwq5uke-ylrCy6iVmX3zfqq97AQTVyzVwoE5F7klBhQpgaCWIeZs2yVvTxfiYOj0kjgAtqYwb_W-QxrJksCyrF9inG0kOiUu628WLREqdnDcAlj510EjCEbe6ie4lMJC88fsi8lhQjxXNhL7lBOQsLvZqO6Oxci8ci1whkM_zOpxsr-QVXagkSQtS9msc2hEuGxqsYh2LVPfkY5D1PZHgVL_v9fEIz5HgLX6ZNRv8DpLlJthcUbM2xTfpN0" alt="Wine Carafe" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £55',1500)">Add to Bag — £55</button>
+    <img src="shop-images/2.jpg" alt="Black Pillow Platter" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p2','Black Pillow Platter','£85','shop-images/2.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £85',1600)">Add to Bag — £85</button>
   </div>
   <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Wine Carafe</h3>
-    <p class="bk-prod-sub">Frosted Borosilicate</p>
-    <p class="bk-prod-price">£55</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="wine">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs" alt="Olive Wood Corkscrew" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £34',1500)">Add to Bag — £34</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Olive Wood Corkscrew</h3>
-    <p class="bk-prod-sub">Hand-carved Handle</p>
-    <p class="bk-prod-price">£34</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="wine">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSVtUdGUeQ47RM3tghAlQoXZ0d9C2a47FPdsZu66PNy5-A0k7N7sbGmYHMb0FG6bdCSxqGgX6LW5AIcIUVQXBD1BePP_YuxJ-shY8tkdYjFhq4TqxygiNRY3IekKv28yeYPVm4D9SrnlRNT9reOjFhxs7ylyq6uCTZVlUQ2mWmSmjYCJbm3yuh-Fg2BObGEnpoXiupoYGOucl7o4IbyoIxfZ43tj0M6me-qDcTWj3yLkVCWDSwGS83ePyfpWPja9IgSmMJme5tKnK" alt="Aerator Pourer" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £28',1500)">Add to Bag — £28</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Aerator Pourer</h3>
-    <p class="bk-prod-sub">Polished Stainless Steel</p>
-    <p class="bk-prod-price">£28</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="wine">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA175vmsCAhlv0aEDr_QEwq5uke-ylrCy6iVmX3zfqq97AQTVyzVwoE5F7klBhQpgaCWIeZs2yVvTxfiYOj0kjgAtqYwb_W-QxrJksCyrF9inG0kOiUu628WLREqdnDcAlj510EjCEbe6ie4lMJC88fsi8lhQjxXNhL7lBOQsLvZqO6Oxci8ci1whkM_zOpxsr-QVXagkSQtS9msc2hEuGxqsYh2LVPfkY5D1PZHgVL_v9fEIz5HgLX6ZNRv8DpLlJthcUbM2xTfpN0" alt="Ice Bucket" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £95',1500)">Add to Bag — £95</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Ice Bucket</h3>
-    <p class="bk-prod-sub">Hammered Copper</p>
-    <p class="bk-prod-price">£95</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="wine">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9RFQyVigqeG1tgW7FV2kpVbc4DV8MKugDb7jhmBpPfsSR_wpTUmmEwsW6U_shbv6fTZ_ykEg12UQzWWuNH3JDasrmrh4kDKak9k6pSeoBeGdm0qGy9_O6YhZD8uAXKSCYL2SDOCuu1NKWF5yI9BbCWq-OBd39GHupCAhHUiBKqU9ApGzqqSebvnrRFg3JX2IDJfCYKVGpencFwtTY7xg1pqoJRlVWhiXJFIsV6lNt2Dv54OyeOw0vDijSy9Jp954ccMjDCgcWRXA" alt="Cocktail Mixing Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £115',1500)">Add to Bag — £115</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Cocktail Mixing Set</h3>
-    <p class="bk-prod-sub">Brass & Walnut, 5-piece</p>
-    <p class="bk-prod-price">£115</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="cutlery">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs" alt="Heirloom Serving Spoons" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £65',1500)">Add to Bag — £65</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Heirloom Serving Spoons</h3>
-    <p class="bk-prod-sub">Antiqued Brass, Set of 3</p>
-    <p class="bk-prod-price">£65</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="cutlery">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFIwbIPGrmTsPzc_oouazKTh6946Ia0BRtx-K6uXYcMas6p-rHoWSoJ0cEn8GuimGXcUHN2wL9t4az9NEiPTb2ybqMmCaMihWT8m0Ht647Uw9pFKboNRzZGIkxGRJO7De3L4PRMBYUDl71SCEJ3NjbqLPzblTqknvQMJGhJIg7z03hnqzRHwuwSamiTU8MxXCJC_EG_Big5SRp8soQsxnakaqOPr1C3ctSoFJ1faVk95fPPw5J7M-HrAJ5OrRmui3HmmGrHtshNFo5" alt="The Archive Knife Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £185',1500)">Add to Bag — £185</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">The Archive Knife Set</h3>
-    <p class="bk-prod-sub">Carbon Steel, Set of 6</p>
-    <p class="bk-prod-price">£185</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="cutlery">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFIwbIPGrmTsPzc_oouazKTh6946Ia0BRtx-K6uXYcMas6p-rHoWSoJ0cEn8GuimGXcUHN2wL9t4az9NEiPTb2ybqMmCaMihWT8m0Ht647Uw9pFKboNRzZGIkxGRJO7De3L4PRMBYUDl71SCEJ3NjbqLPzblTqknvQMJGhJIg7z03hnqzRHwuwSamiTU8MxXCJC_EG_Big5SRp8soQsxnakaqOPr1C3ctSoFJ1faVk95fPPw5J7M-HrAJ5OrRmui3HmmGrHtshNFo5" alt="Matte Black Cutlery" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £110',1500)">Add to Bag — £110</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Matte Black Cutlery</h3>
-    <p class="bk-prod-sub">18-piece Stainless Set</p>
-    <p class="bk-prod-price">£110</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="cutlery">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs" alt="Hammered Serving Fork" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £38',1500)">Add to Bag — £38</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Hammered Serving Fork</h3>
-    <p class="bk-prod-sub">Vintage Brass Finish</p>
-    <p class="bk-prod-price">£38</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="cutlery">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA175vmsCAhlv0aEDr_QEwq5uke-ylrCy6iVmX3zfqq97AQTVyzVwoE5F7klBhQpgaCWIeZs2yVvTxfiYOj0kjgAtqYwb_W-QxrJksCyrF9inG0kOiUu628WLREqdnDcAlj510EjCEbe6ie4lMJC88fsi8lhQjxXNhL7lBOQsLvZqO6Oxci8ci1whkM_zOpxsr-QVXagkSQtS9msc2hEuGxqsYh2LVPfkY5D1PZHgVL_v9fEIz5HgLX6ZNRv8DpLlJthcUbM2xTfpN0" alt="Cheese Knife Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £72',1500)">Add to Bag — £72</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Cheese Knife Set</h3>
-    <p class="bk-prod-sub">Rosewood Handle, 4-piece</p>
-    <p class="bk-prod-price">£72</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="cutlery">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFIwbIPGrmTsPzc_oouazKTh6946Ia0BRtx-K6uXYcMas6p-rHoWSoJ0cEn8GuimGXcUHN2wL9t4az9NEiPTb2ybqMmCaMihWT8m0Ht647Uw9pFKboNRzZGIkxGRJO7De3L4PRMBYUDl71SCEJ3NjbqLPzblTqknvQMJGhJIg7z03hnqzRHwuwSamiTU8MxXCJC_EG_Big5SRp8soQsxnakaqOPr1C3ctSoFJ1faVk95fPPw5J7M-HrAJ5OrRmui3HmmGrHtshNFo5" alt="Steak Knife Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £140',1500)">Add to Bag — £140</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Steak Knife Set</h3>
-    <p class="bk-prod-sub">Ebony Handle, Set of 6</p>
-    <p class="bk-prod-price">£140</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="cutlery">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9RFQyVigqeG1tgW7FV2kpVbc4DV8MKugDb7jhmBpPfsSR_wpTUmmEwsW6U_shbv6fTZ_ykEg12UQzWWuNH3JDasrmrh4kDKak9k6pSeoBeGdm0qGy9_O6YhZD8uAXKSCYL2SDOCuu1NKWF5yI9BbCWq-OBd39GHupCAhHUiBKqU9ApGzqqSebvnrRFg3JX2IDJfCYKVGpencFwtTY7xg1pqoJRlVWhiXJFIsV6lNt2Dv54OyeOw0vDijSy9Jp954ccMjDCgcWRXA" alt="Butter Spreader Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £44',1500)">Add to Bag — £44</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Butter Spreader Set</h3>
-    <p class="bk-prod-sub">Gold Plated, Set of 4</p>
-    <p class="bk-prod-price">£44</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="cutlery">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSVtUdGUeQ47RM3tghAlQoXZ0d9C2a47FPdsZu66PNy5-A0k7N7sbGmYHMb0FG6bdCSxqGgX6LW5AIcIUVQXBD1BePP_YuxJ-shY8tkdYjFhq4TqxygiNRY3IekKv28yeYPVm4D9SrnlRNT9reOjFhxs7ylyq6uCTZVlUQ2mWmSmjYCJbm3yuh-Fg2BObGEnpoXiupoYGOucl7o4IbyoIxfZ43tj0M6me-qDcTWj3yLkVCWDSwGS83ePyfpWPja9IgSmMJme5tKnK" alt="Cake Server Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £36',1500)">Add to Bag — £36</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Cake Server Set</h3>
-    <p class="bk-prod-sub">Linen Handle, 2-piece</p>
-    <p class="bk-prod-price">£36</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="linens">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="Sage Linen Napkins" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £34',1500)">Add to Bag — £34</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Sage Linen Napkins</h3>
-    <p class="bk-prod-sub">Stone-Washed Linen, Set of 4</p>
-    <p class="bk-prod-price">£34</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="linens">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="The Heritage Tablecloth" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £88',1500)">Add to Bag — £88</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">The Heritage Tablecloth</h3>
-    <p class="bk-prod-sub">Natural Linen, 200x140cm</p>
-    <p class="bk-prod-price">£88</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="linens">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="Terracotta Table Runner" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £42',1500)">Add to Bag — £42</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Terracotta Table Runner</h3>
-    <p class="bk-prod-sub">Woven Cotton, 180cm</p>
-    <p class="bk-prod-price">£42</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="linens">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="Embroidered Napkin Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £56',1500)">Add to Bag — £56</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Embroidered Napkin Set</h3>
-    <p class="bk-prod-sub">White Cotton, Set of 6</p>
-    <p class="bk-prod-price">£56</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="linens">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyUpGvgstKJH1E4x1VvAgtfyZ8gVFQ0mdvv2Yy3gIAtdGWfazXcKTDslk9T6d_o93MirODjJGtn83MnrktqYg1VL1309hpuq4u4VXqKEXXWOEE4Swp79VIDjlmUPw9gPyw4GxcfwY-ZVpSIiPVFbbesHCavC4pVGlA8fVCWGSdU58tMJB2cOq3Iu2iNvlJJkbHMn4PdfWCyyryBFXCSOwbsfxh6bwmsB5WXzXm0NzhQX4gwi2Y_jFDuR7LtngUS0gsv7Xc6s0dXRy4" alt="Linen Apron" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £62',1500)">Add to Bag — £62</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Linen Apron</h3>
-    <p class="bk-prod-sub">Cross-back Heritage Style</p>
-    <p class="bk-prod-price">£62</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="linens">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyUpGvgstKJH1E4x1VvAgtfyZ8gVFQ0mdvv2Yy3gIAtdGWfazXcKTDslk9T6d_o93MirODjJGtn83MnrktqYg1VL1309hpuq4u4VXqKEXXWOEE4Swp79VIDjlmUPw9gPyw4GxcfwY-ZVpSIiPVFbbesHCavC4pVGlA8fVCWGSdU58tMJB2cOq3Iu2iNvlJJkbHMn4PdfWCyyryBFXCSOwbsfxh6bwmsB5WXzXm0NzhQX4gwi2Y_jFDuR7LtngUS0gsv7Xc6s0dXRy4" alt="Chef Apron" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £75',1500)">Add to Bag — £75</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Chef Apron</h3>
-    <p class="bk-prod-sub">Heavy Canvas with Pockets</p>
-    <p class="bk-prod-price">£75</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="linens">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="Kitchen Towel Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £28',1500)">Add to Bag — £28</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Kitchen Towel Set</h3>
-    <p class="bk-prod-sub">Striped Linen, Set of 3</p>
-    <p class="bk-prod-price">£28</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="gift">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA175vmsCAhlv0aEDr_QEwq5uke-ylrCy6iVmX3zfqq97AQTVyzVwoE5F7klBhQpgaCWIeZs2yVvTxfiYOj0kjgAtqYwb_W-QxrJksCyrF9inG0kOiUu628WLREqdnDcAlj510EjCEbe6ie4lMJC88fsi8lhQjxXNhL7lBOQsLvZqO6Oxci8ci1whkM_zOpxsr-QVXagkSQtS9msc2hEuGxqsYh2LVPfkY5D1PZHgVL_v9fEIz5HgLX6ZNRv8DpLlJthcUbM2xTfpN0" alt="The Entertainer Gift Box" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £145',1500)">Add to Bag — £145</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">The Entertainer Gift Box</h3>
-    <p class="bk-prod-sub">Curated Set for the Host</p>
-    <p class="bk-prod-price">£145</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="gift">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXl6XUmq9s-m8_r-MDyqSXENucOwXg-X7--b0PFhvOj2tH3fPVwCr6eNc7krSu2_FyJvnwtC-nmoI7SLvhtW87T3INe7znrBjVHkGrm_FRZgG7H28wJ9y3hVqW0zJiS1qp6MlxSfredemZ1CRHE7_G3ivqj4U-hoT7I1MTZ3U-VX3mTbbvyFC7bxe2IP7uChkgVybFO0bXwaUuwuRG28Q5365RdFk7xcMCc7qSPy6txGsk09OmyOt7eyUUk0SC8SeXRHMO-dY88nJv" alt="Wine Lover's Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £165',1500)">Add to Bag — £165</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Wine Lover's Set</h3>
-    <p class="bk-prod-sub">Decanter + 2 Glasses</p>
-    <p class="bk-prod-price">£165</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="gift">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV" alt="The Dinner Party Kit" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £95',1500)">Add to Bag — £95</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">The Dinner Party Kit</h3>
-    <p class="bk-prod-sub">Candles, Napkins & Board</p>
-    <p class="bk-prod-price">£95</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="gift">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA175vmsCAhlv0aEDr_QEwq5uke-ylrCy6iVmX3zfqq97AQTVyzVwoE5F7klBhQpgaCWIeZs2yVvTxfiYOj0kjgAtqYwb_W-QxrJksCyrF9inG0kOiUu628WLREqdnDcAlj510EjCEbe6ie4lMJC88fsi8lhQjxXNhL7lBOQsLvZqO6Oxci8ci1whkM_zOpxsr-QVXagkSQtS9msc2hEuGxqsYh2LVPfkY5D1PZHgVL_v9fEIz5HgLX6ZNRv8DpLlJthcUbM2xTfpN0" alt="Artisan Hamper" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £220',1500)">Add to Bag — £220</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Artisan Hamper</h3>
-    <p class="bk-prod-sub">6 Curated Homeware Pieces</p>
-    <p class="bk-prod-price">£220</p>
-  </div>
-</div>
-<div class="bk-prod-card" data-cat="gift">
-  <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSVtUdGUeQ47RM3tghAlQoXZ0d9C2a47FPdsZu66PNy5-A0k7N7sbGmYHMb0FG6bdCSxqGgX6LW5AIcIUVQXBD1BePP_YuxJ-shY8tkdYjFhq4TqxygiNRY3IekKv28yeYPVm4D9SrnlRNT9reOjFhxs7ylyq6uCTZVlUQ2mWmSmjYCJbm3yuh-Fg2BObGEnpoXiupoYGOucl7o4IbyoIxfZ43tj0M6me-qDcTWj3yLkVCWDSwGS83ePyfpWPja9IgSmMJme5tKnK" alt="New Home Gift Set" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £85',1500)">Add to Bag — £85</button>
-  </div>
-  <div class="bk-prod-info">
-    <h3 class="bk-prod-name">New Home Gift Set</h3>
-    <p class="bk-prod-sub">Personalised Box</p>
+    <h3 class="bk-prod-name">Black Pillow Platter</h3>
+    <p class="bk-prod-sub">Quilted Gloss Ceramic</p>
     <p class="bk-prod-price">£85</p>
   </div>
 </div>
-<div class="bk-prod-card" data-cat="gift">
+<div class="bk-prod-card" data-cat="dining">
   <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyUpGvgstKJH1E4x1VvAgtfyZ8gVFQ0mdvv2Yy3gIAtdGWfazXcKTDslk9T6d_o93MirODjJGtn83MnrktqYg1VL1309hpuq4u4VXqKEXXWOEE4Swp79VIDjlmUPw9gPyw4GxcfwY-ZVpSIiPVFbbesHCavC4pVGlA8fVCWGSdU58tMJB2cOq3Iu2iNvlJJkbHMn4PdfWCyyryBFXCSOwbsfxh6bwmsB5WXzXm0NzhQX4gwi2Y_jFDuR7LtngUS0gsv7Xc6s0dXRy4" alt="The Chef Gift Box" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £175',1500)">Add to Bag — £175</button>
+    <img src="shop-images/3.jpg" alt="Deep Stone Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p3','Deep Stone Bowl','£72','shop-images/3.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £72',1600)">Add to Bag — £72</button>
   </div>
   <div class="bk-prod-info">
-    <h3 class="bk-prod-name">The Chef Gift Box</h3>
-    <p class="bk-prod-sub">Apron + Knife + Board</p>
-    <p class="bk-prod-price">£175</p>
+    <h3 class="bk-prod-name">Deep Stone Bowl</h3>
+    <p class="bk-prod-sub">Speckled Grey Stoneware</p>
+    <p class="bk-prod-price">£72</p>
   </div>
 </div>
-<div class="bk-prod-card" data-cat="gift">
+<div class="bk-prod-card" data-cat="tableware">
   <div class="bk-prod-img-wrap">
-    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9RFQyVigqeG1tgW7FV2kpVbc4DV8MKugDb7jhmBpPfsSR_wpTUmmEwsW6U_shbv6fTZ_ykEg12UQzWWuNH3JDasrmrh4kDKak9k6pSeoBeGdm0qGy9_O6YhZD8uAXKSCYL2SDOCuu1NKWF5yI9BbCWq-OBd39GHupCAhHUiBKqU9ApGzqqSebvnrRFg3JX2IDJfCYKVGpencFwtTY7xg1pqoJRlVWhiXJFIsV6lNt2Dv54OyeOw0vDijSy9Jp954ccMjDCgcWRXA" alt="Seasonal Bundle" class="bk-prod-img" loading="lazy"/>
-    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £125',1500)">Add to Bag — £125</button>
+    <img src="shop-images/4.jpg" alt="Coupe Dinner Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p4','Coupe Dinner Plate','£58','shop-images/4.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £58',1600)">Add to Bag — £58</button>
   </div>
   <div class="bk-prod-info">
-    <h3 class="bk-prod-name">Seasonal Bundle</h3>
-    <p class="bk-prod-sub">Summer Garden Collection</p>
-    <p class="bk-prod-price">£125</p>
+    <h3 class="bk-prod-name">Coupe Dinner Plate</h3>
+    <p class="bk-prod-sub">Matte White, Wide Rim</p>
+    <p class="bk-prod-price">£58</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/5.jpg" alt="Lava Deep Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p5','Lava Deep Bowl','£92','shop-images/5.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £92',1600)">Add to Bag — £92</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Lava Deep Bowl</h3>
+    <p class="bk-prod-sub">Volcanic Texture, Black Glaze</p>
+    <p class="bk-prod-price">£92</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/6.jpg" alt="Midnight Oval Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p6','Midnight Oval Plate','£75','shop-images/6.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £75',1600)">Add to Bag — £75</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Midnight Oval Plate</h3>
+    <p class="bk-prod-sub">Dark Granite, Elongated Form</p>
+    <p class="bk-prod-price">£75</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/7.jpg" alt="Raw Edge Charger Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p7','Raw Edge Charger Plate','£64','shop-images/7.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £64',1600)">Add to Bag — £64</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Raw Edge Charger Plate</h3>
+    <p class="bk-prod-sub">Organic Rim, Charcoal Clay</p>
+    <p class="bk-prod-price">£64</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/8.jpg" alt="Cloud Pasta Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p8','Cloud Pasta Bowl','£52','shop-images/8.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £52',1600)">Add to Bag — £52</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Cloud Pasta Bowl</h3>
+    <p class="bk-prod-sub">Soft White, Deep Well</p>
+    <p class="bk-prod-price">£52</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/9.jpg" alt="Bronze Lustre Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p9','Bronze Lustre Plate','£88','shop-images/9.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £88',1600)">Add to Bag — £88</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Bronze Lustre Plate</h3>
+    <p class="bk-prod-sub">Metallic Reactive Glaze</p>
+    <p class="bk-prod-price">£88</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/10.jpg" alt="Ivory Deep Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p10','Ivory Deep Bowl','£65','shop-images/10.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £65',1600)">Add to Bag — £65</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Ivory Deep Bowl</h3>
+    <p class="bk-prod-sub">Creamy Smooth Porcelain</p>
+    <p class="bk-prod-price">£65</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/11.jpg" alt="Obsidian Ramen Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p11','Obsidian Ramen Bowl','£78','shop-images/11.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £78',1600)">Add to Bag — £78</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Obsidian Ramen Bowl</h3>
+    <p class="bk-prod-sub">Gunmetal Dark Stoneware</p>
+    <p class="bk-prod-price">£78</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/12.jpg" alt="Ash Grey Dinner Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p12','Ash Grey Dinner Plate','£60','shop-images/12.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £60',1600)">Add to Bag — £60</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Ash Grey Dinner Plate</h3>
+    <p class="bk-prod-sub">Speckled Matte Finish</p>
+    <p class="bk-prod-price">£60</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/13.jpg" alt="Terracotta Side Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p13','Terracotta Side Plate','£38','shop-images/13.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £38',1600)">Add to Bag — £38</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Terracotta Side Plate</h3>
+    <p class="bk-prod-sub">Warm Earth-Tone Ceramic</p>
+    <p class="bk-prod-price">£38</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/14.jpg" alt="Salt & Pepper Bowl Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p14','Salt & Pepper Bowl Set','£55','shop-images/14.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £55',1600)">Add to Bag — £55</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Salt & Pepper Bowl Set</h3>
+    <p class="bk-prod-sub">Set of 2, Contrast Glaze</p>
+    <p class="bk-prod-price">£55</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/15.jpg" alt="Heritage Mug & Saucer" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p15','Heritage Mug & Saucer','£48','shop-images/15.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £48',1600)">Add to Bag — £48</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Heritage Mug & Saucer</h3>
+    <p class="bk-prod-sub">Reactive Glaze, Handthrown</p>
+    <p class="bk-prod-price">£48</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/16.jpg" alt="Sage Rim Dinner Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p16','Sage Rim Dinner Plate','£62','shop-images/16.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £62',1600)">Add to Bag — £62</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Sage Rim Dinner Plate</h3>
+    <p class="bk-prod-sub">Speckled Stone, Earth Edge</p>
+    <p class="bk-prod-price">£62</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/17.jpg" alt="Wabi-Sabi Side Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p17','Wabi-Sabi Side Plate','£42','shop-images/17.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £42',1600)">Add to Bag — £42</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Wabi-Sabi Side Plate</h3>
+    <p class="bk-prod-sub">Imperfect Form, White Clay</p>
+    <p class="bk-prod-price">£42</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/18.jpg" alt="Smoked Pearl Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p18','Smoked Pearl Bowl','£70','shop-images/18.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £70',1600)">Add to Bag — £70</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Smoked Pearl Bowl</h3>
+    <p class="bk-prod-sub">Gradient Grey Ceramic</p>
+    <p class="bk-prod-price">£70</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/19.jpg" alt="Artisan Soup Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p19','Artisan Soup Bowl','£58','shop-images/19.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £58',1600)">Add to Bag — £58</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Artisan Soup Bowl</h3>
+    <p class="bk-prod-sub">Handcrafted, Wide Lip</p>
+    <p class="bk-prod-price">£58</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/20.jpg" alt="Square White Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p20','Square White Plate','£72','shop-images/20.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £72',1600)">Add to Bag — £72</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Square White Plate</h3>
+    <p class="bk-prod-sub">Modern Restaurant Style</p>
+    <p class="bk-prod-price">£72</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/21.jpg" alt="Organic Freeform Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p21','Organic Freeform Plate','£88','shop-images/21.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £88',1600)">Add to Bag — £88</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Organic Freeform Plate</h3>
+    <p class="bk-prod-sub">Sculptural White Porcelain</p>
+    <p class="bk-prod-price">£88</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/22.jpg" alt="Hammered Copper Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p22','Hammered Copper Bowl','£95','shop-images/22.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £95',1600)">Add to Bag — £95</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Hammered Copper Bowl</h3>
+    <p class="bk-prod-sub">Hand-Beaten Copper Interior</p>
+    <p class="bk-prod-price">£95</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/23.jpg" alt="Midnight Coupe Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p23','Midnight Coupe Bowl','£68','shop-images/23.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £68',1600)">Add to Bag — £68</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Midnight Coupe Bowl</h3>
+    <p class="bk-prod-sub">Deep Black, Smooth Finish</p>
+    <p class="bk-prod-price">£68</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/24.jpg" alt="Stone Grey Pasta Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p24','Stone Grey Pasta Plate','£64','shop-images/24.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £64',1600)">Add to Bag — £64</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Stone Grey Pasta Plate</h3>
+    <p class="bk-prod-sub">Flat-Rim, Neutral Glaze</p>
+    <p class="bk-prod-price">£64</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/25.jpg" alt="Egg Shell Vessel" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p25','Egg Shell Vessel','£95','shop-images/25.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £95',1600)">Add to Bag — £95</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Egg Shell Vessel</h3>
+    <p class="bk-prod-sub">Cracked Ceramic, Sculptural</p>
+    <p class="bk-prod-price">£95</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="shop-images/26.jpg" alt="Rust & Clay Side Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="bkAddToCart('p26','Rust & Clay Side Bowl','£52','shop-images/26.jpg',1);this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £52',1600)">Add to Bag — £52</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Rust & Clay Side Bowl</h3>
+    <p class="bk-prod-sub">Ochre Earth Tones, Handmade</p>
+    <p class="bk-prod-price">£52</p>
   </div>
 </div>
   </div>
-  <p id="bk-empty" style="display:none;text-align:center;padding:80px 0;font-family:'Bodoni Moda',serif;font-size:24px;color:#727974;">No products in this category yet.</p>
+  <p id="bk-empty" style="display:none;text-align:center;padding:80px 0;font-family:'Bodoni Moda',serif;font-size:24px;color:#727974;">No products in this category.</p>
 </section>
 
 </main>
 
 <style>
-/* Tabs */
-.bk-tab {
-  font-family: Inter, sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  color: #727974;
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  padding: 16px 20px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: color .2s, border-color .2s;
-}
-.bk-tab:hover { color: #466556; }
-.bk-tab.active { color: #466556; border-bottom-color: #466556; }
-
-/* Product Grid — 5 columns */
-.bk-shop-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 24px 20px;
-}
-@media (max-width: 1199px) { .bk-shop-grid { grid-template-columns: repeat(4,1fr); } }
-@media (max-width: 900px)  { .bk-shop-grid { grid-template-columns: repeat(3,1fr); } }
-@media (max-width: 640px)  { .bk-shop-grid { grid-template-columns: repeat(2,1fr); gap: 12px; } }
-
-/* Product card */
-.bk-prod-card { display: flex; flex-direction: column; }
-.bk-prod-img-wrap {
-  position: relative;
-  aspect-ratio: 4/5;
-  overflow: hidden;
-  background: #eeeeeb;
-  margin-bottom: 12px;
-}
-.bk-prod-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(1);
-  transition: filter .5s ease, transform .5s ease;
-}
-.bk-prod-card:hover .bk-prod-img {
-  filter: grayscale(0);
-  transform: scale(1.04);
-}
-.bk-add-btn {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  right: 12px;
-  background: rgba(255,255,255,.93);
-  backdrop-filter: blur(4px);
-  font-family: Inter, sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: #1a1c1b;
-  border: none;
-  padding: 10px 8px;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity .3s, transform .3s;
-}
-.bk-prod-card:hover .bk-add-btn { opacity: 1; transform: translateY(0); }
-.bk-add-btn:hover { background: #466556; color: #fff; }
-
-.bk-prod-name  { font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; color: #1a1c1b; margin: 0 0 4px; }
-.bk-prod-sub   { font-family: Inter, sans-serif; font-size: 12px; color: #727974; margin: 0 0 6px; }
-.bk-prod-price { font-family: 'Bodoni Moda', serif; font-size: 15px; color: #466556; margin: 0; }
+.bk-tab{font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#727974;background:none;border:none;border-bottom:2px solid transparent;padding:16px 20px;cursor:pointer;white-space:nowrap;transition:color .2s,border-color .2s;}
+.bk-tab:hover{color:#466556;}
+.bk-tab.active{color:#466556;border-bottom-color:#466556;}
+.bk-shop-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:28px 20px;}
+@media(max-width:1199px){.bk-shop-grid{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:900px){.bk-shop-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:640px){.bk-shop-grid{grid-template-columns:repeat(2,1fr);gap:14px;}}
+.bk-prod-card{display:flex;flex-direction:column;cursor:pointer;}
+.bk-prod-img-wrap{position:relative;aspect-ratio:1/1;overflow:hidden;background:#eeeeeb;margin-bottom:12px;}
+.bk-prod-img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .6s ease,transform .6s ease;}
+.bk-prod-card:hover .bk-prod-img{filter:grayscale(0);transform:scale(1.05);}
+.bk-add-btn{position:absolute;bottom:12px;left:12px;right:12px;background:rgba(255,255,255,.94);backdrop-filter:blur(4px);font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#1a1c1b;border:none;padding:11px 8px;cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s,background .2s;}
+.bk-prod-card:hover .bk-add-btn{opacity:1;transform:translateY(0);}
+.bk-add-btn:hover{background:#466556;color:#fff;}
+.bk-prod-name{font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#1a1c1b;margin:0 0 4px;}
+.bk-prod-sub{font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0 0 6px;}
+.bk-prod-price{font-family:'Bodoni Moda',serif;font-size:16px;color:#466556;margin:0;}
 </style>
 
 <script>
-function filterCat(cat, btn) {
-  // Update tabs
-  document.querySelectorAll('.bk-tab').forEach(t => t.classList.remove('active'));
+var allCat = 'all';
+function filterCat(cat,btn){
+  allCat=cat;
+  document.querySelectorAll('.bk-tab').forEach(function(t){t.classList.remove('active');});
   btn.classList.add('active');
-  // Filter cards
-  var cards = document.querySelectorAll('.bk-prod-card');
-  var visible = 0;
-  cards.forEach(function(c) {
-    var show = cat === 'all' || c.dataset.cat === cat;
-    c.style.display = show ? 'flex' : 'none';
-    if (show) visible++;
+  var v=0;
+  document.querySelectorAll('.bk-prod-card').forEach(function(c){
+    var show=(cat==='all'||c.dataset.cat===cat);
+    c.style.display=show?'flex':'none';
+    if(show)v++;
   });
-  document.getElementById('bk-count').textContent = visible + ' product' + (visible !== 1 ? 's' : '');
-  document.getElementById('bk-empty').style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('bk-count').textContent=v+' product'+(v!==1?'s':'');
+  document.getElementById('bk-empty').style.display=v===0?'block':'none';
+}
+function sortProducts(val){
+  var grid=document.getElementById('bk-grid');
+  var cards=Array.from(grid.querySelectorAll('.bk-prod-card'));
+  cards.sort(function(a,b){
+    var ap=parseFloat(a.querySelector('.bk-prod-price').textContent.replace(/[^0-9.]/g,''));
+    var bp=parseFloat(b.querySelector('.bk-prod-price').textContent.replace(/[^0-9.]/g,''));
+    return val==='low'?ap-bp:val==='high'?bp-ap:0;
+  });
+  cards.forEach(function(c){grid.appendChild(c);});
 }
 </script>
 
