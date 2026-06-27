@@ -1,66 +1,84 @@
 ﻿<!DOCTYPE html>
 
-<html class="scroll-smooth" lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Shop All Collections | Bukahauz</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-panel {
+            background: rgba(250, 249, 247, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+        }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        body { scroll-behavior: smooth; }
+    </style>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     "colors": {
+                        "on-error-container": "#93000a",
+                        "secondary": "#8f4c37",
+                        "on-primary-container": "#163427",
+                        "on-error": "#ffffff",
+                        "surface": "#faf9f7",
                         "primary-container": "#7d9d8c",
                         "secondary-fixed-dim": "#ffb59e",
                         "surface-container": "#eeeeeb",
                         "on-tertiary-fixed-variant": "#623d3d",
                         "on-surface-variant": "#424844",
-                        "secondary": "#8f4c37",
-                        "on-error-container": "#93000a",
-                        "on-primary-container": "#163427",
-                        "on-error": "#ffffff",
-                        "surface": "#faf9f7",
+                        "inverse-surface": "#2f312f",
+                        "on-tertiary-container": "#462526",
                         "secondary-fixed": "#ffdbd0",
                         "outline": "#727974",
-                        "on-tertiary-container": "#462526",
-                        "inverse-surface": "#2f312f",
                         "tertiary-fixed": "#ffdad9",
                         "on-tertiary": "#ffffff",
-                        "surface-container-lowest": "#ffffff",
-                        "tertiary-fixed-dim": "#eebaba",
-                        "background": "#faf9f7",
-                        "error-container": "#ffdad6",
-                        "surface-container-high": "#e9e8e5",
-                        "tertiary-container": "#b98a8a",
-                        "on-background": "#1a1c1b",
-                        "on-primary-fixed": "#022115",
                         "surface-container-highest": "#e3e2e0",
-                        "surface-variant": "#e3e2e0",
                         "tertiary": "#7c5454",
-                        "on-primary-fixed-variant": "#2f4d3f",
+                        "surface-variant": "#e3e2e0",
+                        "on-surface": "#1a1c1b",
                         "surface-container-low": "#f4f4f1",
                         "primary": "#466556",
-                        "on-surface": "#1a1c1b",
-                        "outline-variant": "#c1c8c2",
+                        "on-primary-fixed-variant": "#2f4d3f",
                         "on-secondary-container": "#7a3b27",
-                        "on-primary": "#ffffff",
-                        "on-secondary-fixed-variant": "#723522",
+                        "outline-variant": "#c1c8c2",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#eebaba",
+                        "background": "#faf9f7",
+                        "tertiary-container": "#b98a8a",
+                        "on-background": "#1a1c1b",
+                        "surface-container-high": "#e9e8e5",
+                        "on-primary-fixed": "#022115",
+                        "surface-tint": "#466556",
+                        "surface-dim": "#dadad7",
+                        "secondary-container": "#ffa98f",
+                        "on-tertiary-fixed": "#301314",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#adcebc",
+                        "on-secondary-fixed": "#3a0b00",
                         "inverse-on-surface": "#f1f1ee",
                         "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#723522",
+                        "on-primary": "#ffffff",
                         "surface-bright": "#faf9f7",
-                        "primary-fixed-dim": "#adcebc",
                         "primary-fixed": "#c8ead7",
-                        "surface-dim": "#dadad7",
-                        "surface-tint": "#466556",
-                        "secondary-container": "#ffa98f",
-                        "on-secondary": "#ffffff",
-                        "on-tertiary-fixed": "#301314",
-                        "on-secondary-fixed": "#3a0b00",
-                        "inverse-primary": "#adcebc"
+                        "primary-fixed-dim": "#adcebc"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.125rem",
@@ -69,60 +87,107 @@
                         "full": "0.75rem"
                     },
                     "spacing": {
-                        "margin-mobile": "20px",
-                        "lg": "32px",
-                        "md": "16px",
-                        "container-max": "1440px",
-                        "xl": "64px",
-                        "unit": "4px",
-                        "xxl": "128px",
-                        "gutter": "24px",
                         "sm": "8px",
-                        "xs": "4px"
+                        "xs": "4px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "xxl": "128px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "md": "16px",
+                        "lg": "32px"
                     },
                     "fontFamily": {
-                        "headline-lg-mobile": ["Bodoni Moda"],
-                        "label-sm": ["Inter"],
-                        "label-lg": ["Inter"],
-                        "body-md": ["Inter"],
-                        "body-lg": ["Inter"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "display-lg": ["Bodoni Moda"],
                         "headline-md": ["Bodoni Moda"],
                         "display-md": ["Bodoni Moda"],
-                        "display-lg": ["Bodoni Moda"],
-                        "headline-lg": ["Bodoni Moda"]
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Bodoni Moda"]
                     },
                     "fontSize": {
-                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.03em", "fontWeight": "500"}],
-                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
                         "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
                         "display-md": ["48px", {"lineHeight": "1.1", "fontWeight": "500"}],
-                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}]
                     }
                 },
             },
         }
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .grain-overlay {
-            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
-            opacity: 0.05;
-            pointer-events: none;
-        }
-        .editorial-shadow {
-            box-shadow: 0 10px 30px -10px rgba(70, 101, 86, 0.1);
-        }
-    </style>
+<style id="bk-form-style">
+/* Professional form styling */
+.bk-form-field { margin-bottom: 20px; }
+.bk-form-field label {
+  display: block;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #424844;
+  margin-bottom: 8px;
+}
+.bk-form-field input,
+.bk-form-field select,
+.bk-form-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  color: #1a1c1b;
+  background: #faf9f7;
+  border: 1px solid #c1c8c2;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.bk-form-field input:focus,
+.bk-form-field select:focus,
+.bk-form-field textarea:focus {
+  border-color: #466556;
+  box-shadow: 0 0 0 3px rgba(70,101,86,.08);
+}
+.bk-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 640px) { .bk-form-row { grid-template-columns: 1fr; } }
+.bk-form-submit {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: #466556;
+  color: #fff;
+  border: none;
+  padding: 16px 40px;
+  cursor: pointer;
+  transition: background .2s;
+  width: 100%;
+}
+.bk-form-submit:hover { background: #2f4d3f; }
+.bk-form-wrap {
+  background: #fff;
+  border: 1px solid #e3e2e0;
+  padding: 48px;
+  box-shadow: 0 2px 24px rgba(0,0,0,.04);
+}
+@media (max-width: 640px) { .bk-form-wrap { padding: 28px 20px; } }
+</style>
 </head>
-<body class="bg-surface text-on-surface selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
-<div class="fixed inset-0 grain-overlay z-[60]"></div>
-<!-- Navigation -->
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<div class="grain-overlay"></div>
+<!-- TopNavBar -->
 <header id="bk-header" style="position:fixed;top:0;left:0;right:0;z-index:50;">
 
 <!-- Outer strip: subtle bg only for the bar itself -->
@@ -349,269 +414,760 @@ document.addEventListener('click', function(e) {
 });
 </script>
 </header>
-<main class="pt-xxl">
-<!-- Hero Section -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-xl mb-xl">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-md border-b border-outline-variant/20 pb-md">
-<div class="max-w-2xl">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-sm block">Curated Living</span>
-<h1 class="font-display-lg text-display-lg text-on-surface mb-sm">The Shop</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                        A tactile collection of hand-selected culinary essentials and lifestyle pieces, designed to bring the Bukahauz hospitality experience into your private sanctuary.
-                    </p>
-</div>
-<div class="flex gap-sm">
-<button class="font-label-lg text-label-lg border border-outline-variant px-md py-xs hover:bg-surface-container transition-colors">Filter</button>
-<button class="font-label-lg text-label-lg border border-outline-variant px-md py-xs hover:bg-surface-container transition-colors">Sort</button>
-</div>
-</div>
-</section>
-<!-- Collections Bento Grid -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-xl pb-xxl"><div class="space-y-xxl">
-<!-- Aprons Collection -->
-<div class="group">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-lg">
-<div class="md:col-span-5">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-sm block">Collection 01</span>
-<h3 class="font-display-md text-display-md text-on-surface mb-md">Artisan Aprons</h3>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">Professional wear for the home curator, crafted from heavy canvas and premium leather.</p>
-<a href="shop-collection.html" style="display:inline-block;padding:12px 28px;background:#466556;color:#fff;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;">Shop the Collection</a>
-</div>
-<div class="md:col-span-7">
-<div class="grid grid-cols-2 gap-md">
-<div class="aspect-[4/5] overflow-hidden bg-surface-container-low">
-<img alt="Linen Apron" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/>
-</div>
-<div class="aspect-[4/5] overflow-hidden bg-surface-container-low">
-<img alt="Leather Detail" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Dining & Serving -->
-<div class="group">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-lg">
-<div class="md:col-span-7 order-2 md:order-1">
-<div class="grid grid-cols-3 gap-md">
-<div class="aspect-square overflow-hidden bg-surface-container-low">
-<img alt="Serving Board" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/>
-</div>
-<div class="aspect-square overflow-hidden bg-surface-container-low">
-<img alt="Ceramic Bowl" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/>
-</div>
-<div class="aspect-square overflow-hidden bg-surface-container-low">
-<img alt="Wooden Tray" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/>
-</div>
-</div>
-</div>
-<div class="md:col-span-5 order-1 md:order-2">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-sm block">Collection 02</span>
-<h3 class="font-display-md text-display-md text-on-surface mb-md">Dining &amp; Serving</h3>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">Sculptural boards and vessels designed for the center of the table and shared moments.</p>
-<a class="font-label-lg text-label-lg text-primary underline underline-offset-4" href="#">Explore 12 Pieces</a>
-</div>
-</div>
-</div>
-<!-- Tableware & Cutlery -->
-<div class="group">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-lg">
-<div class="md:col-span-4">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-sm block">Collection 03 &amp; 04</span>
-<h3 class="font-display-md text-display-md text-on-surface mb-md">Tableware &amp; Cutlery</h3>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">Hand-thrown ceramics and weighted precision cutlery for every course.</p>
-<a href="shop-collection.html" style="color:#466556;font-family:Inter,sans-serif;font-size:14px;text-decoration:underline;">View All Sets</a>
-</div>
-<div class="md:col-span-8">
-<div class="grid grid-cols-4 gap-sm">
-<div class="aspect-[3/4] overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-<div class="aspect-[3/4] overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-<div class="aspect-[3/4] overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-<div class="aspect-[3/4] overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Wine & Hosting -->
-<div class="group">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-<div class="md:col-span-12">
-<div class="flex justify-between items-end mb-lg">
-<div>
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-sm block">Collection 05 &amp; 06</span>
-<h3 class="font-display-md text-display-md text-on-surface">Wine &amp; Hosting</h3>
-</div>
-<a href="shop.html" style="color:#466556;font-family:Inter,sans-serif;font-size:14px;text-decoration:underline;">Shop Essentials</a>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-5 gap-md">
-<div class="aspect-square overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-<div class="aspect-square overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-<div class="aspect-square overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-<div class="aspect-square overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-<div class="aspect-square overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-<div class="aspect-square overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-<div class="aspect-square overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-<div class="aspect-square overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-<div class="aspect-square overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-<div class="aspect-square overflow-hidden bg-surface-container-low"><img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXmtv3JnAyb_aUcFjBqlrcO4S3BDAZMNDGAPrr2NGrQTMX4xoZqra_S4D8WEZt2_m-_KI-p-W4jqBe1dQ9H9e-mmzgxyLnceJDFGXbnuzHLDmUNIz2uVQ-2ZTzUmsricP2IyfPaDL7jevL-1AwLvb-FCLbnmI3jy1Ju4iRMJMp3zw1ER7xeck9LOu74V6-y0TqVRnEklCbBkjBOre0IfB7J3JoLBQ-Gl3jrCdgSxz4rplSfjyATbfPNKgLP7DZ3GHBjrZDk-7W2Va"/></div>
-</div>
-</div>
-</div>
-</div>
-</div></section>
-<!-- Signature Experience Banner -->
-<section class="bg-primary-container/20 py-xxl">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
-<div class="order-2 md:order-1">
-<img alt="Signature Kitchen" class="w-full aspect-square object-cover" data-alt="An atmospheric wide-angle shot of a minimalist, high-end kitchen with dark oak cabinetry and a waterfall marble island. A single spotlight illuminates a curated selection of Bukahauz products on the counter. The overall feeling is one of supreme elegance, quiet luxury, and architectural precision, with a soft, ethereal glow filtering through linen curtains." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcCfNsLra3k5Ks3YT-KMzs23VM23jCptLRlrG-gWrNp8b1Cg0XnNGpxvy-Nto-5iNUH_aA5tzQlsgAy6hqW-S-IrrjX8OsxQ1MaBlTZ9cP97srn0e4ooToMc0YYzmVcKv654Vdr0GNJaBv8oBCAIjOsN3ncZWHMZO4gyspwUUpe1zm4hDBryV1QMojux2P09u1UCzGycoAaOOeK3EM52Qe1JHzZ_1YhGG9dYWzS_LkD9546RZl6x0RbrbFgiPTOmRBESLabm5BqUcz"/>
-</div>
-<div class="order-1 md:order-2">
-<h2 class="font-display-md text-display-md text-on-primary-container mb-md">Gifts for the Gourmet</h2>
-<p class="font-body-lg text-body-lg text-on-primary-container/80 mb-lg">
-                        Thoughtfully packaged gift sets featuring our most-loved pieces, from the Professional Chef's kit to the Ultimate Hosting bundle. Each set is delivered in our signature linen-bound boxing.
-                    </p>
-<div class="flex flex-col sm:flex-row gap-md">
-<a href="shop.html" style="color:#466556;font-family:Inter,sans-serif;font-size:14px;text-decoration:underline;">Shop Gift Guide</a>
-<a href="shop-collection.html" style="color:#466556;font-family:Inter,sans-serif;font-size:14px;text-decoration:underline;">Curated Sets</a>
-</div>
-</div>
-</div>
-</section>
-<!-- Secondary Categories (Quick Links) -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-xl py-xxl">
-<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] mb-xl text-center">Browse by Speciality</h4>
-<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-md">
-<a class="flex flex-col items-center group" href="#">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-sm group-hover:bg-primary-container/20 transition-colors">
-<span class="material-symbols-outlined text-primary">wine_bar</span>
-</div>
-<span class="font-label-lg text-label-lg text-on-surface">Wine Bar</span>
-</a>
-<a class="flex flex-col items-center group" href="#">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-sm group-hover:bg-primary-container/20 transition-colors">
-<span class="material-symbols-outlined text-primary">local_dining</span>
-</div>
-<span class="font-label-lg text-label-lg text-on-surface">Fine Dining</span>
-</a>
-<a class="flex flex-col items-center group" href="#">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-sm group-hover:bg-primary-container/20 transition-colors">
-<span class="material-symbols-outlined text-primary">bakery_dining</span>
-</div>
-<span class="font-label-lg text-label-lg text-on-surface">Bakery</span>
-</a>
-<a class="flex flex-col items-center group" href="#">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-sm group-hover:bg-primary-container/20 transition-colors">
-<span class="material-symbols-outlined text-primary">skillet</span>
-</div>
-<span class="font-label-lg text-label-lg text-on-surface">Cookware</span>
-</a>
-<a class="flex flex-col items-center group" href="#">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-sm group-hover:bg-primary-container/20 transition-colors">
-<span class="material-symbols-outlined text-primary">coffee</span>
-</div>
-<span class="font-label-lg text-label-lg text-on-surface">Cafe</span>
-</a>
-<a class="flex flex-col items-center group" href="#">
-<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-sm group-hover:bg-primary-container/20 transition-colors">
-<span class="material-symbols-outlined text-primary">grocery</span>
-</div>
-<span class="font-label-lg text-label-lg text-on-surface">Gourmet Pantry</span>
-</a>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer style="background:#f4f4f1;border-top:1px solid rgba(193,200,194,0.3);">
+<main style="padding-top:130px;">
 
-  <!-- 5-Column grid -->
+<!-- Page Header -->
+<section style="background:#f4f4f1;padding:48px 32px 40px;text-align:center;border-bottom:1px solid #e3e2e0;">
+  <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 10px;">Bukahauz Shop</p>
+  <h1 style="font-family:'Bodoni Moda',serif;font-size:48px;font-weight:500;line-height:1.1;color:#1a1c1b;margin:0 0 12px;">All Collections</h1>
+  <p style="font-family:Inter,sans-serif;font-size:16px;color:#424844;margin:0;">Artisan homeware for those who live and entertain beautifully.</p>
+</section>
+
+<!-- Category Filter Tabs -->
+<section style="background:#fff;border-bottom:1px solid #e3e2e0;position:sticky;top:112px;z-index:40;">
+  <div style="max-width:1440px;margin:0 auto;padding:0 32px;display:flex;gap:0;overflow-x:auto;">
+    <button class="bk-tab active" onclick="filterCat('all',this)">All Products</button>
+    <button class="bk-tab" onclick="filterCat('dining',this)">Dining &amp; Serving</button>
+    <button class="bk-tab" onclick="filterCat('tableware',this)">Tableware</button>
+    <button class="bk-tab" onclick="filterCat('wine',this)">Wine &amp; Dining</button>
+    <button class="bk-tab" onclick="filterCat('cutlery',this)">Cutlery</button>
+    <button class="bk-tab" onclick="filterCat('linens',this)">Linens &amp; Aprons</button>
+    <button class="bk-tab" onclick="filterCat('gift',this)">Gift Shop</button>
+  </div>
+</section>
+
+<!-- Sort + Count Bar -->
+<div style="max-width:1440px;margin:0 auto;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;">
+  <p id="bk-count" style="font-family:Inter,sans-serif;font-size:14px;color:#727974;margin:0;">50 products</p>
+  <select onchange="" style="font-family:Inter,sans-serif;font-size:13px;border:1px solid #c1c8c2;padding:8px 12px;color:#424844;background:#fff;cursor:pointer;outline:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';">
+    <option>Sort: Featured</option>
+    <option>Price: Low to High</option>
+    <option>Price: High to Low</option>
+    <option>Newest First</option>
+  </select>
+</div>
+
+<!-- Product Grid -->
+<section style="max-width:1440px;margin:0 auto;padding:0 32px 80px;">
+  <div class="bk-shop-grid" id="bk-grid">
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV" alt="The Ember Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £48',1500)">Add to Bag — £48</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">The Ember Bowl</h3>
+    <p class="bk-prod-sub">Smoked Terracotta Stone</p>
+    <p class="bk-prod-price">£48</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSVtUdGUeQ47RM3tghAlQoXZ0d9C2a47FPdsZu66PNy5-A0k7N7sbGmYHMb0FG6bdCSxqGgX6LW5AIcIUVQXBD1BePP_YuxJ-shY8tkdYjFhq4TqxygiNRY3IekKv28yeYPVm4D9SrnlRNT9reOjFhxs7ylyq6uCTZVlUQ2mWmSmjYCJbm3yuh-Fg2BObGEnpoXiupoYGOucl7o4IbyoIxfZ43tj0M6me-qDcTWj3yLkVCWDSwGS83ePyfpWPja9IgSmMJme5tKnK" alt="Obsidian Serving Platter" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £95',1500)">Add to Bag — £95</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Obsidian Serving Platter</h3>
+    <p class="bk-prod-sub">Hand-finished Black Stone</p>
+    <p class="bk-prod-price">£95</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfMAGl5p2VmZNHEw4TfJ7GpmqECz_Z5bKKRhKro52RBWQpgwiFBEfSi-I14IFD9euJWrG1HGZ7qSxv5eKMEVKOTsTczjs2JXmZasjxUY0AFcI4F5m_DU9t250VbJHC365r9VATTCvnEw3_b2MoKLGf7-By9-bmJNzhQEN1yXRkIamPHR0PNj97knNRm5d_8ZQ-0yWwbx_MrRef4DCe3xo_zHXsoMJnrcs63d9Ii13ai_UzJfEcqcv-by5tnX1dhsNgA7dDJ1Y4mQVP" alt="Heritage Wooden Board" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £65',1500)">Add to Bag — £65</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Heritage Wooden Board</h3>
+    <p class="bk-prod-sub">Reclaimed Olive Wood</p>
+    <p class="bk-prod-price">£65</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV" alt="Artisan Dipping Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £32',1500)">Add to Bag — £32</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Artisan Dipping Plate</h3>
+    <p class="bk-prod-sub">Coastal Sand Ceramic</p>
+    <p class="bk-prod-price">£32</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs" alt="The Host Tray" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £78',1500)">Add to Bag — £78</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">The Host Tray</h3>
+    <p class="bk-prod-sub">Brushed Walnut with Handles</p>
+    <p class="bk-prod-price">£78</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSVtUdGUeQ47RM3tghAlQoXZ0d9C2a47FPdsZu66PNy5-A0k7N7sbGmYHMb0FG6bdCSxqGgX6LW5AIcIUVQXBD1BePP_YuxJ-shY8tkdYjFhq4TqxygiNRY3IekKv28yeYPVm4D9SrnlRNT9reOjFhxs7ylyq6uCTZVlUQ2mWmSmjYCJbm3yuh-Fg2BObGEnpoXiupoYGOucl7o4IbyoIxfZ43tj0M6me-qDcTWj3yLkVCWDSwGS83ePyfpWPja9IgSmMJme5tKnK" alt="Carved Serving Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £55',1500)">Add to Bag — £55</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Carved Serving Bowl</h3>
+    <p class="bk-prod-sub">Mango Wood & Resin</p>
+    <p class="bk-prod-price">£55</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV" alt="Slate Cheese Board Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £42',1500)">Add to Bag — £42</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Slate Cheese Board Set</h3>
+    <p class="bk-prod-sub">Natural Slate with Chalk</p>
+    <p class="bk-prod-price">£42</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfMAGl5p2VmZNHEw4TfJ7GpmqECz_Z5bKKRhKro52RBWQpgwiFBEfSi-I14IFD9euJWrG1HGZ7qSxv5eKMEVKOTsTczjs2JXmZasjxUY0AFcI4F5m_DU9t250VbJHC365r9VATTCvnEw3_b2MoKLGf7-By9-bmJNzhQEN1yXRkIamPHR0PNj97knNRm5d_8ZQ-0yWwbx_MrRef4DCe3xo_zHXsoMJnrcs63d9Ii13ai_UzJfEcqcv-by5tnX1dhsNgA7dDJ1Y4mQVP" alt="Rattan Bread Basket" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £28',1500)">Add to Bag — £28</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Rattan Bread Basket</h3>
+    <p class="bk-prod-sub">Hand-Woven Seagrass</p>
+    <p class="bk-prod-price">£28</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs" alt="Copper Serving Spoon Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £52',1500)">Add to Bag — £52</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Copper Serving Spoon Set</h3>
+    <p class="bk-prod-sub">Hammered Copper, Set of 3</p>
+    <p class="bk-prod-price">£52</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="dining">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="Marble Lazy Susan" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £110',1500)">Add to Bag — £110</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Marble Lazy Susan</h3>
+    <p class="bk-prod-sub">White Carrara Marble</p>
+    <p class="bk-prod-price">£110</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfMAGl5p2VmZNHEw4TfJ7GpmqECz_Z5bKKRhKro52RBWQpgwiFBEfSi-I14IFD9euJWrG1HGZ7qSxv5eKMEVKOTsTczjs2JXmZasjxUY0AFcI4F5m_DU9t250VbJHC365r9VATTCvnEw3_b2MoKLGf7-By9-bmJNzhQEN1yXRkIamPHR0PNj97knNRm5d_8ZQ-0yWwbx_MrRef4DCe3xo_zHXsoMJnrcs63d9Ii13ai_UzJfEcqcv-by5tnX1dhsNgA7dDJ1Y4mQVP" alt="Stone Dinner Plates" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £88',1500)">Add to Bag — £88</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Stone Dinner Plates</h3>
+    <p class="bk-prod-sub">Earthy Matte Glaze, Set of 4</p>
+    <p class="bk-prod-price">£88</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFIwbIPGrmTsPzc_oouazKTh6946Ia0BRtx-K6uXYcMas6p-rHoWSoJ0cEn8GuimGXcUHN2wL9t4az9NEiPTb2ybqMmCaMihWT8m0Ht647Uw9pFKboNRzZGIkxGRJO7De3L4PRMBYUDl71SCEJ3NjbqLPzblTqknvQMJGhJIg7z03hnqzRHwuwSamiTU8MxXCJC_EG_Big5SRp8soQsxnakaqOPr1C3ctSoFJ1faVk95fPPw5J7M-HrAJ5OrRmui3HmmGrHtshNFo5" alt="Ivory Porcelain Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £145',1500)">Add to Bag — £145</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Ivory Porcelain Set</h3>
+    <p class="bk-prod-sub">12-piece Fine Porcelain</p>
+    <p class="bk-prod-price">£145</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV" alt="Brushstroke Bowl Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £62',1500)">Add to Bag — £62</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Brushstroke Bowl Set</h3>
+    <p class="bk-prod-sub">Artisan-painted, Set of 2</p>
+    <p class="bk-prod-price">£62</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9RFQyVigqeG1tgW7FV2kpVbc4DV8MKugDb7jhmBpPfsSR_wpTUmmEwsW6U_shbv6fTZ_ykEg12UQzWWuNH3JDasrmrh4kDKak9k6pSeoBeGdm0qGy9_O6YhZD8uAXKSCYL2SDOCuu1NKWF5yI9BbCWq-OBd39GHupCAhHUiBKqU9ApGzqqSebvnrRFg3JX2IDJfCYKVGpencFwtTY7xg1pqoJRlVWhiXJFIsV6lNt2Dv54OyeOw0vDijSy9Jp954ccMjDCgcWRXA" alt="Midnight Side Plates" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £55',1500)">Add to Bag — £55</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Midnight Side Plates</h3>
+    <p class="bk-prod-sub">Deep Blue Ceramic, Set of 4</p>
+    <p class="bk-prod-price">£55</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="Terracotta Soup Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £38',1500)">Add to Bag — £38</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Terracotta Soup Bowl</h3>
+    <p class="bk-prod-sub">Handthrown Earthenware</p>
+    <p class="bk-prod-price">£38</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXl6XUmq9s-m8_r-MDyqSXENucOwXg-X7--b0PFhvOj2tH3fPVwCr6eNc7krSu2_FyJvnwtC-nmoI7SLvhtW87T3INe7znrBjVHkGrm_FRZgG7H28wJ9y3hVqW0zJiS1qp6MlxSfredemZ1CRHE7_G3ivqj4U-hoT7I1MTZ3U-VX3mTbbvyFC7bxe2IP7uChkgVybFO0bXwaUuwuRG28Q5365RdFk7xcMCc7qSPy6txGsk09OmyOt7eyUUk0SC8SeXRHMO-dY88nJv" alt="The Everyday Mug" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £24',1500)">Add to Bag — £24</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">The Everyday Mug</h3>
+    <p class="bk-prod-sub">Stoneware with Speckled Glaze</p>
+    <p class="bk-prod-price">£24</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV" alt="Salad Bowl Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £72',1500)">Add to Bag — £72</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Salad Bowl Set</h3>
+    <p class="bk-prod-sub">Glazed Celadon, Large + Small</p>
+    <p class="bk-prod-price">£72</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfMAGl5p2VmZNHEw4TfJ7GpmqECz_Z5bKKRhKro52RBWQpgwiFBEfSi-I14IFD9euJWrG1HGZ7qSxv5eKMEVKOTsTczjs2JXmZasjxUY0AFcI4F5m_DU9t250VbJHC365r9VATTCvnEw3_b2MoKLGf7-By9-bmJNzhQEN1yXRkIamPHR0PNj97knNRm5d_8ZQ-0yWwbx_MrRef4DCe3xo_zHXsoMJnrcs63d9Ii13ai_UzJfEcqcv-by5tnX1dhsNgA7dDJ1Y4mQVP" alt="Flat Pasta Plate" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £44',1500)">Add to Bag — £44</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Flat Pasta Plate</h3>
+    <p class="bk-prod-sub">Sage Rim Ceramic, Set of 2</p>
+    <p class="bk-prod-price">£44</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs" alt="Breakfast Bowl" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £29',1500)">Add to Bag — £29</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Breakfast Bowl</h3>
+    <p class="bk-prod-sub">Sandy Beige Handcrafted</p>
+    <p class="bk-prod-price">£29</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="tableware">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXl6XUmq9s-m8_r-MDyqSXENucOwXg-X7--b0PFhvOj2tH3fPVwCr6eNc7krSu2_FyJvnwtC-nmoI7SLvhtW87T3INe7znrBjVHkGrm_FRZgG7H28wJ9y3hVqW0zJiS1qp6MlxSfredemZ1CRHE7_G3ivqj4U-hoT7I1MTZ3U-VX3mTbbvyFC7bxe2IP7uChkgVybFO0bXwaUuwuRG28Q5365RdFk7xcMCc7qSPy6txGsk09OmyOt7eyUUk0SC8SeXRHMO-dY88nJv" alt="Dessert Coupe Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £65',1500)">Add to Bag — £65</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Dessert Coupe Set</h3>
+    <p class="bk-prod-sub">Crystal-clear Glass, Set of 4</p>
+    <p class="bk-prod-price">£65</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="wine">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXl6XUmq9s-m8_r-MDyqSXENucOwXg-X7--b0PFhvOj2tH3fPVwCr6eNc7krSu2_FyJvnwtC-nmoI7SLvhtW87T3INe7znrBjVHkGrm_FRZgG7H28wJ9y3hVqW0zJiS1qp6MlxSfredemZ1CRHE7_G3ivqj4U-hoT7I1MTZ3U-VX3mTbbvyFC7bxe2IP7uChkgVybFO0bXwaUuwuRG28Q5365RdFk7xcMCc7qSPy6txGsk09OmyOt7eyUUk0SC8SeXRHMO-dY88nJv" alt="Verge Decanter" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £120',1500)">Add to Bag — £120</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Verge Decanter</h3>
+    <p class="bk-prod-sub">Hand-Blown Crystal</p>
+    <p class="bk-prod-price">£120</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="wine">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9RFQyVigqeG1tgW7FV2kpVbc4DV8MKugDb7jhmBpPfsSR_wpTUmmEwsW6U_shbv6fTZ_ykEg12UQzWWuNH3JDasrmrh4kDKak9k6pSeoBeGdm0qGy9_O6YhZD8uAXKSCYL2SDOCuu1NKWF5yI9BbCWq-OBd39GHupCAhHUiBKqU9ApGzqqSebvnrRFg3JX2IDJfCYKVGpencFwtTY7xg1pqoJRlVWhiXJFIsV6lNt2Dv54OyeOw0vDijSy9Jp954ccMjDCgcWRXA" alt="Red Wine Glass Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £85',1500)">Add to Bag — £85</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Red Wine Glass Set</h3>
+    <p class="bk-prod-sub">Thin-Rim Bordeaux, Set of 4</p>
+    <p class="bk-prod-price">£85</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="wine">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXl6XUmq9s-m8_r-MDyqSXENucOwXg-X7--b0PFhvOj2tH3fPVwCr6eNc7krSu2_FyJvnwtC-nmoI7SLvhtW87T3INe7znrBjVHkGrm_FRZgG7H28wJ9y3hVqW0zJiS1qp6MlxSfredemZ1CRHE7_G3ivqj4U-hoT7I1MTZ3U-VX3mTbbvyFC7bxe2IP7uChkgVybFO0bXwaUuwuRG28Q5365RdFk7xcMCc7qSPy6txGsk09OmyOt7eyUUk0SC8SeXRHMO-dY88nJv" alt="Champagne Flutes" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £68',1500)">Add to Bag — £68</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Champagne Flutes</h3>
+    <p class="bk-prod-sub">Elongated Crystal, Set of 2</p>
+    <p class="bk-prod-price">£68</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="wine">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA175vmsCAhlv0aEDr_QEwq5uke-ylrCy6iVmX3zfqq97AQTVyzVwoE5F7klBhQpgaCWIeZs2yVvTxfiYOj0kjgAtqYwb_W-QxrJksCyrF9inG0kOiUu628WLREqdnDcAlj510EjCEbe6ie4lMJC88fsi8lhQjxXNhL7lBOQsLvZqO6Oxci8ci1whkM_zOpxsr-QVXagkSQtS9msc2hEuGxqsYh2LVPfkY5D1PZHgVL_v9fEIz5HgLX6ZNRv8DpLlJthcUbM2xTfpN0" alt="Wine Carafe" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £55',1500)">Add to Bag — £55</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Wine Carafe</h3>
+    <p class="bk-prod-sub">Frosted Borosilicate</p>
+    <p class="bk-prod-price">£55</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="wine">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs" alt="Olive Wood Corkscrew" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £34',1500)">Add to Bag — £34</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Olive Wood Corkscrew</h3>
+    <p class="bk-prod-sub">Hand-carved Handle</p>
+    <p class="bk-prod-price">£34</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="wine">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSVtUdGUeQ47RM3tghAlQoXZ0d9C2a47FPdsZu66PNy5-A0k7N7sbGmYHMb0FG6bdCSxqGgX6LW5AIcIUVQXBD1BePP_YuxJ-shY8tkdYjFhq4TqxygiNRY3IekKv28yeYPVm4D9SrnlRNT9reOjFhxs7ylyq6uCTZVlUQ2mWmSmjYCJbm3yuh-Fg2BObGEnpoXiupoYGOucl7o4IbyoIxfZ43tj0M6me-qDcTWj3yLkVCWDSwGS83ePyfpWPja9IgSmMJme5tKnK" alt="Aerator Pourer" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £28',1500)">Add to Bag — £28</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Aerator Pourer</h3>
+    <p class="bk-prod-sub">Polished Stainless Steel</p>
+    <p class="bk-prod-price">£28</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="wine">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA175vmsCAhlv0aEDr_QEwq5uke-ylrCy6iVmX3zfqq97AQTVyzVwoE5F7klBhQpgaCWIeZs2yVvTxfiYOj0kjgAtqYwb_W-QxrJksCyrF9inG0kOiUu628WLREqdnDcAlj510EjCEbe6ie4lMJC88fsi8lhQjxXNhL7lBOQsLvZqO6Oxci8ci1whkM_zOpxsr-QVXagkSQtS9msc2hEuGxqsYh2LVPfkY5D1PZHgVL_v9fEIz5HgLX6ZNRv8DpLlJthcUbM2xTfpN0" alt="Ice Bucket" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £95',1500)">Add to Bag — £95</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Ice Bucket</h3>
+    <p class="bk-prod-sub">Hammered Copper</p>
+    <p class="bk-prod-price">£95</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="wine">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9RFQyVigqeG1tgW7FV2kpVbc4DV8MKugDb7jhmBpPfsSR_wpTUmmEwsW6U_shbv6fTZ_ykEg12UQzWWuNH3JDasrmrh4kDKak9k6pSeoBeGdm0qGy9_O6YhZD8uAXKSCYL2SDOCuu1NKWF5yI9BbCWq-OBd39GHupCAhHUiBKqU9ApGzqqSebvnrRFg3JX2IDJfCYKVGpencFwtTY7xg1pqoJRlVWhiXJFIsV6lNt2Dv54OyeOw0vDijSy9Jp954ccMjDCgcWRXA" alt="Cocktail Mixing Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £115',1500)">Add to Bag — £115</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Cocktail Mixing Set</h3>
+    <p class="bk-prod-sub">Brass & Walnut, 5-piece</p>
+    <p class="bk-prod-price">£115</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="cutlery">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs" alt="Heirloom Serving Spoons" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £65',1500)">Add to Bag — £65</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Heirloom Serving Spoons</h3>
+    <p class="bk-prod-sub">Antiqued Brass, Set of 3</p>
+    <p class="bk-prod-price">£65</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="cutlery">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFIwbIPGrmTsPzc_oouazKTh6946Ia0BRtx-K6uXYcMas6p-rHoWSoJ0cEn8GuimGXcUHN2wL9t4az9NEiPTb2ybqMmCaMihWT8m0Ht647Uw9pFKboNRzZGIkxGRJO7De3L4PRMBYUDl71SCEJ3NjbqLPzblTqknvQMJGhJIg7z03hnqzRHwuwSamiTU8MxXCJC_EG_Big5SRp8soQsxnakaqOPr1C3ctSoFJ1faVk95fPPw5J7M-HrAJ5OrRmui3HmmGrHtshNFo5" alt="The Archive Knife Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £185',1500)">Add to Bag — £185</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">The Archive Knife Set</h3>
+    <p class="bk-prod-sub">Carbon Steel, Set of 6</p>
+    <p class="bk-prod-price">£185</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="cutlery">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFIwbIPGrmTsPzc_oouazKTh6946Ia0BRtx-K6uXYcMas6p-rHoWSoJ0cEn8GuimGXcUHN2wL9t4az9NEiPTb2ybqMmCaMihWT8m0Ht647Uw9pFKboNRzZGIkxGRJO7De3L4PRMBYUDl71SCEJ3NjbqLPzblTqknvQMJGhJIg7z03hnqzRHwuwSamiTU8MxXCJC_EG_Big5SRp8soQsxnakaqOPr1C3ctSoFJ1faVk95fPPw5J7M-HrAJ5OrRmui3HmmGrHtshNFo5" alt="Matte Black Cutlery" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £110',1500)">Add to Bag — £110</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Matte Black Cutlery</h3>
+    <p class="bk-prod-sub">18-piece Stainless Set</p>
+    <p class="bk-prod-price">£110</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="cutlery">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs" alt="Hammered Serving Fork" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £38',1500)">Add to Bag — £38</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Hammered Serving Fork</h3>
+    <p class="bk-prod-sub">Vintage Brass Finish</p>
+    <p class="bk-prod-price">£38</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="cutlery">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA175vmsCAhlv0aEDr_QEwq5uke-ylrCy6iVmX3zfqq97AQTVyzVwoE5F7klBhQpgaCWIeZs2yVvTxfiYOj0kjgAtqYwb_W-QxrJksCyrF9inG0kOiUu628WLREqdnDcAlj510EjCEbe6ie4lMJC88fsi8lhQjxXNhL7lBOQsLvZqO6Oxci8ci1whkM_zOpxsr-QVXagkSQtS9msc2hEuGxqsYh2LVPfkY5D1PZHgVL_v9fEIz5HgLX6ZNRv8DpLlJthcUbM2xTfpN0" alt="Cheese Knife Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £72',1500)">Add to Bag — £72</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Cheese Knife Set</h3>
+    <p class="bk-prod-sub">Rosewood Handle, 4-piece</p>
+    <p class="bk-prod-price">£72</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="cutlery">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFIwbIPGrmTsPzc_oouazKTh6946Ia0BRtx-K6uXYcMas6p-rHoWSoJ0cEn8GuimGXcUHN2wL9t4az9NEiPTb2ybqMmCaMihWT8m0Ht647Uw9pFKboNRzZGIkxGRJO7De3L4PRMBYUDl71SCEJ3NjbqLPzblTqknvQMJGhJIg7z03hnqzRHwuwSamiTU8MxXCJC_EG_Big5SRp8soQsxnakaqOPr1C3ctSoFJ1faVk95fPPw5J7M-HrAJ5OrRmui3HmmGrHtshNFo5" alt="Steak Knife Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £140',1500)">Add to Bag — £140</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Steak Knife Set</h3>
+    <p class="bk-prod-sub">Ebony Handle, Set of 6</p>
+    <p class="bk-prod-price">£140</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="cutlery">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9RFQyVigqeG1tgW7FV2kpVbc4DV8MKugDb7jhmBpPfsSR_wpTUmmEwsW6U_shbv6fTZ_ykEg12UQzWWuNH3JDasrmrh4kDKak9k6pSeoBeGdm0qGy9_O6YhZD8uAXKSCYL2SDOCuu1NKWF5yI9BbCWq-OBd39GHupCAhHUiBKqU9ApGzqqSebvnrRFg3JX2IDJfCYKVGpencFwtTY7xg1pqoJRlVWhiXJFIsV6lNt2Dv54OyeOw0vDijSy9Jp954ccMjDCgcWRXA" alt="Butter Spreader Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £44',1500)">Add to Bag — £44</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Butter Spreader Set</h3>
+    <p class="bk-prod-sub">Gold Plated, Set of 4</p>
+    <p class="bk-prod-price">£44</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="cutlery">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSVtUdGUeQ47RM3tghAlQoXZ0d9C2a47FPdsZu66PNy5-A0k7N7sbGmYHMb0FG6bdCSxqGgX6LW5AIcIUVQXBD1BePP_YuxJ-shY8tkdYjFhq4TqxygiNRY3IekKv28yeYPVm4D9SrnlRNT9reOjFhxs7ylyq6uCTZVlUQ2mWmSmjYCJbm3yuh-Fg2BObGEnpoXiupoYGOucl7o4IbyoIxfZ43tj0M6me-qDcTWj3yLkVCWDSwGS83ePyfpWPja9IgSmMJme5tKnK" alt="Cake Server Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £36',1500)">Add to Bag — £36</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Cake Server Set</h3>
+    <p class="bk-prod-sub">Linen Handle, 2-piece</p>
+    <p class="bk-prod-price">£36</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="linens">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="Sage Linen Napkins" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £34',1500)">Add to Bag — £34</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Sage Linen Napkins</h3>
+    <p class="bk-prod-sub">Stone-Washed Linen, Set of 4</p>
+    <p class="bk-prod-price">£34</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="linens">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="The Heritage Tablecloth" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £88',1500)">Add to Bag — £88</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">The Heritage Tablecloth</h3>
+    <p class="bk-prod-sub">Natural Linen, 200x140cm</p>
+    <p class="bk-prod-price">£88</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="linens">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="Terracotta Table Runner" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £42',1500)">Add to Bag — £42</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Terracotta Table Runner</h3>
+    <p class="bk-prod-sub">Woven Cotton, 180cm</p>
+    <p class="bk-prod-price">£42</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="linens">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="Embroidered Napkin Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £56',1500)">Add to Bag — £56</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Embroidered Napkin Set</h3>
+    <p class="bk-prod-sub">White Cotton, Set of 6</p>
+    <p class="bk-prod-price">£56</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="linens">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyUpGvgstKJH1E4x1VvAgtfyZ8gVFQ0mdvv2Yy3gIAtdGWfazXcKTDslk9T6d_o93MirODjJGtn83MnrktqYg1VL1309hpuq4u4VXqKEXXWOEE4Swp79VIDjlmUPw9gPyw4GxcfwY-ZVpSIiPVFbbesHCavC4pVGlA8fVCWGSdU58tMJB2cOq3Iu2iNvlJJkbHMn4PdfWCyyryBFXCSOwbsfxh6bwmsB5WXzXm0NzhQX4gwi2Y_jFDuR7LtngUS0gsv7Xc6s0dXRy4" alt="Linen Apron" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £62',1500)">Add to Bag — £62</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Linen Apron</h3>
+    <p class="bk-prod-sub">Cross-back Heritage Style</p>
+    <p class="bk-prod-price">£62</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="linens">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyUpGvgstKJH1E4x1VvAgtfyZ8gVFQ0mdvv2Yy3gIAtdGWfazXcKTDslk9T6d_o93MirODjJGtn83MnrktqYg1VL1309hpuq4u4VXqKEXXWOEE4Swp79VIDjlmUPw9gPyw4GxcfwY-ZVpSIiPVFbbesHCavC4pVGlA8fVCWGSdU58tMJB2cOq3Iu2iNvlJJkbHMn4PdfWCyyryBFXCSOwbsfxh6bwmsB5WXzXm0NzhQX4gwi2Y_jFDuR7LtngUS0gsv7Xc6s0dXRy4" alt="Chef Apron" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £75',1500)">Add to Bag — £75</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Chef Apron</h3>
+    <p class="bk-prod-sub">Heavy Canvas with Pockets</p>
+    <p class="bk-prod-price">£75</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="linens">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik" alt="Kitchen Towel Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £28',1500)">Add to Bag — £28</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Kitchen Towel Set</h3>
+    <p class="bk-prod-sub">Striped Linen, Set of 3</p>
+    <p class="bk-prod-price">£28</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="gift">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA175vmsCAhlv0aEDr_QEwq5uke-ylrCy6iVmX3zfqq97AQTVyzVwoE5F7klBhQpgaCWIeZs2yVvTxfiYOj0kjgAtqYwb_W-QxrJksCyrF9inG0kOiUu628WLREqdnDcAlj510EjCEbe6ie4lMJC88fsi8lhQjxXNhL7lBOQsLvZqO6Oxci8ci1whkM_zOpxsr-QVXagkSQtS9msc2hEuGxqsYh2LVPfkY5D1PZHgVL_v9fEIz5HgLX6ZNRv8DpLlJthcUbM2xTfpN0" alt="The Entertainer Gift Box" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £145',1500)">Add to Bag — £145</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">The Entertainer Gift Box</h3>
+    <p class="bk-prod-sub">Curated Set for the Host</p>
+    <p class="bk-prod-price">£145</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="gift">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXl6XUmq9s-m8_r-MDyqSXENucOwXg-X7--b0PFhvOj2tH3fPVwCr6eNc7krSu2_FyJvnwtC-nmoI7SLvhtW87T3INe7znrBjVHkGrm_FRZgG7H28wJ9y3hVqW0zJiS1qp6MlxSfredemZ1CRHE7_G3ivqj4U-hoT7I1MTZ3U-VX3mTbbvyFC7bxe2IP7uChkgVybFO0bXwaUuwuRG28Q5365RdFk7xcMCc7qSPy6txGsk09OmyOt7eyUUk0SC8SeXRHMO-dY88nJv" alt="Wine Lover's Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £165',1500)">Add to Bag — £165</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Wine Lover's Set</h3>
+    <p class="bk-prod-sub">Decanter + 2 Glasses</p>
+    <p class="bk-prod-price">£165</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="gift">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV" alt="The Dinner Party Kit" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £95',1500)">Add to Bag — £95</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">The Dinner Party Kit</h3>
+    <p class="bk-prod-sub">Candles, Napkins & Board</p>
+    <p class="bk-prod-price">£95</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="gift">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA175vmsCAhlv0aEDr_QEwq5uke-ylrCy6iVmX3zfqq97AQTVyzVwoE5F7klBhQpgaCWIeZs2yVvTxfiYOj0kjgAtqYwb_W-QxrJksCyrF9inG0kOiUu628WLREqdnDcAlj510EjCEbe6ie4lMJC88fsi8lhQjxXNhL7lBOQsLvZqO6Oxci8ci1whkM_zOpxsr-QVXagkSQtS9msc2hEuGxqsYh2LVPfkY5D1PZHgVL_v9fEIz5HgLX6ZNRv8DpLlJthcUbM2xTfpN0" alt="Artisan Hamper" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £220',1500)">Add to Bag — £220</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Artisan Hamper</h3>
+    <p class="bk-prod-sub">6 Curated Homeware Pieces</p>
+    <p class="bk-prod-price">£220</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="gift">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSVtUdGUeQ47RM3tghAlQoXZ0d9C2a47FPdsZu66PNy5-A0k7N7sbGmYHMb0FG6bdCSxqGgX6LW5AIcIUVQXBD1BePP_YuxJ-shY8tkdYjFhq4TqxygiNRY3IekKv28yeYPVm4D9SrnlRNT9reOjFhxs7ylyq6uCTZVlUQ2mWmSmjYCJbm3yuh-Fg2BObGEnpoXiupoYGOucl7o4IbyoIxfZ43tj0M6me-qDcTWj3yLkVCWDSwGS83ePyfpWPja9IgSmMJme5tKnK" alt="New Home Gift Set" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £85',1500)">Add to Bag — £85</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">New Home Gift Set</h3>
+    <p class="bk-prod-sub">Personalised Box</p>
+    <p class="bk-prod-price">£85</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="gift">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyUpGvgstKJH1E4x1VvAgtfyZ8gVFQ0mdvv2Yy3gIAtdGWfazXcKTDslk9T6d_o93MirODjJGtn83MnrktqYg1VL1309hpuq4u4VXqKEXXWOEE4Swp79VIDjlmUPw9gPyw4GxcfwY-ZVpSIiPVFbbesHCavC4pVGlA8fVCWGSdU58tMJB2cOq3Iu2iNvlJJkbHMn4PdfWCyyryBFXCSOwbsfxh6bwmsB5WXzXm0NzhQX4gwi2Y_jFDuR7LtngUS0gsv7Xc6s0dXRy4" alt="The Chef Gift Box" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £175',1500)">Add to Bag — £175</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">The Chef Gift Box</h3>
+    <p class="bk-prod-sub">Apron + Knife + Board</p>
+    <p class="bk-prod-price">£175</p>
+  </div>
+</div>
+<div class="bk-prod-card" data-cat="gift">
+  <div class="bk-prod-img-wrap">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9RFQyVigqeG1tgW7FV2kpVbc4DV8MKugDb7jhmBpPfsSR_wpTUmmEwsW6U_shbv6fTZ_ykEg12UQzWWuNH3JDasrmrh4kDKak9k6pSeoBeGdm0qGy9_O6YhZD8uAXKSCYL2SDOCuu1NKWF5yI9BbCWq-OBd39GHupCAhHUiBKqU9ApGzqqSebvnrRFg3JX2IDJfCYKVGpencFwtTY7xg1pqoJRlVWhiXJFIsV6lNt2Dv54OyeOw0vDijSy9Jp954ccMjDCgcWRXA" alt="Seasonal Bundle" class="bk-prod-img" loading="lazy"/>
+    <button class="bk-add-btn" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Bag — £125',1500)">Add to Bag — £125</button>
+  </div>
+  <div class="bk-prod-info">
+    <h3 class="bk-prod-name">Seasonal Bundle</h3>
+    <p class="bk-prod-sub">Summer Garden Collection</p>
+    <p class="bk-prod-price">£125</p>
+  </div>
+</div>
+  </div>
+  <p id="bk-empty" style="display:none;text-align:center;padding:80px 0;font-family:'Bodoni Moda',serif;font-size:24px;color:#727974;">No products in this category yet.</p>
+</section>
+
+</main>
+
+<style>
+/* Tabs */
+.bk-tab {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: #727974;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 16px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color .2s, border-color .2s;
+}
+.bk-tab:hover { color: #466556; }
+.bk-tab.active { color: #466556; border-bottom-color: #466556; }
+
+/* Product Grid — 5 columns */
+.bk-shop-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px 20px;
+}
+@media (max-width: 1199px) { .bk-shop-grid { grid-template-columns: repeat(4,1fr); } }
+@media (max-width: 900px)  { .bk-shop-grid { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 640px)  { .bk-shop-grid { grid-template-columns: repeat(2,1fr); gap: 12px; } }
+
+/* Product card */
+.bk-prod-card { display: flex; flex-direction: column; }
+.bk-prod-img-wrap {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #eeeeeb;
+  margin-bottom: 12px;
+}
+.bk-prod-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: filter .5s ease, transform .5s ease;
+}
+.bk-prod-card:hover .bk-prod-img {
+  filter: grayscale(0);
+  transform: scale(1.04);
+}
+.bk-add-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(255,255,255,.93);
+  backdrop-filter: blur(4px);
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #1a1c1b;
+  border: none;
+  padding: 10px 8px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .3s, transform .3s;
+}
+.bk-prod-card:hover .bk-add-btn { opacity: 1; transform: translateY(0); }
+.bk-add-btn:hover { background: #466556; color: #fff; }
+
+.bk-prod-name  { font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; color: #1a1c1b; margin: 0 0 4px; }
+.bk-prod-sub   { font-family: Inter, sans-serif; font-size: 12px; color: #727974; margin: 0 0 6px; }
+.bk-prod-price { font-family: 'Bodoni Moda', serif; font-size: 15px; color: #466556; margin: 0; }
+</style>
+
+<script>
+function filterCat(cat, btn) {
+  // Update tabs
+  document.querySelectorAll('.bk-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  // Filter cards
+  var cards = document.querySelectorAll('.bk-prod-card');
+  var visible = 0;
+  cards.forEach(function(c) {
+    var show = cat === 'all' || c.dataset.cat === cat;
+    c.style.display = show ? 'flex' : 'none';
+    if (show) visible++;
+  });
+  document.getElementById('bk-count').textContent = visible + ' product' + (visible !== 1 ? 's' : '');
+  document.getElementById('bk-empty').style.display = visible === 0 ? 'block' : 'none';
+}
+</script>
+
+<footer style="background:#f4f4f1;">
   <div style="max-width:1440px;margin:0 auto;padding:80px 32px 48px;">
     <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:40px;">
 
       <!-- Col 1: Brand -->
       <div>
         <a href="index.html" style="display:inline-block;margin-bottom:14px;">
-          <img src="bk-footer-logo.png" alt="Bukahauz — Culinary Excellence. Timeless Experiences." style="height:60px;width:auto;object-fit:contain;" />
+          <img src="bk-footer-logo.png" alt="Bukahauz" style="height:60px;width:auto;object-fit:contain;"/>
         </a>
-        <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.7;color:#424844;max-width:200px;margin-bottom:20px;">
-          A sanctuary for those who appreciate the narrative behind the meal.
-        </p>
+        <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.7;color:#424844;max-width:200px;margin-bottom:20px;">A sanctuary for those who appreciate the narrative behind the meal.</p>
         <div style="display:flex;gap:10px;">
-          <a href="https://instagram.com/bukahauz" target="_blank" aria-label="Instagram"
-             style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;"
-             onmouseover="this.style.borderColor='#466656';this.style.color='#466556';"
-             onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+          <a href="https://instagram.com/bukahauz" target="_blank" aria-label="Instagram" style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;" onmouseover="this.style.borderColor='#466556';this.style.color='#466556';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
             <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           </a>
-          <a href="https://facebook.com/bukahauz" target="_blank" aria-label="Facebook"
-             style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;"
-             onmouseover="this.style.borderColor='#466556';this.style.color='#466556';"
-             onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+          <a href="https://facebook.com/bukahauz" target="_blank" aria-label="Facebook" style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;" onmouseover="this.style.borderColor='#466556';this.style.color='#466556';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
             <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           </a>
-          <a href="https://wa.me/447000000000" target="_blank" aria-label="WhatsApp"
-             style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;"
-             onmouseover="this.style.borderColor='#466556';this.style.color='#466556';"
-             onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+          <a href="https://wa.me/447000000000" target="_blank" aria-label="WhatsApp" style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;" onmouseover="this.style.borderColor='#466556';this.style.color='#466556';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
             <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- Col 2: Experiences -->
+      <!-- Col 2: Experiences (trimmed) -->
       <div>
-        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Experiences</h3>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Experiences</h3>
         <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
-          <li><a href="private-dining.html"     style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Private Dining</a></li>
-          <li><a href="wine-tastings.html"      style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine Tastings</a></li>
-          <li><a href="chef-experiences.html"   style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Chef Experiences</a></li>
-          <li><a href="corporate-catering.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Corporate Catering</a></li>
-          <li><a href="event-food-planning.html"style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Event Planning</a></li>
-          <li><a href="private-parties.html"    style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Private Parties</a></li>
-          <li><a href="takeaway.html"           style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Takeaway</a></li>
-          <li><a href="testimonials.html"           style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Testimonials</a></li>
-          <li><a href="women-supporting-women.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Women Supporting Women</a></li>
+          <li><a href="private-dining.html"   style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Private Dining</a></li>
+          <li><a href="chef-experiences.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Chef Experiences</a></li>
+          <li><a href="wine-tastings.html"    style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine Tastings</a></li>
+          <li><a href="food-truck.html"       style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Food Truck</a></li>
         </ul>
       </div>
 
-      <!-- Col 3: Menus -->
+      <!-- Col 3: Shop (was column 4, now moved to column 3) -->
       <div>
-        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Menus</h3>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Shop</h3>
         <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
-          <li><a href="afro-continental-menu.html"          style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Afro Continental</a></li>
-          <li><a href="menus.html"                 style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Private Dining</a></li>
-          <li><a href="wine-pairing-menu.html"     style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine Pairings</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 4: Shop -->
-      <div>
-        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Shop</h3>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
-          <li><a href="shop.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Aprons</a></li>
-          <li><a href="shop.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Dining &amp; Serving</a></li>
-          <li><a href="shop.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Tableware</a></li>
-          <li><a href="shop.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine &amp; Dining</a></li>
-          <li><a href="shop.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Hosting Collection</a></li>
           <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">All Collections</a></li>
-          <li><a href="shop.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Cutlery &amp; Serving</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Dining &amp; Serving</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Tableware</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine &amp; Dining</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Gift Shop</a></li>
+          <li><a href="shop.html"            style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Best Sellers</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Company (NEW) -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Company</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="contact.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Contact Us</a></li>
+          <li><a href="shipping.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Shipping</a></li>
+          <li><a href="tracking.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Order Tracking</a></li>
+          <li><a href="refunds.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Refunds</a></li>
+          <li><a href="faq.html"      style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">FAQ</a></li>
         </ul>
       </div>
 
       <!-- Col 5: Newsletter -->
       <div>
-        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Stay in the Loop</h3>
-        <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#424844;margin:0 0 18px;">
-          Early access to new experiences, seasonal menus and artisan collaborations.
-        </p>
-        <form onsubmit="this.innerHTML='<p style='font-family:Inter,sans-serif;font-size:14px;color:#466556;'>Thank you &mdash; you're on the list!</p>';return false;" style="display:flex;flex-direction:column;gap:8px;">
-          <input type="email" required placeholder="Your email address"
-            style="font-family:Inter,sans-serif;font-size:14px;border:none;border-bottom:1px solid #c1c8c2;background:transparent;padding:8px 0;color:#1a1c1b;outline:none;transition:border-color .2s;"
-            onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-          <button type="submit"
-            style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:10px 16px;cursor:pointer;transition:background .2s;margin-top:4px;"
-            onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">
-            Subscribe
-          </button>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Stay in the Loop</h3>
+        <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#424844;margin:0 0 18px;">Early access to new experiences, seasonal menus and artisan collaborations.</p>
+        <form onsubmit="this.innerHTML='<p style=font-family:Inter,sans-serif;font-size:14px;color:#466556;margin:0>Thank you — you are on the list!</p>';return false;" style="display:flex;flex-direction:column;gap:8px;">
+          <input type="email" required placeholder="Your email address" style="font-family:Inter,sans-serif;font-size:14px;border:none;border-bottom:1px solid #c1c8c2;background:transparent;padding:8px 0;color:#1a1c1b;outline:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+          <button type="submit" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:10px 16px;cursor:pointer;margin-top:4px;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Subscribe</button>
         </form>
       </div>
 
@@ -619,7 +1175,7 @@ document.addEventListener('click', function(e) {
   </div>
 
   <!-- Bottom bar -->
-  <div style="border-top:1px solid rgba(193,200,194,0.4);background:#eeeeeb;">
+  <div style="border-top:1px solid rgba(193,200,194,.4);background:#eeeeeb;">
     <div style="max-width:1440px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
       <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2025 Bukahauz. All rights reserved.</p>
       <nav style="display:flex;flex-wrap:wrap;gap:24px;">
@@ -632,34 +1188,9 @@ document.addEventListener('click', function(e) {
   </div>
 
   <style>
-  @media (max-width: 1023px) {
-    footer > div:first-child > div { grid-template-columns: repeat(2, 1fr) !important; }
-  }
-  @media (max-width: 639px) {
-    footer > div:first-child > div { grid-template-columns: 1fr !important; }
-    footer > div:first-child { padding: 48px 20px 32px !important; }
-  }
+  @media(max-width:1023px){footer>div:first-child>div{grid-template-columns:repeat(2,1fr)!important;}}
+  @media(max-width:639px){footer>div:first-child>div{grid-template-columns:1fr!important;}footer>div:first-child{padding:48px 20px 32px!important;}}
   </style>
 
 </footer>
-<script>
-        // Simple parallax-like scroll reveal
-        window.addEventListener('scroll', () => {
-            const scroll = window.pageYOffset;
-            document.querySelectorAll('img').forEach(img => {
-                const speed = 0.05;
-                const rect = img.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    img.style.transform = `translateY(${(rect.top - window.innerHeight / 2) * speed}px)`;
-                }
-            });
-        });
-
-        // Hover effect enhancement
-        document.querySelectorAll('.group').forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                item.style.transition = 'all 0.5s ease-out';
-            });
-        });
-    </script>
 </body></html>

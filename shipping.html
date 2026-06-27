@@ -1,134 +1,127 @@
 ﻿<!DOCTYPE html>
 
-<html class="scroll-smooth" lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Wine Pairing Menu | Bukahauz</title>
+<title>Shipping Information | Bukahauz</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        .glass-panel {
+            background: rgba(250, 249, 247, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
         .grain-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none;
             z-index: 9999;
             opacity: 0.03;
-            background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+            background-image: url("https://www.transparenttextures.com/patterns/p6.png");
         }
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .reveal-on-scroll.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        body { scroll-behavior: smooth; }
     </style>
 <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                "primary-container": "#7d9d8c",
-                "secondary-fixed-dim": "#ffb59e",
-                "surface-container": "#eeeeeb",
-                "on-tertiary-fixed-variant": "#623d3d",
-                "on-surface-variant": "#424844",
-                "secondary": "#8f4c37",
-                "on-error-container": "#93000a",
-                "on-primary-container": "#163427",
-                "on-error": "#ffffff",
-                "surface": "#faf9f7",
-                "secondary-fixed": "#ffdbd0",
-                "outline": "#727974",
-                "on-tertiary-container": "#462526",
-                "inverse-surface": "#2f312f",
-                "tertiary-fixed": "#ffdad9",
-                "on-tertiary": "#ffffff",
-                "surface-container-lowest": "#ffffff",
-                "tertiary-fixed-dim": "#eebaba",
-                "background": "#faf9f7",
-                "error-container": "#ffdad6",
-                "surface-container-high": "#e9e8e5",
-                "tertiary-container": "#b98a8a",
-                "on-background": "#1a1c1b",
-                "on-primary-fixed": "#022115",
-                "surface-container-highest": "#e3e2e0",
-                "surface-variant": "#e3e2e0",
-                "tertiary": "#7c5454",
-                "on-primary-fixed-variant": "#2f4d3f",
-                "surface-container-low": "#f4f4f1",
-                "primary": "#466556",
-                "on-surface": "#1a1c1b",
-                "outline-variant": "#c1c8c2",
-                "on-secondary-container": "#7a3b27",
-                "on-primary": "#ffffff",
-                "on-secondary-fixed-variant": "#723522",
-                "inverse-on-surface": "#f1f1ee",
-                "error": "#ba1a1a",
-                "surface-bright": "#faf9f7",
-                "primary-fixed-dim": "#adcebc",
-                "primary-fixed": "#c8ead7",
-                "surface-dim": "#dadad7",
-                "surface-tint": "#466556",
-                "secondary-container": "#ffa98f",
-                "on-secondary": "#ffffff",
-                "on-tertiary-fixed": "#301314",
-                "on-secondary-fixed": "#3a0b00",
-                "inverse-primary": "#adcebc"
-              },
-              "borderRadius": {
-                "DEFAULT": "0.125rem",
-                "lg": "0.25rem",
-                "xl": "0.5rem",
-                "full": "0.75rem"
-              },
-              "spacing": {
-                "margin-mobile": "20px",
-                "lg": "32px",
-                "md": "16px",
-                "container-max": "1440px",
-                "xl": "64px",
-                "unit": "4px",
-                "xxl": "128px",
-                "gutter": "24px",
-                "sm": "8px",
-                "xs": "4px"
-              },
-              "fontFamily": {
-                "headline-lg-mobile": ["Bodoni Moda"],
-                "label-sm": ["Inter"],
-                "label-lg": ["Inter"],
-                "body-md": ["Inter"],
-                "body-lg": ["Inter"],
-                "headline-md": ["Bodoni Moda"],
-                "display-md": ["Bodoni Moda"],
-                "display-lg": ["Bodoni Moda"],
-                "headline-lg": ["Bodoni Moda"]
-              },
-              "fontSize": {
-                "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.03em", "fontWeight": "500"}],
-                "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                "display-md": ["48px", {"lineHeight": "1.1", "fontWeight": "500"}],
-                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
-                "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}]
-              }
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "secondary": "#8f4c37",
+                        "on-primary-container": "#163427",
+                        "on-error": "#ffffff",
+                        "surface": "#faf9f7",
+                        "primary-container": "#7d9d8c",
+                        "secondary-fixed-dim": "#ffb59e",
+                        "surface-container": "#eeeeeb",
+                        "on-tertiary-fixed-variant": "#623d3d",
+                        "on-surface-variant": "#424844",
+                        "inverse-surface": "#2f312f",
+                        "on-tertiary-container": "#462526",
+                        "secondary-fixed": "#ffdbd0",
+                        "outline": "#727974",
+                        "tertiary-fixed": "#ffdad9",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e3e2e0",
+                        "tertiary": "#7c5454",
+                        "surface-variant": "#e3e2e0",
+                        "on-surface": "#1a1c1b",
+                        "surface-container-low": "#f4f4f1",
+                        "primary": "#466556",
+                        "on-primary-fixed-variant": "#2f4d3f",
+                        "on-secondary-container": "#7a3b27",
+                        "outline-variant": "#c1c8c2",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#eebaba",
+                        "background": "#faf9f7",
+                        "tertiary-container": "#b98a8a",
+                        "on-background": "#1a1c1b",
+                        "surface-container-high": "#e9e8e5",
+                        "on-primary-fixed": "#022115",
+                        "surface-tint": "#466556",
+                        "surface-dim": "#dadad7",
+                        "secondary-container": "#ffa98f",
+                        "on-tertiary-fixed": "#301314",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#adcebc",
+                        "on-secondary-fixed": "#3a0b00",
+                        "inverse-on-surface": "#f1f1ee",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#723522",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#faf9f7",
+                        "primary-fixed": "#c8ead7",
+                        "primary-fixed-dim": "#adcebc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "xxl": "128px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "md": "16px",
+                        "lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Bodoni Moda"],
+                        "display-lg": ["Bodoni Moda"],
+                        "headline-md": ["Bodoni Moda"],
+                        "display-md": ["Bodoni Moda"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "display-md": ["48px", {"lineHeight": "1.1", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                },
             },
-          },
         }
     </script>
 <style id="bk-form-style">
@@ -192,26 +185,9 @@
 @media (max-width: 640px) { .bk-form-wrap { padding: 28px 20px; } }
 </style>
 </head>
-<body class="bg-surface text-on-surface selection:bg-primary/20 selection:text-primary overflow-x-hidden">
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
 <div class="grain-overlay"></div>
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md border-b border-outline-variant/10">
-<div class="flex justify-between items-center px-lg py-sm max-w-container-max mx-auto">
-<div class="font-display-md text-display-md text-primary dark:text-inverse-primary tracking-tight">Bukahauz</div>
-<div class="hidden md:flex items-center gap-xl">
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Experiences</a>
-<a class="font-label-lg text-label-lg text-primary border-b-2 border-primary pb-1" href="#">Menus</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Shop</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
-</div>
-<div class="flex items-center gap-md">
-<button class="hidden lg:block font-label-lg text-label-lg text-primary px-md py-sm hover:text-secondary transition-all">Shop Now</button>
-<button class="bg-primary text-on-primary px-lg py-sm rounded hover:bg-primary-container transition-all font-label-lg text-label-lg">Book An Experience</button>
-</div>
-</div>
-</nav>
-<!-- Luxury Hero Section -->
 <header id="bk-header" style="position:fixed;top:0;left:0;right:0;z-index:50;">
 
 <!-- Outer strip: subtle bg only for the bar itself -->
@@ -438,197 +414,32 @@ document.addEventListener('click', function(e) {
 });
 </script>
 </header>
-<!-- The Art of the Sommelier Introduction -->
-<section class="py-xxl bg-surface-container-low relative">
-<div class="max-w-container-max mx-auto px-lg">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-xxl items-center">
-<div class="reveal-on-scroll">
-<div class="aspect-[4/5] relative overflow-hidden rounded-xl">
-<img class="w-full h-full object-cover grayscale-[20%] hover:scale-105 transition-transform duration-700" data-alt="A professional sommelier in a dark apron delicately inspecting a glass of white wine against a soft light source. The setting is a minimalist, modern bar area with warm wood accents and neutral tones. The lighting is focused and artistic, capturing the clarity of the wine and the expert's focused expression, evoking a sense of refined human expertise and curated hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoEl-szl8M1jr-5orFJs8qkaIRQexyeCqQW9UGlUEOun4v2gcTVD6CnLXG95h-l3hklZ0V__aOkTK3XRITcUjvh5NKhiw5pY1Cw5buMSXuCSr44GWVag3fq_FrWBu-Zz2bMhpKq0XYemqWL-oEe_UFNC6DCJmGu2sRREmRfAzp52udW2lE6OY6w1v2CRVVzsdbEUuEEhgDl9i4lVZ_P4TaN-fWEcSHp0FVjaMQJkw77T4Q_hRfTiSBsokpuRdwH49xwxDIfTQcH52l"/>
+<main style="padding-top:140px;">
+  <div style="max-width:800px;margin:0 auto;padding:60px 32px 0;">
+    <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 12px;">Delivery</p>
+<h1 style="font-family:'Bodoni Moda',serif;font-size:48px;font-weight:500;line-height:1.1;color:#1a1c1b;margin:0 0 16px;">Shipping Information</h1>
+<p style="font-family:Inter,sans-serif;font-size:14px;color:#727974;margin:0 0 48px;">Last updated: June 2025</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px;">
+  <div style="padding:24px;border:1px solid #e3e2e0;text-align:center;">
+    <p style="font-family:'Bodoni Moda',serif;font-size:28px;font-weight:500;color:#466556;margin:0 0 8px;">3–5</p>
+    <p style="font-family:Inter,sans-serif;font-size:13px;color:#424844;margin:0;">Business Days (Standard)</p>
+  </div>
+  <div style="padding:24px;border:1px solid #e3e2e0;text-align:center;">
+    <p style="font-family:'Bodoni Moda',serif;font-size:28px;font-weight:500;color:#466556;margin:0 0 8px;">1–2</p>
+    <p style="font-family:Inter,sans-serif;font-size:13px;color:#424844;margin:0;">Business Days (Express)</p>
+  </div>
+  <div style="padding:24px;border:1px solid #e3e2e0;text-align:center;">
+    <p style="font-family:'Bodoni Moda',serif;font-size:28px;font-weight:500;color:#466556;margin:0 0 8px;">Free</p>
+    <p style="font-family:Inter,sans-serif;font-size:13px;color:#424844;margin:0;">Orders Over £75</p>
+  </div>
 </div>
-</div>
-<div class="space-y-lg reveal-on-scroll">
-<h2 class="font-display-md text-display-md">The Art of <br/>the Sommelier</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                        At Bukahauz, our wine philosophy is rooted in the concept of "Kinship in Terroir." We seek out vintages that share a spiritual connection with the bold spices and earthy aromatics of Afro-Caribbean cuisine. 
-                    </p>
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                        Our sommelier, Chijioke Okonkwo, meticulously curates a cellar that prioritizes Black-owned vineyards and heritage estates, ensuring that every pairing is not just a flavor match, but a cultural conversation.
-                    </p>
-<div class="pt-md">
-<div class="flex items-center gap-md">
-<span class="w-12 h-px bg-primary"></span>
-<span class="font-headline-md text-headline-md italic">Chijioke Okonkwo</span>
-</div>
-<span class="font-label-sm text-label-sm text-outline-variant ml-16">Head Sommelier</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Signature Flights -->
-<section class="py-xxl bg-surface">
-<div class="max-w-container-max mx-auto px-lg">
-<div class="text-center mb-xl">
-<h2 class="font-display-md text-display-md mb-sm">Signature Flights</h2>
-<p class="font-label-lg text-label-lg text-outline-variant tracking-widest uppercase">Thematic Oenological Explorations</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<!-- Flight One: The Diaspora Collection -->
-<div class="group cursor-pointer reveal-on-scroll">
-<div class="relative overflow-hidden mb-lg">
-<div class="aspect-[16/9] overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Three tasting glasses of wine—a pale gold, a deep amber, and a dark ruby—arranged in a neat line on a dark basalt stone flight board. The background features soft bokeh of a sophisticated restaurant interior with muted green and terracotta accents. The image is bright yet moody, focusing on the clarity and color of the different wines, representing a curated diaspora collection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ka83140_NuKKarSwQbZrycXuYAVKDgZU3vG2v5BMK6J_0JwIYrtRnlqu6H_J3ezYHH_vrE70QaUVQEgZESHcMChoS7FAz3PB_KhAd9hUcTuUnAtAcJwVMjUK7ByFbuB341lNoXdICRLLTdsdOqILa6jmMaRy7F69pIGczBOoFo3eSa22PO5Uxx2yGlCyIGo7Vz8_BiiHkxinJCyIvGNVa-7ouZA6E8Vy8RUTAlskpD0sYxTAsdjV9QQ-pPq-Aee0_crxZ7NA-Ng3"/>
-</div>
-<div class="absolute top-md left-md bg-surface px-md py-xs font-label-sm text-label-sm text-primary">Limited Release</div>
-</div>
-<h3 class="font-headline-lg text-headline-lg mb-md">The Diaspora Collection</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-lg max-w-lg">A celebration of excellence from the African diaspora, featuring vintages from Stellenbosch, Swartland, and the emerging vineyards of the Virginia hills.</p>
-<ul class="space-y-sm mb-xl">
-<li class="flex justify-between items-baseline border-b border-outline-variant/20 pb-xs">
-<span class="font-label-lg text-label-lg">Chenin Blanc | Stellenbosch</span>
-<span class="font-body-md text-body-md text-outline">2021</span>
-</li>
-<li class="flex justify-between items-baseline border-b border-outline-variant/20 pb-xs">
-<span class="font-label-lg text-label-lg">Syrah | Swartland</span>
-<span class="font-body-md text-body-md text-outline">2019</span>
-</li>
-<li class="flex justify-between items-baseline border-b border-outline-variant/20 pb-xs">
-<span class="font-label-lg text-label-lg">Norton | Virginia Highlands</span>
-<span class="font-body-md text-body-md text-outline">2020</span>
-</li>
-</ul>
-<button class="font-label-lg text-label-lg text-secondary group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-xs">
-                        EXPLORE FLIGHT <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</button>
-</div>
-<!-- Flight Two: The Continental Archive -->
-<div class="group cursor-pointer reveal-on-scroll">
-<div class="relative overflow-hidden mb-lg">
-<div class="aspect-[16/9] overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A collection of vintage wine bottles with handwritten parchment labels resting against a textured stone wall in a dimly lit, historic European wine cellar. The lighting is warm and golden, casting long shadows. This scene evokes the feeling of an archive, highlighting rare and aged vintages from classic continental vineyards, maintaining a sense of heritage and quiet luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgR0zJ0SkXeatOY0M-n0cXEWxOkXMIZbD24GOuoEMEUhV2oQCZCQ9Uwe2bLWdaHsThT6rAS_ZceVI_zrHsR_FRzoh_cSHCLmTqEf10O9pS0IvRe98FlHwAlda8Kk0QNiOY-e1gfGHrchqHCK-C-xZ6-XkQ3Hu3YA1LtEx3k3373WWo57jrLQGWYw-YNXnIrPcPKXSy60b1EH080FMvo9t_XyJoC7WvyEIf3VknhaKNsKJ1NrfJjIFNvA60oGGeAsslBDjxwDpfvXEp"/>
-</div>
-<div class="absolute top-md left-md bg-surface px-md py-xs font-label-sm text-label-sm text-primary">Member Selection</div>
-</div>
-<h3 class="font-headline-lg text-headline-lg mb-md">The Continental Archive</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-lg max-w-lg">A journey through the Old World's most prestigious terrains, specifically selected for their structural compatibility with spiced flavor profiles.</p>
-<ul class="space-y-sm mb-xl">
-<li class="flex justify-between items-baseline border-b border-outline-variant/20 pb-xs">
-<span class="font-label-lg text-label-lg">Riesling | Mosel Valley</span>
-<span class="font-body-md text-body-md text-outline">2018</span>
-</li>
-<li class="flex justify-between items-baseline border-b border-outline-variant/20 pb-xs">
-<span class="font-label-lg text-label-lg">Tempranillo | Rioja Alta</span>
-<span class="font-body-md text-body-md text-outline">2015</span>
-</li>
-<li class="flex justify-between items-baseline border-b border-outline-variant/20 pb-xs">
-<span class="font-label-lg text-label-lg">Pinot Noir | Burgundy</span>
-<span class="font-body-md text-body-md text-outline">2017</span>
-</li>
-</ul>
-<button class="font-label-lg text-label-lg text-secondary group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-xs">
-                        EXPLORE FLIGHT <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</button>
-</div>
-</div>
-</div>
-</section>
-<!-- Oenology Notes - Bento Style -->
-<section class="py-xxl bg-surface-container-high">
-<div class="max-w-container-max mx-auto px-lg">
-<h2 class="font-display-md text-display-md mb-xl reveal-on-scroll">Oenology Notes</h2>
-<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-gutter h-auto md:h-[600px] reveal-on-scroll">
-<!-- Large Feature -->
-<div class="md:col-span-2 md:row-span-2 bg-surface p-xl flex flex-col justify-between border border-outline-variant/20 group">
-<div>
-<span class="font-label-sm text-label-sm text-primary mb-md block">TASTING PERSPECTIVE</span>
-<h3 class="font-display-md text-display-md mb-md">On Spices &amp; Tannins</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Exploring how high-tannin reds interact with Scotch Bonnet and Bird's Eye chilies. The secret lies in the residual sugars and balanced acidity.</p>
-</div>
-<div class="mt-xl aspect-video overflow-hidden">
-<img class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0" data-alt="An artistic flat-lay composition featuring dried red bird's eye chilies, cinnamon sticks, and a swirl of dark red wine on a white marble surface. The lighting is high-contrast and editorial, emphasizing the textures and organic forms of the spices alongside the fluid movement of the wine, illustrating the sensory connection between spice and oenology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIp1ZU5ZiVJjQxb1mAzEzO4sBiWgmRpbzNhqJiYhWD6dB5luifWw5ZUE32zw6KoQk1XsCWNV1DXhzWkQ1YtWpI_TsOTqygTsRuUS-SnvBVpsx3hrtXfJCCLnX5YkLV4hB0tLK2u94v9ICfES1KkB8d4gZkDD3crbk1kj0Q3o0rQ92HmpBt3UZEz9uzSrlB_ujFRCIIyN8C0V-qDl1IBqwxz_-p3IrhMAaDgN_4dPE6FACgH7no-4SWeXRwDg3HkO587XweDYHhXP-v"/>
-</div>
-</div>
-<!-- Small Grid 1 -->
-<div class="md:col-span-2 bg-primary text-on-primary p-xl flex flex-col justify-center border border-outline-variant/20">
-<h4 class="font-headline-lg text-headline-lg mb-sm">The Cooling Effect</h4>
-<p class="font-body-md text-body-md opacity-80">Why we serve our sparkling reds at exactly 12°C for Suya pairings. The precise temperature modulates the perceived heat of the yajin spice.</p>
-</div>
-<!-- Small Grid 2 -->
-<div class="md:col-span-1 bg-surface-container p-xl border border-outline-variant/20">
-<span class="material-symbols-outlined text-display-md text-secondary mb-md">eco</span>
-<h4 class="font-label-lg text-label-lg mb-xs">Organic Practice</h4>
-<p class="font-label-sm text-label-sm text-on-surface-variant">100% of our domestic selections are biodynamically farmed.</p>
-</div>
-<!-- Small Grid 3 -->
-<div class="md:col-span-1 bg-tertiary text-on-tertiary p-xl border border-outline-variant/20">
-<span class="material-symbols-outlined text-display-md mb-md">hourglass_bottom</span>
-<h4 class="font-label-lg text-label-lg mb-xs">Cellar Aging</h4>
-<p class="font-label-sm text-label-sm opacity-80">Our vintage archive dates back to 1984, curated for longevity.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Small Plate Pairings -->
-<section class="py-xxl bg-surface">
-<div class="max-w-container-max mx-auto px-lg">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-xl reveal-on-scroll">
-<div class="max-w-xl">
-<h2 class="font-display-md text-display-md mb-sm">Small Plate Pairings</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Bite-sized culinary expressions designed to elevate your wine experience.</p>
-</div>
-<a href="contact.html" style="display:inline-block;padding:12px 28px;background:#466556;color:#fff;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;">Request Full Menu</a>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
-<!-- Plate 1 -->
-<div class="reveal-on-scroll" style="transition-delay: 100ms;">
-<div class="aspect-square overflow-hidden mb-lg rounded-xl">
-<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="A delicate serving of seared scallops garnished with tiny orange blossoms and a drizzle of emerald-colored herb oil on a minimalist white plate. The lighting is soft and natural, emphasizing the pearlescent texture of the scallops. The composition is clean and artistic, representing a high-end small plate pairing in a luxury hospitality setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8oVtpIGZYdJ6jtGTxKM3lm-CYRloAriAg7eeQ8lOEs3_YGpedF8yzgNJAQ6DCx6zKqq0SZTwRYtKt0fl93oRWS96r8YaQP4zSWI0RsdChbDK-uIJQ2AitPl8DSKb21FwzXCF9I8GDjzuPZL_K1rGtM-vOfx5UFfYsahXXrfzn9DwB3UHu_o3DjMp76uq04kDZpR2UpThoB9HS_ik_iVRhqBcFVeXHcKYatnD4z2Sf0tby-fch_rJMyz45pL8hI_8Db8rifYsDSigq"/>
-</div>
-<div class="flex justify-between items-start mb-sm">
-<h4 class="font-headline-md text-headline-md">Seared Scallops</h4>
-<span class="font-label-lg text-label-lg text-secondary">$24</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-md">Yuzu-infused brown butter, crisp plantain dust, and micro-cilantro.</p>
-<div class="flex items-center gap-sm p-sm bg-surface-container-low rounded">
-<span class="material-symbols-outlined text-primary text-md">wine_bar</span>
-<span class="font-label-sm text-label-sm text-primary">PAIR WITH: 2021 Chablis, Domaine Moreau</span>
-</div>
-</div>
-<!-- Plate 2 -->
-<div class="reveal-on-scroll" style="transition-delay: 200ms;">
-<div class="aspect-square overflow-hidden mb-lg rounded-xl">
-<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="Tender slices of glazed lamb loin served with a vibrant purée of sweet potato and charred baby leeks. The dish is presented on a textured dark ceramic plate under warm, focused lighting that creates rich shadows. The visual style is editorial and sophisticated, emphasizing the deep colors and varied textures of the gourmet cuisine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWBn2JuLrHh8WwDMXgO9_Euan_Jf5qYA1hRV4i795W8K18M-zb7EkPs7W-WRQD_YAHqzl23rhgRLZ2e60FmhI2AEABcgzErvjjjtA0gb20DegYRGBH3DNccS7imGzAJ86g76SfmIG_nZjja8AU4N3TbSsIWxYYgsC8vhjN7hCWnKbDjbiZnUvJal3Bii6Lv6afarql9hkoZV64FJWVHkSF5Kdt8EdzfI3aVWgMfgGc192vHg1b0lk836VvZ8TImR7RW3wJzr2RMOBN"/>
-</div>
-<div class="flex justify-between items-start mb-sm">
-<h4 class="font-headline-md text-headline-md">Glazed Lamb Loin</h4>
-<span class="font-label-lg text-label-lg text-secondary">$28</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-md">Berbere-spiced red wine reduction, sweet potato foam, charred leeks.</p>
-<div class="flex items-center gap-sm p-sm bg-surface-container-low rounded">
-<span class="material-symbols-outlined text-primary text-md">wine_bar</span>
-<span class="font-label-sm text-label-sm text-primary">PAIR WITH: 2017 Rioja Gran Reserva</span>
-</div>
-</div>
-<!-- Plate 3 -->
-<div class="reveal-on-scroll" style="transition-delay: 300ms;">
-<div class="aspect-square overflow-hidden mb-lg rounded-xl">
-<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="An artisanal cheese board featuring wedges of aged Gouda, a creamy blue cheese, and dried figs, accompanied by small bowls of honey and spiced nuts. The board is made of dark reclaimed wood, set against a background of soft linen and warm candlelight. The overall mood is cozy, textured, and inviting, showcasing a curated selection for wine pairing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7F9Q9MEGgSNBrGc3xByJ81OUA-DYBMyM1EDTIgKjUj48OVi9c8EnV0i6usXbIVNUuNvs9bIuD4VSUvY5Td0Muq8_MYhXBoi3P4yUujT8d2qaC4W0yysawTryHOJZDcg4u9oMLjNzfonb7I-5FrwFioPg2k4OTqAR47aqax_OmLHB7ZjkafeYTrob60Nn3PuMYKJ9LlJjXx2pG-o8-QFl_Lkx5Tg83AzUyrdvf1qnRqqxB0HYKyCHcKZvhzYvRiiFUJI8zqr3C8y17"/>
-</div>
-<div class="flex justify-between items-start mb-sm">
-<h4 class="font-headline-md text-headline-md">Heritage Cheese</h4>
-<span class="font-label-lg text-label-lg text-secondary">$22</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-md">Aged artisanal cheeses from African-owned creameries, served with wild honey.</p>
-<div class="flex items-center gap-sm p-sm bg-surface-container-low rounded">
-<span class="material-symbols-outlined text-primary text-md">wine_bar</span>
-<span class="font-label-sm text-label-sm text-primary">PAIR WITH: Vintage Port or Sweet Muscat</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
+<div style="margin-bottom:36px;"><h2 style="font-family:'Bodoni Moda',serif;font-size:24px;font-weight:500;color:#1a1c1b;margin:0 0 12px;">UK Delivery</h2><p style="font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#424844;margin:0;">Standard UK delivery is £4.95 and takes 3–5 business days. Express delivery is £9.95 and is delivered within 1–2 business days. All orders over £75 qualify for free standard delivery. Orders are dispatched Monday to Friday, excluding bank holidays.</p></div>
+<div style="margin-bottom:36px;"><h2 style="font-family:'Bodoni Moda',serif;font-size:24px;font-weight:500;color:#1a1c1b;margin:0 0 12px;">International Shipping</h2><p style="font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#424844;margin:0;">We ship to Europe (5–10 business days), USA & Canada (7–14 business days), and worldwide destinations (10–21 business days). International shipping rates are calculated at checkout based on weight and destination. Import duties and taxes are the responsibility of the recipient.</p></div>
+<div style="margin-bottom:36px;"><h2 style="font-family:'Bodoni Moda',serif;font-size:24px;font-weight:500;color:#1a1c1b;margin:0 0 12px;">Packaging</h2><p style="font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#424844;margin:0;">All Bukahauz products are packaged with care using sustainable materials. Fragile items are wrapped individually with recycled tissue and packed securely to ensure they arrive in perfect condition. Gift orders include our signature kraft box and handwritten note on request.</p></div>
+<div style="margin-bottom:36px;"><h2 style="font-family:'Bodoni Moda',serif;font-size:24px;font-weight:500;color:#1a1c1b;margin:0 0 12px;">Order Cut-Off</h2><p style="font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#424844;margin:0;">Orders placed before 2pm Monday–Friday are dispatched the same day. Orders placed after 2pm or on weekends will be dispatched the next working day.</p></div>
+<div style="margin-top:48px;padding:32px;background:#f4f4f1;border-left:3px solid #466556;"><p style="font-family:Inter,sans-serif;font-size:14px;color:#424844;margin:0;">Questions about your delivery? <a href="tracking.html" style="color:#466556;">Track your order</a> or <a href="contact.html" style="color:#466556;">contact us</a>.</p></div>
+  </div>
+</main>
 <footer style="background:#f4f4f1;">
   <div style="max-width:1440px;margin:0 auto;padding:80px 32px 48px;">
     <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:40px;">
@@ -720,33 +531,4 @@ document.addEventListener('click', function(e) {
   </style>
 
 </footer>
-<script>
-        // Simple scroll reveal animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Parallax effect for hero image
-        window.addEventListener('scroll', () => {
-            const scrollPos = window.pageYOffset;
-            const heroImage = document.querySelector('header img');
-            if (heroImage) {
-                heroImage.style.transform = `translateY(${scrollPos * 0.4}px)`;
-            }
-        });
-    </script>
 </body></html>
