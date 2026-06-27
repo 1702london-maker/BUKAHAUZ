@@ -228,6 +228,7 @@
         </button>
         <div class="bk-dropdown">
                     <a href="afro-continental-menu.html" class="bk-dd-item">Afro Continental Menu</a>
+          <a href="afro-fusion.html" class="bk-dd-item">Afro Fusion Menu</a>
                     <a href="menus.html"                class="bk-dd-item">Private Dining Menu</a>
           <a href="wine-pairing-menu.html"    class="bk-dd-item">Wine Pairing Menu</a>
         </div>
@@ -731,27 +732,4 @@ document.addEventListener('click', function(e) {
             observer.observe(item);
         });
     </script>
-<script src="cart.js"></script><!-- Cookie Consent Popup -->
-<div id="bk-cookie-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1c1b;color:#f4f4f1;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;box-shadow:0 -4px 24px rgba(0,0,0,.18);">
-  <div style="flex:1;min-width:260px;">
-    <p style="font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#f4f4f1;margin:0 0 4px;letter-spacing:.02em;">We use cookies</p>
-    <p style="font-family:Inter,sans-serif;font-size:12px;color:#c1c8c2;margin:0;line-height:1.5;">We use essential and optional cookies to improve your experience. <a href="cookies.html" style="color:#adcebc;text-decoration:underline;">Cookie Policy</a></p>
-  </div>
-  <div style="display:flex;gap:10px;flex-shrink:0;">
-    <button onclick="bkCookieAccept('essential')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:#c1c8c2;border:1px solid #424844;padding:10px 20px;cursor:pointer;transition:all .2s;" onmouseover="this.style.borderColor='#c1c8c2';" onmouseout="this.style.borderColor='#424844';">Essential Only</button>
-    <button onclick="bkCookieAccept('all')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#466556;color:#fff;border:1px solid #466556;padding:10px 20px;cursor:pointer;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Accept All</button>
-  </div>
-</div>
-<script>
-(function(){
-  if(!localStorage.getItem('bk_cookies_accepted')){
-    var bar=document.getElementById('bk-cookie-bar');
-    if(bar){bar.style.display='flex';}
-  }
-})();
-function bkCookieAccept(type){
-  localStorage.setItem('bk_cookies_accepted',type);
-  var bar=document.getElementById('bk-cookie-bar');
-  if(bar){bar.style.opacity='0';bar.style.transition='opacity .3s';setTimeout(function(){bar.style.display='none';},300);}
-}
-</script></body></html>
+<script src="cart.js"></script></body></html>

@@ -224,6 +224,7 @@
         </button>
         <div class="bk-dropdown">
                     <a href="afro-continental-menu.html" class="bk-dd-item">Afro Continental Menu</a>
+          <a href="afro-fusion.html" class="bk-dd-item">Afro Fusion Menu</a>
                     <a href="menus.html"                class="bk-dd-item">Private Dining Menu</a>
           <a href="wine-pairing-menu.html"    class="bk-dd-item">Wine Pairing Menu</a>
         </div>
@@ -427,7 +428,7 @@ document.addEventListener('click', function(e) {
                     From private dining and curated wine tastings to unforgettable celebrations and networking events, Bukahauz creates meaningful experiences through exceptional food and hospitality.
                 </p>
 <div class="flex flex-wrap justify-center gap-md reveal" style="transition-delay: 0.2s;">
-<button class="bg-primary text-on-primary px-xl py-md font-label-lg text-label-lg rounded-lg shadow-xl">Book An Experience</button>
+<a href="book.html" class="bg-primary text-on-primary px-xl py-md font-label-lg text-label-lg rounded-lg shadow-xl" style="display:inline-block;color:#fff;text-decoration:none;">Book An Experience</a>
 <button class="bg-surface/10 backdrop-blur-md border border-surface/30 text-surface px-xl py-md font-label-lg text-label-lg rounded-lg hover:bg-surface/20">Explore Menus</button>
 <a href="shop-collection.html" style="display:inline-block;color:inherit;text-decoration:none;border-bottom:inherit;" class="text-surface font-label-lg text-label-lg border-b border-surface pb-1 hover:text-secondary hover:border-secondary transition-all">Shop Collection</a>
 </div>
@@ -444,15 +445,15 @@ document.addEventListener('click', function(e) {
 <p class="font-body-md text-body-md text-on-surface-variant italic border-l-2 border-primary-container pl-lg mb-xl">
                     "We don't just serve dishes; we curate memories that linger long after the last course is cleared."
                 </p>
-<button class="text-primary font-label-lg text-label-lg underline decoration-primary/30 underline-offset-8 hover:decoration-primary transition-all">Meet Our Directors</button>
+<a href="about.html" style="font-family:Inter,sans-serif;font-size:14px;font-weight:600;color:#466556;text-decoration:underline;text-underline-offset:6px;">About Bukahauz &rarr;</a>
 </div>
 <div class="md:col-span-7 relative reveal" style="transition-delay: 0.2s;">
 <div class="aspect-[4/3] bg-surface-container-high rounded-xl overflow-hidden shadow-2xl">
 <img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" data-alt="A sophisticated chef's kitchen during a private tasting event. Warm lighting hits polished copper cookware and fresh organic ingredients. The aesthetic is professional yet inviting, reflecting a high-end Afro-Caribbean culinary studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnbyta5hve4eAs9lre5h8hIYFnAUzLkWmgV0ZzKO9Fcuga2K0LQVwU_vn1AF_fKbmWHtKjZAY1XEgNviGDMMD3pOt7xm5tspHqai_vsLR4M8FeVb4PlZUvqiTSZhHSLbwweeGsLh6NetkPKDjKZZJEd6It4GxM5s2kqo-Cbj-ln3u5Nuq4JMl2TFUdmBX0kLuzogb0i7TTfFyvA6OHx8CI_iebdZ9s031gAPB-4pXScaT-n8yE4Am-3hiHZGU338GJLB_AUj48b7v2"/>
 </div>
 <div class="absolute -bottom-12 -left-12 hidden lg:block w-64 p-lg bg-surface border border-outline-variant/20 rounded-xl shadow-lg">
-<p class="font-label-lg text-label-lg text-secondary mb-xs">Founded 2024</p>
-<p class="font-body-md text-body-md">Pioneering Afro-Caribbean fine dining across the globe.</p>
+<p class="font-label-lg text-label-lg text-secondary mb-xs">Founded 2022</p>
+<p class="font-body-md text-body-md">Pioneering Afro-Continental fine dining across the globe.</p>
 </div>
 </div>
 </section>
@@ -490,7 +491,7 @@ document.addEventListener('click', function(e) {
 <div class="relative p-xl h-full flex flex-col justify-end">
 <h3 class="font-headline-lg text-headline-lg text-on-primary mb-sm">Chef Masterclasses</h3>
 <p class="font-body-md text-body-md text-on-primary/80 mb-lg">Learn the secrets of Afro-fusion cuisine directly from our executive chefs.</p>
-<button class="bg-on-primary text-primary px-lg py-sm font-label-lg text-label-lg rounded-lg">View Schedule</button>
+<a href="chef-experiences.html" style="display:inline-block;background:#fff;color:#466556;padding:8px 24px;font-family:Inter,sans-serif;font-size:14px;font-weight:600;letter-spacing:.05em;text-decoration:none;border-radius:4px;">View Schedule</a>
 </div>
 </div>
 <!-- Celebrations -->
@@ -499,7 +500,7 @@ document.addEventListener('click', function(e) {
 <div class="text-center">
 <h3 class="font-display-md text-display-md text-surface mb-sm">Celebrations &amp; Networking</h3>
 <p class="font-body-lg text-body-lg text-surface/90 max-w-xl mx-auto mb-lg">Transform your events into extraordinary experiences that inspire conversation and community.</p>
-<button class="border border-surface text-surface px-xl py-md font-label-lg text-label-lg rounded-lg hover:bg-surface hover:text-secondary transition-all">Host Your Event</button>
+<button onclick="document.getElementById('bk-event-modal').style.display='flex'" class="border border-surface text-surface px-xl py-md font-label-lg text-label-lg rounded-lg hover:bg-surface hover:text-secondary transition-all">Host Your Event</button>
 </div>
 </div>
 </div>
@@ -542,10 +543,10 @@ document.addEventListener('click', function(e) {
 <img class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" data-alt="A vibrant Afro-Caribbean plate featuring jerk-spiced components, tropical fruit reductions, and elegant garnish. The plating is high-end and editorial, showcasing the richness of the cuisine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6yZsCoxPFFIZx2kCkK0GbPHZhodSzTKUb7rInVEsP86PzkNrpiV7prBPByXrtaS6J6EnQBS4nf_fw9daIE257qlE494xIa1Caxz-8oA83MVoupK7ITdqwsHrGXSM54VaYgXiwS_rS9w_b6t2Vwtz6oAsp1rzhti2kWSFkoWu6Cbku5e0iJRfpYC7d1CW3ruNPn6AGYYnFHj7_DIDuGFxPFS32_ddh1X4ggtvHvhzaqmAS3jsKXPzltSkreYErnY3ulkNEl3fyvi_F"/>
 </div>
 <div>
-<span class="text-secondary font-label-sm text-label-sm uppercase tracking-widest mb-xs block">Heritage</span>
-<h3 class="font-headline-md text-headline-md mb-sm">Afro-Caribbean Selection</h3>
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-widest mb-xs block">Afro Selection</span>
+<h3 class="font-headline-md text-headline-md mb-sm">Afro-Continental Selection</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mb-md">Bold spices meet refined techniques. Featuring our signature 48-hour marinated Jerk Lamb and Coconut Infused Jollof.</p>
-<a class="text-primary font-label-lg text-label-lg inline-flex items-center gap-xs" href="#">Preview Items <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<a class="text-primary font-label-lg text-label-lg inline-flex items-center gap-xs" href="afro-continental-menu.html">Preview Items <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
 </div>
 </div>
 <div class="bg-surface p-lg rounded-xl flex flex-col md:flex-row gap-lg group reveal" style="transition-delay: 0.1s;">
@@ -553,10 +554,10 @@ document.addEventListener('click', function(e) {
 <img class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" data-alt="A sophisticated intercontinental fusion dish with minimalist presentation. High-key lighting highlights the clean textures of the food, set against a pristine ceramic plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEuRix_v1xdMxx35u8g9isAiclrFVAOPfX3ssY3AKYOIp-n6UaJCCQrs-lEfK9EII9rDA4zm149oDcKRc3jCIVfLQ5gT7v4yOC5wJSfy3X_VMrBK-P85F9RjaZfNrYjSzPTh-7gganF1iP4uFjK9HVaoXTqGvs2OeVtMtUDI4Y6i8x8W3Y3KHrFIHMYhWBCGbESI1ArmTqKjSlvBwFpTGf29yzCdgCHqUmdpSVBwvOA81Ta5z5gIY4wAZKGDopxvOpxtGb6doGZyaN"/>
 </div>
 <div>
-<span class="text-secondary font-label-sm text-label-sm uppercase tracking-widest mb-xs block">Fusion</span>
-<h3 class="font-headline-md text-headline-md mb-sm">Intercontinental Classics</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-md">European refinement with global influences. Highlighting our Truffle Polenta and Pan-Seared Seabass with Hibiscus reduction.</p>
-<a class="text-primary font-label-lg text-label-lg inline-flex items-center gap-xs" href="#">Preview Items <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-widest mb-xs block">Afro Fusion</span>
+<h3 class="font-headline-md text-headline-md mb-sm">Afro Fusion Classic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Bold African flavours fused with global technique. Featuring our signature Hibiscus Seabass and Suya-spiced Truffle Polenta.</p>
+<a class="text-primary font-label-lg text-label-lg inline-flex items-center gap-xs" href="afro-continental-menu.html">Preview Items <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
 </div>
 </div>
 </div>
@@ -588,7 +589,7 @@ document.addEventListener('click', function(e) {
 <span class="font-body-md text-body-md">Mentorship and Leadership Panels</span>
 </div>
 </div>
-<button class="bg-secondary text-on-secondary px-xl py-md font-label-lg text-label-lg rounded-lg">Join the Circle</button>
+<a href="networking.html" style="display:inline-block;background:#8f4c37;color:#fff;padding:16px 32px;font-family:Inter,sans-serif;font-size:14px;font-weight:600;letter-spacing:.05em;text-decoration:none;border-radius:4px;">Join the Circle</a>
 </div>
 </div>
 </section>
@@ -600,7 +601,7 @@ document.addEventListener('click', function(e) {
 <h2 class="font-display-md text-display-md text-on-surface">Lifestyle Collection</h2>
 <p class="font-body-md text-body-md text-on-surface-variant">Bring the Bukahauz atmosphere into your home.</p>
 </div>
-<button class="bg-primary text-on-primary px-lg py-sm font-label-lg text-label-lg rounded-lg">Shop Now</button>
+<a href="shop-collection.html" style="display:inline-block;background:#466556;color:#fff;padding:8px 24px;font-family:Inter,sans-serif;font-size:14px;font-weight:600;letter-spacing:.05em;text-decoration:none;border-radius:4px;">Shop Now</a>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-lg">
 <div class="group reveal">
@@ -647,7 +648,7 @@ document.addEventListener('click', function(e) {
                         Our upcoming food truck experience will bring high-end Afro-Caribbean fusion to the streets. Think gourmet street food, reimagined with the soul of Bukahauz.
                     </p>
 <div class="flex items-center gap-lg">
-<button class="bg-surface text-on-surface px-xl py-md font-label-lg text-label-lg rounded-lg">Notify Me</button>
+<a href="food-truck.html#waiting-list" style="display:inline-block;background:#faf9f7;color:#1a1c1b;padding:16px 32px;font-family:Inter,sans-serif;font-size:14px;font-weight:600;letter-spacing:.05em;text-decoration:none;border-radius:4px;">Notify Me</a>
 <span class="font-label-lg text-label-lg text-surface/60">Launching Winter 2024</span>
 </div>
 </div>
@@ -844,4 +845,35 @@ function bkCookieAccept(type){
   var bar=document.getElementById('bk-cookie-bar');
   if(bar){bar.style.opacity='0';bar.style.transition='opacity .3s';setTimeout(function(){bar.style.display='none';},300);}
 }
+</script><!-- Event Inquiry Modal -->
+<div id="bk-event-modal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(26,28,27,.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#faf9f7;max-width:640px;width:100%;max-height:90vh;overflow-y:auto;position:relative;">
+    <button onclick="document.getElementById('bk-event-modal').style.display='none'" style="position:absolute;top:16px;right:16px;background:none;border:none;cursor:pointer;font-size:22px;color:#424844;line-height:1;">&times;</button>
+    <div style="padding:48px 48px 40px;">
+      <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f4c37;margin:0 0 8px;">Host Your Event</p>
+      <h2 style="font-family:'Bodoni Moda',serif;font-size:36px;font-weight:500;color:#1a1c1b;margin:0 0 6px;">Tell Us About Your Event</h2>
+      <p style="font-family:Inter,sans-serif;font-size:14px;color:#727974;margin:0 0 32px;">Our events team will be in touch within 24 hours.</p>
+      <form onsubmit="bkSubmitEvent(event)" style="display:flex;flex-direction:column;gap:0;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div class="bk-form-field" style="margin:0;"><label>First Name</label><input type="text" name="fname" required placeholder="Ada"/></div>
+          <div class="bk-form-field" style="margin:0;"><label>Last Name</label><input type="text" name="lname" required placeholder="Johnson"/></div>
+        </div>
+        <div class="bk-form-field"><label>Email</label><input type="email" name="email" required placeholder="ada@example.com"/></div>
+        <div class="bk-form-field"><label>Phone</label><input type="tel" name="phone" placeholder="+44 7700 000000"/></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="bk-form-field" style="margin-bottom:16px;"><label>Event Type</label>
+            <select name="type" required><option value="">Select type</option><option>Private Dining</option><option>Corporate Event</option><option>Birthday / Celebration</option><option>Wedding Reception</option><option>Networking Evening</option><option>Other</option></select>
+          </div>
+          <div class="bk-form-field" style="margin-bottom:16px;"><label>Estimated Guests</label><input type="number" name="guests" min="1" placeholder="e.g. 40"/></div>
+        </div>
+        <div class="bk-form-field"><label>Preferred Date</label><input type="date" name="date"/></div>
+        <div class="bk-form-field"><label>Tell Us More</label><textarea name="message" rows="4" placeholder="Describe your vision, dietary requirements, theme..."></textarea></div>
+        <button type="submit" class="bk-form-submit">Send Enquiry</button>
+      </form>
+      <p id="bk-event-thanks" style="display:none;font-family:Inter,sans-serif;font-size:15px;color:#466556;text-align:center;padding:24px 0;margin:0;">Thank you - our events team will contact you shortly!</p>
+    </div>
+  </div>
+</div>
+<script>
+function bkSubmitEvent(e){e.preventDefault();var f=e.target;var body='Name: '+f.fname.value+' '+f.lname.value+'\nEmail: '+f.email.value+'\nPhone: '+f.phone.value+'\nType: '+f.type.value+'\nGuests: '+f.guests.value+'\nDate: '+f.date.value+'\nMessage: '+f.message.value;window.location.href='mailto:events@bukahauz.com?subject=Event Enquiry: '+encodeURIComponent(f.type.value)+'&body='+encodeURIComponent(body);f.style.display='none';document.getElementById('bk-event-thanks').style.display='block';}
 </script></body></html>
