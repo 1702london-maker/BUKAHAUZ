@@ -1,48 +1,25 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en"><head>
+<html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Bukahauz | Lifestyle Shop</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style>
-        body {
-            background-color: #faf9f7;
-            -webkit-font-smoothing: antialiased;
-        }
         .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
         }
         .grain-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
+            background-image: url("https://www.transparenttextures.com/patterns/felt-tip.png");
             opacity: 0.03;
-            background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+            pointer-events: none;
         }
-        .text-underline-animate {
-            position: relative;
-            display: inline-block;
-        }
-        .text-underline-animate::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: currentColor;
-            transition: width 0.3s ease;
-        }
-        .text-underline-animate:hover::after {
-            width: 100%;
+        .editorial-shadow {
+            box-shadow: 0 10px 30px -15px rgba(70, 101, 86, 0.1);
         }
     </style>
 <script id="tailwind-config">
@@ -51,53 +28,53 @@
         theme: {
           extend: {
             "colors": {
-                    "on-error-container": "#93000a",
-                    "secondary": "#8f4c37",
-                    "on-primary-container": "#163427",
-                    "on-error": "#ffffff",
-                    "surface": "#faf9f7",
                     "primary-container": "#7d9d8c",
                     "secondary-fixed-dim": "#ffb59e",
                     "surface-container": "#eeeeeb",
                     "on-tertiary-fixed-variant": "#623d3d",
                     "on-surface-variant": "#424844",
-                    "inverse-surface": "#2f312f",
-                    "on-tertiary-container": "#462526",
+                    "secondary": "#8f4c37",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#163427",
+                    "on-error": "#ffffff",
+                    "surface": "#faf9f7",
                     "secondary-fixed": "#ffdbd0",
                     "outline": "#727974",
+                    "on-tertiary-container": "#462526",
+                    "inverse-surface": "#2f312f",
                     "tertiary-fixed": "#ffdad9",
                     "on-tertiary": "#ffffff",
-                    "surface-container-highest": "#e3e2e0",
-                    "tertiary": "#7c5454",
-                    "surface-variant": "#e3e2e0",
-                    "on-surface": "#1a1c1b",
-                    "surface-container-low": "#f4f4f1",
-                    "primary": "#466556",
-                    "on-primary-fixed-variant": "#2f4d3f",
-                    "on-secondary-container": "#7a3b27",
-                    "outline-variant": "#c1c8c2",
                     "surface-container-lowest": "#ffffff",
-                    "error-container": "#ffdad6",
                     "tertiary-fixed-dim": "#eebaba",
                     "background": "#faf9f7",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e9e8e5",
                     "tertiary-container": "#b98a8a",
                     "on-background": "#1a1c1b",
-                    "surface-container-high": "#e9e8e5",
                     "on-primary-fixed": "#022115",
-                    "surface-tint": "#466556",
-                    "surface-dim": "#dadad7",
-                    "secondary-container": "#ffa98f",
-                    "on-tertiary-fixed": "#301314",
-                    "on-secondary": "#ffffff",
-                    "inverse-primary": "#adcebc",
-                    "on-secondary-fixed": "#3a0b00",
+                    "surface-container-highest": "#e3e2e0",
+                    "surface-variant": "#e3e2e0",
+                    "tertiary": "#7c5454",
+                    "on-primary-fixed-variant": "#2f4d3f",
+                    "surface-container-low": "#f4f4f1",
+                    "primary": "#466556",
+                    "on-surface": "#1a1c1b",
+                    "outline-variant": "#c1c8c2",
+                    "on-secondary-container": "#7a3b27",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#723522",
                     "inverse-on-surface": "#f1f1ee",
                     "error": "#ba1a1a",
-                    "on-secondary-fixed-variant": "#723522",
-                    "on-primary": "#ffffff",
                     "surface-bright": "#faf9f7",
+                    "primary-fixed-dim": "#adcebc",
                     "primary-fixed": "#c8ead7",
-                    "primary-fixed-dim": "#adcebc"
+                    "surface-dim": "#dadad7",
+                    "surface-tint": "#466556",
+                    "secondary-container": "#ffa98f",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#301314",
+                    "on-secondary-fixed": "#3a0b00",
+                    "inverse-primary": "#adcebc"
             },
             "borderRadius": {
                     "DEFAULT": "0.125rem",
@@ -106,47 +83,47 @@
                     "full": "0.75rem"
             },
             "spacing": {
-                    "sm": "8px",
-                    "xs": "4px",
-                    "unit": "4px",
-                    "gutter": "24px",
-                    "xxl": "128px",
-                    "xl": "64px",
                     "margin-mobile": "20px",
-                    "container-max": "1440px",
+                    "lg": "32px",
                     "md": "16px",
-                    "lg": "32px"
+                    "container-max": "1440px",
+                    "xl": "64px",
+                    "unit": "4px",
+                    "xxl": "128px",
+                    "gutter": "24px",
+                    "sm": "8px",
+                    "xs": "4px"
             },
             "fontFamily": {
-                    "headline-lg": ["Bodoni Moda"],
-                    "display-lg": ["Bodoni Moda"],
-                    "headline-md": ["Bodoni Moda"],
-                    "display-md": ["Bodoni Moda"],
-                    "body-lg": ["Inter"],
-                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Bodoni Moda"],
                     "label-sm": ["Inter"],
                     "label-lg": ["Inter"],
-                    "headline-lg-mobile": ["Bodoni Moda"]
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Bodoni Moda"],
+                    "display-md": ["Bodoni Moda"],
+                    "display-lg": ["Bodoni Moda"],
+                    "headline-lg": ["Bodoni Moda"]
             },
             "fontSize": {
-                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
-                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                    "display-md": ["48px", {"lineHeight": "1.1", "fontWeight": "500"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}],
                     "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.03em", "fontWeight": "500"}],
                     "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "display-md": ["48px", {"lineHeight": "1.1", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}]
             }
           },
         },
       }
     </script>
 </head>
-<body class="font-body-md text-on-surface overflow-x-hidden selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
-<div class="grain-overlay"></div>
-<!-- TopNavBar -->
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<div class="fixed inset-0 grain-overlay z-[60]"></div>
+<!-- Navigation -->
 <header id="bk-header" style="position:fixed;top:0;left:0;right:0;z-index:50;">
 
 <!-- Outer strip: subtle bg only for the bar itself -->
@@ -183,7 +160,7 @@
         </button>
         <div class="bk-dropdown">
           <a href="afro-caribbean-menu.html"  class="bk-dd-item">Afro-Caribbean Menu</a>
-          <a href="african-menu.html"         class="bk-dd-item">African Menu</a>
+          <a href="african-menu.html"         class="bk-dd-item">Afro Continental Menu</a>
           <a href="intercontinental-menu.html"class="bk-dd-item">Intercontinental Menu</a>
           <a href="menus.html"                class="bk-dd-item">Private Dining Menu</a>
           <a href="wine-pairing-menu.html"    class="bk-dd-item">Wine Pairing Menu</a>
@@ -373,216 +350,179 @@ document.addEventListener('click', function(e) {
 });
 </script>
 </header>
-<main class="pt-16">
+<main class="pt-28">
 <!-- Hero Section -->
-<section class="relative h-[870px] flex items-center overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" data-alt="A highly aesthetic, minimalist dining table setting in a sun-drenched, high-end architectural space. The table features hand-crafted ceramic plates in a warm stone color, artisanal wooden serving spoons, and delicate linen napkins. The lighting is soft and golden, casting long, elegant shadows that emphasize the textures of the natural materials. The overall mood is one of quiet, lived-in luxury and sophisticated hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoH5ZozptGDoq-xevj1wug1ZgZRqwrg5gH2O3IFH8EKKyvR8-C9vv-xsDoEclalT8U2S00HvUrUbtw4kl34Y1bzSKYrU2ZZnwhsQOILvK_8yQoUzXO09deKz7jqNIdp2EUAz32sdgHQ2zsq4dO4Dmv0psgXQn8G0uEEZ_RuY3GpOWoxNw0JsxwKAmCBQjxUjNk0C0yw2lSNRqbKEmhUxeflINYr9kEt5RJrFTfiT1-_KDgcusA_x9l7Gqg7OWf1GGO0BBPkSBOwKu4"/>
-<div class="absolute inset-0 bg-on-surface/10"></div>
+<section class="relative h-[870px] overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 z-0 scale-105 transition-transform duration-[10000ms] hover:scale-100">
+<img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" data-alt="A top-down cinematic shot of a lavish African feast laid out on a dark, rustic wood table. The scene features glowing terracotta bowls filled with rich, red stews, golden fufu, and vibrant green vegetables. Soft, directional sunlight streams across the table, highlighting the steam and textures of the heritage grains. The aesthetic is sophisticated quiet luxury, with deep olive and warm earth tones dominating the palette, evoking a refined and modern African hospitality atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3mBOiGFg5789FXTQ1cW-TSDiCx1mj46VO3P2RDdd4gzEY4Ug_9P1bZo1mNVtvu5jLXpoOXusFF44A1Z4PAuI_YKbgTnLeDrz-d4Lnv3dUiV-rdQqtNSIcQfBxhwnJNx_6Dg2ia5Tvypr51T3kE5Vom-4WvfD3ZG5JyCZAw8jvsplQDXgU4cJeiiU4Uu7umJKN3CII2xmn_yLcH7TBoSXHMsmQZJDrFfVT2JiO1UH7sFb0ORzkjMcleSLA5gpOGDmq9An46C5HlHUo"/>
+<div class="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
 </div>
-<div class="relative z-10 max-w-container-max mx-auto px-lg w-full">
-<div class="max-w-2xl">
-<span class="font-label-lg text-label-lg text-on-primary uppercase tracking-widest mb-sm block">The Collection</span>
-<h1 class="font-display-lg text-display-lg text-white mb-lg">Elevate Your Home with the Bukahauz Collection.</h1>
-<button class="bg-primary text-on-primary px-xl py-md font-label-lg text-label-lg rounded-lg hover:opacity-90 transition-all flex items-center gap-sm">
-                        Explore the Collection
-                        <span class="material-symbols-outlined">arrow_forward</span>
-</button>
+<div class="relative z-10 text-center text-white px-margin-mobile">
+<span class="font-label-lg text-label-lg tracking-[0.2em] uppercase mb-md block">The Art of African Cuisine</span>
+<h1 class="font-display-lg text-display-lg md:text-[96px] leading-none mb-lg drop-shadow-2xl italic">Heritage &amp; Heat</h1>
+<div class="max-w-xl mx-auto border-t border-white/20 pt-md">
+<p class="font-body-lg text-body-lg text-white/90">A sensory exploration through the vibrant landscapes and ancient traditions of the continent.</p>
 </div>
 </div>
 </section>
-<!-- Featured Collections (Asymmetric Editorial Grid) -->
-<section class="py-xxl max-w-container-max mx-auto px-lg">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-xl items-center">
-<div class="md:col-span-5 space-y-lg">
-<div class="space-y-sm">
-<span class="text-secondary font-label-lg text-label-lg uppercase tracking-widest">Hand-Crafted</span>
-<h2 class="font-display-md text-display-md">The Artisan Dining Set</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Our signature collection features stoneware crafted by generational potters, designed to bring the tactile warmth of Bukahauz experiences to your private table.</p>
+<!-- Journey Intro -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-xl py-xxl grid md:grid-cols-12 gap-lg items-center">
+<div class="md:col-span-5">
+<h2 class="font-headline-lg text-headline-lg text-secondary mb-md">A Journey Through the Continent</h2>
+<p class="font-body-lg text-body-lg mb-lg text-on-surface-variant leading-relaxed">
+                    Bukahauz celebrates the soul of Africa. From the spice-laden markets of Marrakesh to the rhythmic coastal flavors of Lagos, we curate an experience that honors ancestral techniques while embracing contemporary culinary finesse.
+                </p>
+<div class="flex gap-md border-t border-outline-variant/30 pt-lg">
+<div class="text-center">
+<span class="font-display-md text-display-md text-primary block">15</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Regional Roots</span>
 </div>
-<a class="text-primary font-label-lg text-label-lg uppercase tracking-widest border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-all" href="#">View Details</a>
-</div>
-<div class="md:col-span-7">
-<img class="w-full aspect-[4/3] object-cover rounded-lg" data-alt="Close-up of artisan stone plates stacked neatly on a rustic wooden shelf. The plates have an irregular, hand-made edge and a subtle matte glaze in a dusty peach and warm grey tone. Soft side-lighting highlights the grainy texture of the ceramic and the rich wood grain behind it. The aesthetic is clean, editorial, and deeply tactile, conveying a sense of curated quality and heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBpUS16b-MV6LV1fUA64hXVTCcszuYd3U_PJbMjY9JpPjMHHk5olobY96uOdXo_2g_XuCMUl1mqWv-YN-v_KUQYpJFXgJ1ljXX-CCYMVH0dr_-Ac_mub-iG4kaqB33AZIBbNQLrnDyKZo2FuDY9FEZ4dmIQWJo_EklF1NqxapAeCa74CYbwUItVvY-vMzA_mdI6zdNP9XcpRj8lCTuLnudUV2QQfNLHhLB14TYlas2RUA0ho4_PhjC_EIxfA9Fe62sSXldo5VoiDUu"/>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-xl items-center mt-xxl">
-<div class="md:col-span-7 order-2 md:order-1">
-<img class="w-full aspect-[4/3] object-cover rounded-lg" data-alt="Large-scale shot of high-quality linen textiles draped over a modern sculptural chair. The linens are in muted shades of sage green, ivory, and terracotta. The fabric is thick and textured, suggesting durability and softness. The room is a bright, minimalist interior with clean lines and natural light pouring in from a large window. The mood is serene, breathable, and reflects high-end textile craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYMRZvyNfEgHElzaaLfKIXiPJdWpVym4X3dKKZeLGRkaJbT_222yGndcYsSZqI6DXtZr32u6L1c27w4HO4Pk93M179ONJ0y8erHME1fIbfZJhb4TtbmqkB2JoTYyLgPW1FLUQHiAjvxZx8nOFSIcAbH14_fB7sCpOIlSHZi_jxrCtlMHKXyzbYjGFG3eSwRoZrQSGJWdrvuWFH6We0dBnqUFOzF3F1Y4Z80NOlW6zUmAY99gHnzwoxf3a0908pHSIHk8z6ufa55HOK"/>
-</div>
-<div class="md:col-span-5 order-1 md:order-2 md:pl-xl space-y-lg">
-<div class="space-y-sm">
-<span class="text-secondary font-label-lg text-label-lg uppercase tracking-widest">Natural Fibers</span>
-<h2 class="font-display-md text-display-md">Linen Textile Collection</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Sustainable, breathable, and timeless. Each piece is stone-washed for a lived-in feel that only improves with every shared meal.</p>
-</div>
-<a class="text-primary font-label-lg text-label-lg uppercase tracking-widest border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-all" href="#">Shop Linens</a>
+<div class="w-px h-16 bg-outline-variant/30"></div>
+<div class="text-center px-md">
+<span class="font-display-md text-display-md text-primary block">40+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Heritage Spices</span>
 </div>
 </div>
+</div>
+<div class="md:col-span-6 md:col-start-7 relative">
+<div class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden shadow-2xl relative z-10">
+<img class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" data-alt="A portrait of a chef's hands delicately garnishing a modern African dish with vibrant microgreens and edible flowers. The chef is wearing a crisp charcoal apron in a minimalist, high-end kitchen with stone surfaces. Soft ambient lighting creates a serene mood, emphasizing the precision and artistry of African gastronomy. The color palette is composed of sage green, deep olive, and warm linen textures, maintaining an editorial and premium luxury feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5z380JVv92MQ_a7jnYfdzt2kiNW-t2WDuMhINcj37MA8aNRd_QOyTOtzsZES7Kc1ze10wUmqMiQBn5eyGkpD5-AEBEe-chYg4RJhToz9pSTjOR5aqYk4bYj95K1K0eACuyvojtZ7U859KX9mkH8npuDUjILaRdyFGVdxXbIunw4F5nQEexaYdAq1WwfHaFQrF7KBGCvLs93Fl3MvbJFVVtW_Ehf0QPb_lgEsjqY0wz4Bx9iuxBl5oHOthQqEvs2qOY7tcOxzbLrqF"/>
+</div>
+<div class="absolute -bottom-lg -left-lg w-48 h-48 bg-secondary-fixed rounded-full -z-10 mix-blend-multiply opacity-30 blur-2xl"></div>
+</div>
+<div class="mt-xl text-center"><button class="inline-flex items-center gap-md border border-primary text-primary font-label-lg text-label-lg px-xl py-md rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300 uppercase tracking-widest">Explore All Grains <span class="material-symbols-outlined">arrow_right_alt</span></button></div></section>
+<!-- Menu Section: Heritage Classics -->
+<section class="py-xxl bg-surface"><div class="max-w-container-max mx-auto px-margin-mobile md:px-xl"><div class="mb-xl text-center"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.3em] mb-md block">A Visual Feast</span><h2 class="font-display-md text-display-md">The Bukahauz Collection</h2></div><div class="aspect-video w-full overflow-hidden rounded-xl shadow-2xl group"><img alt="Premium hospitality food photography of traditional African cuisine" class="w-full h-full object-cover transition-transform duration-[10000ms] group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM7rB2AAtaJxw7MniDdnt6c-bke2m81sFpNRqSPpM-WDqmX-cCf-3opkS4ntIEKAK_X0WRoAn8S8a1uY5bkX27IQqUOT1GSz-3pIKn2J_jantoTwkw90gZSnPTR7ZilxUGUpaslv1LfNGeZKnaRchXf8PO5HfAeZBCXs_Fp1DKaP-06-5TsPpKwj67zxdNqhiPdwH82AaNU3nVPIuPIi6Q4fj0hz-6rtTKGPg6FgzSAcBxQjve8qzB885yyzXgjw2mXClU85ReZiH8"/></div><p class="font-body-md text-body-md text-on-surface-variant text-center mt-lg max-w-2xl mx-auto italic">From Egusi Dumplings to Ghana Dark Ganache, explore the nine pillars of our seasonal heritage menu.</p><div class="mt-xl text-center"><button class="inline-flex items-center gap-md border border-primary text-primary font-label-lg text-label-lg px-xl py-md rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300 uppercase tracking-widest">View Dessert Menu <span class="material-symbols-outlined">arrow_right_alt</span></button></div></div></section><section class="bg-surface-container-low py-xxl">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
+<div class="mb-xxl text-center max-w-2xl mx-auto">
+<h2 class="font-display-md text-display-md mb-xs">Heritage Classics</h2>
+<div class="w-24 h-px bg-primary mx-auto mb-md"></div>
+<p class="font-body-md text-body-md text-on-surface-variant">Timeless recipes reimagined for the discerning palate.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-xl gap-y-xxl">
+<!-- Item 1 -->
+<div class="group flex flex-col md:flex-row gap-lg">
+<div class="w-full md:w-1/3 aspect-square overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700" data-alt="A gourmet presentation of Egusi Dumplings on a handmade ceramic plate in warm stone color. The dumplings are delicately crafted, resting in a pool of vibrant red palm oil and topped with crispy kale. The lighting is low and intimate, highlighting the steam and rich textures of the dish. The background features subtle textures of linen and dark wood, reinforcing a luxury, curated dining experience for Bukahauz." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM3MO949S7fRsPNSR0lpA15AcwVBT0mE2hJRwrfUfgIebNU_J5_JH9vSXCXYXpHwS6vy58stj0_Eor7OkwqRgGoz45ITAdIpmikT5JAfOckrF8k037kIT6QXXmET_ET8tPuPc3uxWtn2TavzbjaM-1GgwjvXNC_lTo4jsp5lk9eBc-Q-tcTfApJ9N9K93_-xG1Dyj5jmLg47rk_gOi55f4FPFFbh4ZKvrO9gzVL9oRqihoWGt2qz4hnZVBxVar71znSqE0iEHokgSL"/>
+</div>
+<div class="w-full md:w-2/3 border-b border-outline-variant/30 pb-md">
+<div class="flex justify-between items-baseline mb-sm">
+<h3 class="font-headline-md text-headline-md">Egusi Dumplings</h3>
+<span class="font-label-lg text-label-lg text-secondary">£28</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md leading-relaxed italic">
+                                Delicate rice-flour parcels filled with toasted melon seeds and wild spinach, finished with a reduction of crayfish butter and Scotch Bonnet oil.
+                            </p>
+<span class="inline-block px-sm py-xs bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm rounded uppercase tracking-wider">West African Roots</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group flex flex-col md:flex-row gap-lg">
+<div class="w-full md:w-1/3 aspect-square overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700" data-alt="A masterfully seared Suya Ribeye steak sliced to reveal a perfect medium-rare center, crusted with traditional groundnut spices. The steak is served on a dark volcanic rock slate alongside blistered heritage tomatoes and a brush of charred onion purée. High-contrast lighting emphasizes the succulent texture and smoky aroma. The setting is a private member's club atmosphere with warm wood and charcoal accents, embodying a high-end culinary journal style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXi1aFw__KkbvgqwUzAPkrGYnOAtW8ydM0SkifaLflMRwPtWoWmDsmxm975ZI3-TPoiaHzgotwi-9Xcg6Yygb_FjfnNVdaS9Uc04cMeUOstqlAoahE1xE8qK-s8cRjbsNVSqoBeInL2Km781k16fP7lvbfRhwQ-RiNHCUx6w8SzlmEVOtn66sHQOob-1U_NPCgGpIJDz2IZbj4WJy52zSVKXah_hIr32v-x1TvXdXbPXTvQfpC8ewNqHkZCS6ld4wz1AsRpNjj_r7n"/>
+</div>
+<div class="w-full md:w-2/3 border-b border-outline-variant/30 pb-md">
+<div class="flex justify-between items-baseline mb-sm">
+<h3 class="font-headline-md text-headline-md">Seared Suya Ribeye</h3>
+<span class="font-label-lg text-label-lg text-secondary">£42</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md leading-relaxed italic">
+                                35-day dry-aged British beef, crusted in artisanal groundnut spice and Yaji. Served with plantain purée and a red-chili chimichurri.
+                            </p>
+<span class="inline-block px-sm py-xs bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm rounded uppercase tracking-wider">The Hausa Legacy</span>
+</div>
+</div>
+</div>
+<div class="mt-xl text-center"><button class="inline-flex items-center gap-md border border-primary text-primary font-label-lg text-label-lg px-xl py-md rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300 uppercase tracking-widest">View Full Classics Menu <span class="material-symbols-outlined">arrow_right_alt</span></button></div></div>
 </section>
-<!-- Category Grid -->
-<section class="bg-surface-container-low py-xxl">
-<div class="max-w-container-max mx-auto px-lg">
-<div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
-<div class="space-y-sm">
-<h2 class="font-headline-lg text-headline-lg">Curated Essentials</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Browse by category to find your next heirloom piece.</p>
-</div>
-<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-all flex items-center gap-xs">
-                        View All Categories <span class="material-symbols-outlined text-[18px]">east</span>
-</button>
-</div>
-<div class="grid grid-cols-2 lg:grid-cols-5 gap-md">
-<a class="group relative aspect-[3/4] overflow-hidden rounded-lg" href="#">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A collection of elegant dining and serving platters arranged artistically." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSVtUdGUeQ47RM3tghAlQoXZ0d9C2a47FPdsZu66PNy5-A0k7N7sbGmYHMb0FG6bdCSxqGgX6LW5AIcIUVQXBD1BePP_YuxJ-shY8tkdYjFhq4TqxygiNRY3IekKv28yeYPVm4D9SrnlRNT9reOjFhxs7ylyq6uCTZVlUQ2mWmSmjYCJbm3yuh-Fg2BObGEnpoXiupoYGOucl7o4IbyoIxfZ43tj0M6me-qDcTWj3yLkVCWDSwGS83ePyfpWPja9IgSmMJme5tKnK"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-md">
-<span class="text-white font-label-lg text-label-lg">Dining &amp; Serving</span>
-</div>
-</a>
-<a class="group relative aspect-[3/4] overflow-hidden rounded-lg" href="#">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern tableware set in neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfMAGl5p2VmZNHEw4TfJ7GpmqECz_Z5bKKRhKro52RBWQpgwiFBEfSi-I14IFD9euJWrG1HGZ7qSxv5eKMEVKOTsTczjs2JXmZasjxUY0AFcI4F5m_DU9t250VbJHC365r9VATTCvnEw3_b2MoKLGf7-By9-bmJNzhQEN1yXRkIamPHR0PNj97knNRm5d_8ZQ-0yWwbx_MrRef4DCe3xo_zHXsoMJnrcs63d9Ii13ai_UzJfEcqcv-by5tnX1dhsNgA7dDJ1Y4mQVP"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-md">
-<span class="text-white font-label-lg text-label-lg">Tableware</span>
-</div>
-</a>
-<a class="group relative aspect-[3/4] overflow-hidden rounded-lg" href="#">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="High-end minimalist cutlery set in matte black." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFIwbIPGrmTsPzc_oouazKTh6946Ia0BRtx-K6uXYcMas6p-rHoWSoJ0cEn8GuimGXcUHN2wL9t4az9NEiPTb2ybqMmCaMihWT8m0Ht647Uw9pFKboNRzZGIkxGRJO7De3L4PRMBYUDl71SCEJ3NjbqLPzblTqknvQMJGhJIg7z03hnqzRHwuwSamiTU8MxXCJC_EG_Big5SRp8soQsxnakaqOPr1C3ctSoFJ1faVk95fPPw5J7M-HrAJ5OrRmui3HmmGrHtshNFo5"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-md">
-<span class="text-white font-label-lg text-label-lg">Cutlery</span>
-</div>
-</a>
-<a class="group relative aspect-[3/4] overflow-hidden rounded-lg" href="#">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A curated selection of fine wines and luxury dining accessories." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9RFQyVigqeG1tgW7FV2kpVbc4DV8MKugDb7jhmBpPfsSR_wpTUmmEwsW6U_shbv6fTZ_ykEg12UQzWWuNH3JDasrmrh4kDKak9k6pSeoBeGdm0qGy9_O6YhZD8uAXKSCYL2SDOCuu1NKWF5yI9BbCWq-OBd39GHupCAhHUiBKqU9ApGzqqSebvnrRFg3JX2IDJfCYKVGpencFwtTY7xg1pqoJRlVWhiXJFIsV6lNt2Dv54OyeOw0vDijSy9Jp954ccMjDCgcWRXA"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-md">
-<span class="text-white font-label-lg text-label-lg">Wine &amp; Dining</span>
-</div>
-</a>
-<a class="group relative aspect-[3/4] overflow-hidden rounded-lg" href="#">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Exquisitely wrapped gift boxes in premium paper." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA175vmsCAhlv0aEDr_QEwq5uke-ylrCy6iVmX3zfqq97AQTVyzVwoE5F7klBhQpgaCWIeZs2yVvTxfiYOj0kjgAtqYwb_W-QxrJksCyrF9inG0kOiUu628WLREqdnDcAlj510EjCEbe6ie4lMJC88fsi8lhQjxXNhL7lBOQsLvZqO6Oxci8ci1whkM_zOpxsr-QVXagkSQtS9msc2hEuGxqsYh2LVPfkY5D1PZHgVL_u9fEIz5HgLX6ZNRv8DpLlJthcUbM2xTfpN0"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-md">
-<span class="text-white font-label-lg text-label-lg">The Gift Shop</span>
-</div>
-</a>
+<!-- Bento Grid: Signature Grains -->
+<section class="py-xxl max-w-container-max mx-auto px-margin-mobile md:px-xl">
+<h2 class="font-display-md text-display-md text-center mb-xl">Signature Grains</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-md h-[800px] md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-high rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" data-alt="A wide-angle editorial shot of a steaming bowl of Jollof Rice in a minimalist white bowl. The rice is a vibrant orange-red, topped with a single bay leaf and grilled prawns. The background is an artistic blur of a sun-drenched terrace overlooking an African landscape. The composition is asymmetrical, following a magazine-style layout, with soft natural light highlighting the grain's texture and richness. The overall mood is calm, high-end, and expertly curated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBggCHgki_NVu_vf7MMzvblwdIpsr_SyadylqZfHz0h1jfY6HjQWsmjlEoKMi_WtY6-MvSic4inYT0OuNrOaGJ-xlzABw44a442lPSs9ydE2bOwzC4jRX9l5GwsWCptDlRy1YbiS1yrbZ9PuTIHh4S1X6TGFp6m96mKn0tDcdnWcfhL585yD24qS5ihBZEI7N5-D1z-g2zPuve6sP_6P-vus8bxwEN9_nRYoe-JRwsHF0jkwjI33b3XQfevZCeHanI85Hm82LfAEs5D"/>
+<div class="absolute bottom-0 left-0 right-0 p-lg bg-gradient-to-t from-black/80 to-transparent text-white">
+<h4 class="font-headline-lg text-headline-lg mb-xs">Smokey Jollof Risotto</h4>
+<p class="font-body-md text-body-md opacity-80 mb-sm">Long-grain rice slow-cooked in a trinity of heritage tomatoes, red peppers, and hardwood smoke.</p>
+<span class="font-label-lg text-label-lg text-secondary-fixed-dim">The Gold Standard</span>
 </div>
 </div>
-</section>
-<!-- Best Sellers (Product Cards) -->
-<section class="py-xxl max-w-container-max mx-auto px-lg">
-<h2 class="font-headline-lg text-headline-lg text-center mb-xl">The Best Sellers</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
-<!-- Product 1 -->
+<div class="md:col-span-2 bg-primary-container/20 rounded-xl flex items-center p-xl">
+<div class="max-w-md">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-xs block">Technical Excellence</span>
+<h4 class="font-headline-md text-headline-md mb-md">The Ancestral Fonio</h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Known as the "seed of the universe," our Fonio is sourced directly from sustainable farms in Senegal. It is toasted and steamed to a cloud-like consistency, dressed with wild honey and toasted shea nut oil.
+                        </p>
+</div>
+</div>
+<div class="bg-secondary/10 rounded-xl p-lg flex flex-col justify-end">
+<span class="material-symbols-outlined text-secondary text-[40px] mb-md">eco</span>
+<h5 class="font-label-lg text-label-lg text-secondary mb-xs">Ancient Teff</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Nut-brown Ethiopian grain, fermented for 72 hours for a complex tart finish.</p>
+</div>
+<div class="bg-tertiary-container/10 rounded-xl p-lg flex flex-col justify-end">
+<span class="material-symbols-outlined text-tertiary text-[40px] mb-md">landscape</span>
+<h5 class="font-label-lg text-label-lg text-tertiary mb-xs">Highland Sorghum</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Toasted mountain grains from the Kenyan highlands, served with cultured butter.</p>
+</div>
+</div>
+<div class="mt-xl text-center"><button class="inline-flex items-center gap-md border border-primary text-primary font-label-lg text-label-lg px-xl py-md rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300 uppercase tracking-widest">Explore All Grains <span class="material-symbols-outlined">arrow_right_alt</span></button></div></section>
+<!-- Traditional Desserts -->
+<section class="py-xxl bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
+<div class="flex flex-col md:flex-row items-end justify-between mb-xxl">
+<div class="max-w-xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.3em] mb-md block">A Sweet Conclusion</span>
+<h2 class="font-display-md text-display-md">Traditional Desserts</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant md:w-1/3 mb-md md:mb-0">Refined interpretations of the continent's most beloved sweet endings.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-lg">
+<!-- Dessert 1 -->
 <div class="group">
-<div class="relative aspect-[4/5] overflow-hidden mb-md bg-surface-container rounded-lg">
-<img class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" data-alt="A solitary artisanal bowl sitting on a rough-hewn stone plinth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdS6gzJ01Thed1XKvumeJ5hcqNC8xEmMZ-Y3zF08bnYRmvVCP_c4qdJrSMozeCjg8Zsf03wya2cdljZ1M6tC9lzKJnqvETfm0IBgbywMe7n4srkodJweQHRS0G3vtT9mw05wVW9mfEtpEoSgE5ghiOuaAC7-HXP6Gzfl1c-t74IkHaAtsw-Ji5dXTnl1eFQ_GWtGnkqH9uolyGRPJLs7_jnGQTvchGVToc19MqwOmUEl2BKc33bybkCOPUXg9vJ6g-5KjxGI7KJjV"/>
-<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm text-on-surface font-label-lg text-label-lg py-sm rounded-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Add to Bag — $48</button>
+<div class="aspect-square mb-md overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:rotate-1" data-alt="A sophisticated dessert presentation of Koeksisters with a modern twist. Two braided golden pastries are glazed in a ginger-spiced syrup, served with a side of rooibos-infused chantilly cream. The plate is a dark navy stoneware, set against a warm linen background. Soft, dramatic lighting creates a chiaroscuro effect, highlighting the glistening syrup and the airy texture of the pastry. The aesthetic is hand-selected and effortless high-end luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPBGTjsvJbY6-YK0bIkYn_mlvx10hJuV-RdJM3--wEnM0wCPxBankvo6N9kD8w47swJPvMwKHJd8RH4Eh4jW4ANpMPvUcA1nkq0-WSQ7QEWMQZCbwUynQ5UfoS41aHbZ5Xxhf--I62LEm42y6_7sdctIE1M8YhCHtMcImfN8m3SKMKHrGgGBjv0mvaq7d9WjppfJ7gCqkTdd-vxKyRQHi5c91fc2yIDQ40h24YoivQeXPuwBXqAOoI2nnEBzvgQblnZhx0-qE0WYZE"/>
 </div>
-<h3 class="font-label-lg text-label-lg mb-xs">The Ember Bowl</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Smoked Terracotta Stone</p>
+<h3 class="font-headline-md text-headline-md mb-xs">Spiced Koeksisters</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md italic">Cape Malay classic, infused with cardamom and rooibos-steeped syrup.</p>
+<div class="h-px bg-outline-variant/30 w-12 group-hover:w-full transition-all duration-500"></div>
 </div>
-<!-- Product 2 -->
+<!-- Dessert 2 -->
 <div class="group">
-<div class="relative aspect-[4/5] overflow-hidden mb-md bg-surface-container rounded-lg">
-<img class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" data-alt="Crystal glass wine carafe with a unique modern silhouette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXl6XUmq9s-m8_r-MDyqSXENucOwXg-X7--b0PFhvOj2tH3fPVwCr6eNc7krSu2_FyJvnwtC-nmoI7SLvhtW87T3INe7znrBjVHkGrm_FRZgG7H28wJ9y3hVqW0zJiS1qp6MlxSfredemZ1CRHE7_G3ivqj4U-hoT7I1MTZ3U-VX3mTbbvyFC7bxe2IP7uChkgVybFO0bXwaUuwuRG28Q5365RdFk7xcMCc7qSPy6txGsk09OmyOt7eyUUk0SC8SeXRHMO-dY88nJv"/>
-<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm text-on-surface font-label-lg text-label-lg py-sm rounded-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Add to Bag — $120</button>
+<div class="aspect-square mb-md overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:rotate-1" data-alt="A gourmet 'Hibiscus Poached Pear' dessert served in a shallow glass bowl. The pear is a deep vibrant magenta from the hibiscus flower infusion, resting on a bed of crumbled almond cake and a scoop of white chocolate mousse. Edible gold leaf accents and dried hibiscus petals are scattered around. The lighting is high-key and bright, creating a clean editorial look. The color palette centers on soft linen and rich berry tones, reflecting the human connection and warmth of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaejrYSGA4Ry43tDZT1Cq1NS4qd2Icx0r4WxVOmj-H5cemWRflnj6SLoYno-YC9gp45buRWVCoLcQwXC1f212Pq4Oci1KqH2snNnkr3eg4RRpAjm-chxGKx0zVgn9Yi_6CNCPHrsCI_vPs_6nGyq5PtSGQVQMv7U_TGEKRFqa7nGKDMXXWJJpGziYZaYPcRHT2JcrxfUC-wMr2aEzUTKPCQGEBcxyyo_wSp-luFzkhoaIKJ2Xl390Rf36p2FuEuPFQbp5DmZm-4qbM"/>
 </div>
-<h3 class="font-label-lg text-label-lg mb-xs">Verge Decanter</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Hand-Blown Crystal</p>
+<h3 class="font-headline-md text-headline-md mb-xs">Hibiscus Poached Pear</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md italic">Wild hibiscus syrup, cassava crumb, and whipped coconut cream.</p>
+<div class="h-px bg-outline-variant/30 w-12 group-hover:w-full transition-all duration-500"></div>
 </div>
-<!-- Product 3 -->
+<!-- Dessert 3 -->
 <div class="group">
-<div class="relative aspect-[4/5] overflow-hidden mb-md bg-surface-container rounded-lg">
-<img class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" data-alt="Set of linen napkins in an earthy sage green." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD30lruBk9hG-XahUEmecZ--vrLdVsTz3o-D5JMIgaAvuMOPaOeSmt5qMbSk_0LMxDksjqDP1MpH_4v1AwWOkeNIKmJVCmzaVxUZA6mm3t0WBVzUgjAVKeIPCUUOab2N9eDNt1_MnoDFKKho21743PpNU2NThvthsonffu2skL-Nf9xLoe_XY-xXfjepLGNFqyHb4BpNXF2CnEz8nIzI8fHAbP1JiKXvUzqWn067blW-OO54Zsky3JvWXxItrmc_gN8I2IZ4wilzXik"/>
-<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm text-on-surface font-label-lg text-label-lg py-sm rounded-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Add to Bag — $34</button>
+<div class="aspect-square mb-md overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:rotate-1" data-alt="An artisanal chocolate dessert featuring Ghana dark chocolate ganache, shaped into a smooth dome. The plate is garnished with salted plantain chips and a drizzle of caramel. The photography is dark and moody, with a single light source highlighting the glossy chocolate and the golden caramel. The setting is a luxury restaurant with a soft stone tabletop, creating a tactile and textured sensory experience. The mood is confidence through restraint, perfectly aligned with the Bukahauz brand personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbwKRcqLKicJRphBLS9SonjRaZ7OG3HMeyL_h3RKZUevBlujy4ESThpLnYklSuhq0lmzwFDR41nGxPs5kkV24h89EUxO0sbOrzJnvKPNWpDeWARQYz2pRzu2v23rKmxe6rV2lsuaXdd-ANb3SWR09kohTanhCziO4mUPeRjyK6M045EFcr2FzwdHYI9SeOLhk6AtOr3hrgYXxCZo4YmuKSs5hXKqFmMSLlgEv8dxAJkVW0AXec2U6UXmfkIDtGXbv-CmhVdSNdlZtE"/>
 </div>
-<h3 class="font-label-lg text-label-lg mb-xs">Sage Linen Napkins</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Set of 4</p>
-</div>
-<!-- Product 4 -->
-<div class="group">
-<div class="relative aspect-[4/5] overflow-hidden mb-md bg-surface-container rounded-lg">
-<img class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" data-alt="A set of handcrafted brass spoons with a vintage finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmWDmw-6-Bw9X3XNF35N-yp2_HaGTiOvXXp0UC3_r1cI0V6TSTIPpXLEmXbxyZLnmpz2vT_A_WlXOllkE4tl50b-abHetJmTcsREIwnnq-PhqJRtR7rSKk9Rxyw9qHj8-8lTUttsuxU7QYWTDQadMRusf0PiIROssnWCUJ06Vyh0xw7bD7t9SZJ9vTP1aqcr-c-fRwRKBGw-b0bMActqVonXMqr7RPstsTQdRLCv0jpB8xO8yadry9BeDoDWbEO8orvQHyLXGTKNs"/>
-<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm text-on-surface font-label-lg text-label-lg py-sm rounded-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Add to Bag — $65</button>
-</div>
-<h3 class="font-label-lg text-label-lg mb-xs">Heirloom Serving Spoons</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Antiqued Brass</p>
+<h3 class="font-headline-md text-headline-md mb-xs">Ghana Dark Ganache</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md italic">70% Single Origin chocolate, salted plantain crisps, and smoked sea salt.</p>
+<div class="h-px bg-outline-variant/30 w-12 group-hover:w-full transition-all duration-500"></div>
 </div>
 </div>
+<div class="mt-xl text-center"><button class="inline-flex items-center gap-md border border-primary text-primary font-label-lg text-label-lg px-xl py-md rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300 uppercase tracking-widest">View Dessert Menu <span class="material-symbols-outlined">arrow_right_alt</span></button></div></div>
 </section>
-<!-- Product Storytelling (Curation) -->
-<section class="py-xxl bg-surface-container-low border-y border-outline-variant/10">
-<div class="max-w-container-max mx-auto px-lg">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-xxl items-center">
-<div class="space-y-lg">
-<span class="text-primary font-label-lg text-label-lg uppercase tracking-widest">Our Philosophy</span>
-<h2 class="font-display-md text-display-md max-w-md">Every object tells a story of craftsmanship.</h2>
-<div class="space-y-md font-body-lg text-body-lg text-on-surface-variant max-w-lg">
-<p>We believe that the tools of hospitality should be as carefully chosen as the ingredients of a meal. At Bukahauz, our shop is an extension of our culinary heart.</p>
-<p>We partner with independent artisans who use traditional techniques—from the ceramicist who mixes her own glazes to the weaver who works on a pedal loom. These are not mere products; they are the artifacts of a life well-lived.</p>
-</div>
-<div class="pt-md grid grid-cols-2 gap-lg">
-<div>
-<h4 class="font-label-lg text-label-lg text-primary mb-xs">Sustainably Sourced</h4>
-<p class="text-label-sm font-label-sm text-on-surface-variant">Ethically obtained materials that respect the earth.</p>
-</div>
-<div>
-<h4 class="font-label-lg text-label-lg text-primary mb-xs">Generational Skill</h4>
-<p class="text-label-sm font-label-sm text-on-surface-variant">Pieces crafted using techniques passed down through decades.</p>
+<!-- Storytelling Section -->
+<section class="bg-primary text-on-primary py-xxl text-center overflow-hidden relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="grid grid-cols-6 h-full">
+<div class="border-r border-on-primary"></div><div class="border-r border-on-primary"></div><div class="border-r border-on-primary"></div><div class="border-r border-on-primary"></div><div class="border-r border-on-primary"></div>
 </div>
 </div>
-</div>
-<div class="relative">
-<div class="absolute -top-12 -left-12 w-48 h-48 bg-secondary-fixed opacity-20 rounded-full blur-3xl"></div>
-<img class="relative z-10 w-full rounded-lg shadow-xl" data-alt="A craftsman's workshop with hands shaping a wet clay pot on a spinning wheel. Dust particles dance in the warm morning light coming through a dusty window. The background shows wooden shelves filled with unfinished pottery. The scene captures the raw, human element of artisan production, aligning with the brand's 'human connection' value." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyUpGvgstKJH1E4x1VvAgtfyZ8gVFQ0mdvv2Yy3gIAtdGWfazXcKTDslk9T6d_o93MirODjJGtn83MnrktqYg1VL1309hpuq4u4VXqKEXXWOEE4Swp79VIDjlmUPw9gPyw4GxcfwY-ZVpSIiPVFbbesHCavC4pVGlA8fVCWGSdU58tMJB2cOq3Iu2iNvlJJkbHMn4PdfWCyyryBFXCSOwbsfxh6bwmsB5WXzXm0NzhQX4gwi2Y_jFDuR7LtngUS0gsv7Xc6s0dXRy4"/>
-</div>
-</div>
-</div>
-</section>
-<!-- Seasonal Collection -->
-<section class="py-xxl">
-<div class="max-w-container-max mx-auto px-lg">
-<div class="relative h-[600px] rounded-xl overflow-hidden group">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="A lush outdoor dinner setting during twilight. A long wooden table is decorated with vibrant citrus fruits, tall candlesticks, and wildflower arrangements. The guests are blurred in the background, laughing under string lights. The overall feel is one of Mediterranean warmth, celebration, and the effortless beauty of a summer garden gathering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5xBga9_XrT8E-YvYGIqtckoljUb9vSL0XbNwhKMfCvSq2zawnCw0jG8Fz_QGSWWLTI1VJgrJhPQ1xvTD8xYlkx5ub1v7LaTkptjv4To6tpCO3_ss6f6L4SAC127o2gbhGSKwu_Z6OYIC8bRMI90vsPbU2LG39aTXo1dn3pN3NPF-oPDTARq6MGVnFgmBExxi9raORaKJAZer-s5oo1Tf2O3TpyOKTnY7zH5W4Yzpc1OVz488sjcLFKEx-9b3r5ECGS5jLpaj5qMbq"/>
-<div class="absolute inset-0 bg-black/30 flex items-center justify-center text-center">
-<div class="max-w-xl px-lg">
-<span class="text-white/80 font-label-lg text-label-lg uppercase tracking-widest mb-sm block">Limited Edition</span>
-<h2 class="font-display-lg text-display-lg text-white mb-lg">The Summer Garden Gathering</h2>
-<p class="text-white/90 font-body-lg text-body-lg mb-lg">A curated set of essentials designed for the long, sun-drenched evenings of the season. Featuring lightweight linens and vibrant glassware.</p>
-<button class="bg-white text-on-surface px-xl py-md font-label-lg text-label-lg rounded-lg hover:bg-primary hover:text-white transition-all">Shop Seasonal Collection</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Lifestyle Photography Integration -->
-<section class="pb-xxl">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
-<div class="aspect-square overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover hover:opacity-80 transition-opacity" data-alt="A vibrant lifestyle shot of a chef finishing a plate at a Bukahauz event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ4sl6KUSeqRMAkhvNAfCA_WYkZxDNI9f2XrWp8GNiiSiBNTJYfjCeCuCHzSAVCBrCmxUF5whW7W02T4dfTJYrklgc4yx-FxJtUj1fqQoM0FzXFye4QpU7pBD_M7tsLQM9J7C6TuYgskTekPp0EmbuuiAwEs8ork2huh3jxKLPRxbfuTKBWmVUUYHygQu132WD1itg0495Mppcisf1gQz-2NrnerxdESFPz00EL71svEHxY7_-hJBZsoXqw-kGmX7YzzWQU1c-9rvL"/>
-</div>
-<div class="aspect-square overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover hover:opacity-80 transition-opacity" data-alt="Close-up of wine being poured into a Bukahauz crystal glass." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeteNMTsTBRLise5Fln2jSuexMCj2iMDCkUtGuyoayyIyK6U1kmUQfo9vBW1Mfkd-Xw0vdiqLlnGq4x3iqVvP-e79hPOBoO-P0xtbxX8bheaqW18-5qP8zDBnc4HD4rTabMqYgcQ6Bo9Kf335_N71mUR3X4KXKjo9kflfW2JXV784l9XGZmyQKrectljI3iVUHkBV_8Q4GxI7Lel1MfJ6lhU80BFiYelPES9xWuIYSi-ICRXLETE2D1Q77U94mgMChkULst4Rv6_Pp"/>
-</div>
-<div class="aspect-square overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover hover:opacity-80 transition-opacity" data-alt="Overhead shot of a beautifully laid breakfast table with Bukahauz linens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxQiCh41ThCk7ZHwFD2_i6UvqJDpnpLsl95UVcg2l7xXFGRxikbKuXsRfZTDZZrWSgUVD6wM41zcILGs1-nLkt_MMoq03iSdqJos82gHHv-SwlF3KI_8t0I21NynVY9rOChgJV_SqgEVIG5rR4JrQU0uWrAfd1i2V_S70gZ8a_3HgUrD0hMN7nfUI2g1zSJKyv3I1hwELNKW-z6PKG4GhbUtcpbTr5owdbM3bIS_4yulzYDJoP3KWB8a-a_dsslanDh_4qm6tNatOo"/>
-</div>
-<div class="aspect-square overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover hover:opacity-80 transition-opacity" data-alt="A group of friends laughing over appetizers served on Bukahauz wooden boards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS9bZzdAy9h1MnrBTHaxbrRj_DXeUO_GbET_pfYXHy2cP8h3btazClxbBU3k6_dBia-ARF00Dl3io46TRErJeWi-747o0IcFpRII2RcrKqI6ni2XWpo5cDXBTbPxjNWCpt77CCBR90u4rEDVQiA1AETjeCtWDjAi9ftd5kz-U5Me1Q4DbF6jbs4--sFPHL7qKTC1J2Gz_VbmIFAI5kmqJvdIN-jGIjwrV2xfd9cWXkfqcKmo1iDj4bE5jYaQh1t-rlFHU5b8OeryhM"/>
-</div>
-</div>
-<div class="text-center mt-lg">
-<a class="font-label-lg text-label-lg text-on-surface-variant flex items-center justify-center gap-sm hover:text-primary transition-all" href="#">
-<span class="material-symbols-outlined">camera</span> Follow the Bukahauz Lifestyle @bukahauz
-                </a>
-</div>
-</section>
-<!-- Final CTA -->
-<section class="py-xxl text-center bg-surface">
-<div class="max-w-2xl mx-auto px-lg space-y-lg">
-<h2 class="font-display-md text-display-md">Bring the Bukahauz experience home.</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Join our culinary inner circle and receive early access to new collections and artisanal collaborations.</p>
-<div class="flex flex-col sm:flex-row gap-md justify-center pt-md">
-<input class="border-b border-outline-variant bg-transparent px-md py-sm focus:outline-none focus:border-primary text-body-md w-full sm:w-80" placeholder="Your Email Address" type="email"/>
-<button class="bg-primary text-on-primary px-xl py-sm font-label-lg text-label-lg rounded-lg whitespace-nowrap">Join the Club</button>
+<div class="relative z-10 max-w-3xl mx-auto px-margin-mobile">
+<span class="font-label-sm text-label-sm text-on-primary/70 uppercase tracking-[0.5em] mb-lg block">The Bukahauz Philosophy</span>
+<h2 class="font-display-md text-display-md mb-lg italic">"A table is where the stories of our ancestors meet the dreams of our children."</h2>
+<div class="flex items-center justify-center gap-md">
+<div class="w-12 h-px bg-on-primary"></div>
+<p class="font-label-lg text-label-lg">CHEF ADEBOLA</p>
+<div class="w-12 h-px bg-on-primary"></div>
 </div>
 </div>
 </section>
@@ -709,23 +649,21 @@ document.addEventListener('click', function(e) {
 
 </footer>
 <script>
-        // Micro-interactions for smooth scrolling or hover effects
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Atmospheric effect: parallax-ish scroll for hero
+        // Micro-interactions and subtle parallax
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const heroImg = document.querySelector('section img');
-            if(heroImg) {
-                heroImg.style.transform = `translateY(${scrolled * 0.2}px)`;
+            const heroImage = document.querySelector('section img');
+            if(heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.2}px) scale(1.05)`;
             }
+        });
+
+        // Hover effects for menu items
+        const menuItems = document.querySelectorAll('.group');
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.querySelector('img')?.classList.remove('grayscale-[0.3]');
+            });
         });
     </script>
 </body></html>

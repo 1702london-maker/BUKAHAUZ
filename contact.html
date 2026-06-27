@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
@@ -244,6 +244,11 @@
       <a href="takeaway.html"            class="bk-mob-sub">Takeaway</a>
     </div>
     <a href="menus.html" class="bk-mob-link">Menus</a>
+    <div style="padding-left:16px;border-left:2px solid rgba(70,101,86,0.2);margin-left:8px;">
+      <a href="afro-continental-menu.html" class="bk-mob-sub">Afro Continental Menu</a>
+      <a href="menus.html"                 class="bk-mob-sub">Private Dining Menu</a>
+      <a href="wine-pairing-menu.html"     class="bk-mob-sub">Wine Pairing Menu</a>
+    </div>
     <a href="networking.html" class="bk-mob-link">Networking</a>
     <a href="shop.html" class="bk-mob-link">Shop</a>
     <a href="food-truck.html" class="bk-mob-link">Food Truck</a>
@@ -411,78 +416,122 @@ document.addEventListener('click', function(e) {
 </section>
 <!-- Contact Form & Direct Channels -->
 <section class="py-xl md:py-xxl max-w-container-max mx-auto px-margin-mobile md:px-xl" id="form">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+
 <!-- Form -->
-<div class="md:col-span-7">
-<h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-on-surface mb-xl">Tell us about your needs.</h2>
-<form class="space-y-lg">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
-<div class="flex flex-col gap-xs">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Full Name</label>
-<input class="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md" placeholder="Julianne Smith" type="text"/>
-</div>
-<div class="flex flex-col gap-xs">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Email Address</label>
-<input class="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md" placeholder="hello@company.com" type="email"/>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
-<div class="flex flex-col gap-xs">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Nature of Enquiry</label>
-<select class="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 text-on-surface-variant transition-all font-body-md">
-<option>Private Dining</option>
-<option>Corporate Event</option>
-<option>Chef Collaboration</option>
-<option>Shop &amp; Delivery</option>
-<option>Other</option>
-</select>
-</div>
-<div class="flex flex-col gap-xs">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Approx. Date</label>
-<input class="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 text-on-surface-variant transition-all font-body-md" type="date"/>
-</div>
-</div>
-<div class="flex flex-col gap-xs">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Message</label>
-<textarea class="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md resize-none" placeholder="How can we assist in crafting your experience?" rows="4"></textarea>
-</div>
-<button class="bg-primary text-on-primary px-xl py-md rounded-lg font-label-lg text-label-lg hover:bg-on-primary-fixed-variant transition-all duration-300 w-full md:w-auto shadow-sm" type="submit">Send Inquiry</button>
+<div class="lg:col-span-7">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] mb-sm block">Send An Enquiry</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xl">Tell us about your needs.</h2>
+<form class="space-y-lg" onsubmit="this.innerHTML='<div style=\'padding:32px 0;\'><p style=\'font-family:Bodoni Moda,serif;font-size:24px;color:#466556;margin-bottom:8px;\'>Thank you.</p><p style=\'font-family:Inter,sans-serif;font-size:16px;color:#424844;\'>We\'ll be in touch within 24 hours.</p></div>';return false;">
+
+  <!-- Row 1: Name + Phone -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-lg">
+    <div class="flex flex-col gap-xs">
+      <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Full Name *</label>
+      <input required class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md text-on-surface w-full" placeholder="Your full name" type="text"/>
+    </div>
+    <div class="flex flex-col gap-xs">
+      <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Phone Number</label>
+      <input class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md text-on-surface w-full" placeholder="+44 7000 000000" type="tel"/>
+    </div>
+  </div>
+
+  <!-- Row 2: Email -->
+  <div class="flex flex-col gap-xs">
+    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Email Address *</label>
+    <input required class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md text-on-surface w-full" placeholder="hello@yourcompany.com" type="email"/>
+  </div>
+
+  <!-- Row 3: Enquiry Type + Date -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-lg">
+    <div class="flex flex-col gap-xs">
+      <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Nature of Enquiry *</label>
+      <select required class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 text-on-surface-variant transition-all font-body-md w-full">
+        <option value="" disabled selected>Select one...</option>
+        <option>Private Dining</option>
+        <option>Corporate Event</option>
+        <option>Chef Collaboration</option>
+        <option>Networking / Community</option>
+        <option>Shop &amp; Delivery</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="flex flex-col gap-xs">
+      <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Preferred Date</label>
+      <input class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 text-on-surface-variant transition-all font-body-md w-full" type="date"/>
+    </div>
+  </div>
+
+  <!-- Row 4: Guests + Budget -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-lg">
+    <div class="flex flex-col gap-xs">
+      <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Number of Guests</label>
+      <input class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md text-on-surface w-full" placeholder="e.g. 20" type="number" min="1"/>
+    </div>
+    <div class="flex flex-col gap-xs">
+      <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Approximate Budget</label>
+      <select class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 text-on-surface-variant transition-all font-body-md w-full">
+        <option value="" disabled selected>Select range...</option>
+        <option>Under £500</option>
+        <option>£500 – £1,000</option>
+        <option>£1,000 – £3,000</option>
+        <option>£3,000 – £10,000</option>
+        <option>£10,000+</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Row 5: Message -->
+  <div class="flex flex-col gap-xs">
+    <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Your Message *</label>
+    <textarea required class="bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary py-sm px-0 placeholder:text-outline-variant transition-all font-body-md resize-none text-on-surface w-full" placeholder="Tell us about your vision — the occasion, dietary needs, or anything that will help us curate the perfect experience." rows="5"></textarea>
+  </div>
+
+  <!-- Submit -->
+  <div class="pt-sm">
+    <button class="w-full sm:w-auto bg-primary text-on-primary px-xl py-md font-label-lg text-label-lg uppercase tracking-widest hover:bg-on-primary-fixed-variant transition-all duration-300 shadow-sm" type="submit">
+      Send Enquiry
+    </button>
+    <p class="font-label-sm text-label-sm text-outline mt-sm">We respond within 24 business hours.</p>
+  </div>
+
 </form>
 </div>
+
 <!-- Direct Channels -->
-<div class="md:col-span-4 md:col-start-9 space-y-xl">
-<div class="space-y-md">
-<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em]">Contact Channels</h4>
-<div class="space-y-lg">
-<div class="flex gap-md items-start">
-<span class="material-symbols-outlined text-primary">chat_bubble</span>
-<div>
-<p class="font-label-lg text-label-lg">WhatsApp Concierge</p>
-<p class="text-on-surface-variant">+44 (0) 7700 900000</p>
-<p class="text-label-sm text-outline font-label-sm">Active 9am - 6pm GMT</p>
-</div>
-</div>
-<div class="flex gap-md items-start">
-<span class="material-symbols-outlined text-primary">call</span>
-<div>
-<p class="font-label-lg text-label-lg">Telephone</p>
-<p class="text-on-surface-variant">+44 (0) 20 7946 0123</p>
-</div>
-</div>
-<div class="flex gap-md items-start">
-<span class="material-symbols-outlined text-primary">mail</span>
-<div>
-<p class="font-label-lg text-label-lg">General Email</p>
-<p class="text-on-surface-variant">concierge@bukahauz.com</p>
-</div>
-</div>
-</div>
-</div>
-<div class="bg-secondary-fixed p-lg rounded-lg border border-secondary/10">
-<h4 class="font-headline-md text-headline-md text-on-secondary-fixed mb-sm">Bespoke Gifting</h4>
-<p class="text-on-secondary-fixed-variant mb-md">Interested in volume orders for our gourmet hampers or wine selections?</p>
-<a class="inline-block font-label-lg text-label-lg text-on-secondary-fixed underline decoration-secondary/30" href="#">Download Gift Guide</a>
-</div>
+<div class="lg:col-span-4 lg:col-start-9 space-y-lg">
+  <div class="bg-surface-container-low rounded-lg p-lg">
+    <h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] mb-lg">Contact Channels</h4>
+    <div class="space-y-lg">
+      <a href="https://wa.me/447700900000" class="flex gap-md items-start group" style="text-decoration:none;">
+        <span class="material-symbols-outlined text-primary" style="margin-top:2px;">chat_bubble</span>
+        <div>
+          <p class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">WhatsApp Concierge</p>
+          <p class="font-body-md text-on-surface-variant">+44 (0) 7700 900000</p>
+          <p class="font-label-sm text-label-sm text-outline">Active 9am – 6pm GMT</p>
+        </div>
+      </a>
+      <a href="tel:+442079460123" class="flex gap-md items-start group" style="text-decoration:none;">
+        <span class="material-symbols-outlined text-primary" style="margin-top:2px;">call</span>
+        <div>
+          <p class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Telephone</p>
+          <p class="font-body-md text-on-surface-variant">+44 (0) 20 7946 0123</p>
+        </div>
+      </a>
+      <a href="mailto:concierge@bukahauz.com" class="flex gap-md items-start group" style="text-decoration:none;">
+        <span class="material-symbols-outlined text-primary" style="margin-top:2px;">mail</span>
+        <div>
+          <p class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Email</p>
+          <p class="font-body-md text-on-surface-variant">concierge@bukahauz.com</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="bg-primary rounded-lg p-lg" style="color:#fff;">
+    <h4 class="font-headline-md text-headline-md mb-sm" style="color:#fff;">Bespoke Gifting</h4>
+    <p class="font-body-md mb-md" style="color:rgba(255,255,255,0.85);">Interested in volume orders for our gourmet hampers or wine selections?</p>
+    <a class="font-label-lg text-label-lg uppercase tracking-widest underline decoration-white/30 underline-offset-4" href="#" style="color:#fff;">Download Gift Guide</a>
+  </div>
 </div>
 </div>
 </section>
