@@ -1,0 +1,18 @@
+﻿/* Mobile action button size reduction — 40% smaller */
+@media (max-width: 900px) {
+  header a[href="book.html"] {
+    padding: 5px 11px !important;
+    font-size: 7px !important;
+    letter-spacing: .05em !important;
+  }
+  header a[href="affiliate-portal.html"] {
+    padding: 5px 9px !important;
+    font-size: 7px !important;
+    letter-spacing: .05em !important;
+  }
+  /* Add to Cart on menu */
+  button.bk-add {
+    padding: 7px 10px !important;
+    font-size: 8px !important;
+  }
+}
