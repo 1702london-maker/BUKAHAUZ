@@ -753,13 +753,6 @@ document.addEventListener('click', function(e) {
             observer.observe(el);
         });
 
-        // Parallax effect for hero image
-        window.addEventListener('scroll', () => {
-            const scrollPos = window.pageYOffset;
-            const heroImage = document.querySelector('header img');
-            if (heroImage) {
-                heroImage.style.transform = `translateY(${scrollPos * 0.4}px)`;
-            }
-        });
+        // Parallax removed - was moving nav logo
     </script>
 <script src="cart.js"></script></body></html>
