@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Affiliate Portal | Bukahauz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#faf9f7;font-family:Inter,sans-serif;color:#1a1c1b;}
+.bk-nav-link{font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#424844;background:none;border:none;cursor:pointer;padding:6px 8px;text-decoration:none;white-space:nowrap;transition:color 0.2s;display:inline-block;}
+.bk-nav-link:hover{color:#466556;}
+.bk-dropdown-wrap{position:relative;display:inline-block;}
+.bk-dropdown{display:none;position:absolute;top:calc(100% + 4px);left:0;background:#faf9f7;border:1px solid rgba(193,200,194,0.3);box-shadow:0 8px 24px rgba(0,0,0,0.08);min-width:200px;z-index:100;}
+.bk-dropdown.bk-open{display:block;}
+.bk-dd-item{display:block;padding:10px 16px;font-family:Inter,sans-serif;font-size:13px;color:#424844;text-decoration:none;transition:background 0.15s,color 0.15s;}
+.bk-dd-item:hover{background:#f4f4f1;color:#466556;}
+.bk-mob-link{display:block;padding:10px 8px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#424844;text-decoration:none;border-bottom:1px solid rgba(193,200,194,0.2);}
+.bk-mob-sub{display:block;padding:8px 8px;font-family:Inter,sans-serif;font-size:12px;color:#5a6160;text-decoration:none;border-bottom:1px solid rgba(193,200,194,0.1);}
+.bk-mob-link:hover,.bk-mob-sub:hover{color:#466556;}
+#bk-mobile-menu{display:none;}
+#bk-mobile-menu.bk-open{display:block!important;}
+@media(max-width:900px){#bk-desktop-nav{display:none!important;}#bk-burger{display:block!important;}}
+
+/* Portal */
+.ap-hero{background:#1a1c1b;padding:80px 48px 60px;margin-top:112px;}
+.ap-hero-inner{max-width:1200px;margin:0 auto;}
+.ap-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f4c37;margin:0 0 12px;}
+.ap-title{font-family:"Bodoni Moda",serif;font-size:52px;color:#fff;margin:0 0 14px;line-height:1.1;}
+.ap-sub{font-size:14px;color:rgba(255,255,255,.6);max-width:480px;line-height:1.75;}
+.ap-wrap{max-width:1200px;margin:0 auto;padding:0 48px;}
+.ap-section{padding:64px 0 40px;}
+.ap-card{background:#fff;border:1px solid #e8e6e2;padding:32px;}
+.ap-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e8e6e2;border:1px solid #e8e6e2;margin:0 0 40px;}
+.ap-stat{background:#fff;padding:28px 30px;}
+.ap-stat-num{font-family:"Bodoni Moda",serif;font-size:36px;color:#466556;margin:0 0 4px;}
+.ap-stat-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#727974;}
+.ap-h{font-family:"Bodoni Moda",serif;font-size:28px;color:#1a1c1b;margin:0 0 8px;}
+.ap-p{font-size:14px;color:#5a6160;line-height:1.75;margin:0 0 28px;}
+.ap-form{display:flex;flex-direction:column;gap:14px;max-width:480px;}
+.ap-input{font-family:Inter,sans-serif;font-size:14px;border:1.5px solid #d4d0cb;padding:13px 16px;background:#fff;outline:none;transition:border-color .2s;}
+.ap-input:focus{border-color:#466556;}
+.ap-btn{font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:16px 32px;cursor:pointer;transition:background .2s;align-self:flex-start;}
+.ap-btn:hover{background:#2f4d3f;}
+.ap-btn-outline{background:transparent;color:#466556;border:1.5px solid #466556;}
+.ap-btn-outline:hover{background:#466556;color:#fff;}
+.ap-table{width:100%;border-collapse:collapse;margin-top:16px;}
+.ap-table th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#727974;padding:10px 16px;border-bottom:2px solid #e8e6e2;text-align:left;}
+.ap-table td{font-size:13px;color:#1a1c1b;padding:14px 16px;border-bottom:1px solid #f0ede8;}
+.ap-table tr:hover td{background:#faf9f7;}
+.ap-badge{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;}
+.ap-badge-green{color:#466556;background:rgba(70,101,86,.1);}
+.ap-badge-amber{color:#8f4c37;background:rgba(143,76,55,.1);}
+.ap-divider{border:none;border-top:1px solid #e8e6e2;margin:40px 0;}
+.ap-alert{background:#f4f9f6;border:1px solid #c4d8cc;padding:16px 20px;font-size:13px;color:#2f4d3f;margin-bottom:28px;display:none;}
+.ap-alert.visible{display:block;}
+.ap-error{background:#fff8f2;border:1px solid #f0d4b0;color:#7a4a1a;}
+.ap-code-box{background:#1a1c1b;color:#a8d5b5;font-family:monospace;font-size:18px;font-weight:700;letter-spacing:.12em;padding:18px 24px;display:inline-block;margin:8px 0 16px;}
+#ap-login{display:block;}
+#ap-dashboard{display:none;}
+@media(max-width:768px){.ap-hero{padding:60px 20px 48px;}.ap-wrap{padding:0 20px;}.ap-stat-grid{grid-template-columns:repeat(2,1fr);}.ap-title{font-size:36px;}}
+</style>
+</head>
+<body>
+
+<header id="bk-header" style="position:fixed;top:0;left:0;right:0;z-index:50;">
+<div style="background:rgba(250,249,247,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(193,200,194,0.2);">
+  <div style="max-width:1440px;margin:0 auto;padding:0 32px;height:112px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;">
+    <nav id="bk-desktop-nav" style="display:flex;align-items:center;gap:2px;justify-content:flex-start;flex-wrap:nowrap;">
+      <a href="index.html" class="bk-nav-link">Home</a>
+      <a href="about.html" class="bk-nav-link">About</a>
+      <div class="bk-dropdown-wrap">
+        <button class="bk-nav-link bk-has-dropdown" onclick="bkToggle(this)">Experiences <span style="font-size:10px;opacity:0.6;">&#9660;</span></button>
+        <div class="bk-dropdown">
+          <a href="private-dining.html" class="bk-dd-item">Private Dining</a>
+          <a href="chef-experiences.html" class="bk-dd-item">Chef Experiences</a>
+          <a href="wine-tastings.html" class="bk-dd-item">Wine Tastings</a>
+          <a href="wine-cellar.html" class="bk-dd-item">Wine Cellar</a>
+          <a href="private-parties.html" class="bk-dd-item">Private Parties</a>
+          <a href="corporate-catering.html" class="bk-dd-item">Corporate Catering</a>
+          <a href="event-food-planning.html" class="bk-dd-item">Event Food Planning</a>
+          <a href="takeaway.html" class="bk-dd-item">Takeaway</a>
+        </div>
+      </div>
+      <a href="bukahauz-menu.html" class="bk-nav-link">Menu</a>
+      <a href="networking.html" class="bk-nav-link">Networking</a>
+      <a href="shop-collection.html" class="bk-nav-link">Shop</a>
+      <a href="food-truck.html" class="bk-nav-link">Food Truck</a>
+      <a href="gallery.html" class="bk-nav-link">Gallery</a>
+      <a href="contact.html" class="bk-nav-link">Contact</a>
+      <a href="affiliate-portal.html" class="bk-nav-link" style="color:#466556;">Affiliate</a>
+    </nav>
+    <a href="index.html" style="display:flex;align-items:center;justify-content:center;text-decoration:none;">
+      <img src="bk-header-logo.png" alt="Bukahauz" style="height:104px;width:auto;object-fit:contain;"/>
+    </a>
+    <div style="display:flex;align-items:center;gap:6px;justify-content:flex-end;">
+      <a href="affiliate-portal.html" style="background:transparent;color:#466556;padding:8px 16px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap;border:1.5px solid #466556;margin-right:6px;transition:all .2s;" onmouseover="this.style.background='#466556';this.style.color='#fff';" onmouseout="this.style.background='transparent';this.style.color='#466556';">Affiliate Portal</a>
+      <a href="book.html" style="background:#466556;color:#fff;padding:8px 18px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap;margin-right:8px;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Book Now</a>
+      <a href="account.html" title="Account" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></a>
+      <a href="cart.html" title="Cart" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;position:relative;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg><span class="bk-cart-badge" style="display:none;position:absolute;top:2px;right:2px;min-width:16px;height:16px;background:#8f4c37;border-radius:8px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;color:#fff;line-height:16px;text-align:center;padding:0 3px;"></span></a>
+    </div>
+    <button onclick="document.getElementById('bk-mobile-menu').classList.toggle('bk-open');" style="display:none;background:none;border:none;cursor:pointer;padding:4px;" id="bk-burger">
+      <svg width="22" height="22" fill="none" stroke="#1a1c1b" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</div>
+<div id="bk-mobile-menu" style="background:#faf9f7;border-top:1px solid #e3e2e0;max-height:80vh;overflow-y:auto;">
+  <div style="padding:12px 20px;">
+    <a href="index.html" class="bk-mob-link">Home</a>
+    <a href="bukahauz-menu.html" class="bk-mob-link">Menu</a>
+    <a href="networking.html" class="bk-mob-link">Networking</a>
+    <a href="shop-collection.html" class="bk-mob-link">Shop</a>
+    <a href="contact.html" class="bk-mob-link">Contact</a>
+    <a href="affiliate-portal.html" class="bk-mob-link" style="color:#466556;">Affiliate Portal</a>
+    <a href="book.html" style="display:block;margin:12px 8px 4px;background:#466556;color:#fff;padding:10px 16px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;text-align:center;">Book Now</a>
+  </div>
+</div>
+</header>
+
+<!-- LOGIN PANEL -->
+<div id="ap-login">
+  <div class="ap-hero">
+    <div class="ap-hero-inner">
+      <p class="ap-label">Bukahauz Affiliate Programme</p>
+      <h1 class="ap-title">Affiliate Portal</h1>
+      <p class="ap-sub">Earn 5% commission on every booking made through your unique link. Your client gets 5% off — everyone wins.</p>
+    </div>
+  </div>
+  <div class="ap-wrap">
+    <div class="ap-section">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+        <div>
+          <h2 class="ap-h">Sign In to Your Portal</h2>
+          <p class="ap-p">Enter your affiliate code to access your dashboard and track your earnings.</p>
+          <div id="ap-login-alert" class="ap-alert ap-error"></div>
+          <div class="ap-form">
+            <input class="ap-input" type="text" id="ap-code-input" placeholder="Your affiliate code (e.g. BK-JANE2024)" style="text-transform:uppercase;letter-spacing:.08em;"/>
+            <button class="ap-btn" onclick="apLogin()">Access Dashboard</button>
+          </div>
+          <p style="font-size:12px;color:#8f9490;margin-top:20px;">Not yet an affiliate? <a href="contact.html" style="color:#466556;text-decoration:none;font-weight:600;">Apply here →</a></p>
+        </div>
+        <div style="background:#1a1c1b;padding:36px;">
+          <p style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f4c37;margin:0 0 16px;">How It Works</p>
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <span style="font-family:'Bodoni Moda',serif;font-size:28px;color:#466556;line-height:1;flex-shrink:0;">01</span>
+              <div><p style="font-size:13px;font-weight:600;color:#fff;margin:0 0 4px;">Get your unique code</p><p style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.6;">Approved affiliates receive a personal code (e.g. BK-JANE2024).</p></div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <span style="font-family:'Bodoni Moda',serif;font-size:28px;color:#466556;line-height:1;flex-shrink:0;">02</span>
+              <div><p style="font-size:13px;font-weight:600;color:#fff;margin:0 0 4px;">Share with clients</p><p style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.6;">Clients enter your code at checkout for 5% off their booking.</p></div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <span style="font-family:'Bodoni Moda',serif;font-size:28px;color:#466556;line-height:1;flex-shrink:0;">03</span>
+              <div><p style="font-size:13px;font-weight:600;color:#fff;margin:0 0 4px;">Earn 5% commission</p><p style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.6;">You earn 5% of the total booking value, paid monthly.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DASHBOARD (shown after login) -->
+<div id="ap-dashboard">
+  <div class="ap-hero">
+    <div class="ap-hero-inner">
+      <p class="ap-label">Bukahauz Affiliate Programme</p>
+      <h1 class="ap-title" id="ap-welcome-title">Welcome back</h1>
+      <p class="ap-sub">Your affiliate dashboard — track bookings, commissions, and your unique code.</p>
+    </div>
+  </div>
+  <div class="ap-wrap">
+    <div class="ap-section">
+
+      <!-- Stats -->
+      <div class="ap-stat-grid" id="ap-stats-grid">
+        <div class="ap-stat"><p class="ap-stat-num" id="ap-stat-uses">—</p><p class="ap-stat-lbl">Total Uses</p></div>
+        <div class="ap-stat"><p class="ap-stat-num" id="ap-stat-earnings">—</p><p class="ap-stat-lbl">Total Commission</p></div>
+        <div class="ap-stat"><p class="ap-stat-num" id="ap-stat-pending">—</p><p class="ap-stat-lbl">Pending Payment</p></div>
+        <div class="ap-stat"><p class="ap-stat-num" id="ap-stat-month">—</p><p class="ap-stat-lbl">This Month</p></div>
+      </div>
+
+      <!-- Code -->
+      <div class="ap-card" style="margin-bottom:32px;">
+        <p style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#727974;margin:0 0 8px;">Your Affiliate Code</p>
+        <div class="ap-code-box" id="ap-code-display">—</div>
+        <p style="font-size:12px;color:#8f9490;margin-top:4px;">Each code is single-use per client. Contact us if a client needs a fresh one.</p>
+        <button class="ap-btn ap-btn-outline" style="margin-top:16px;" onclick="apCopyCode()">Copy Code</button>
+      </div>
+
+      <hr class="ap-divider"/>
+
+      <!-- Bookings table -->
+      <h2 class="ap-h" style="margin-bottom:8px;">Booking History</h2>
+      <p class="ap-p">Every booking where your code was used.</p>
+      <div id="ap-alert" class="ap-alert"></div>
+      <div style="overflow-x:auto;">
+        <table class="ap-table">
+          <thead><tr><th>Date</th><th>Booking Ref</th><th>Experience</th><th>Booking Value</th><th>Your Commission (5%)</th><th>Status</th></tr></thead>
+          <tbody id="ap-bookings-body"><tr><td colspan="6" style="text-align:center;padding:32px;color:#8f9490;font-size:13px;font-style:italic;">Loading bookings…</td></tr></tbody>
+        </table>
+      </div>
+
+      <hr class="ap-divider"/>
+      <button class="ap-btn" style="background:#e8e6e2;color:#424844;" onclick="apLogout()">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+<footer style="background:#1a1c1b;margin-top:80px;">
+  <div style="max-width:1440px;margin:0 auto;padding:72px 48px 48px;">
+    <div style="display:grid;grid-template-columns:1.5fr repeat(4,1fr);gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08);">
+      <div>
+        <p style="font-family:'Bodoni Moda',serif;font-size:22px;font-weight:400;color:#fff;letter-spacing:.04em;margin:0 0 12px;">BUKAHAUZ</p>
+        <p style="font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase;margin:0 0 20px;">Culinary Excellence. Timeless Experiences.</p>
+        <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.8;max-width:260px;">A sanctuary for those who appreciate the narrative behind the meal.</p>
+      </div>
+      <div>
+        <p style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f4c37;margin:0 0 20px;">Experiences</p>
+        <a href="private-dining.html" style="display:block;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:10px;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='rgba(255,255,255,.6)';">Private Dining</a>
+        <a href="chef-experiences.html" style="display:block;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:10px;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='rgba(255,255,255,.6)';">Chef Experiences</a>
+        <a href="wine-tastings.html" style="display:block;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:10px;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='rgba(255,255,255,.6)';">Wine Tastings</a>
+        <a href="food-truck.html" style="display:block;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:10px;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='rgba(255,255,255,.6)';">Food Truck</a>
+      </div>
+      <div>
+        <p style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f4c37;margin:0 0 20px;">Affiliate</p>
+        <a href="affiliate-portal.html" style="display:block;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:10px;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='rgba(255,255,255,.6)';">My Dashboard</a>
+        <a href="contact.html" style="display:block;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:10px;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='rgba(255,255,255,.6)';">Apply to Join</a>
+      </div>
+      <div>
+        <p style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f4c37;margin:0 0 20px;">Company</p>
+        <a href="contact.html" style="display:block;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:10px;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='rgba(255,255,255,.6)';">Contact Us</a>
+        <a href="privacy.html" style="display:block;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:10px;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='rgba(255,255,255,.6)';">Privacy Policy</a>
+        <a href="terms.html" style="display:block;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:10px;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='rgba(255,255,255,.6)';">Terms</a>
+      </div>
+    </div>
+    <div style="padding-top:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <p style="font-size:12px;color:rgba(255,255,255,.3);">&#169; 2026 Bukahauz. All rights reserved.</p>
+      <p style="font-size:12px;color:rgba(255,255,255,.3);">Affiliate commissions paid monthly to registered affiliates.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+var SUPABASE_URL = 'https://zvqtfsjkhlxhaifbjvkn.supabase.co';
+var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp2cXRmc2praGx4aGFpZmJqdmtuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA2NTgwNTcsImV4cCI6MjA0NjIzNDA1N30.Hkd9KHs3yqFGWFNmk1nO0gCVQSKvEfPcL_Fy5bpAfC4';
+
+function bkToggle(btn){var d=btn.nextElementSibling;d.classList.toggle('bk-open');}
+document.addEventListener('click',function(e){if(!e.target.closest('.bk-dropdown-wrap')){document.querySelectorAll('.bk-dropdown').forEach(function(d){d.classList.remove('bk-open');});}});
+
+var _afCode = null;
+
+function apLogin(){
+  var raw = document.getElementById('ap-code-input').value.trim().toUpperCase();
+  if(!raw){apShowAlert('ap-login-alert','Please enter your affiliate code.','error');return;}
+  apShowAlert('ap-login-alert','Checking code…','');
+  fetch(SUPABASE_URL+'/rest/v1/affiliates?code=eq.'+encodeURIComponent(raw)+'&select=*',{
+    headers:{'apikey':SUPABASE_ANON,'Authorization':'Bearer '+SUPABASE_ANON}
+  })
+  .then(function(r){return r.json();})
+  .then(function(data){
+    if(!data||data.length===0){apShowAlert('ap-login-alert','Code not found. Please check and try again.','error');return;}
+    var aff = data[0];
+    _afCode = aff.code;
+    document.getElementById('ap-login').style.display='none';
+    document.getElementById('ap-dashboard').style.display='block';
+    document.getElementById('ap-welcome-title').textContent='Welcome, '+aff.name;
+    document.getElementById('ap-code-display').textContent=aff.code;
+    apLoadBookings(aff.code);
+  })
+  .catch(function(){apShowAlert('ap-login-alert','Connection error. Please try again.','error');});
+}
+
+function apLoadBookings(code){
+  fetch(SUPABASE_URL+'/rest/v1/affiliate_uses?affiliate_code=eq.'+encodeURIComponent(code)+'&select=*&order=used_at.desc',{
+    headers:{'apikey':SUPABASE_ANON,'Authorization':'Bearer '+SUPABASE_ANON}
+  })
+  .then(function(r){return r.json();})
+  .then(function(data){
+    var totalUses=data.length, totalEarnings=0, pendingEarnings=0, monthEarnings=0;
+    var now=new Date(), thisMonth=now.getMonth(), thisYear=now.getFullYear();
+    var rows='';
+    if(!data||data.length===0){
+      rows='<tr><td colspan="6" style="text-align:center;padding:32px;color:#8f9490;font-size:13px;font-style:italic;">No bookings yet. Share your code to start earning!</td></tr>';
+    } else {
+      data.forEach(function(u){
+        var val=parseFloat(u.booking_value)||0;
+        var comm=(val*0.05);
+        totalEarnings+=comm;
+        var d=new Date(u.used_at);
+        var badge=u.status==='paid'?'<span class="ap-badge ap-badge-green">Paid</span>':'<span class="ap-badge ap-badge-amber">Pending</span>';
+        if(u.status!=='paid')pendingEarnings+=comm;
+        if(d.getMonth()===thisMonth&&d.getFullYear()===thisYear)monthEarnings+=comm;
+        rows+='<tr><td>'+d.toLocaleDateString('en-GB')+'</td><td style="font-family:monospace;font-size:12px;">'+( u.booking_ref||'—')+'</td><td>'+(u.experience||'Experience')+'</td><td>£'+val.toFixed(2)+'</td><td style="color:#466556;font-weight:600;">£'+comm.toFixed(2)+'</td><td>'+badge+'</td></tr>';
+      });
+    }
+    document.getElementById('ap-bookings-body').innerHTML=rows;
+    document.getElementById('ap-stat-uses').textContent=totalUses;
+    document.getElementById('ap-stat-earnings').textContent='£'+totalEarnings.toFixed(2);
+    document.getElementById('ap-stat-pending').textContent='£'+pendingEarnings.toFixed(2);
+    document.getElementById('ap-stat-month').textContent='£'+monthEarnings.toFixed(2);
+  })
+  .catch(function(){document.getElementById('ap-bookings-body').innerHTML='<tr><td colspan="6" style="text-align:center;color:#8f4c37;padding:24px;">Unable to load bookings.</td></tr>';});
+}
+
+function apCopyCode(){
+  if(_afCode){navigator.clipboard.writeText(_afCode).then(function(){alert('Code copied: '+_afCode);});}
+}
+
+function apLogout(){
+  _afCode=null;
+  document.getElementById('ap-dashboard').style.display='none';
+  document.getElementById('ap-login').style.display='block';
+  document.getElementById('ap-code-input').value='';
+}
+
+function apShowAlert(id,msg,type){
+  var el=document.getElementById(id);
+  el.textContent=msg;
+  el.className='ap-alert visible'+(type==='error'?' ap-error':'');
+}
+</script>
+</body></html>

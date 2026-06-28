@@ -38,12 +38,12 @@ body{background:#faf9f7;font-family:Inter,sans-serif;color:#1a1c1b;}
 
 /* ---- FOOD CARDS (with image) ---- */
 .bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:20px;margin-bottom:4px;}
-.bk-card{background:#fff;border:1px solid #ece9e4;overflow:hidden;cursor:pointer;transition:box-shadow .3s,transform .3s;}
+.bk-card{background:#fff;border:1px solid #ece9e4;overflow:visible;cursor:pointer;transition:box-shadow .3s,transform .3s;text-align:center;padding-top:24px;}
 .bk-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.1);transform:translateY(-3px);}
-.bk-card-img{height:210px;overflow:hidden;background:#e8e5e0;position:relative;}
+.bk-card-img{width:168px;height:168px;border-radius:50%;overflow:hidden;background:#e8e5e0;margin:0 auto 16px;border:3px solid #f0ede8;flex-shrink:0;position:relative;}
 .bk-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;display:block;}
 .bk-card:hover .bk-card-img img{transform:scale(1.06);}
-.bk-card-body{padding:18px 20px 20px;}
+.bk-card-body{padding:0 18px 22px;}
 .bk-card-name{font-family:"Bodoni Moda",serif;font-size:16px;font-weight:500;color:#1a1c1b;margin:0 0 4px;line-height:1.3;}
 .bk-card-sub{font-size:11px;color:#8f9490;line-height:1.5;margin:0 0 12px;}
 .bk-tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.09);padding:3px 8px;margin:0 0 10px;}
@@ -99,17 +99,14 @@ body{background:#faf9f7;font-family:Inter,sans-serif;color:#1a1c1b;}
 .bk-lb-price{font-family:"Bodoni Moda",serif;font-size:24px;color:#466556;margin:0 0 24px;}
 .bk-lb-h{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1a1c1b;margin:20px 0 6px;}
 .bk-lb-p{font-size:13.5px;color:#5a6160;line-height:1.75;}
-.bk-lb-allergy-box{background:#fff8f2;border:1px solid #f0d4b0;padding:14px 16px;margin:20px 0 16px;}
-.bk-lb-allergy-box strong{display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 5px;}
-.bk-lb-allergy-box p{font-size:12px;color:#7a4a1a;line-height:1.6;}
-.bk-lb-allergy-box a{color:#8f4c37;}
+
 .bk-lb-note{width:100%;font-family:Inter,sans-serif;font-size:13px;border:1px solid #d4d0cb;padding:10px 14px;background:#fff;outline:none;resize:none;height:68px;margin:8px 0 16px;}
 .bk-lb-note:focus{border-color:#466556;}
 .bk-lb-cta{width:100%;font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:17px;cursor:pointer;transition:background .2s;}
 .bk-lb-cta:hover{background:#2f4d3f;}
 
 /* ---- COMING SOON BANNER ---- */
-.bk-soon{background:#466556;padding:52px 48px;margin-top:52px;}
+.bk-soon{background:#1a1c1b;border-top:1px solid #2a302c;padding:52px 48px;margin-top:52px;}
 .bk-soon-inner{max-width:1440px;margin:0 auto;}
 
 /* ---- RESPONSIVE ---- */
@@ -152,19 +149,7 @@ body{background:#faf9f7;font-family:Inter,sans-serif;color:#1a1c1b;}
         </div>
       </div>
 
-      <!-- Menus -->
-      <div class="bk-dropdown-wrap">
-        <button class="bk-nav-link bk-has-dropdown" onclick="bkToggle(this)">
-          Menus <span style="font-size:10px;opacity:0.6;">&#9660;</span>
-        </button>
-        <div class="bk-dropdown">
-                    <a href="bukahauz-menu.html" class="bk-dd-item">Full Menu</a>
-          <a href="afro-continental-menu.html" class="bk-dd-item">Afro Continental Menu</a>
-          <a href="afro-fusion.html" class="bk-dd-item">Afro Fusion Menu</a>
-                    <a href="menus.html"                class="bk-dd-item">Private Dining Menu</a>
-          <a href="wine-pairing-menu.html"    class="bk-dd-item">Wine Pairing Menu</a>
-        </div>
-      </div>
+      <a href="bukahauz-menu.html" class="bk-nav-link" style="color:#466556;">Menu</a>
 
       <a href="networking.html" class="bk-nav-link">Networking</a>
 
@@ -173,6 +158,7 @@ body{background:#faf9f7;font-family:Inter,sans-serif;color:#1a1c1b;}
       <a href="food-truck.html" class="bk-nav-link">Food Truck</a>
       <a href="gallery.html" class="bk-nav-link">Gallery</a>
       <a href="contact.html" class="bk-nav-link">Contact</a>
+      <a href="affiliate-portal.html" class="bk-nav-link">Affiliate</a>
       
 
     </nav>
@@ -185,6 +171,7 @@ body{background:#faf9f7;font-family:Inter,sans-serif;color:#1a1c1b;}
     <!-- Right: Currency / Account / Cart -->
     <div style="display:flex;align-items:center;gap:6px;justify-content:flex-end;">
 
+      <a href="affiliate-portal.html" style="background:transparent;color:#466556;padding:8px 16px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap;border:1.5px solid #466556;margin-right:6px;transition:all .2s;" onmouseover="this.style.background='#466556';this.style.color='#fff';" onmouseout="this.style.background='transparent';this.style.color='#466556';">Affiliate Portal</a>
       <a href="book.html" style="background:#466556;color:#fff;padding:8px 18px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap;margin-right:8px;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Book Now</a>
       <!-- Currency selector -->
       
@@ -514,11 +501,7 @@ document.addEventListener('click', function(e) {
       <p class="bk-lb-p" id="bk-lb-desc"></p>
       <p class="bk-lb-h" style="margin-top:18px;">Ingredients</p>
       <p class="bk-lb-p" id="bk-lb-ing"></p>
-      <div class="bk-lb-allergy-box">
-        <strong>Allergen Information</strong>
-        <p>Contains: <span id="bk-lb-allergy"></span>.<br>Please inform us of any dietary requirements before ordering. <a href="mailto:concierge@bukahauz.com">concierge@bukahauz.com</a></p>
-      </div>
-      <p class="bk-lb-h">Allergy or dietary notes (optional)</p>
+      <p class="bk-lb-h" style="margin-top:18px;">Dietary notes (optional)</p>
       <textarea class="bk-lb-note" id="bk-lb-note" placeholder="e.g. nut allergy, dairy-free, halal only..."></textarea>
       <button class="bk-lb-cta" id="bk-lb-cta">Add to Cart</button>
     </div>
@@ -597,7 +580,7 @@ cups:[
 fusionMains:[
   {n:'Suya-Spiced Gyoza',s:'Afro-Fusion · Japanese x West African',p:19,sub:'Pan-seared · Tamarind-ginger broth',d:'Pan-seared pork and lemongrass dumplings coated in suya spice blend, served with a tamarind-ginger dipping broth. The crunch of the fold meets the heat of the sahel.',i:'Pork mince, lemongrass, suya spice (groundnut, ginger, paprika), tamarind, ginger, spring onion.',a:'Pork, Nuts, Gluten, Soya',t:''},
   {n:'Truffle Suya Ribeye',s:'Afro-Fusion · French x Northern Nigerian',p:52,sub:'28-day dry-aged · Black truffle butter',d:'28-day dry-aged ribeye, marinated in suya rub and finished with black truffle butter. Accompanied by a shallot and scotch bonnet jus and crispy yam puree.',i:'Ribeye, suya spice (groundnut), black truffle butter, shallots, scotch bonnet, yam.',a:'Beef, Nuts, Dairy, Celery',t:'GF'},
-  {n:'Jollof Risotto',s:'Afro-Fusion · Italian x West African',p:26,sub:'Arborio rice · King prawns',d:'Arborio rice cooked in a smoky tomato-pepper Jollof base, finished with aged Parmesan and sauteed king prawns. The meeting point of Lagos and Milan.',i:'Arborio rice, plum tomatoes, scotch bonnet, king prawns, Parmesan, onions, garlic, butter.',a:'Shellfish, Dairy, Celery'},
+  {n:'Jollof Risotto',img:'menu-images/menu-66.png',s:'Afro-Fusion · Italian x West African',p:26,sub:'Arborio rice · King prawns',d:'Arborio rice cooked in a smoky tomato-pepper Jollof base, finished with aged Parmesan and sauteed king prawns. The meeting point of Lagos and Milan.',i:'Arborio rice, plum tomatoes, scotch bonnet, king prawns, Parmesan, onions, garlic, butter.',a:'Shellfish, Dairy, Celery'},
   {n:'Miso Pepper Soup',s:'Afro-Fusion · Japanese x Nigerian',p:22,sub:'White miso · Uziza leaves · Quail egg',d:'White miso broth blended with uziza leaves, African nutmeg and catfish stock. Finished with sesame oil, soft-poached quail egg and crispy shallots.',i:'White miso, catfish stock, uziza leaves, African nutmeg, quail eggs, sesame oil, shallots.',a:'Fish, Eggs, Soya, Celery'},
   {n:'48-Hour Jerk Lamb',s:'Afro-Fusion · Signature',p:42,sub:'22-spice rub · Pimento smoke',d:'Our lamb is massaged with a 22-spice secret rub and slow-smoked over pimento wood. Served with charred corn and rum-glazed sweet potato.',i:'Lamb shoulder, pimento smoke, scotch bonnet, thyme, allspice, nutmeg, ginger, garlic, brown sugar, rum.',a:'Celery',t:'GF'},
   {n:'Coconut Infused Jollof',s:'Afro-Fusion · Signature',p:34,sub:'Cold-pressed coconut milk · Jumbo prawns',d:'A silky interpretation of the classic, finished with cold-pressed coconut milk and jumbo prawns.',i:'Parboiled rice, coconut milk, jumbo prawns, plum tomatoes, scotch bonnet, onions, garlic, ginger.',a:'Shellfish, Celery, Coconut',t:'GF'}
