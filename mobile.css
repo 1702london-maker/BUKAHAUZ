@@ -80,3 +80,62 @@
   }
 
 }
+
+/* Header guardrails: keep the large desktop menu from crowding on tablets. */
+#bk-header img[alt="Bukahauz"] {
+  max-width: min(220px, 42vw);
+}
+
+#bk-desktop-nav {
+  min-width: 0;
+}
+
+@media (min-width: 1200px) and (max-width: 1320px) {
+  .bk-nav-link {
+    font-size: 10px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    letter-spacing: .04em !important;
+  }
+
+  #bk-header a[href="affiliate-portal.html"],
+  #bk-header a[href="book.html"] {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  #bk-desktop-nav {
+    display: none !important;
+  }
+
+  #bk-burger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  #bk-header > div > div:first-child {
+    grid-template-columns: auto 1fr auto !important;
+    height: 88px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  #bk-header img[alt="Bukahauz"] {
+    height: 78px !important;
+    max-width: 46vw !important;
+  }
+
+  #bk-header > div > div:first-child > div[style*="justify-content:flex-end"] {
+    gap: 4px !important;
+  }
+
+  #bk-header > div > div:first-child > div[style*="justify-content:flex-end"] > a[href="affiliate-portal.html"] {
+    display: none !important;
+  }
+}

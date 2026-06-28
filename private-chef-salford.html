@@ -1,24 +1,53 @@
 ﻿<!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Food Truck Manchester | Bukahauz On Wheels</title>
-<meta name="description" content="Bukahauz On Wheels brings elevated Afro-Caribbean and African street food to events, offices and festivals around Manchester."/>
-<link rel="canonical" href="https://www.bukahauz.com/food-truck"/>
-<meta property="og:title" content="Food Truck Manchester | Bukahauz On Wheels"/>
-<meta property="og:description" content="Bukahauz On Wheels brings elevated Afro-Caribbean and African street food to events, offices and festivals around Manchester."/>
-<meta property="og:url" content="https://www.bukahauz.com/food-truck"/>
+<title>Private Chef Salford | Bukahauz</title>
+<meta name="description" content="Private chef experiences in Salford, MediaCity, Manchester city centre and surrounding neighbourhoods by Bukahauz."/>
+<link rel="canonical" href="https://www.bukahauz.com/private-chef-salford"/>
+<meta property="og:title" content="Private Chef Salford | Bukahauz"/>
+<meta property="og:description" content="Private chef experiences in Salford, MediaCity, Manchester city centre and surrounding neighbourhoods by Bukahauz."/>
+<meta property="og:url" content="https://www.bukahauz.com/private-chef-salford"/>
 <meta property="og:type" content="website"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bukahauz","url":"https://www.bukahauz.com/food-truck","areaServed":["Manchester","Salford","Trafford","Chorlton","Didsbury","Ancoats","Deansgate"],"servesCuisine":["African","Afro-Caribbean","Afro-Continental","Intercontinental"],"email":"hello@bukahauz.com","telephone":"+44 7700 900000","sameAs":["https://instagram.com/bukahauz","https://facebook.com/bukahauz"]}</script>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bukahauz","url":"https://www.bukahauz.com/private-chef-salford","areaServed":["Manchester","Salford","Trafford","Chorlton","Didsbury","Ancoats","Deansgate"],"servesCuisine":["African","Afro-Caribbean","Afro-Continental","Intercontinental"],"email":"hello@bukahauz.com","telephone":"+44 7700 900000","sameAs":["https://instagram.com/bukahauz","https://facebook.com/bukahauz"]}</script>
+<meta property="og:description" content="Bespoke private dining in Manchester and Salford with Afro-Caribbean, African and intercontinental menus prepared by Bukahauz."/>
+<meta property="og:type" content="website"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #faf9f7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -117,27 +146,6 @@
         },
       }
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-        .text-grain {
-            position: relative;
-        }
-        .text-grain::after {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url("https://www.transparenttextures.com/patterns/p6-dark.png");
-            opacity: 0.03;
-            pointer-events: none;
-        }
-        .asymmetric-clip {
-            clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
-        }
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
-    </style>
 <style id="bk-form-style">
 /* Professional form styling */
 .bk-form-field { margin-bottom: 20px; }
@@ -200,8 +208,9 @@
 </style>
 <link rel="stylesheet" href="mobile.css">
 </head>
-<body class="bg-surface text-on-surface font-body-md text-grain selection:bg-secondary/30 selection:text-on-surface">
-<!-- Top Navigation -->
+<body class="bg-surface text-on-surface">
+<div class="grain-overlay"></div>
+<!-- Navigation -->
 <header id="bk-header" style="position:fixed;top:0;left:0;right:0;z-index:50;">
 
 <!-- Outer strip: subtle bg only for the bar itself -->
@@ -414,262 +423,246 @@ document.addEventListener('click', function(e) {
 });
 </script>
 </header>
-<main>
+<main class="pt-16">
+
+<section class="py-xl bg-surface-container-low border-y border-outline-variant/20">
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-lg">
+    <span class="font-label-lg text-label-lg text-secondary uppercase tracking-widest mb-sm block">Salford, MediaCity & Manchester</span>
+    <h2 class="font-display-md text-display-md text-on-surface mb-md">Private Chef in Salford</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-4xl">A private chef service for homes, apartments and venues in Salford, MediaCity, Spinningfields, Deansgate and nearby Manchester neighbourhoods.</p>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-4xl mt-md">Primary service areas include Manchester city centre, Salford, MediaCity, Trafford, Didsbury, Chorlton, Ancoats, Deansgate and surrounding communities.</p>
+    <div class="mt-lg flex flex-wrap gap-sm">
+      <a href="book.html" style="display:inline-block;background:#466556;color:#fff;padding:12px 24px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;">Book an Enquiry</a>
+      <a href="contact.html" style="display:inline-block;color:#466556;padding:12px 0;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;">Contact Bukahauz</a>
+    </div>
+  </div>
+</section>
 <!-- Hero Section -->
-<section class="relative min-h-screen flex items-center pt-xxl">
-<div class="absolute inset-0 z-0 overflow-hidden">
-<img alt="Food Truck" class="w-full h-full object-cover opacity-20 grayscale brightness-75" data-alt="A high-contrast, editorial style photograph of a modern, sleek food truck at twilight. The truck features clean lines and a matte finish in charcoal and sage green tones. Warm, soft golden light spills from the service window, illuminating a beautifully arranged counter of colorful Afro-Caribbean appetizers. The background is a blurred urban landscape with ambient city lights, evoking a sophisticated yet energetic night-time street food atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtqHtZcep-ftHdxOUi4hDNbkB6EHEA1BP3RBecJyLDarwId-wXWwGqGHNd5X96ppohFJi1qtNw6SlKu-miRpgnbn6GJJsvTb6TrF81qJIqEjJvqcdMo1IhL2wiWeRmHwYjFWHDlLW_8aIAU63gTtlogYiz7ZFI77394XPp_oBeH4hpl9XhuW06wFZnUOa4RD2B5cn6vXXXkrmrRGaBcVuEZoWLVuo_Ac40cSRFGvb0xuz9V2SLXufGpQ4V9KIuoEaKQaKNJDau0RUW"/>
+<section class="relative h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover brightness-75 scale-105" data-alt="A luxury private dining table set in a modern architectural home at sunset. The table is adorned with crisp linen, fine crystal glassware, and elegant porcelain. Warm golden light spills across the scene, highlighting the textures of high-end materials. The atmosphere is sophisticated, serene, and deeply premium, following a soft tactile aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpC_-oDWTWx0tbwmY7lWEK6OCIHdGQh3ByjcCUYC3lJVhpse8AqIp4a3zH1JwGx2vI8zCqwA3z-1_hpLt_7yFyab0iSU6kLOETQGcVHyebSMGck8UpayPYFZkEFRv-hdo8iGR1QwCyxyURRb8hDxcfq61Bz8vhPRu8vw5mH3vDYZC4MZEb_WqP5KqTj7U3mtBc7-YUDAqqlX49js5I98qfWedaOf2KhFyBgcsqpFvhO4hp89aDVOnaaos9Hmdkgsr13ToumPcnkBYm"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
 </div>
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl relative z-10 w-full">
-<div class="md:w-3/5 space-y-md">
-<span class="inline-block py-xs px-md bg-secondary-container text-on-secondary-container font-label-lg text-label-lg rounded-full uppercase tracking-widest">Global Flavors, Local Routes</span>
-<h1 class="font-display-lg text-display-lg md:text-[84px] text-primary leading-none">Bukahauz On Wheels: Coming Soon.</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">We are taking the Bukahauz experience beyond the dining room. A curated mobile kitchen bringing elevated Afro-Caribbean soul to the streets.</p>
-<div class="pt-md flex flex-col md:flex-row gap-md">
-<a class="px-xl py-md bg-primary text-on-primary font-label-lg text-label-lg rounded-lg text-center" href="#waiting-list">Join The Route List</a>
-<a class="px-xl py-md border border-outline text-on-surface font-label-lg text-label-lg rounded-lg text-center flex items-center justify-center gap-sm" href="#vision">
-                            Discover The Vision
-                            <span class="material-symbols-outlined">arrow_downward</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-<!-- The Vision Section -->
-<section class="py-xxl bg-surface-container-lowest" id="vision">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-lg items-center">
-<div class="md:col-span-5 relative">
-<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-lg">
-<img alt="Gourmet Street Food" class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" data-alt="Close-up editorial food photography of a vibrant Afro-Caribbean dish served in a sustainable, high-end street food container. The dish features succulent jerk chicken skewers with a glossy glaze, served over fluffy coconut rice and peas, topped with bright pickled red onions and fresh microgreens. The lighting is soft and natural, emphasizing the rich textures and deep terracotta and sage colors of the meal. The background is a clean, minimalist wooden surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRon_jxSjjYHvfjy-WyKCW-vCOrTiZicBOtCC2HAvNkI5BWrh_gBFKVi2u-PRY3C0RXR5cayaktTaATK6YylRGO0m6--n5rolmPnWhWlmrirrPbx4GoK62p8DaWzCwUWJl6WDAao8z__NXWWZ8hLL_4Rab9RqdGKkpv4xBaabXI8UIBhbugxA-3Gda0Qkc5R6vMdqblfXA3i6wZdtu_k9HJu2Tv4lvDNXQqycSR5UgX-PN-RcfcgGmBojtaLZ_kjEr7LUlSDGLnGkI"/>
-</div>
-<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-secondary/10 rounded-full blur-3xl -z-10"></div>
-</div>
-<div class="md:col-span-6 md:col-start-7 space-y-lg">
-<h2 class="font-display-md text-display-md text-secondary">Gourmet Soul, Mobile Heart.</h2>
-<div class="space-y-md text-on-surface-variant font-body-lg text-body-lg">
-<p>For us, street food isn't just about convenience—it's about the vibrant energy of communal eating. We’re bringing Afro-Caribbean and African heritage to the forefront of the mobile culinary world.</p>
-<p>Imagine the smokiness of West African Suya, the comforting spice of Caribbean curries, and the freshness of coastal seafood—all prepared with the precision of a high-end kitchen and served in the heart of your neighborhood.</p>
-</div>
-<div class="flex gap-lg pt-sm">
-<div class="flex flex-col">
-<span class="font-headline-md text-headline-md text-primary">100%</span>
-<span class="font-label-sm text-label-sm uppercase opacity-60">Authentic Spice</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline-md text-headline-md text-primary">Sustainable</span>
-<span class="font-label-sm text-label-sm uppercase opacity-60">Packaging</span>
-</div>
-</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-lg w-full">
+<div class="md:max-w-3xl">
+<span class="font-label-lg text-label-lg text-white/80 tracking-widest uppercase mb-md block">Bukahauz Private Dining</span>
+<h1 class="font-display-lg text-display-lg text-white mb-lg">Private Chef in Salford</h1>
+<p style="font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin:0 0 24px;">A Celebration of Afro-Continental &amp; Afro-Fusion Flavors</p>
+<p class="font-body-lg text-body-lg text-white/90 mb-xl max-w-xl">Transcending the traditional restaurant experience. We bring the artistry of a world-class kitchen to your home, curated to your exact palate and occasion.</p>
+<div class="flex flex-col sm:flex-row gap-md">
+<button class="bg-primary text-on-primary px-lg py-md rounded-lg font-label-lg text-label-lg hover:opacity-90 transition-all flex items-center justify-center gap-sm">
+                            Begin Your Journey
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button onclick="window.location.href='book.html'" style="background:#466556;color:#fff;padding:12px 24px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">
+                            View Sample Menus
+                        </button>
 </div>
 </div>
 </div>
 </section>
-<!-- Launch Timeline -->
+<!-- Experience Journey -->
 <section class="py-xxl bg-surface">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
-<div class="text-center mb-xl">
-<h2 class="font-display-md text-display-md text-primary">The Road To Launch</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mt-sm">Follow our progress as we prepare to hit the road in Winter 2026.</p>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-lg">
+<div class="text-center max-w-2xl mx-auto mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-md">The Experience Journey</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A seamless orchestration from the first spark of inspiration to the final satisfied smile. Every detail is meticulously planned for your absolute ease.</p>
 </div>
-<div class="relative pt-lg">
-<!-- Timeline Line -->
-<div class="absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant/30 hidden md:block"></div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg relative">
+<!-- Progress Line (Desktop) -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-[1px] bg-outline-variant/30 z-0"></div>
 <!-- Step 1 -->
-<div class="relative flex flex-col items-center md:items-start text-center md:text-left">
-<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center mb-md z-10">
-<span class="material-symbols-outlined">design_services</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-xs">Curation</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Menu development and vehicle customization phase.</p>
-<span class="mt-sm font-label-sm text-label-sm text-secondary font-bold">COMPLETED</span>
+<div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left reveal-on-scroll">
+<div class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center font-display-md text-[20px] mb-lg border border-primary/20">1</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Consultation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">An intimate dialogue to understand your vision, dietary preferences, and the unique atmosphere of your event.</p>
 </div>
 <!-- Step 2 -->
-<div class="relative flex flex-col items-center md:items-start text-center md:text-left">
-<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-md z-10">
-<span class="material-symbols-outlined">oven_gen</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-xs">Equipping</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Installing state-of-the-art kitchen tech for high-volume service.</p>
-<span class="mt-sm font-label-sm text-label-sm text-primary font-bold">IN PROGRESS</span>
+<div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left reveal-on-scroll" style="transition-delay: 200ms;">
+<div class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center font-display-md text-[20px] mb-lg border border-primary/20">2</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Menu Curation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Our chefs design a personalized menu featuring seasonal ingredients, artisanal textures, and visual storytelling.</p>
 </div>
 <!-- Step 3 -->
-<div class="relative flex flex-col items-center md:items-start text-center md:text-left">
-<div class="w-12 h-12 bg-surface-container-high text-outline rounded-full flex items-center justify-center mb-md z-10">
-<span class="material-symbols-outlined">data_table</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-xs">Pop-Ups</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Secret preview events across the city for early feedback.</p>
-<span class="mt-sm font-label-sm text-label-sm text-on-surface-variant italic">October 2026</span>
+<div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left reveal-on-scroll" style="transition-delay: 400ms;">
+<div class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center font-display-md text-[20px] mb-lg border border-primary/20">3</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Chef Arrival</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We arrive with all necessary tools, premium ingredients, and a commitment to transforming your kitchen into a culinary studio.</p>
 </div>
 <!-- Step 4 -->
-<div class="relative flex flex-col items-center md:items-start text-center md:text-left">
-<div class="w-12 h-12 bg-surface-container-high text-outline rounded-full flex items-center justify-center mb-md z-10">
-<span class="material-symbols-outlined">local_shipping</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-xs">Grand Debut</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Official launch of our Winter City Tour.</p>
-<span class="mt-sm font-label-sm text-label-sm text-on-surface-variant italic">November 2026</span>
-</div>
+<div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left reveal-on-scroll" style="transition-delay: 600ms;">
+<div class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center font-display-md text-[20px] mb-lg border border-primary/20">4</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Final Service</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The crescendo of your evening. Exquisite table service, dish presentation, and a spotless kitchen left behind.</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Interactive Map/Requests Section -->
-<section class="py-xxl bg-secondary/5">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
-<div class="lg:col-span-5">
-<h2 class="font-display-md text-display-md text-secondary">Where Should We Drive Next?</h2>
-<p class="mt-md font-body-lg text-body-lg text-on-surface-variant mb-lg">We’re building our route based on your cravings. Vote for your neighborhood or suggest a specific street corner.</p>
-<div class="space-y-md">
-<div class="p-md bg-surface rounded-lg flex items-center justify-between border border-outline-variant/30 hover:border-secondary transition-all cursor-pointer group">
-<div class="flex items-center gap-md">
-<span class="material-symbols-outlined text-secondary">location_on</span>
+<!-- What To Expect (Bento Style) -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-lg">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-7 flex flex-col justify-center reveal-on-scroll">
+<span class="font-label-lg text-label-lg text-secondary tracking-widest uppercase mb-sm">The Bukahauz Standard</span>
+<h2 class="font-headline-lg text-headline-lg mb-lg">White Glove Service, Redefined.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl">Expect nothing less than perfection. Our service isn't just about food; it's about the invisible threads of hospitality that make a night truly memorable. From the temperature of the wine to the placement of the silverware, we operate with a quiet, confident luxury.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-lg">
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-primary text-[28px]">eco</span>
 <div>
-<h4 class="font-label-lg text-label-lg">The Arts District</h4>
-<p class="font-label-sm text-label-sm opacity-60">242 Votes</p>
+<h4 class="font-label-lg text-label-lg mb-xs">Premium Ingredients</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Sourced from small-scale regenerative farms and artisanal producers.</p>
 </div>
 </div>
-<button onclick="var s=this.previousElementSibling||this.parentElement.querySelector('span');if(s){var n=parseInt(s.textContent)||0;s.textContent=n+1;}" style="background:#466556;color:#fff;padding:8px 16px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">+ Vote</button>
-</div>
-<div class="p-md bg-surface rounded-lg flex items-center justify-between border border-outline-variant/30 hover:border-secondary transition-all cursor-pointer group">
-<div class="flex items-center gap-md">
-<span class="material-symbols-outlined text-secondary">location_on</span>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-primary text-[28px]">concierge</span>
 <div>
-<h4 class="font-label-lg text-label-lg">Waterfront Park</h4>
-<p class="font-label-sm text-label-sm opacity-60">189 Votes</p>
+<h4 class="font-label-lg text-label-lg mb-xs">Bespoke Tableware</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Available upon request: curated linens, crystal, and custom florals.</p>
 </div>
 </div>
-<button onclick="var s=this.previousElementSibling||this.parentElement.querySelector('span');if(s){var n=parseInt(s.textContent)||0;s.textContent=n+1;}" style="background:#466556;color:#fff;padding:8px 16px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">+ Vote</button>
-</div>
-<form class="mt-lg">
-<label class="font-label-sm text-label-sm block mb-xs">Suggest A New Location</label>
-<div class="flex gap-sm">
-<input class="flex-1 bg-surface border-b border-outline outline-none focus:border-primary p-sm font-body-md" placeholder="Enter neighborhood or city..." type="text"/>
-<button onclick="window.location.href='book.html'" style="background:#466556;color:#fff;padding:12px 24px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;"><button type="submit" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Submit</button></button>
-</div>
-</form>
 </div>
 </div>
-<div class="lg:col-span-7 h-[500px] bg-surface-container relative rounded-xl overflow-hidden shadow-sm">
-<img alt="Map Visualization" class="w-full h-full object-cover grayscale brightness-110" data-location="London" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA41JHPvq_YmsFFN_AR2dA5OfpLC8CXQWHWW3wru-PUNR4EvtlEm-8TjmMjhAyVzRiKfWPlnZsNuKWoDzP3v5AzrQAYjrbKoE13I5MjciwagzqtjCMh5DLJic_1eXRiBVtqkRb8dAByS3MgApt4q3IxeKPhTVCR3soYMgyUejHzwZjZ0jlDX4KuzKztDi4H7czeQKIM_zquhgavHIDB46gmFVvUXiNdex60TEsAh3WARt7u2RQw-uo1mZnTGJBZMFL0it7Ykjr_TSVR"/>
-<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
-<!-- Stylized Map Markers -->
-<div class="absolute top-1/3 left-1/4 animate-bounce">
-<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
-</div>
-<div class="absolute bottom-1/4 right-1/2 opacity-60">
-<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
-</div>
-<div class="absolute top-1/2 right-1/4 opacity-40">
-<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
-</div>
+<div class="md:col-span-5 h-[500px] rounded-lg overflow-hidden reveal-on-scroll">
+<img alt="" class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" data-alt="A macro shot of a chef's hands delicately placing a micro-herb garnish on a beautifully plated modern dish. The plate is textured ceramic, and the lighting is soft and focused, creating a sense of precision and culinary artistry. The scene is clean, minimal, and high-end, emphasizing the human touch in luxury hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIoro9Mdk-2tt2YE3BKbWAgEpbCM4n9qUodeHMd1aTCxWuC0Zredt5iJKJTcqoiTD4FRVf0COVE2cOiZUnQ0twlEo-TieuWqi78dNX8sbx4aKYiCKEjHDTKwCYo25mGotrwpmQ8LBnhqkv6sOmKubeonolvl-ltcbT38T7BHaQbJy5jPBufo0LtixvTftbIULm74RgZH50Ch1Es4REfx8trAlBELSeQ8Nb7j8y-kzSdYcnBa_i4yNLHyWkx5f6hMie84psoYghJy79"/>
 </div>
 </div>
 </div>
 </section>
-<!-- Festival & Corporate Bookings -->
-<section class="py-xxl bg-surface">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
-<div class="bg-primary-container/20 rounded-2xl p-xl flex flex-col md:flex-row gap-xl items-center">
-<div class="md:w-1/2 space-y-md">
-<h2 class="font-display-md text-display-md text-primary">Host The Bukahauz Experience.</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">From corporate lunch takeovers to boutique summer festivals, our truck brings a level of sophistication and culinary excellence that transcends the typical mobile eatery.</p>
-<ul class="space-y-sm font-label-lg text-label-lg text-primary">
-<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-sm">check_circle</span> Bespoke Menus Tailored to Your Guests</li>
-<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-sm">check_circle</span> Professional &amp; High-Energy Service</li>
-<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-sm">check_circle</span> Full Dietary Integration (Vegan, GF Options)</li>
-</ul>
-<a href="contact.html" style="display:inline-block;background:#466556;color:#fff;padding:14px 32px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;">Enquire About Booking</a>
+<!-- Dining Packages (Asymmetrical Cards) -->
+<section class="py-xxl">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-lg">
+<h2 class="font-display-md text-display-md text-center mb-xxl">Curated Dining Packages</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
+<!-- Package 1 -->
+<div class="group bg-surface-container-lowest p-lg rounded-xl flex flex-col h-full border border-outline-variant/5 hover:border-primary/20 transition-all duration-500 reveal-on-scroll">
+<div class="aspect-[4/5] overflow-hidden rounded-lg mb-lg">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A romantic, candle-lit dinner for two on a balcony overlooking a soft city skyline at dusk. The table features warm stone textures, elegant long-stemmed candles, and a single artisanal floral arrangement. The mood is intimate, tranquil, and deeply exclusive, reflecting the quiet luxury of a private member's club." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjosfqIlSiQCWnc1Mpc9jK9XjBioRfognhGLfpuaj_DBDNDUH1w0ezP2h9CNbnJVxzs2xkksIMLWTtX7fzH7ZZdgkXFQOvXHF0MyOIn78dRv11r4KjXfULj5hvywm1VkdPSQYparSZRP2S2aL5yaR9KMv7W1rcRzPyXSK4pqZXjqZ9-AHaVVfG6cy8-SC3hFHy4CPvuDtzSx3j48VI2JOQ6P_EhccBjj_IlM8NEpsGoi4V8k8K67OGQKPqP08r96TO21Z50DNK453e"/>
 </div>
-<div class="md:w-1/2 grid grid-cols-2 gap-md">
-<img alt="Festival Food" class="rounded-lg h-48 w-full object-cover" data-alt="A candid, cinematic shot of a vibrant outdoor festival scene with people laughing and enjoying gourmet street food. In the foreground, a beautifully plated Afro-Caribbean appetizer is held by a guest, with the blurred, stylish Bukahauz food truck in the background under string lights. The warm evening glow and terracotta color accents create a joyful, upscale community atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPtiJm57p7nZjstQuTxQBPktLwu9RN6ptTX2woQNMM8QKoaMGZpGrnJtF-ozpNWV0zADg4XSBnpCs7zQ2wXQBooo8884xU-kf3tq3pTS6he0cBmtVTeO_D4e0XT2q4yyZ7Hb3K683TQxqZRnDKITziOlSJQ_eW0D-viTk8GWqPAKdJHQZToJt2p5_qfZxrJBZUPtsRMO6NnFhLfjBhUNv7xxeP9Mpfoote9UtIUl0mWn58tI_93uqyB3uHfpyWvBe3vgRznXFEjYUg"/>
-<img alt="Corporate Event" class="rounded-lg h-48 w-full object-cover mt-lg" data-alt="An elegant corporate outdoor gathering during the afternoon. Professionally dressed individuals are seen interacting near a minimalist, high-end mobile kitchen serving gourmet African-inspired small plates. The setting is a clean, modern courtyard with lush greenery and soft natural lighting, emphasizing the premium nature of the catering service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlmUGXSvUJonoC-iCWgipgjXg1dpfD8cqpb027FegFHLziBUa4DMOyS5sqHXFnc-sFmQFKVH1TCWYkx2skr-vnrYQHg9P6YfEx9qRTWtSYgnEKC0hg-wBY-QDjUVLkw2bUcvmeHbRRSipeNrJgZSPHVMjuxowtCmf6heel_vu3TlUVCNY5WIOVkUROpghRQuJgePSpulLU3g3mawderDzKy1cexe5oxFY3zTKNrv6UYY39y1HLCLsriPQ66QMYHSsMP7GJFCXOE5B"/>
+<div class="flex-grow">
+<h3 class="font-headline-md text-headline-md mb-sm">The Intimate Evening</h3>
+<p class="font-label-sm text-label-sm text-secondary mb-md">Perfect for Anniversaries &amp; Proposals</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">A 5-course tasting journey designed for two. Includes wine pairing consultation and a personalized keepsake menu.</p>
+</div>
+<button onclick="window.location.href='book.html'" style="background:#466556;color:#fff;padding:12px 24px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Enquire Now</button>
+</div>
+<!-- Package 2 -->
+<div class="group bg-surface-container-lowest p-lg rounded-xl flex flex-col h-full border border-outline-variant/5 hover:border-primary/20 transition-all duration-500 reveal-on-scroll" style="transition-delay: 200ms;">
+<div class="aspect-[4/5] overflow-hidden rounded-lg mb-lg">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A festive table set for a larger group in a spacious, sun-drenched garden dining area. The layout is vibrant yet tasteful, featuring overflowing platters of gourmet food, textured wood tables, and organic linen napkins. The lighting is bright and airy, suggesting a celebratory afternoon of high-end dining and community." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOLGHyE7wy6EdUgPwlVYfIYwjhZeg8oTx50oQtZ3lgMhkyb4Xo7lGYehNCCXRMtlSP2PxUoA7T1WWUdRtUgDYrVQimIWnRiDQQ8bkPk8RYeAG-hPtqL1IAsmXgO-mxchDF3chP-eTQyQG-XCObIuHaJpwtUp_GIQ3HA9jPk6U_uPPwL38ghEKO0yeSaTBUjyubrwJoVG-zpra50j0xkzsFmiiUj3cj4oMapOLGqX9s3IAaF4eLLUQupDwYVjM7HgMJC7GoI7jqse8Y"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-md text-headline-md mb-sm">The Celebration Feast</h3>
+<p class="font-label-sm text-label-sm text-secondary mb-md">For Gatherings of 6 to 12 Guests</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Family-style luxury featuring sharing platters of our signature Afro-Caribbean fusions and artisanal sides.</p>
+</div>
+<button onclick="window.location.href='book.html'" style="background:#466556;color:#fff;padding:12px 24px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Enquire Now</button>
+</div>
+<!-- Package 3 -->
+<div class="group bg-surface-container-lowest p-lg rounded-xl flex flex-col h-full border border-outline-variant/5 hover:border-primary/20 transition-all duration-500 reveal-on-scroll" style="transition-delay: 400ms;">
+<div class="aspect-[4/5] overflow-hidden rounded-lg mb-lg">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated executive boardroom setting with a minimalist table arrangement. Subtle tech integration is visible, but the focus is on a refined business lunch service. The color palette consists of deep olives, slate greys, and warm stone, evoking a sense of calm professionalism and high-stakes hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO-fx37LulfxOrR5q4diB2JNGmqwTvi_syg44wt4lmUoLs6FPq6b0VXbZTPleAw29hfFeXoLh2iymwhMipuQ5LnqonHEYkx3j9cccGdhzCk3NNC6yK76vv4gTGX5oc3WECLHu9BRP8VXABdxDUZ6rv0AmN_XMeCrV36Uh0Y9kVkPq2kPcBtXZ5pguwwwbLHRmUAEj7N9A47gWC2E5MjSGrhtXkotMKjyRcMqjnjVL6VSTxohQiXcYq4Ih0LBEsNiJ8QpJNSMNfMvCW"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-md text-headline-md mb-sm">The Executive Boardroom</h3>
+<p class="font-label-sm text-label-sm text-secondary mb-md">Working Lunches &amp; Corporate Events</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Efficient yet exquisite. A curated 3-course menu designed to impress without disrupting the flow of business.</p>
+</div>
+<button onclick="window.location.href='book.html'" style="background:#466556;color:#fff;padding:12px 24px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Enquire Now</button>
 </div>
 </div>
 </div>
 </section>
-<!-- Waiting List & Gallery -->
-<section class="py-xxl bg-surface-container-low overflow-hidden" id="waiting-list">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-xl">
-<div class="md:col-span-5 space-y-lg">
-<h2 class="font-display-md text-display-md text-primary">Be The First To Know.</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Join our exclusive waiting list to receive route notifications, secret menu passwords, and VIP invitations to our preview tastings.</p>
-<div class="bg-surface p-xl rounded-xl shadow-sm border border-outline-variant/20">
-<form class="space-y-md">
-<div class="space-y-xs">
-<label class="font-label-sm text-label-sm uppercase opacity-60">Full Name</label>
-<input class="w-full bg-transparent border-b border-outline-variant py-sm outline-none focus:border-primary" type="text"/>
+<!-- Gallery & Testimonials (Mixed Layout) -->
+<section class="py-xxl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-lg">
+<div class="flex flex-col md:flex-row gap-xl items-start">
+<div class="md:w-1/3 sticky top-24">
+<h2 class="font-display-md text-display-md mb-lg">Client Stories</h2>
+<div class="space-y-lg">
+<div class="bg-surface p-lg rounded-lg border border-outline-variant/20 shadow-sm reveal-on-scroll">
+<p class="font-body-md italic text-on-surface-variant mb-md">"Bukahauz transformed our terrace into a Michelin-star haven. The attention to detail in the fusion of flavors was breathtaking. An unforgettable evening."</p>
+<p class="font-label-lg text-label-lg">— Elena R., Private Member</p>
 </div>
-<div class="space-y-xs">
-<label class="font-label-sm text-label-sm uppercase opacity-60">Email Address</label>
-<input class="w-full bg-transparent border-b border-outline-variant py-sm outline-none focus:border-primary" type="email"/>
-</div>
-<div class="space-y-xs">
-<label class="font-label-sm text-label-sm uppercase opacity-60">Preferred Neighborhood</label>
-<select class="w-full bg-transparent border-b border-outline-variant py-sm outline-none focus:border-primary">
-<option>Downtown Core</option>
-<option>East Side</option>
-<option>West End</option>
-<option>The Docks</option>
-</select>
-</div>
-<button onclick="this.closest('form').submit()" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Get Launch Updates</button>
-</form>
+<div class="bg-surface p-lg rounded-lg border border-outline-variant/20 shadow-sm reveal-on-scroll">
+<p class="font-body-md italic text-on-surface-variant mb-md">"The Executive package was exactly what our team needed. Sophisticated service that respected our meeting's pace. The sea bass was spectacular."</p>
+<p class="font-label-lg text-label-lg">— Marcus T., CEO Ventures</p>
 </div>
 </div>
-<div class="md:col-span-7 flex flex-col gap-md">
-<div class="flex gap-md h-80">
-<img alt="Interior Details" class="flex-1 object-cover rounded-lg" data-alt="A focused close-up of the interior of a luxury mobile kitchen. Stainless steel surfaces gleam under soft warm task lighting. A professional chef is seen in the background, out of focus, carefully plating a dish. The foreground shows fresh herbs like thyme and scotch bonnet peppers on a clean prep station, highlighting the quality of the ingredients and the precision of the Bukahauz process." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL028O6aqDGHUMIDAONcHqdrMU_TF8dJHmUTuH-22VUUeblls1w5kIKPsiO8l2uYKyIWevK5vZL-Dksn2nA1WsSrrW1njAKJOiDZKGsXqojWx9ZHFtSDTYEZq4JSsazCxAQmc4taSMYxy907cdbaSSB489fWp8pWxm1Niz_Ct-9Y6gwtjj3_cw4vE_LFzLjP6bbJq5uKGdgvE8hx47s6st11GUZ3ugZKtoy754vewQt8sSxX8ENLefbDDM5ryvs9BMyUGSDnpS3a3N"/>
-<img alt="Conceptual Design" class="w-1/3 object-cover rounded-lg" data-alt="An editorial architectural sketch of a bespoke food truck, rendered with soft watercolors and charcoal lines. The design is sleek and modern, incorporating sage green panels and natural wood accents. The Bukahauz logo is elegantly displayed on a side awning. The drawing conveys a sense of artisanal craftsmanship and thoughtful design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS7Sb4aXoYRJScgsK4-wVx4PuJ1EGqBEUUk1llWxrO_vfnH12jt07gK-lt1NJEf1-cC9Gq1bj4oC0pGqVTvLIfmUgX0zNe_Fd4NIE7HKJWriFFhIBe7ZepZaLZcrJDpPKTQRX55-JNWt87n8g62K0KczbzEzeQOxcPpElJcCJ1WVe06DnRrlvwz2DuC0a-sUUVx6_ezBb6srHthwiW1VTJ3fLujgPRgqHYgs08iESgnf2sNubA1VL1QzHcrRhT__D3rrlAOJ0gTK2f"/>
 </div>
-<div class="bg-primary h-48 rounded-lg flex items-center justify-center text-on-primary px-xl relative overflow-hidden">
-<div class="absolute inset-0 opacity-10 flex flex-wrap gap-md scale-150 rotate-12">
-<span class="material-symbols-outlined text-9xl">local_shipping</span>
-<span class="material-symbols-outlined text-9xl">restaurant</span>
+<div class="md:w-2/3 grid grid-cols-2 gap-md">
+<div class="h-64 rounded-lg overflow-hidden reveal-on-scroll">
+<img alt="" class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" data-alt="Close up of a gourmet seafood dish with foam and edible flowers. Bright, editorial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVNSvJrkCRiki8DwdKAdnN6UuvmLCQpYk658o660Nb0Led7Cw5wZaR4NpHkOWkAf3uaeRVeHLvITIrf5W2Y-phY8WROY8w_84EnMae2pqEog8ORtJAoblarB5Af02CYKgnbY0mSTBirlvJFOKpZHFWT63ARKeLppKxxR24fuE6tS-xUC_HHuTvlpPi8ZFrBxZjz76bPf-tao5AbR8ynDGFcXWe1R2PxpyFmx_eU4sHpfLbvO_6L3aLdd_7wAdqB6DZBsMB0KAeS6Ca"/>
 </div>
-<p class="font-headline-md text-headline-md text-center relative z-10 italic">"Street food is the heart of every culture. We're just making sure it's also high-art."</p>
+<div class="h-80 rounded-lg overflow-hidden reveal-on-scroll" style="transition-delay: 100ms;">
+<img alt="" class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" data-alt="Elegant wine pouring into a crystal glass with soft bokeh background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr2Io-5APB7bfGGy--2SRC6LIQPeYoLxGrrky8sT6tISLVL72HAt1WlO4bwJfsr3tNpqXQoS2jIz00plNimJLXPnQm5nQlh54D5ez2Qnqpp2-8FGVsf-PweTlP4KKGBQbNH3bBVS-pNlM31Rl-B7JPyQpiDrV6_9r71-_c5dzC4N-qEworz8b-d-3sTB5a_wWMs6pNJzR3yEup15135iigVU7gfJNGTuKgeq8FacXP7o5ZmDjouCwBBzukxcE89pQomwONXLJqckj1"/>
+</div>
+<div class="h-96 rounded-lg overflow-hidden col-span-2 reveal-on-scroll" style="transition-delay: 200ms;">
+<img alt="" class="w-full h-full object-cover grayscale transition-all duration-500 hover:grayscale-0" data-alt="Wide shot of a candlelit dinner table under a willow tree at night." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUiH_RXiBVz4GakZ6GwiqFxAryrOvVnjJykGGnLdS6uCrjAvWbl_95-SG2nh76-_M7U_N9pHDBHU1KTD1oeYXx8swFfhRDFCptZwE85Xc37KhP1o6H6M9cB32p7ywvXym0_Ndymf0X_gzxZ4VFgZct7lPX3VZin6XLlC3OkXUMp6XNZ7Jbs7VMahwubiGB2uSPbaLsYQyXI6_WKt-eO223Tm-egS1IhqNm6JgTJcTGQF4mOq3LSMrnuu1xpg3kD-VjTFyj-L-YPO2R"/>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- FAQ Section -->
-<section class="py-xxl bg-surface">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-xl">
-<div class="max-w-3xl mx-auto">
-<h2 class="font-display-md text-display-md text-primary text-center mb-xl">Curiosities &amp; Details</h2>
-<div class="space-y-md">
-<details class="group p-lg bg-surface-container-low rounded-xl">
-<summary class="flex justify-between items-center cursor-pointer list-none font-headline-md text-headline-md text-on-surface">
-                                What’s on the debut menu?
-                                <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+<section class="py-xxl">
+<div class="max-w-3xl mx-auto px-margin-mobile md:px-lg">
+<h2 class="font-headline-lg text-headline-lg text-center mb-xl">Frequently Asked Questions</h2>
+<div class="space-y-sm">
+<details class="group p-lg border-b border-outline-variant/20 cursor-pointer">
+<summary class="flex justify-between items-center font-label-lg text-label-lg list-none">
+                            Do you cater to specific dietary requirements?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
 </summary>
-<div class="mt-md font-body-md text-body-md text-on-surface-variant">
-                                Our launch menu features our signature Jollof Arancini, Slow-Braised Oxtail Sliders, and a Grilled Corn with Hibiscus-Infused Butter. We will also feature weekly 'Regional Rotations' highlighting specific islands or countries.
-                            </div>
+<p class="mt-md font-body-md text-body-md text-on-surface-variant">Absolutely. Our consultation process includes a deep dive into any allergies, intolerances, or lifestyle choices (Vegan, Keto, Halal, etc.) to ensure every guest enjoys a seamless experience.</p>
 </details>
-<details class="group p-lg bg-surface-container-low rounded-xl">
-<summary class="flex justify-between items-center cursor-pointer list-none font-headline-md text-headline-md text-on-surface">
-                                How can I track the truck daily?
-                                <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+<details class="group p-lg border-b border-outline-variant/20 cursor-pointer">
+<summary class="flex justify-between items-center font-label-lg text-label-lg list-none">
+                            What is the minimum and maximum guest count?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
 </summary>
-<div class="mt-md font-body-md text-body-md text-on-surface-variant">
-                                Upon launch, we will have a live GPS tracker on our website and real-time updates on our Instagram stories. You can also sign up for SMS alerts for your specific neighborhood.
-                            </div>
+<p class="mt-md font-body-md text-body-md text-on-surface-variant">We specialize in intimate gatherings starting from 2 guests. For larger celebrations, our 'Feast' package comfortably accommodates up to 24 guests in a residential setting.</p>
 </details>
-<details class="group p-lg bg-surface-container-low rounded-xl">
-<summary class="flex justify-between items-center cursor-pointer list-none font-headline-md text-headline-md text-on-surface">
-                                Do you offer vegan options?
-                                <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+<details class="group p-lg border-b border-outline-variant/20 cursor-pointer">
+<summary class="flex justify-between items-center font-label-lg text-label-lg list-none">
+                            How far do your chefs travel?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
 </summary>
-<div class="mt-md font-body-md text-body-md text-on-surface-variant">
-                                Absolutely. Over 40% of our menu is plant-based, featuring items like our Roasted Yam Tacos and Callaloo Cream Croquettes. We prioritize inclusivity in every dish.
-                            </div>
+<p class="mt-md font-body-md text-body-md text-on-surface-variant">We currently serve the greater metropolitan area and surrounding regions within a 50-mile radius. For international or destination dining, please contact our concierge for a bespoke quote.</p>
 </details>
+</div>
+</div>
+</section>
+<!-- Booking CTA -->
+<section class="py-xxl bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-lg">Ready to host your own Bukahauz experience?</h2>
+<p class="font-body-lg text-body-lg mb-xl opacity-90">Our concierge is ready to help you plan an evening that will be talked about for years. Let us handle the details while you savor the moment.</p>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-xl rounded-xl border border-white/20">
+<form class="space-y-lg">
+<div>
+<label class="font-label-sm text-label-sm uppercase tracking-widest block mb-xs opacity-80">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b border-white/30 focus:border-white focus:ring-0 text-white placeholder-white/40 font-body-md text-body-md py-sm" placeholder="Johnathan Doe" type="text"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm uppercase tracking-widest block mb-xs opacity-80">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b border-white/30 focus:border-white focus:ring-0 text-white placeholder-white/40 font-body-md text-body-md py-sm" placeholder="j.doe@example.com" type="email"/>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<label class="font-label-sm text-label-sm uppercase tracking-widest block mb-xs opacity-80">Guest Count</label>
+<input class="w-full bg-transparent border-0 border-b border-white/30 focus:border-white focus:ring-0 text-white placeholder-white/40 font-body-md text-body-md py-sm" placeholder="2-20" type="number"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm uppercase tracking-widest block mb-xs opacity-80">Preferred Date</label>
+<input class="w-full bg-transparent border-0 border-b border-white/30 focus:border-white focus:ring-0 text-white placeholder-white/40 font-body-md text-body-md py-sm" placeholder="MM/DD/YY" type="text"/>
+</div>
+</div>
+<button onclick="window.location.href='book.html'" style="background:#466556;color:#fff;padding:12px 24px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Submit Enquiry</button>
+</form>
 </div>
 </div>
 </div>
@@ -738,7 +731,7 @@ document.addEventListener('click', function(e) {
         <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#424844;margin:0 0 18px;">Early access to new experiences, seasonal menus and artisan collaborations.</p>
         <form onsubmit="this.innerHTML='<p style=font-family:Inter,sans-serif;font-size:14px;color:#466556;margin:0>Thank you — you are on the list!</p>';return false;" style="display:flex;flex-direction:column;gap:8px;">
           <input type="email" required placeholder="Your email address" style="font-family:Inter,sans-serif;font-size:14px;border:none;border-bottom:1px solid #c1c8c2;background:transparent;padding:8px 0;color:#1a1c1b;outline:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-          <button onclick="this.closest('form').submit()" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Subscribe</button>
+          <button onclick="this.closest('form')?this.closest('form').submit():null" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Subscribe</button>
         </form>
       </div>
 
@@ -777,22 +770,63 @@ document.addEventListener('click', function(e) {
   </style>
 
 </footer>
-<!-- Interactive Scripts -->
 <script>
-        // Simple Intersection Observer for Fade-In Effects
-        const observerOptions = { threshold: 0.1 };
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    entry.target.classList.add('active');
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
-            observer.observe(section);
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Smooth Nav Background Change
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
         });
     </script>
-<script src="cart.js"></script></body></html>
+<script src="cart.js"></script><!-- Private Dining Inquiry Modal -->
+<div id="bk-pd-modal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(26,28,27,.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#faf9f7;max-width:600px;width:100%;max-height:90vh;overflow-y:auto;position:relative;">
+    <button onclick="document.getElementById('bk-pd-modal').style.display='none'" style="position:absolute;top:16px;right:16px;background:none;border:none;cursor:pointer;font-size:22px;color:#424844;">&times;</button>
+    <div style="padding:48px 48px 40px;">
+      <p style="font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f4c37;margin:0 0 8px;">Private Dining</p>
+      <h2 style="font-family:'Bodoni Moda',serif;font-size:34px;font-weight:500;color:#1a1c1b;margin:0 0 6px;">Private Dining Enquiry</h2>
+      <p style="font-family:Inter,sans-serif;font-size:14px;color:#727974;margin:0 0 32px;">Tell us about your occasion and we will craft the perfect experience.</p>
+      <form onsubmit="bkPdSubmit(event)">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div class="bk-form-field" style="margin:0;"><label>First Name</label><input type="text" name="fname" required/></div>
+          <div class="bk-form-field" style="margin:0;"><label>Last Name</label><input type="text" name="lname" required/></div>
+        </div>
+        <div class="bk-form-field"><label>Email</label><input type="email" name="email" required/></div>
+        <div class="bk-form-field"><label>Phone</label><input type="tel" name="phone"/></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="bk-form-field" style="margin-bottom:16px;"><label>Number of Guests</label><input type="number" name="guests" min="1" max="50" placeholder="e.g. 12"/></div>
+          <div class="bk-form-field" style="margin-bottom:16px;"><label>Preferred Date</label><input type="date" name="date"/></div>
+        </div>
+        <div class="bk-form-field"><label>Menu Preference</label>
+          <select name="menu"><option value="">Select preference</option><option>Afro-Continental Tasting Menu</option><option>Afro Fusion Menu</option><option>Bespoke / Custom Menu</option><option>Chef's Selection</option></select>
+        </div>
+        <div class="bk-form-field"><label>Occasion & Special Requirements</label><textarea name="message" rows="4" placeholder="Tell us about the occasion, dietary needs, allergens, atmosphere..."></textarea></div>
+        <button onclick="window.location.href='book.html'" style="background:#466556;color:#fff;padding:12px 24px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Send Enquiry</button>
+      </form>
+      <p id="bk-pd-thanks" style="display:none;font-family:Inter,sans-serif;font-size:15px;color:#466556;text-align:center;padding:24px 0;margin:0;">Thank you - our private dining team will be in touch within 24 hours.</p>
+    </div>
+  </div>
+</div>
+<script>
+function bkPdSubmit(e){e.preventDefault();var f=e.target;var body='Name: '+f.fname.value+' '+f.lname.value+'\nEmail: '+f.email.value+'\nPhone: '+f.phone.value+'\nGuests: '+f.guests.value+'\nDate: '+f.date.value+'\nMenu: '+f.menu.value+'\nMessage: '+f.message.value;window.location.href='mailto:events@bukahauz.com?subject=Private Dining Enquiry&body='+encodeURIComponent(body);f.style.display='none';document.getElementById('bk-pd-thanks').style.display='block';}
+</script></body></html>
