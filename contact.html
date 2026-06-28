@@ -788,4 +788,29 @@ document.addEventListener('click', function(e) {
             });
         }
     </script>
-<script src="cart.js"></script><script>function bkContactSubmit(e){e.preventDefault();var f=e.target;var fields=f.querySelectorAll("input,select,textarea");var vals={};fields.forEach(function(el){if(el.name)vals[el.name]=el.value;});var body="Name: "+(vals.fname||"")+"\nPhone: "+(vals.phone||"")+"\nEmail: "+(vals.email||"")+"\nEnquiry: "+(vals.enquiry||"")+"\nDate: "+(vals.date||"")+"\nGuests: "+(vals.guests||"")+"\nBudget: "+(vals.budget||"")+"\nMessage: "+(vals.message||"");window.location.href="mailto:concierge@bukahauz.com?subject=Bukahauz Enquiry&body="+encodeURIComponent(body);f.innerHTML="<div style=\"padding:40px 0;text-align:center;\"><p style=\"font-family:Bodoni Moda,serif;font-size:28px;color:#466556;margin-bottom:8px;\">Thank you.</p><p style=\"font-family:Inter,sans-serif;font-size:16px;color:#424844;\">We will be in touch within 24 hours.</p></div>";}</script></body></html>
+<script src="cart.js"></script><script>function bkContactSubmit(e){
+  e.preventDefault();
+  var f=e.target;
+  var btn=f.querySelector('button[type="submit"]')||f.querySelector('button');
+  var orig=btn?btn.textContent:'Send';
+  if(btn){btn.textContent='Sending…';btn.disabled=true;}
+  var vals={};
+  f.querySelectorAll('input,select,textarea').forEach(function(el){if(el.name)vals[el.name]=el.value;});
+  fetch('https://zvqtfsjkhlxhaifbjvkn.supabase.co/functions/v1/bk-contact',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      name:(vals.fname||'')+' '+(vals.lname||''),
+      email:vals.email||'',
+      phone:vals.phone||'',
+      subject:vals.enquiry||'General Enquiry',
+      enquiry:vals.enquiry||'',
+      message:vals.message||''
+    })
+  }).then(function(r){return r.json();}).then(function(){
+    f.innerHTML='<div style="padding:40px 0;text-align:center;"><p style="font-family:Bodoni Moda,serif;font-size:24px;color:#466556;margin:0 0 12px;">Thank you</p><p style="font-family:Inter,sans-serif;font-size:15px;color:#424844;">We\'ve received your message and will be in touch within 24 hours.</p></div>';
+  }).catch(function(){
+    if(btn){btn.textContent=orig;btn.disabled=false;}
+    alert('Something went wrong. Please email us at concierge@bukahauz.com');
+  });
+}</script></body></html>
