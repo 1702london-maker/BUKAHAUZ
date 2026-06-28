@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>The Menu | Bukahauz</title><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/><style>*{box-sizing:border-box;margin:0;padding:0;}body{background:#faf9f7;font-family:Inter,sans-serif;}img{display:block;width:100%;height:100%;object-fit:cover;}#bk-tab-bar{position:sticky;top:112px;z-index:40;background:rgba(250,249,247,.97);backdrop-filter:blur(8px);border-bottom:1px solid #e3e2e0;}.bk-tab{font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#727974;background:none;border:none;border-bottom:2px solid transparent;padding:16px 20px;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap;}.bk-tab.active,.bk-tab:hover{color:#466556;border-bottom-color:#466556;}#bk-tab-bar-inner{display:flex;overflow-x:auto;max-width:1440px;margin:0 auto;padding:0 32px;gap:0;scrollbar-width:none;}#bk-tab-bar-inner::-webkit-scrollbar{display:none;}.bk-menu-section{display:none;padding:64px 0 80px;}.bk-menu-section.active{display:block;}.bk-container{max-width:1440px;margin:0 auto;padding:0 32px;}.bk-sec-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 8px;}.bk-sec-title{font-family:'Bodoni Moda',serif;font-size:40px;font-weight:500;color:#1a1c1b;margin:0 0 48px;line-height:1.15;}.bk-col-heading{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:500;color:#1a1c1b;margin:52px 0 24px;padding-bottom:12px;border-bottom:1px solid #e3e2e0;}.bk-col-heading:first-of-type{margin-top:0;}.bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-bottom:16px;}.bk-grid-lg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;margin-bottom:16px;}.bk-card{background:#fff;border:1px solid #e3e2e0;overflow:hidden;transition:box-shadow .25s,transform .25s;}.bk-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-2px);}.bk-card-img{height:220px;overflow:hidden;background:#e8e6e2;}.bk-card-img img{transition:transform .5s ease;width:100%;height:100%;object-fit:cover;}.bk-card:hover .bk-card-img img{transform:scale(1.04);}.bk-card-body{padding:20px;}.bk-card-name{font-family:'Bodoni Moda',serif;font-size:17px;font-weight:500;color:#1a1c1b;margin:0 0 6px;line-height:1.3;}.bk-card-sub{font-size:12px;color:#727974;letter-spacing:.03em;line-height:1.5;}.bk-card-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;}.bk-text-card{background:#fff;border:1px solid #e3e2e0;padding:28px;transition:box-shadow .2s;}.bk-text-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.07);}.bk-text-card-name{font-family:'Bodoni Moda',serif;font-size:19px;font-weight:500;color:#1a1c1b;margin:0 0 10px;}.bk-text-card-desc{font-size:14px;color:#424844;line-height:1.7;}.bk-text-card-ingredients{margin-top:12px;font-size:12px;color:#727974;line-height:1.8;}.bk-dark-card{background:#1a1c1b;border:1px solid #2a2e2c;padding:36px;color:#fff;}.bk-dark-card-name{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:500;color:#fff;margin:0 0 12px;}.bk-dark-card-desc{font-size:14px;color:rgba(255,255,255,.7);line-height:1.7;}.bk-dark-card-items{margin-top:16px;font-size:13px;color:rgba(255,255,255,.55);line-height:2;}.bk-smoothie{background:#fff;border:1px solid #e3e2e0;padding:24px;text-align:center;}.bk-smoothie-name{font-family:'Bodoni Moda',serif;font-size:18px;color:#1a1c1b;margin:0 0 12px;}.bk-smoothie-fruits{font-size:13px;color:#466556;font-weight:500;line-height:1.8;}.bk-coming-soon{background:#466556;padding:48px 32px;text-align:center;margin-top:64px;}.bk-note{font-size:13px;color:#727974;margin-top:8px;margin-bottom:32px;font-style:italic;}@media(max-width:768px){.bk-sec-title{font-size:28px;}.bk-container{padding:0 20px;}#bk-tab-bar-inner{padding:0 16px;}.bk-grid,.bk-grid-lg{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;}}</style></head><body><header id="bk-header" style="position:fixed;top:0;left:0;right:0;z-index:50;">
+
+<!-- Outer strip: subtle bg only for the bar itself -->
+<div style="background:rgba(250,249,247,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(193,200,194,0.2);">
+  <div style="max-width:1440px;margin:0 auto;padding:0 32px;height:112px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;">
+
+    <!-- Left: Desktop nav -->
+    <nav id="bk-desktop-nav" style="display:flex;align-items:center;gap:2px;justify-content:flex-start;flex-wrap:nowrap;">
+
+      <a href="index.html" class="bk-nav-link">Home</a>
+
+      <a href="about.html" class="bk-nav-link">About</a>
+
+      <!-- Experiences -->
+      <div class="bk-dropdown-wrap">
+        <button class="bk-nav-link bk-has-dropdown" onclick="bkToggle(this)">
+          Experiences <span style="font-size:10px;opacity:0.6;">&#9660;</span>
+        </button>
+        <div class="bk-dropdown">
+          <a href="private-dining.html"      class="bk-dd-item">Private Dining</a>
+          <a href="chef-experiences.html"    class="bk-dd-item">Chef Experiences</a>
+          <a href="wine-tastings.html"       class="bk-dd-item">Wine Tastings</a>
+          <a href="wine-cellar.html"       class="bk-dd-item">Wine Cellar</a>
+          <a href="private-parties.html"     class="bk-dd-item">Private Parties</a>
+          <a href="corporate-catering.html"  class="bk-dd-item">Corporate Catering</a>
+          <a href="event-food-planning.html" class="bk-dd-item">Event Food Planning</a>
+          <a href="takeaway.html"            class="bk-dd-item">Takeaway</a>
+        </div>
+      </div>
+
+      <!-- Menus -->
+      <div class="bk-dropdown-wrap">
+        <button class="bk-nav-link bk-has-dropdown" onclick="bkToggle(this)">
+          Menus <span style="font-size:10px;opacity:0.6;">&#9660;</span>
+        </button>
+        <div class="bk-dropdown">
+                    <a href="afro-continental-menu.html" class="bk-dd-item">Afro Continental Menu</a>
+          <a href="afro-fusion.html" class="bk-dd-item">Afro Fusion Menu</a>
+                    <a href="menus.html"                class="bk-dd-item">Private Dining Menu</a>
+          <a href="wine-pairing-menu.html"    class="bk-dd-item">Wine Pairing Menu</a>
+        </div>
+      </div>
+
+      <a href="networking.html" class="bk-nav-link">Networking</a>
+
+      <a href="shop-collection.html" class="bk-nav-link">Shop</a>
+
+      <a href="food-truck.html" class="bk-nav-link">Food Truck</a>
+      <a href="gallery.html" class="bk-nav-link">Gallery</a>
+      <a href="contact.html" class="bk-nav-link">Contact</a>
+      
+
+    </nav>
+
+    <!-- Centre: Logo -->
+    <a href="index.html" style="display:flex;align-items:center;justify-content:center;text-decoration:none;">
+      <img src="bk-header-logo.png" alt="Bukahauz" style="height:104px;width:auto;object-fit:contain;" />
+    </a>
+
+    <!-- Right: Currency / Account / Cart -->
+    <div style="display:flex;align-items:center;gap:6px;justify-content:flex-end;">
+
+      <a href="book.html" style="background:#466556;color:#fff;padding:8px 18px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap;margin-right:8px;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Book Now</a>
+      <!-- Currency selector -->
+      <div style="position:relative;">
+        <select onchange="" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.05em;color:#424844;background:transparent;border:1px solid #c1c8c2;padding:6px 8px;cursor:pointer;appearance:none;-webkit-appearance:none;outline:none;transition:border-color .2s;min-width:60px;"
+          onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';">
+          <option>GBP</option>
+          <option>USD</option>
+          <option>EUR</option>
+          <option>NGN</option>
+        </select>
+      </div>
+
+      <!-- Account icon -->
+      <a href="account.html" title="Account" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></a><!--old-account-removed
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+      </a>
+
+      <!-- Cart icon -->
+      <a href="cart.html" title="Cart" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;position:relative;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
+        <span class="bk-cart-badge" style="display:none;position:absolute;top:2px;right:2px;min-width:16px;height:16px;background:#8f4c37;border-radius:8px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;color:#fff;line-height:16px;text-align:center;padding:0 3px;"></span>
+      </a>
+
+    </div>
+
+    <!-- Mobile burger -->
+    <button onclick="document.getElementById('bk-mobile-menu').classList.toggle('bk-open');" style="display:none;background:none;border:none;cursor:pointer;padding:4px;" id="bk-burger" aria-label="Menu">
+      <svg width="22" height="22" fill="none" stroke="#1a1c1b" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+
+  </div>
+</div>
+
+<!-- Mobile menu -->
+<div id="bk-mobile-menu" style="display:none;background:#faf9f7;border-top:1px solid #e3e2e0;max-height:80vh;overflow-y:auto;">
+  <div style="padding:12px 20px;">
+    <a href="index.html" class="bk-mob-link">Home</a>
+    <a href="about.html" class="bk-mob-link">About</a>
+    <a href="experiences.html" class="bk-mob-link">Experiences</a>
+    <div style="padding-left:16px;border-left:2px solid rgba(70,101,86,0.2);margin-left:8px;">
+      <a href="private-dining.html"      class="bk-mob-sub">Private Dining</a>
+      <a href="chef-experiences.html"    class="bk-mob-sub">Chef Experiences</a>
+      <a href="wine-tastings.html"       class="bk-mob-sub">Wine Tastings</a>
+      <a href="private-parties.html"     class="bk-mob-sub">Private Parties</a>
+      <a href="corporate-catering.html"  class="bk-mob-sub">Corporate Catering</a>
+      <a href="event-food-planning.html" class="bk-mob-sub">Event Food Planning</a>
+      <a href="takeaway.html"            class="bk-mob-sub">Takeaway</a>
+    </div>
+    <a href="menus.html" class="bk-mob-link">Menus</a>
+    <div style="padding-left:16px;border-left:2px solid rgba(70,101,86,0.2);margin-left:8px;">
+      <a href="afro-continental-menu.html" class="bk-mob-sub">Afro Continental Menu</a>
+      <a href="menus.html"                 class="bk-mob-sub">Private Dining Menu</a>
+      <a href="wine-pairing-menu.html"     class="bk-mob-sub">Wine Pairing Menu</a>
+    </div>
+    <a href="networking.html" class="bk-mob-link">Networking</a>
+    <a href="shop-collection.html" class="bk-mob-link">Shop</a>
+    <a href="food-truck.html" class="bk-mob-link">Food Truck</a>
+    <a href="gallery.html" class="bk-mob-link">Gallery</a>
+    <a href="contact.html" class="bk-mob-link">Contact</a>
+    <a href="book.html" style="display:block;margin:12px 8px 4px;background:#466556;color:#fff;padding:10px 16px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;text-align:center;">Book Now</a>
+  </div>
+</div>
+
+<style>
+/* Nav link base */
+.bk-nav-link {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #424844;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+  display: inline-block;
+}
+.bk-nav-link:hover { color: #466556; }
+
+/* Dropdown wrapper */
+.bk-dropdown-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown panel — hidden by default */
+.bk-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: #faf9f7;
+  border: 1px solid rgba(193,200,194,0.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  min-width: 200px;
+  z-index: 100;
+}
+.bk-dropdown.bk-open { display: block; }
+
+.bk-dd-item {
+  display: block;
+  padding: 10px 16px;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  color: #424844;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.bk-dd-item:hover { background: #f4f4f1; color: #466556; }
+
+/* Mobile links */
+.bk-mob-link {
+  display: block;
+  padding: 10px 8px;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #424844;
+  text-decoration: none;
+}
+.bk-mob-sub {
+  display: block;
+  padding: 7px 8px;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  color: #424844;
+  text-decoration: none;
+}
+.bk-mob-link:hover, .bk-mob-sub:hover { color: #466556; }
+
+/* Mobile open state */
+#bk-mobile-menu.bk-open { display: block !important; }
+
+/* Responsive: hide desktop nav, show burger */
+@media (max-width: 1199px) {
+  #bk-desktop-nav { display: none !important; }
+  #bk-burger { display: flex !important; align-items: center; justify-content: flex-start; }
+  /* On mobile: switch to flex, logo still centred */
+  #bk-header > div > div:first-child {
+    grid-template-columns: auto 1fr auto !important;
+  }
+}
+</style>
+
+<script>
+// Toggle dropdown open/close
+function bkToggle(btn) {
+  var dd = btn.nextElementSibling;
+  var isOpen = dd.classList.contains('bk-open');
+  // Close all dropdowns
+  document.querySelectorAll('.bk-dropdown.bk-open').forEach(function(el){ el.classList.remove('bk-open'); });
+  if (!isOpen) dd.classList.add('bk-open');
+}
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.bk-dropdown-wrap')) {
+    document.querySelectorAll('.bk-dropdown.bk-open').forEach(function(el){ el.classList.remove('bk-open'); });
+  }
+});
+</script>
+</header><div id="bk-tab-bar"><div id="bk-tab-bar-inner"><button class="bk-tab active" onclick="bkTab('afro-continental',this)">Afro-Continental</button><button class="bk-tab" onclick="bkTab('afro-fusion',this)">Afro-Fusion</button><button class="bk-tab" onclick="bkTab('desserts',this)">Desserts</button><button class="bk-tab" onclick="bkTab('smoothies',this)">Smoothies</button><button class="bk-tab" onclick="bkTab('wine',this)">Wine Experience</button></div></div><div style="padding-top:112px;"></div><section id="sec-afro-continental" class="bk-menu-section active"><div class="bk-container"><p class="bk-sec-label">Afro-Continental</p><h2 class="bk-sec-title">The Signature Collection</h2><h3 class="bk-col-heading">Rice Collection</h3><p class="bk-note">All served with Bukahauz Signature Pepper Sauce.</p><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-14.png' alt='White Rice with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>White Rice with Chicken Breast</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-16.png' alt='White Rice with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>White Rice with Turkey</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-15.png' alt='White Rice with Tilapia' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>White Rice with Tilapia</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-45.png' alt='White Rice with Mackerel' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>White Rice with Mackerel</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-13.png' alt='White Rice with Catfish' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>White Rice with Catfish</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-4.png' alt='Jollof Rice with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Jollof Rice with Chicken Breast</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-7.png' alt='Jollof Rice with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Jollof Rice with Turkey</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-6.png' alt='Jollof Rice with Tilapia' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Jollof Rice with Tilapia</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-5.png' alt='Jollof Rice with Mackerel' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Jollof Rice with Mackerel</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-3.png' alt='Jollof Rice with Catfish' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Jollof Rice with Catfish</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div></div><h3 class="bk-col-heading">Plantain Burger Collection</h3><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-1.png' alt='Chicken Breast Plantain Burger' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Chicken Breast Plantain Burger</p><p style='font-size:12px;color:#727974;line-height:1.5;margin-top:6px;'>Caramelised fried plantain buns · Lettuce · Tomatoes · Cucumber · Bukahauz Burger Sauce</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-2.png' alt='Chicken Plantain Burger' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Chicken Plantain Burger</p><p style='font-size:12px;color:#727974;line-height:1.5;margin-top:6px;'>Caramelised fried plantain buns · Lettuce · Tomatoes · Cucumber · Bukahauz Burger Sauce</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-12.png' alt='Turkey Plantain Burger' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Turkey Plantain Burger</p><p style='font-size:12px;color:#727974;line-height:1.5;margin-top:6px;'>Caramelised fried plantain buns · Lettuce · Tomatoes · Cucumber · Bukahauz Burger Sauce</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-8.png' alt='Minced Meat Plantain Burger' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Minced Meat Plantain Burger</p><p style='font-size:12px;color:#727974;line-height:1.5;margin-top:6px;'>Caramelised fried plantain buns · Lettuce · Tomatoes · Cucumber · Bukahauz Burger Sauce</p></div></div></div><h3 class="bk-col-heading">Sweet Potato Waffle Collection</h3><p class="bk-note">All served with warm caramel drizzle.</p><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-9.png' alt='Sweet Potato Waffles with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Sweet Potato Waffles with Turkey</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-10.png' alt='Sweet Potato Waffles with Chicken' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Sweet Potato Waffles with Chicken</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-11.png' alt='Sweet Potato Waffles with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Sweet Potato Waffles with Chicken Breast</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-31.png' alt='Sweet Potato Waffles with King Prawns' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Sweet Potato Waffles with King Prawns</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-32.png' alt='Sweet Potato Waffles with Minced Meat' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Sweet Potato Waffles with Minced Meat</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div></div><h3 class="bk-col-heading">Plantain Waffle Collection</h3><p class="bk-note">All served with warm caramel drizzle.</p><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-24.png' alt='Plantain Waffles with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Waffles with Turkey</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-25.png' alt='Plantain Waffles with Chicken' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Waffles with Chicken</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-26.png' alt='Plantain Waffles with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Waffles with Chicken Breast</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-27.png' alt='Plantain Waffles with King Prawns' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Waffles with King Prawns</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-40.png' alt='Plantain Waffles with Minced Meat' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Waffles with Minced Meat</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div></div><h3 class="bk-col-heading">Fried Plantain Collection</h3><p class="bk-note">All served with Bukahauz Signature Pepper Sauce.</p><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-17.png' alt='Fried Plantain with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with Chicken Breast</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-18.png' alt='Fried Plantain with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with Turkey</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-19.png' alt='Fried Plantain with Tilapia' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with Tilapia</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-20.png' alt='Fried Plantain with Mackerel' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with Mackerel</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-21.png' alt='Fried Plantain with Catfish' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with Catfish</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-22.png' alt='Fried Plantain with King Prawns' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with King Prawns</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-23.png' alt='Fried Plantain with Minced Meat' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with Minced Meat</p></div></div></div><h3 class="bk-col-heading">Sweet Potato Strip Fries Collection</h3><p class="bk-note">All served with Bukahauz Signature Pepper Sauce.</p><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-28.png' alt='Strip Fries with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with Chicken Breast</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-29.png' alt='Strip Fries with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with Turkey</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-30.png' alt='Strip Fries with Tilapia' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with Tilapia</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-41.png' alt='Strip Fries with Mackerel' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with Mackerel</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-42.png' alt='Strip Fries with Catfish' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with Catfish</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-43.png' alt='Strip Fries with King Prawns' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with King Prawns</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-44.png' alt='Strip Fries with Minced Meat' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with Minced Meat</p></div></div></div><h3 class="bk-col-heading">Plantain Cups Collection</h3><p class="bk-note">Filled with selected protein and Bukahauz Signature Pepper Sauce.</p><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-33.png' alt='Plantain Cups with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with Chicken Breast</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-34.png' alt='Plantain Cups with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with Turkey</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-35.png' alt='Plantain Cups with Tilapia' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with Tilapia</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-36.png' alt='Plantain Cups with Mackerel' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with Mackerel</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-37.png' alt='Plantain Cups with Catfish' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with Catfish</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-38.png' alt='Plantain Cups with King Prawns' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with King Prawns</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-39.png' alt='Plantain Cups with Minced Meat' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with Minced Meat</p></div></div></div></div></section><section id="sec-afro-fusion" class="bk-menu-section"><div class="bk-container"><p class="bk-sec-label">Afro-Fusion</p><h2 class="bk-sec-title">Where Africa Meets the World</h2><h3 class="bk-col-heading">Signature Pasta</h3><div class="bk-grid-lg"><div class="bk-text-card"><p class="bk-text-card-name">Suya Alfredo Pasta</p><p class="bk-text-card-desc">Creamy parmesan Alfredo finished with grilled suya chicken.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Coconut Curry Seafood Linguine</p><p class="bk-text-card-desc">King prawns, calamari and mussels in creamy coconut curry sauce.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Jollof Risotto</p><p class="bk-text-card-desc">Italian risotto infused with smoky Nigerian jollof flavours, parmesan and grilled prawns.</p></div></div><h3 class="bk-col-heading">Chef's Specials</h3><div class="bk-grid-lg"><div class="bk-text-card"><p class="bk-text-card-name">Suya Steak Bowl</p><p class="bk-text-card-desc">Premium grilled steak with garlic herb rice and suya butter.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Jerk Salmon Royale</p><p class="bk-text-card-desc">Grilled salmon served with coconut rice and roasted vegetables.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Peri Suya Chicken</p><p class="bk-text-card-desc">Flame grilled chicken served with sweet potato fries.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Prawn Coconut Rice</p><p class="bk-text-card-desc">Creamy coconut rice finished with grilled king prawns.</p></div></div><h3 class="bk-col-heading">Street Fusion</h3><div class="bk-grid-lg"><div class="bk-text-card"><p class="bk-text-card-name">Plantain &amp; Beef Tacos</p><p class="bk-text-card-desc">The ultimate street-food crossover — seasoned beef in plantain shells.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Bukahauz Loaded Plantain Nachos</p><p class="bk-text-card-desc">Crispy plantain chips loaded with signature toppings.</p></div></div><h3 class="bk-col-heading">Sharing Experience</h3><div class="bk-dark-card"><p style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 10px;">For the Table</p><p class="bk-dark-card-name">Bukahauz Sharing Platter</p><p class="bk-dark-card-desc">The ultimate communal feast — everything on one platter, shared the Bukahauz way.</p><p class="bk-dark-card-items">White Rice &middot; Jollof Rice &middot; Chicken &middot; Turkey &middot; Tilapia &middot; Mackerel &middot; Catfish &middot; King Prawns &middot; Fried Plantain &middot; Sweet Potato Strip Fries &middot; Signature Pepper Sauce</p><a href="book.html" style="display:inline-block;margin-top:24px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#466556;color:#fff;padding:12px 28px;text-decoration:none;">Reserve for Your Group</a></div></div></section>
+
+<section id="sec-desserts" class="bk-menu-section"><div class="bk-container"><p class="bk-sec-label">Sweet Endings</p><h2 class="bk-sec-title">Dessert Collection</h2><div class="bk-grid-lg"><div class="bk-text-card"><p class="bk-text-card-name">Biscoff Plantain Cheesecake</p><p class="bk-text-card-desc">A Bukahauz signature — velvety cheesecake on a Biscoff base with caramelised plantain.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Puff Puff Bites</p><p class="bk-text-card-desc">Light, pillowy West African puff puff served with your choice of dip.</p><p style="margin-top:10px;font-size:12px;color:#727974;">Chocolate Dip &middot; Salted Caramel Dip &middot; Vanilla Dip</p></div><div class="bk-text-card"><p class="bk-text-card-name">Chocolate Plantain Brownie</p><p class="bk-text-card-desc">Dense, fudgy brownie with ribbons of caramelised plantain throughout.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Coconut &amp; Mango Panna Cotta</p><p class="bk-text-card-desc">Silky coconut panna cotta with fresh mango and tropical coulis.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Vanilla Bean Cr&egrave;me Br&ucirc;l&eacute;e</p><p class="bk-text-card-desc">Classic with Madagascar vanilla bean and a perfect caramel crust.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Sticky Toffee Cake</p><p class="bk-text-card-desc">Warm, moist sticky toffee pudding with house-made toffee sauce.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Red Velvet Royale</p><p class="bk-text-card-desc">Layers of red velvet with cream cheese frosting and house garnish.</p></div><div class="bk-text-card"><p class="bk-text-card-name">New York Cheesecake</p><p class="bk-text-card-desc">Classic New York style — dense, rich, unapologetically indulgent.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Chocolate Lava Cake</p><p class="bk-text-card-desc">Warm dark chocolate cake with a molten centre, served with vanilla ice cream.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Tropical Fruit Platter</p><p class="bk-text-card-desc">A curated selection of seasonal tropical fruits, elegantly presented.</p></div></div><h3 class="bk-col-heading" style="margin-top:40px;">Luxury Ice Cream Selection</h3><div class="bk-grid"><div class="bk-smoothie"><p class="bk-smoothie-name">Vanilla Bean</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Chocolate</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Salted Caramel</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Coconut</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Mango Sorbet</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Strawberry</p></div></div></div></section>
+
+<section id="sec-smoothies" class="bk-menu-section"><div class="bk-container"><p class="bk-sec-label">Fresh &amp; Tropical</p><h2 class="bk-sec-title">Tropical Smoothies</h2><div class="bk-grid"><div class="bk-smoothie"><p class="bk-smoothie-name">Sunrise Glow</p><p class="bk-smoothie-fruits">Banana &middot; Pineapple &middot; Honey Melon</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Tropical Escape</p><p class="bk-smoothie-fruits">Watermelon &middot; Pineapple &middot; Apple</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Green Oasis</p><p class="bk-smoothie-fruits">Apple &middot; Honey Melon &middot; Pineapple</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Sweet Island</p><p class="bk-smoothie-fruits">Banana &middot; Watermelon &middot; Pineapple</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Summer Splash</p><p class="bk-smoothie-fruits">Watermelon &middot; Honey Melon &middot; Apple</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Golden Harvest</p><p class="bk-smoothie-fruits">Banana &middot; Apple &middot; Pineapple</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Pink Paradise</p><p class="bk-smoothie-fruits">Watermelon &middot; Banana &middot; Honey Melon</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Orchard Blend</p><p class="bk-smoothie-fruits">Apple &middot; Banana &middot; Honey Melon</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Berry-Free Tropical</p><p class="bk-smoothie-fruits">Watermelon &middot; Pineapple &middot; Honey Melon</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">The Red Garden</p><p class="bk-smoothie-fruits">Tomato &middot; Apple &middot; Watermelon</p></div></div></div></section>
+
+<section id="sec-wine" class="bk-menu-section"><div class="bk-container"><p class="bk-sec-label">Curated Experiences</p><h2 class="bk-sec-title">Wine Tasting Experience</h2><div class="bk-grid-lg"><div class="bk-dark-card"><p class="bk-dark-card-name">French Wine Flights</p><p class="bk-dark-card-desc">A curated journey through the finest French appellations — Bordeaux, Burgundy, Rh&ocirc;ne and beyond.</p><a href="wine-tastings.html" style="display:inline-block;margin-top:20px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-decoration:underline;text-underline-offset:4px;">Explore &rarr;</a></div><div class="bk-dark-card"><p class="bk-dark-card-name">Champagne Flights</p><p class="bk-dark-card-desc">Premium grower champagnes and prestige cuv&eacute;es, guided by our sommelier.</p><a href="wine-tastings.html" style="display:inline-block;margin-top:20px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-decoration:underline;text-underline-offset:4px;">Explore &rarr;</a></div><div class="bk-dark-card"><p class="bk-dark-card-name">Premium Cognac Flights</p><p class="bk-dark-card-desc">Rare and aged cognacs from the finest houses, paired with African small plates.</p></div><div class="bk-dark-card"><p class="bk-dark-card-name">Les Arrang&eacute;s du Rhum</p><p class="bk-dark-card-desc">Artisanal infused rums from the French Caribbean, each with a unique botanical story.</p></div><div class="bk-dark-card"><p class="bk-dark-card-name">Vieux Marc de Champagne Club 1911</p><p class="bk-dark-card-desc">An exceptional marc de champagne from one of the region's most storied producers.</p></div><div class="bk-dark-card"><p class="bk-dark-card-name">Ratafia Champenois Jean Goyard</p><p class="bk-dark-card-desc">A rare and elegant ratafia — grape must and marc blended to perfection.</p></div><div class="bk-dark-card"><p class="bk-dark-card-name">Seasonal Sommelier Pairing</p><p class="bk-dark-card-desc">Our head sommelier curates a bespoke seasonal pairing for your table — available on request.</p><a href="book.html" style="display:inline-block;margin-top:20px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-decoration:underline;text-underline-offset:4px;">Book Experience &rarr;</a></div></div><div style="margin-top:32px;text-align:center;"><a href="wine-cellar.html" style="display:inline-block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#466556;color:#fff;padding:14px 32px;text-decoration:none;">Explore the Wine Cellar</a></div></div></section>
+
+<div style="background:#466556;padding:48px 32px;text-align:center;margin-top:64px;"><p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:0 0 12px;">Coming Soon</p><p style="font-family:'Bodoni Moda',serif;font-size:28px;color:#fff;margin:0 0 16px;">Pounded Yam &amp; Soups</p><p style="font-family:Inter,sans-serif;font-size:14px;color:rgba(255,255,255,.7);line-height:1.7;">Pounded Yam &amp; Egusi &nbsp;&middot;&nbsp; Pounded Yam &amp; Ogbono &nbsp;&middot;&nbsp; Pounded Yam &amp; Seafood Okra</p></div>
+
+<script src="cart.js"></script>
+<script>
+function bkTab(id,btn){document.querySelectorAll('.bk-menu-section').forEach(function(s){s.classList.remove('active');});document.querySelectorAll('.bk-tab').forEach(function(b){b.classList.remove('active');});document.getElementById('sec-'+id).classList.add('active');btn.classList.add('active');window.scrollTo({top:document.getElementById('bk-tab-bar').offsetTop-10,behavior:'smooth'});}
+</script><footer style="background:#f4f4f1;">
+  <div style="max-width:1440px;margin:0 auto;padding:80px 32px 48px;">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:40px;">
+
+      <!-- Col 1: Brand -->
+      <div>
+        <a href="index.html" style="display:inline-block;margin-bottom:14px;">
+          <img src="bk-footer-logo.png" alt="Bukahauz" style="height:60px;width:auto;object-fit:contain;"/>
+        </a>
+        <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.7;color:#424844;max-width:200px;margin-bottom:20px;">A sanctuary for those who appreciate the narrative behind the meal.</p>
+        <div style="display:flex;gap:10px;">
+          <a href="https://instagram.com/bukahauz" target="_blank" aria-label="Instagram" style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;" onmouseover="this.style.borderColor='#466556';this.style.color='#466556';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://facebook.com/bukahauz" target="_blank" aria-label="Facebook" style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;" onmouseover="this.style.borderColor='#466556';this.style.color='#466556';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/447000000000" target="_blank" aria-label="WhatsApp" style="width:36px;height:36px;border:1px solid #c1c8c2;display:flex;align-items:center;justify-content:center;color:#424844;transition:all .2s;text-decoration:none;" onmouseover="this.style.borderColor='#466556';this.style.color='#466556';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Experiences (trimmed) -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Experiences</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="private-dining.html"   style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Private Dining</a></li>
+          <li><a href="chef-experiences.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Chef Experiences</a></li>
+          <li><a href="wine-tastings.html"    style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine Tastings</a></li>
+          <li><a href="food-truck.html"       style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Food Truck</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Shop (was column 4, now moved to column 3) -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Shop</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">All Collections</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Dining &amp; Serving</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Tableware</a></li>
+          <li><a href="shop-collection.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Wine &amp; Dining</a></li>
+          </ul>
+      </div>
+
+      <!-- Col 4: Company (NEW) -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Company</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="contact.html"  style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Contact Us</a></li>
+          <li><a href="shipping.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Shipping</a></li>
+          <li><a href="tracking.html" style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">Order Tracking</a></li>
+          <li><a href="faq.html"      style="font-family:Inter,sans-serif;font-size:14px;color:#424844;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Newsletter -->
+      <div>
+        <h3 style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 18px;">Stay in the Loop</h3>
+        <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#424844;margin:0 0 18px;">Early access to new experiences, seasonal menus and artisan collaborations.</p>
+        <form onsubmit="this.innerHTML='<p style=font-family:Inter,sans-serif;font-size:14px;color:#466556;margin:0>Thank you — you are on the list!</p>';return false;" style="display:flex;flex-direction:column;gap:8px;">
+          <input type="email" required placeholder="Your email address" style="font-family:Inter,sans-serif;font-size:14px;border:none;border-bottom:1px solid #c1c8c2;background:transparent;padding:8px 0;color:#1a1c1b;outline:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+          <button onclick="this.closest('form')?this.closest('form').submit():null" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div style="border-top:1px solid rgba(193,200,194,.4);background:#eeeeeb;">
+    <div style="max-width:1440px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
+      <p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:0;">&copy; 2026 Bukahauz. All rights reserved.</p>      <div class="bk-pay-cards" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        <!-- Visa -->
+        <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e3e2e0;border-radius:3px;background:#fff;"><rect width="38" height="24" rx="3" fill="#fff"/><text x="5" y="16" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#1a1f71" letter-spacing="0">VISA</text></svg>
+        <!-- Mastercard -->
+        <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e3e2e0;border-radius:3px;background:#fff;"><rect width="38" height="24" rx="3" fill="#fff"/><circle cx="14" cy="12" r="7" fill="#EB001B"/><circle cx="24" cy="12" r="7" fill="#F79E1B"/><path d="M19 6.8a7 7 0 010 10.4A7 7 0 0119 6.8z" fill="#FF5F00"/></svg>
+        <!-- Amex -->
+        <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e3e2e0;border-radius:3px;"><rect width="38" height="24" rx="3" fill="#2E77BC"/><text x="4" y="16" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#fff" letter-spacing="0">AMEX</text></svg>
+        <!-- Klarna -->
+        <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e3e2e0;border-radius:3px;background:#FFB3C7;"><rect width="38" height="24" rx="3" fill="#FFB3C7"/><text x="4" y="16" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#17120e" letter-spacing="0">Klarna</text></svg>
+        <!-- PayPal -->
+        <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e3e2e0;border-radius:3px;background:#fff;"><rect width="38" height="24" rx="3" fill="#fff"/><text x="3" y="16" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#003087" letter-spacing="0">Pay</text><text x="17" y="16" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#009CDE" letter-spacing="0">Pal</text></svg>
+        <!-- Apple Pay -->
+        <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e3e2e0;border-radius:3px;background:#000;"><rect width="38" height="24" rx="3" fill="#000"/><text x="3" y="16" font-family="Arial,sans-serif" font-size="7.5" font-weight="500" fill="#fff" letter-spacing="0">Apple Pay</text></svg>
+      </div>
+      <nav style="display:flex;flex-wrap:wrap;gap:24px;">
+        <a href="privacy.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Privacy Policy</a>
+        <a href="terms.html"    style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Terms &amp; Conditions</a>
+        
+        <a href="cookies.html"  style="font-family:Inter,sans-serif;font-size:12px;color:#727974;text-decoration:none;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#727974';">Cookie Policy</a>
+      </nav>
+    </div>
+  </div>
+
+  <style>
+  @media(max-width:1023px){footer>div:first-child>div{grid-template-columns:repeat(2,1fr)!important;}}
+  @media(max-width:639px){footer>div:first-child>div{grid-template-columns:1fr!important;}footer>div:first-child{padding:48px 20px 32px!important;}}
+  </style>
+
+</footer></body></html>
