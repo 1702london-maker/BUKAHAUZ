@@ -1,4 +1,128 @@
-﻿<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>The Menu | Bukahauz</title><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/><style>*{box-sizing:border-box;margin:0;padding:0;}body{background:#faf9f7;font-family:Inter,sans-serif;}img{display:block;width:100%;height:100%;object-fit:cover;}#bk-tab-bar{position:sticky;top:112px;z-index:40;background:rgba(250,249,247,.97);backdrop-filter:blur(8px);border-bottom:1px solid #e3e2e0;}.bk-tab{font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#727974;background:none;border:none;border-bottom:2px solid transparent;padding:16px 20px;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap;}.bk-tab.active,.bk-tab:hover{color:#466556;border-bottom-color:#466556;}#bk-tab-bar-inner{display:flex;overflow-x:auto;max-width:1440px;margin:0 auto;padding:0 32px;gap:0;scrollbar-width:none;}#bk-tab-bar-inner::-webkit-scrollbar{display:none;}.bk-menu-section{display:none;padding:64px 0 80px;}.bk-menu-section.active{display:block;}.bk-container{max-width:1440px;margin:0 auto;padding:0 32px;}.bk-sec-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 8px;}.bk-sec-title{font-family:'Bodoni Moda',serif;font-size:40px;font-weight:500;color:#1a1c1b;margin:0 0 48px;line-height:1.15;}.bk-col-heading{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:500;color:#1a1c1b;margin:52px 0 24px;padding-bottom:12px;border-bottom:1px solid #e3e2e0;}.bk-col-heading:first-of-type{margin-top:0;}.bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-bottom:16px;}.bk-grid-lg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;margin-bottom:16px;}.bk-card{background:#fff;border:1px solid #e3e2e0;overflow:hidden;transition:box-shadow .25s,transform .25s;}.bk-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-2px);}.bk-card-img{height:220px;overflow:hidden;background:#e8e6e2;}.bk-card-img img{transition:transform .5s ease;width:100%;height:100%;object-fit:cover;}.bk-card:hover .bk-card-img img{transform:scale(1.04);}.bk-card-body{padding:20px;}.bk-card-name{font-family:'Bodoni Moda',serif;font-size:17px;font-weight:500;color:#1a1c1b;margin:0 0 6px;line-height:1.3;}.bk-card-sub{font-size:12px;color:#727974;letter-spacing:.03em;line-height:1.5;}.bk-card-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;}.bk-text-card{background:#fff;border:1px solid #e3e2e0;padding:28px;transition:box-shadow .2s;}.bk-text-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.07);}.bk-text-card-name{font-family:'Bodoni Moda',serif;font-size:19px;font-weight:500;color:#1a1c1b;margin:0 0 10px;}.bk-text-card-desc{font-size:14px;color:#424844;line-height:1.7;}.bk-text-card-ingredients{margin-top:12px;font-size:12px;color:#727974;line-height:1.8;}.bk-dark-card{background:#1a1c1b;border:1px solid #2a2e2c;padding:36px;color:#fff;}.bk-dark-card-name{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:500;color:#fff;margin:0 0 12px;}.bk-dark-card-desc{font-size:14px;color:rgba(255,255,255,.7);line-height:1.7;}.bk-dark-card-items{margin-top:16px;font-size:13px;color:rgba(255,255,255,.55);line-height:2;}.bk-smoothie{background:#fff;border:1px solid #e3e2e0;padding:24px;text-align:center;}.bk-smoothie-name{font-family:'Bodoni Moda',serif;font-size:18px;color:#1a1c1b;margin:0 0 12px;}.bk-smoothie-fruits{font-size:13px;color:#466556;font-weight:500;line-height:1.8;}.bk-coming-soon{background:#466556;padding:48px 32px;text-align:center;margin-top:64px;}.bk-note{font-size:13px;color:#727974;margin-top:8px;margin-bottom:32px;font-style:italic;}@media(max-width:768px){.bk-sec-title{font-size:28px;}.bk-container{padding:0 20px;}#bk-tab-bar-inner{padding:0 16px;}.bk-grid,.bk-grid-lg{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;}}</style></head><body><header id="bk-header" style="position:fixed;top:0;left:0;right:0;z-index:50;">
+﻿<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>The Menu | Bukahauz</title><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#faf9f7;font-family:Inter,sans-serif;color:#1a1c1b;}
+
+/* ---- HERO ---- */
+.bk-mhero{height:420px;background:#1a1c1b;position:relative;display:flex;align-items:flex-end;overflow:hidden;}
+.bk-mhero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1a2e22 0%,#2a1810 60%,#1a1c1b 100%);opacity:.9;}
+.bk-mhero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 0,transparent 50%);background-size:24px 24px;}
+.bk-mhero-content{position:relative;z-index:2;max-width:1440px;margin:0 auto;width:100%;padding:0 48px 56px;}
+.bk-mhero-label{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#8f4c37;margin:0 0 14px;}
+.bk-mhero-title{font-family:"Bodoni Moda",serif;font-size:64px;font-weight:400;color:#fff;line-height:1.05;margin:0 0 18px;}
+.bk-mhero-sub{font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;max-width:540px;margin:0;}
+.bk-mhero-stats{display:flex;gap:40px;margin-top:32px;}
+.bk-mhero-stat span{display:block;}
+.bk-mhero-stat .num{font-family:"Bodoni Moda",serif;font-size:28px;color:#fff;}
+.bk-mhero-stat .lbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:2px;}
+
+/* ---- SECTION NAV ---- */
+#bk-snav{position:sticky;top:112px;z-index:40;background:rgba(250,249,247,.97);backdrop-filter:blur(10px);border-bottom:1px solid #e3e2e0;}
+#bk-snav-inner{display:flex;overflow-x:auto;max-width:1440px;margin:0 auto;padding:0 48px;scrollbar-width:none;gap:0;}
+#bk-snav-inner::-webkit-scrollbar{display:none;}
+.bk-snav-btn{font-family:Inter,sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#727974;background:none;border:none;border-bottom:2px solid transparent;padding:18px 22px;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap;}
+.bk-snav-btn:hover,.bk-snav-btn.active{color:#466556;border-bottom-color:#466556;}
+
+/* ---- LAYOUT ---- */
+.bk-wrap{max-width:1440px;margin:0 auto;padding:0 48px;}
+.bk-sec{padding:80px 0 48px;}
+.bk-sec-inner{max-width:1440px;margin:0 auto;padding:0 48px;}
+.bk-sec-top{display:flex;align-items:flex-end;justify-content:space-between;margin:0 0 52px;gap:32px;}
+.bk-sec-left{}
+.bk-label{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8f4c37;margin:0 0 10px;}
+.bk-title{font-family:"Bodoni Moda",serif;font-size:44px;font-weight:400;color:#1a1c1b;line-height:1.1;margin:0 0 12px;}
+.bk-desc{font-size:14px;color:#5a6160;line-height:1.8;max-width:520px;}
+.bk-col-title{font-family:"Bodoni Moda",serif;font-size:20px;font-weight:500;color:#1a1c1b;margin:52px 0 6px;padding-bottom:14px;border-bottom:1px solid #e8e6e2;}
+.bk-note{font-size:12px;color:#8f9490;font-style:italic;margin:8px 0 24px;}
+.bk-divider{border:none;border-top:1px solid #e3e2e0;margin:0;}
+
+/* ---- FOOD CARDS (with image) ---- */
+.bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:20px;margin-bottom:4px;}
+.bk-card{background:#fff;border:1px solid #ece9e4;overflow:hidden;cursor:pointer;transition:box-shadow .3s,transform .3s;}
+.bk-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.1);transform:translateY(-3px);}
+.bk-card-img{height:210px;overflow:hidden;background:#e8e5e0;position:relative;}
+.bk-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;display:block;}
+.bk-card:hover .bk-card-img img{transform:scale(1.06);}
+.bk-card-body{padding:18px 20px 20px;}
+.bk-card-name{font-family:"Bodoni Moda",serif;font-size:16px;font-weight:500;color:#1a1c1b;margin:0 0 4px;line-height:1.3;}
+.bk-card-sub{font-size:11px;color:#8f9490;line-height:1.5;margin:0 0 12px;}
+.bk-tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.09);padding:3px 8px;margin:0 0 10px;}
+.bk-card-foot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid #f0ede8;}
+.bk-price{font-family:"Bodoni Moda",serif;font-size:19px;font-weight:500;color:#1a1c1b;}
+.bk-add{font-family:Inter,sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:9px 15px;cursor:pointer;transition:background .2s;}
+.bk-add:hover{background:#2f4d3f;}
+.bk-add.added{background:#2f4d3f;}
+
+/* ---- TEXT CARDS (no image) ---- */
+.bk-tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px;margin-bottom:4px;}
+.bk-tcard{background:#fff;border:1px solid #ece9e4;padding:28px 30px;cursor:pointer;transition:box-shadow .25s,border-color .25s;}
+.bk-tcard:hover{box-shadow:0 10px 32px rgba(0,0,0,.08);border-color:#c8c4bd;}
+.bk-tcard-name{font-family:"Bodoni Moda",serif;font-size:18px;color:#1a1c1b;margin:0 0 6px;line-height:1.2;}
+.bk-tcard-sub{font-size:12px;color:#8f9490;margin:0 0 10px;}
+.bk-tcard-desc{font-size:13px;color:#5a6160;line-height:1.7;margin:0 0 16px;}
+.bk-tcard-foot{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid #f0ede8;}
+.bk-tprice{font-family:"Bodoni Moda",serif;font-size:18px;color:#1a1c1b;}
+
+/* ---- DARK SECTION (wine) ---- */
+.bk-dark{background:#111312;padding:80px 0;}
+.bk-dark .bk-label{color:#8f4c37;}
+.bk-dark .bk-title{color:#fff;}
+.bk-dark .bk-desc{color:rgba(255,255,255,.6);}
+.bk-dark .bk-col-title{color:#fff;border-bottom-color:#2a2e2c;}
+.bk-wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:#252a27;border:1px solid #252a27;margin-top:28px;}
+.bk-wcard{background:#111312;padding:28px 30px;cursor:pointer;transition:background .2s;}
+.bk-wcard:hover{background:#1a1f1c;}
+.bk-wlabel{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8f4c37;margin:0 0 8px;}
+.bk-wname{font-family:"Bodoni Moda",serif;font-size:18px;color:#fff;margin:0 0 6px;}
+.bk-wdesc{font-size:12px;color:rgba(255,255,255,.55);line-height:1.65;margin:0 0 14px;}
+.bk-wprice{font-family:"Bodoni Moda",serif;font-size:16px;color:rgba(255,255,255,.85);}
+
+/* ---- SMOOTHIE CARDS ---- */
+.bk-sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;}
+.bk-scard{background:#fff;border:1px solid #ece9e4;padding:24px 22px;text-align:center;cursor:pointer;transition:box-shadow .25s;}
+.bk-scard:hover{box-shadow:0 8px 24px rgba(0,0,0,.07);}
+.bk-scard-name{font-family:"Bodoni Moda",serif;font-size:16px;color:#1a1c1b;margin:0 0 8px;}
+.bk-scard-fruits{font-size:11px;color:#466556;font-weight:500;line-height:1.8;margin:0 0 14px;}
+.bk-scard-foot{display:flex;align-items:center;justify-content:center;gap:14px;padding-top:12px;border-top:1px solid #f0ede8;}
+.bk-sprice{font-family:"Bodoni Moda",serif;font-size:15px;color:#1a1c1b;}
+
+/* ---- LIGHTBOX ---- */
+#bk-lb{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.8);padding:20px;overflow-y:auto;align-items:center;justify-content:center;}
+#bk-lb.open{display:flex;}
+#bk-lb-box{background:#fff;max-width:900px;width:100%;position:relative;display:grid;grid-template-columns:1fr 1fr;max-height:92vh;overflow:hidden;}
+#bk-lb-img{background:#e8e5e0;overflow:hidden;}
+#bk-lb-img img{width:100%;height:100%;object-fit:cover;display:block;}
+#bk-lb-body{padding:40px;overflow-y:auto;background:#faf9f7;}
+#bk-lb-x{position:absolute;top:0;right:0;background:#1a1c1b;color:#fff;border:none;width:40px;height:40px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;}
+.bk-lb-section{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8f4c37;margin:0 0 8px;}
+.bk-lb-name{font-family:"Bodoni Moda",serif;font-size:28px;color:#1a1c1b;margin:0 0 10px;line-height:1.15;}
+.bk-lb-price{font-family:"Bodoni Moda",serif;font-size:24px;color:#466556;margin:0 0 24px;}
+.bk-lb-h{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1a1c1b;margin:20px 0 6px;}
+.bk-lb-p{font-size:13.5px;color:#5a6160;line-height:1.75;}
+.bk-lb-allergy-box{background:#fff8f2;border:1px solid #f0d4b0;padding:14px 16px;margin:20px 0 16px;}
+.bk-lb-allergy-box strong{display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 5px;}
+.bk-lb-allergy-box p{font-size:12px;color:#7a4a1a;line-height:1.6;}
+.bk-lb-allergy-box a{color:#8f4c37;}
+.bk-lb-note{width:100%;font-family:Inter,sans-serif;font-size:13px;border:1px solid #d4d0cb;padding:10px 14px;background:#fff;outline:none;resize:none;height:68px;margin:8px 0 16px;}
+.bk-lb-note:focus{border-color:#466556;}
+.bk-lb-cta{width:100%;font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:17px;cursor:pointer;transition:background .2s;}
+.bk-lb-cta:hover{background:#2f4d3f;}
+
+/* ---- COMING SOON BANNER ---- */
+.bk-soon{background:#466556;padding:52px 48px;margin-top:52px;}
+.bk-soon-inner{max-width:1440px;margin:0 auto;}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:900px){
+  .bk-mhero-title{font-size:40px;}
+  #bk-lb-box{grid-template-columns:1fr;}
+  #bk-lb-img{height:240px;}
+  .bk-sec-top{flex-direction:column;gap:16px;}
+  .bk-wrap,.bk-sec-inner{padding:0 20px;}
+  #bk-snav-inner{padding:0 20px;}
+  .bk-mhero-content{padding:0 20px 40px;}
+}
+</style></head><body><header id="bk-header" style="position:fixed;top:0;left:0;right:0;z-index:50;">
 
 <!-- Outer strip: subtle bg only for the bar itself -->
 <div style="background:rgba(250,249,247,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(193,200,194,0.2);">
@@ -63,15 +187,7 @@
 
       <a href="book.html" style="background:#466556;color:#fff;padding:8px 18px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap;margin-right:8px;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Book Now</a>
       <!-- Currency selector -->
-      <div style="position:relative;">
-        <select onchange="" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.05em;color:#424844;background:transparent;border:1px solid #c1c8c2;padding:6px 8px;cursor:pointer;appearance:none;-webkit-appearance:none;outline:none;transition:border-color .2s;min-width:60px;"
-          onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';">
-          <option>GBP</option>
-          <option>USD</option>
-          <option>EUR</option>
-          <option>NGN</option>
-        </select>
-      </div>
+      
 
       <!-- Account icon -->
       <a href="account.html" title="Account" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#424844;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#466556';" onmouseout="this.style.color='#424844';"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></a><!--old-account-removed
@@ -227,19 +343,414 @@ document.addEventListener('click', function(e) {
   }
 });
 </script>
-</header><div id="bk-tab-bar"><div id="bk-tab-bar-inner"><button class="bk-tab active" onclick="bkTab('afro-continental',this)">Afro-Continental</button><button class="bk-tab" onclick="bkTab('afro-fusion',this)">Afro-Fusion</button><button class="bk-tab" onclick="bkTab('desserts',this)">Desserts</button><button class="bk-tab" onclick="bkTab('smoothies',this)">Smoothies</button><button class="bk-tab" onclick="bkTab('wine',this)">Wine Experience</button></div></div><div style="padding-top:112px;"></div><section id="sec-afro-continental" class="bk-menu-section active"><div class="bk-container"><p class="bk-sec-label">Afro-Continental</p><h2 class="bk-sec-title">The Signature Collection</h2><h3 class="bk-col-heading">Rice Collection</h3><p class="bk-note">All served with Bukahauz Signature Pepper Sauce.</p><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-14.png' alt='White Rice with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>White Rice with Chicken Breast</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-16.png' alt='White Rice with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>White Rice with Turkey</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-15.png' alt='White Rice with Tilapia' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>White Rice with Tilapia</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-45.png' alt='White Rice with Mackerel' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>White Rice with Mackerel</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-13.png' alt='White Rice with Catfish' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>White Rice with Catfish</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-4.png' alt='Jollof Rice with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Jollof Rice with Chicken Breast</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-7.png' alt='Jollof Rice with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Jollof Rice with Turkey</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-6.png' alt='Jollof Rice with Tilapia' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Jollof Rice with Tilapia</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-5.png' alt='Jollof Rice with Mackerel' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Jollof Rice with Mackerel</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-3.png' alt='Jollof Rice with Catfish' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Jollof Rice with Catfish</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Signature Pepper Sauce</span></div></div></div><h3 class="bk-col-heading">Plantain Burger Collection</h3><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-1.png' alt='Chicken Breast Plantain Burger' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Chicken Breast Plantain Burger</p><p style='font-size:12px;color:#727974;line-height:1.5;margin-top:6px;'>Caramelised fried plantain buns · Lettuce · Tomatoes · Cucumber · Bukahauz Burger Sauce</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-2.png' alt='Chicken Plantain Burger' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Chicken Plantain Burger</p><p style='font-size:12px;color:#727974;line-height:1.5;margin-top:6px;'>Caramelised fried plantain buns · Lettuce · Tomatoes · Cucumber · Bukahauz Burger Sauce</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-12.png' alt='Turkey Plantain Burger' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Turkey Plantain Burger</p><p style='font-size:12px;color:#727974;line-height:1.5;margin-top:6px;'>Caramelised fried plantain buns · Lettuce · Tomatoes · Cucumber · Bukahauz Burger Sauce</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-8.png' alt='Minced Meat Plantain Burger' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Minced Meat Plantain Burger</p><p style='font-size:12px;color:#727974;line-height:1.5;margin-top:6px;'>Caramelised fried plantain buns · Lettuce · Tomatoes · Cucumber · Bukahauz Burger Sauce</p></div></div></div><h3 class="bk-col-heading">Sweet Potato Waffle Collection</h3><p class="bk-note">All served with warm caramel drizzle.</p><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-9.png' alt='Sweet Potato Waffles with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Sweet Potato Waffles with Turkey</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-10.png' alt='Sweet Potato Waffles with Chicken' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Sweet Potato Waffles with Chicken</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-11.png' alt='Sweet Potato Waffles with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Sweet Potato Waffles with Chicken Breast</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-31.png' alt='Sweet Potato Waffles with King Prawns' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Sweet Potato Waffles with King Prawns</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-32.png' alt='Sweet Potato Waffles with Minced Meat' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Sweet Potato Waffles with Minced Meat</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div></div><h3 class="bk-col-heading">Plantain Waffle Collection</h3><p class="bk-note">All served with warm caramel drizzle.</p><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-24.png' alt='Plantain Waffles with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Waffles with Turkey</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-25.png' alt='Plantain Waffles with Chicken' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Waffles with Chicken</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-26.png' alt='Plantain Waffles with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Waffles with Chicken Breast</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-27.png' alt='Plantain Waffles with King Prawns' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Waffles with King Prawns</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-40.png' alt='Plantain Waffles with Minced Meat' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Waffles with Minced Meat</p><span style='display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#466556;background:rgba(70,101,86,.08);padding:3px 8px;margin-top:10px;'>Warm Caramel Drizzle</span></div></div></div><h3 class="bk-col-heading">Fried Plantain Collection</h3><p class="bk-note">All served with Bukahauz Signature Pepper Sauce.</p><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-17.png' alt='Fried Plantain with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with Chicken Breast</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-18.png' alt='Fried Plantain with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with Turkey</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-19.png' alt='Fried Plantain with Tilapia' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with Tilapia</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-20.png' alt='Fried Plantain with Mackerel' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with Mackerel</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-21.png' alt='Fried Plantain with Catfish' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with Catfish</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-22.png' alt='Fried Plantain with King Prawns' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with King Prawns</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-23.png' alt='Fried Plantain with Minced Meat' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Fried Plantain with Minced Meat</p></div></div></div><h3 class="bk-col-heading">Sweet Potato Strip Fries Collection</h3><p class="bk-note">All served with Bukahauz Signature Pepper Sauce.</p><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-28.png' alt='Strip Fries with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with Chicken Breast</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-29.png' alt='Strip Fries with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with Turkey</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-30.png' alt='Strip Fries with Tilapia' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with Tilapia</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-41.png' alt='Strip Fries with Mackerel' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with Mackerel</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-42.png' alt='Strip Fries with Catfish' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with Catfish</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-43.png' alt='Strip Fries with King Prawns' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with King Prawns</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-44.png' alt='Strip Fries with Minced Meat' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Strip Fries with Minced Meat</p></div></div></div><h3 class="bk-col-heading">Plantain Cups Collection</h3><p class="bk-note">Filled with selected protein and Bukahauz Signature Pepper Sauce.</p><div class="bk-grid"><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-33.png' alt='Plantain Cups with Chicken Breast' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with Chicken Breast</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-34.png' alt='Plantain Cups with Turkey' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with Turkey</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-35.png' alt='Plantain Cups with Tilapia' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with Tilapia</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-36.png' alt='Plantain Cups with Mackerel' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with Mackerel</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-37.png' alt='Plantain Cups with Catfish' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with Catfish</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-38.png' alt='Plantain Cups with King Prawns' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with King Prawns</p></div></div><div class='bk-card'><div class='bk-card-img'><img src='menu-images/menu-39.png' alt='Plantain Cups with Minced Meat' loading='lazy'/></div><div class='bk-card-body'><p class='bk-card-name'>Plantain Cups with Minced Meat</p></div></div></div></div></section><section id="sec-afro-fusion" class="bk-menu-section"><div class="bk-container"><p class="bk-sec-label">Afro-Fusion</p><h2 class="bk-sec-title">Where Africa Meets the World</h2><h3 class="bk-col-heading">Signature Pasta</h3><div class="bk-grid-lg"><div class="bk-text-card"><p class="bk-text-card-name">Suya Alfredo Pasta</p><p class="bk-text-card-desc">Creamy parmesan Alfredo finished with grilled suya chicken.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Coconut Curry Seafood Linguine</p><p class="bk-text-card-desc">King prawns, calamari and mussels in creamy coconut curry sauce.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Jollof Risotto</p><p class="bk-text-card-desc">Italian risotto infused with smoky Nigerian jollof flavours, parmesan and grilled prawns.</p></div></div><h3 class="bk-col-heading">Chef's Specials</h3><div class="bk-grid-lg"><div class="bk-text-card"><p class="bk-text-card-name">Suya Steak Bowl</p><p class="bk-text-card-desc">Premium grilled steak with garlic herb rice and suya butter.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Jerk Salmon Royale</p><p class="bk-text-card-desc">Grilled salmon served with coconut rice and roasted vegetables.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Peri Suya Chicken</p><p class="bk-text-card-desc">Flame grilled chicken served with sweet potato fries.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Prawn Coconut Rice</p><p class="bk-text-card-desc">Creamy coconut rice finished with grilled king prawns.</p></div></div><h3 class="bk-col-heading">Street Fusion</h3><div class="bk-grid-lg"><div class="bk-text-card"><p class="bk-text-card-name">Plantain &amp; Beef Tacos</p><p class="bk-text-card-desc">The ultimate street-food crossover — seasoned beef in plantain shells.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Bukahauz Loaded Plantain Nachos</p><p class="bk-text-card-desc">Crispy plantain chips loaded with signature toppings.</p></div></div><h3 class="bk-col-heading">Sharing Experience</h3><div class="bk-dark-card"><p style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 10px;">For the Table</p><p class="bk-dark-card-name">Bukahauz Sharing Platter</p><p class="bk-dark-card-desc">The ultimate communal feast — everything on one platter, shared the Bukahauz way.</p><p class="bk-dark-card-items">White Rice &middot; Jollof Rice &middot; Chicken &middot; Turkey &middot; Tilapia &middot; Mackerel &middot; Catfish &middot; King Prawns &middot; Fried Plantain &middot; Sweet Potato Strip Fries &middot; Signature Pepper Sauce</p><a href="book.html" style="display:inline-block;margin-top:24px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#466556;color:#fff;padding:12px 28px;text-decoration:none;">Reserve for Your Group</a></div></div></section>
+</header><!-- HERO -->
+<div class="bk-mhero">
+  <div class="bk-mhero-bg"></div>
+  <div class="bk-mhero-pattern"></div>
+  <div class="bk-mhero-content">
+    <p class="bk-mhero-label">Bukahauz · London</p>
+    <h1 class="bk-mhero-title">The Menu</h1>
+    <p class="bk-mhero-sub">Rooted in West African tradition, refined for the modern table. Every plate honours ancestral technique and seasonal ingredients.</p>
+    <div class="bk-mhero-stats">
+      <div class="bk-mhero-stat"><span class="num">60+</span><span class="lbl">Dishes</span></div>
+      <div class="bk-mhero-stat"><span class="num">40+</span><span class="lbl">Heritage Spices</span></div>
+      <div class="bk-mhero-stat"><span class="num">6</span><span class="lbl">Sections</span></div>
+    </div>
+  </div>
+</div>
 
-<section id="sec-desserts" class="bk-menu-section"><div class="bk-container"><p class="bk-sec-label">Sweet Endings</p><h2 class="bk-sec-title">Dessert Collection</h2><div class="bk-grid-lg"><div class="bk-text-card"><p class="bk-text-card-name">Biscoff Plantain Cheesecake</p><p class="bk-text-card-desc">A Bukahauz signature — velvety cheesecake on a Biscoff base with caramelised plantain.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Puff Puff Bites</p><p class="bk-text-card-desc">Light, pillowy West African puff puff served with your choice of dip.</p><p style="margin-top:10px;font-size:12px;color:#727974;">Chocolate Dip &middot; Salted Caramel Dip &middot; Vanilla Dip</p></div><div class="bk-text-card"><p class="bk-text-card-name">Chocolate Plantain Brownie</p><p class="bk-text-card-desc">Dense, fudgy brownie with ribbons of caramelised plantain throughout.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Coconut &amp; Mango Panna Cotta</p><p class="bk-text-card-desc">Silky coconut panna cotta with fresh mango and tropical coulis.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Vanilla Bean Cr&egrave;me Br&ucirc;l&eacute;e</p><p class="bk-text-card-desc">Classic with Madagascar vanilla bean and a perfect caramel crust.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Sticky Toffee Cake</p><p class="bk-text-card-desc">Warm, moist sticky toffee pudding with house-made toffee sauce.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Red Velvet Royale</p><p class="bk-text-card-desc">Layers of red velvet with cream cheese frosting and house garnish.</p></div><div class="bk-text-card"><p class="bk-text-card-name">New York Cheesecake</p><p class="bk-text-card-desc">Classic New York style — dense, rich, unapologetically indulgent.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Chocolate Lava Cake</p><p class="bk-text-card-desc">Warm dark chocolate cake with a molten centre, served with vanilla ice cream.</p></div><div class="bk-text-card"><p class="bk-text-card-name">Tropical Fruit Platter</p><p class="bk-text-card-desc">A curated selection of seasonal tropical fruits, elegantly presented.</p></div></div><h3 class="bk-col-heading" style="margin-top:40px;">Luxury Ice Cream Selection</h3><div class="bk-grid"><div class="bk-smoothie"><p class="bk-smoothie-name">Vanilla Bean</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Chocolate</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Salted Caramel</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Coconut</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Mango Sorbet</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Strawberry</p></div></div></div></section>
+<!-- SECTION NAV -->
+<div id="bk-snav">
+  <div id="bk-snav-inner">
+    <button class="bk-snav-btn active" onclick="bkScrollTo('s-afro')">Afro-Continental</button>
+    <button class="bk-snav-btn" onclick="bkScrollTo('s-fusion')">Afro-Fusion</button>
+    <button class="bk-snav-btn" onclick="bkScrollTo('s-desserts')">Desserts</button>
+    <button class="bk-snav-btn" onclick="bkScrollTo('s-smoothies')">Smoothies</button>
+    <button class="bk-snav-btn" onclick="bkScrollTo('s-wine')">Wine Experience</button>
+  </div>
+</div>
 
-<section id="sec-smoothies" class="bk-menu-section"><div class="bk-container"><p class="bk-sec-label">Fresh &amp; Tropical</p><h2 class="bk-sec-title">Tropical Smoothies</h2><div class="bk-grid"><div class="bk-smoothie"><p class="bk-smoothie-name">Sunrise Glow</p><p class="bk-smoothie-fruits">Banana &middot; Pineapple &middot; Honey Melon</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Tropical Escape</p><p class="bk-smoothie-fruits">Watermelon &middot; Pineapple &middot; Apple</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Green Oasis</p><p class="bk-smoothie-fruits">Apple &middot; Honey Melon &middot; Pineapple</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Sweet Island</p><p class="bk-smoothie-fruits">Banana &middot; Watermelon &middot; Pineapple</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Summer Splash</p><p class="bk-smoothie-fruits">Watermelon &middot; Honey Melon &middot; Apple</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Golden Harvest</p><p class="bk-smoothie-fruits">Banana &middot; Apple &middot; Pineapple</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Pink Paradise</p><p class="bk-smoothie-fruits">Watermelon &middot; Banana &middot; Honey Melon</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Orchard Blend</p><p class="bk-smoothie-fruits">Apple &middot; Banana &middot; Honey Melon</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">Berry-Free Tropical</p><p class="bk-smoothie-fruits">Watermelon &middot; Pineapple &middot; Honey Melon</p></div><div class="bk-smoothie"><p class="bk-smoothie-name">The Red Garden</p><p class="bk-smoothie-fruits">Tomato &middot; Apple &middot; Watermelon</p></div></div></div></section>
+<main>
 
-<section id="sec-wine" class="bk-menu-section"><div class="bk-container"><p class="bk-sec-label">Curated Experiences</p><h2 class="bk-sec-title">Wine Tasting Experience</h2><div class="bk-grid-lg"><div class="bk-dark-card"><p class="bk-dark-card-name">French Wine Flights</p><p class="bk-dark-card-desc">A curated journey through the finest French appellations — Bordeaux, Burgundy, Rh&ocirc;ne and beyond.</p><a href="wine-tastings.html" style="display:inline-block;margin-top:20px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-decoration:underline;text-underline-offset:4px;">Explore &rarr;</a></div><div class="bk-dark-card"><p class="bk-dark-card-name">Champagne Flights</p><p class="bk-dark-card-desc">Premium grower champagnes and prestige cuv&eacute;es, guided by our sommelier.</p><a href="wine-tastings.html" style="display:inline-block;margin-top:20px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-decoration:underline;text-underline-offset:4px;">Explore &rarr;</a></div><div class="bk-dark-card"><p class="bk-dark-card-name">Premium Cognac Flights</p><p class="bk-dark-card-desc">Rare and aged cognacs from the finest houses, paired with African small plates.</p></div><div class="bk-dark-card"><p class="bk-dark-card-name">Les Arrang&eacute;s du Rhum</p><p class="bk-dark-card-desc">Artisanal infused rums from the French Caribbean, each with a unique botanical story.</p></div><div class="bk-dark-card"><p class="bk-dark-card-name">Vieux Marc de Champagne Club 1911</p><p class="bk-dark-card-desc">An exceptional marc de champagne from one of the region's most storied producers.</p></div><div class="bk-dark-card"><p class="bk-dark-card-name">Ratafia Champenois Jean Goyard</p><p class="bk-dark-card-desc">A rare and elegant ratafia — grape must and marc blended to perfection.</p></div><div class="bk-dark-card"><p class="bk-dark-card-name">Seasonal Sommelier Pairing</p><p class="bk-dark-card-desc">Our head sommelier curates a bespoke seasonal pairing for your table — available on request.</p><a href="book.html" style="display:inline-block;margin-top:20px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-decoration:underline;text-underline-offset:4px;">Book Experience &rarr;</a></div></div><div style="margin-top:32px;text-align:center;"><a href="wine-cellar.html" style="display:inline-block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#466556;color:#fff;padding:14px 32px;text-decoration:none;">Explore the Wine Cellar</a></div></div></section>
+<!-- ===================== AFRO-CONTINENTAL ===================== -->
+<section id="s-afro" class="bk-sec">
+  <div class="bk-sec-inner">
+    <div class="bk-sec-top">
+      <div class="bk-sec-left">
+        <p class="bk-label">Afro-Continental</p>
+        <h2 class="bk-title">The Signature Collection</h2>
+        <p class="bk-desc">From the spice-laden markets of Lagos to the coastal flavours of the continent. Ancestral recipes, seasonal ingredients, Bukahauz finesse.</p>
+      </div>
+    </div>
 
-<div style="background:#466556;padding:48px 32px;text-align:center;margin-top:64px;"><p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:0 0 12px;">Coming Soon</p><p style="font-family:'Bodoni Moda',serif;font-size:28px;color:#fff;margin:0 0 16px;">Pounded Yam &amp; Soups</p><p style="font-family:Inter,sans-serif;font-size:14px;color:rgba(255,255,255,.7);line-height:1.7;">Pounded Yam &amp; Egusi &nbsp;&middot;&nbsp; Pounded Yam &amp; Ogbono &nbsp;&middot;&nbsp; Pounded Yam &amp; Seafood Okra</p></div>
+    <p class="bk-col-title">Rice Collection</p>
+    <p class="bk-note">All served with Bukahauz Signature Pepper Sauce.</p>
+    <div class="bk-grid" id="g-rice"></div>
+
+    <p class="bk-col-title">Jollof Collection</p>
+    <p class="bk-note">Slow-cooked in our clay pot, served with Bukahauz Signature Pepper Sauce.</p>
+    <div class="bk-grid" id="g-jollof"></div>
+
+    <p class="bk-col-title">Plantain Burger Collection</p>
+    <div class="bk-grid" id="g-burger"></div>
+
+    <p class="bk-col-title">Sweet Potato Waffle Collection</p>
+    <p class="bk-note">All served with warm caramel drizzle.</p>
+    <div class="bk-grid" id="g-spwaffle"></div>
+
+    <p class="bk-col-title">Plantain Waffle Collection</p>
+    <p class="bk-note">All served with warm caramel drizzle.</p>
+    <div class="bk-grid" id="g-plwaffle"></div>
+
+    <p class="bk-col-title">Fried Plantain Collection</p>
+    <p class="bk-note">All served with Bukahauz Signature Pepper Sauce.</p>
+    <div class="bk-grid" id="g-fp"></div>
+
+    <p class="bk-col-title">Sweet Potato Strip Fries</p>
+    <p class="bk-note">All served with Bukahauz Signature Pepper Sauce.</p>
+    <div class="bk-grid" id="g-fries"></div>
+
+    <p class="bk-col-title">Plantain Cups Collection</p>
+    <p class="bk-note">Filled with selected protein and Bukahauz Signature Pepper Sauce.</p>
+    <div class="bk-grid" id="g-cups"></div>
+
+    <div class="bk-soon">
+      <div class="bk-soon-inner">
+        <p style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);margin:0 0 10px;">Coming Soon</p>
+        <p style="font-family:'Bodoni Moda',serif;font-size:30px;color:#fff;margin:0 0 8px;">Pounded Yam &amp; Soups</p>
+        <p style="font-size:14px;color:rgba(255,255,255,.7);">Pounded Yam &amp; Egusi &nbsp;&middot;&nbsp; Pounded Yam &amp; Ogbono &nbsp;&middot;&nbsp; Pounded Yam &amp; Seafood Okra</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="bk-divider">
+
+<!-- ===================== AFRO-FUSION ===================== -->
+<section id="s-fusion" class="bk-sec" style="background:#f5f3f0;">
+  <div class="bk-sec-inner">
+    <div class="bk-sec-top">
+      <div class="bk-sec-left">
+        <p class="bk-label">Afro-Fusion</p>
+        <h2 class="bk-title">Where Tradition Meets Innovation</h2>
+        <p class="bk-desc">Bold African spice meets global technique — Japanese precision, French richness, Caribbean warmth. A boundary-defying culinary conversation.</p>
+      </div>
+      <div style="text-align:right;flex-shrink:0;">
+        <p style="font-family:'Bodoni Moda',serif;font-size:40px;color:#8f4c37;line-height:1;">6</p>
+        <p style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#727974;margin-top:4px;">Fusion Signatures</p>
+      </div>
+    </div>
+
+    <p class="bk-col-title">Fusion Signatures — Mains</p>
+    <div class="bk-tgrid" id="g-fusion-mains"></div>
+
+    <p class="bk-col-title" style="margin-top:40px;">Starters &amp; Small Plates</p>
+    <div class="bk-tgrid" id="g-fusion-starters"></div>
+  </div>
+</section>
+
+<hr class="bk-divider">
+
+<!-- ===================== DESSERTS ===================== -->
+<section id="s-desserts" class="bk-sec">
+  <div class="bk-sec-inner">
+    <div class="bk-sec-top">
+      <div class="bk-sec-left">
+        <p class="bk-label">Desserts</p>
+        <h2 class="bk-title">A Sweet Ending</h2>
+        <p class="bk-desc">Thoughtfully crafted desserts drawing from African and European tradition — a final note of pure indulgence.</p>
+      </div>
+    </div>
+    <div class="bk-tgrid" id="g-desserts"></div>
+  </div>
+</section>
+
+<hr class="bk-divider">
+
+<!-- ===================== SMOOTHIES ===================== -->
+<section id="s-smoothies" class="bk-sec" style="background:#f5f3f0;">
+  <div class="bk-sec-inner">
+    <div class="bk-sec-top">
+      <div class="bk-sec-left">
+        <p class="bk-label">Smoothies &amp; Drinks</p>
+        <h2 class="bk-title">Liquid Nourishment</h2>
+        <p class="bk-desc">Cold-pressed, freshly blended. No artificial sweeteners. No shortcuts. Just flavour.</p>
+      </div>
+    </div>
+    <div class="bk-sgrid" id="g-smoothies"></div>
+  </div>
+</section>
+
+<hr class="bk-divider">
+
+<!-- ===================== WINE ===================== -->
+<section id="s-wine" class="bk-dark">
+  <div class="bk-sec-inner">
+    <div class="bk-sec-top" style="margin-bottom:8px;">
+      <div class="bk-sec-left">
+        <p class="bk-label" style="color:#8f4c37;">Wine Experience</p>
+        <h2 class="bk-title" style="color:#fff;">The Cellar</h2>
+        <p class="bk-desc" style="color:rgba(255,255,255,.6);">A curated selection of Old and New World wines, chosen by our sommelier to complement Afro-continental flavours. Available by the glass or bottle.</p>
+      </div>
+    </div>
+    <p class="bk-col-title" style="color:rgba(255,255,255,.4);border-bottom-color:#252a27;margin-top:8px;">White &amp; Sparkling</p>
+    <div class="bk-wgrid" id="g-wine-white"></div>
+    <p class="bk-col-title" style="color:rgba(255,255,255,.4);border-bottom-color:#252a27;margin-top:32px;">Red</p>
+    <div class="bk-wgrid" id="g-wine-red"></div>
+    <p style="font-size:12px;color:rgba(255,255,255,.35);margin:32px 0 0;text-align:center;letter-spacing:.04em;">Full wine list &amp; pairing suggestions available on request &nbsp;·&nbsp; concierge@bukahauz.com</p>
+  </div>
+</section>
+
+</main><!-- LIGHTBOX -->
+<div id="bk-lb">
+  <div id="bk-lb-box">
+    <button id="bk-lb-x" onclick="bkClose()">&#215;</button>
+    <div id="bk-lb-img"><img id="bk-lb-imgel" src="" alt=""/></div>
+    <div id="bk-lb-body">
+      <p class="bk-lb-section" id="bk-lb-cat"></p>
+      <h2 class="bk-lb-name" id="bk-lb-nameel"></h2>
+      <p class="bk-lb-price" id="bk-lb-priceel"></p>
+      <p class="bk-lb-h">About this dish</p>
+      <p class="bk-lb-p" id="bk-lb-desc"></p>
+      <p class="bk-lb-h" style="margin-top:18px;">Ingredients</p>
+      <p class="bk-lb-p" id="bk-lb-ing"></p>
+      <div class="bk-lb-allergy-box">
+        <strong>Allergen Information</strong>
+        <p>Contains: <span id="bk-lb-allergy"></span>.<br>Please inform us of any dietary requirements before ordering. <a href="mailto:concierge@bukahauz.com">concierge@bukahauz.com</a></p>
+      </div>
+      <p class="bk-lb-h">Allergy or dietary notes (optional)</p>
+      <textarea class="bk-lb-note" id="bk-lb-note" placeholder="e.g. nut allergy, dairy-free, halal only..."></textarea>
+      <button class="bk-lb-cta" id="bk-lb-cta">Add to Cart</button>
+    </div>
+  </div>
+</div>
 
 <script src="cart.js"></script>
 <script>
-function bkTab(id,btn){document.querySelectorAll('.bk-menu-section').forEach(function(s){s.classList.remove('active');});document.querySelectorAll('.bk-tab').forEach(function(b){b.classList.remove('active');});document.getElementById('sec-'+id).classList.add('active');btn.classList.add('active');window.scrollTo({top:document.getElementById('bk-tab-bar').offsetTop-10,behavior:'smooth'});}
+var _D=[], _cur=null;
+function _s(d){_D.push(d);return _D.length-1;}
+function _f(p){return typeof p==='number'?'£'+(p%1===0?p:p.toFixed(2)):p;}
+
+// ---- MENU DATA ----
+var DATA={
+rice:[
+  {n:'White Rice & Grilled Chicken',s:'Afro-Continental',img:'menu-images/menu-14.png',p:15,sub:'Long-grain rice · Signature pepper sauce',d:'Fluffy long-grain white rice served with our signature marinated grilled chicken breast, finished with a vibrant homemade pepper sauce.',i:'White rice, chicken breast, red peppers, scotch bonnet, tomatoes, onions, garlic, ginger, thyme, bay leaves, sunflower oil.',a:'Poultry, Celery'},
+  {n:'White Rice & Grilled Turkey',s:'Afro-Continental',img:'menu-images/menu-16.png',p:16,sub:'Long-grain rice · Signature pepper sauce',d:'Steamed white rice paired with slow-marinated grilled turkey, drizzled with our signature pepper sauce.',i:'White rice, turkey breast, red peppers, scotch bonnet, tomatoes, onions, garlic, ginger, rosemary, sunflower oil.',a:'Poultry, Celery'},
+  {n:'White Rice & Grilled Tilapia',s:'Afro-Continental',img:'menu-images/menu-15.png',p:16,sub:'Long-grain rice · Signature pepper sauce',d:'Delicate white rice served alongside a whole grilled tilapia, marinated in Bukahauz spice blend and finished with pepper sauce.',i:'White rice, tilapia, red peppers, scotch bonnet, tomatoes, onions, garlic, ginger, mixed herbs, lime, sunflower oil.',a:'Fish, Celery'},
+  {n:'White Rice & Mackerel',s:'Afro-Continental',img:'menu-images/menu-45.png',p:15,sub:'Long-grain rice · Signature pepper sauce',d:'Classic West African comfort: steamed white rice alongside richly flavoured mackerel in our signature pepper sauce.',i:'White rice, mackerel, red peppers, scotch bonnet, tomatoes, onions, garlic, ginger, sunflower oil.',a:'Fish, Celery'},
+  {n:'White Rice & Catfish',s:'Afro-Continental',img:'menu-images/menu-13.png',p:16,sub:'Long-grain rice · Signature pepper sauce',d:'Freshwater catfish, slow-cooked in a rich tomato and pepper base, served over steamed white rice.',i:'White rice, catfish, red peppers, scotch bonnet, tomatoes, onions, garlic, iru (locust beans), sunflower oil.',a:'Fish, Celery'}
+],
+jollof:[
+  {n:'Jollof Rice & Grilled Chicken',s:'Afro-Continental',img:'menu-images/menu-4.png',p:17,sub:'Clay-pot jollof · Signature pepper sauce',d:'Our famous clay-pot Jollof Rice — smoky, rich, and aromatic — served with golden grilled chicken and house pepper sauce.',i:'Parboiled rice, chicken breast, plum tomatoes, red peppers, scotch bonnet, onions, garlic, ginger, mixed spice, bay leaves, chicken stock.',a:'Poultry, Celery'},
+  {n:'Jollof Rice & Grilled Turkey',s:'Afro-Continental',img:'menu-images/menu-7.png',p:18,sub:'Clay-pot jollof · Signature pepper sauce',d:'Richly spiced Jollof rice paired with tender, herb-marinated grilled turkey.',i:'Parboiled rice, turkey, plum tomatoes, red peppers, scotch bonnet, onions, garlic, ginger, bay leaves, turkey stock.',a:'Poultry, Celery'},
+  {n:'Jollof Rice & Tilapia',s:'Afro-Continental',img:'menu-images/menu-6.png',p:18,sub:'Clay-pot jollof · Signature pepper sauce',d:'Smoky Jollof rice paired with a perfectly grilled whole tilapia. A coastal West African classic.',i:'Parboiled rice, tilapia, plum tomatoes, red peppers, scotch bonnet, onions, garlic, ginger, lime, herbs.',a:'Fish, Celery'},
+  {n:'Jollof Rice & Mackerel',s:'Afro-Continental',img:'menu-images/menu-5.png',p:17,sub:'Clay-pot jollof · Signature pepper sauce',d:'Our signature smoky Jollof rice with bold, flavoursome mackerel.',i:'Parboiled rice, mackerel, plum tomatoes, red peppers, scotch bonnet, onions, garlic, ginger, sunflower oil.',a:'Fish, Celery'},
+  {n:'Jollof Rice & Catfish',s:'Afro-Continental',img:'menu-images/menu-3.png',p:18,sub:'Clay-pot jollof · Signature pepper sauce',d:'Deeply smoky Jollof paired with freshwater catfish slow-stewed in tomatoes and locust beans.',i:'Parboiled rice, catfish, plum tomatoes, red peppers, scotch bonnet, onions, garlic, iru (locust beans), palm oil.',a:'Fish, Celery'}
+],
+burger:[
+  {n:'Plantain Burger — Chicken Breast',s:'Afro-Continental',img:'menu-images/menu-1.png',p:14,sub:'Fried plantain bun · House slaw',d:'Juicy grilled chicken breast nestled in crispy fried plantain buns, topped with our house pepper sauce and fresh slaw.',i:'Plantain, chicken breast, red peppers, scotch bonnet, shredded cabbage, carrots, spring onion, mayo, garlic.',a:'Poultry, Eggs, Mustard, Celery'},
+  {n:'Plantain Burger — Crispy Chicken',s:'Afro-Continental',img:'menu-images/menu-2.png',p:13,sub:'Fried plantain bun · Scotch bonnet mayo',d:'Golden crispy fried chicken thigh in plantain buns with scotch bonnet mayo and pickled red onion.',i:'Plantain, chicken thigh, seasoned flour, eggs, scotch bonnet, red onion, vinegar, garlic.',a:'Poultry, Eggs, Gluten, Celery'},
+  {n:'Plantain Burger — Turkey',s:'Afro-Continental',img:'menu-images/menu-12.png',p:15,sub:'Fried plantain bun · Avocado cream',d:'Herb-marinated turkey patty in golden plantain buns with avocado cream and peri-peri drizzle.',i:'Plantain, turkey mince, herbs, avocado, lemon, scotch bonnet, garlic, spring onion.',a:'Poultry, Eggs, Celery'},
+  {n:'Plantain Burger — Minced Beef',s:'Afro-Continental',img:'menu-images/menu-8.png',p:14,sub:'Fried plantain bun · Caramelised onions',d:'Spiced minced beef patty in crispy plantain buns with caramelised onions and house sauce.',i:'Plantain, minced beef, onions, garlic, ginger, scotch bonnet, mixed spices, sunflower oil.',a:'Beef, Eggs, Celery'}
+],
+spwaffle:[
+  {n:'Sweet Potato Waffles — Classic',s:'Afro-Continental',img:'menu-images/menu-9.png',p:13,sub:'Caramel drizzle · Powdered sugar',d:'Crispy on the outside, pillowy within. Our signature sweet potato waffles with warm caramel drizzle.',i:'Sweet potato, flour, eggs, milk, butter, baking powder, vanilla, brown sugar, caramel sauce.',a:'Gluten, Eggs, Dairy, Soya'},
+  {n:'Sweet Potato Waffles — Loaded',s:'Afro-Continental',img:'menu-images/menu-10.png',p:15,sub:'Grilled chicken · Scotch bonnet honey',d:'Our sweet potato waffles piled with grilled chicken, pickled jalapeño and scotch bonnet honey.',i:'Sweet potato, flour, eggs, milk, butter, chicken breast, jalapeño, honey, scotch bonnet, garlic.',a:'Gluten, Eggs, Dairy, Poultry, Soya'},
+  {n:'Sweet Potato Waffles — Berries',s:'Afro-Continental',img:'menu-images/menu-11.png',p:14,sub:'Mixed berries · Hibiscus reduction',d:'Light and crisp sweet potato waffles topped with mixed berries, hibiscus reduction and whipped cream.',i:'Sweet potato, flour, eggs, milk, butter, mixed berries, hibiscus, cream, maple syrup.',a:'Gluten, Eggs, Dairy, Soya'},
+  {n:'Sweet Potato Waffles — Smoked Salmon',s:'Afro-Continental',img:'menu-images/menu-31.png',p:16,sub:'Creme fraiche · Capers · Dill',d:'Savoury sweet potato waffles layered with cold smoked salmon, creme fraiche and dill.',i:'Sweet potato, flour, eggs, milk, butter, smoked salmon, creme fraiche, capers, dill, lemon.',a:'Gluten, Eggs, Dairy, Fish, Soya'},
+  {n:'Sweet Potato Waffles — Vegan',s:'Afro-Continental',img:'menu-images/menu-32.png',p:13,sub:'Coconut cream · Mango compote',d:'100% plant-based sweet potato waffles with coconut cream, mango compote and toasted coconut flakes.',i:'Sweet potato, oat flour, flax egg, coconut milk, coconut oil, mango, lime, maple syrup.',a:'Gluten, Soya, Coconut',t:'VG'}
+],
+plwaffle:[
+  {n:'Plantain Waffles — Classic',s:'Afro-Continental',img:'menu-images/menu-24.png',p:13,sub:'Caramel drizzle · Sea salt',d:'Golden plantain waffles, naturally sweet with a crisp exterior. Drizzled with warm caramel and sea salt.',i:'Ripe plantain, flour, eggs, milk, butter, baking powder, caramel sauce, sea salt.',a:'Gluten, Eggs, Dairy, Soya'},
+  {n:'Plantain Waffles — Fried Chicken',s:'Afro-Continental',img:'menu-images/menu-25.png',p:15,sub:'Spiced fried chicken · Scotch bonnet honey',d:'Our iconic plantain waffles topped with spiced fried chicken and scotch bonnet honey.',i:'Ripe plantain, flour, eggs, milk, chicken thigh, seasoned flour, scotch bonnet, honey, sunflower oil.',a:'Gluten, Eggs, Dairy, Poultry, Soya'},
+  {n:'Plantain Waffles — Berries and Cream',s:'Afro-Continental',img:'menu-images/menu-26.png',p:14,sub:'Seasonal berries · Hibiscus syrup',d:'Soft plantain waffles topped with seasonal berries, whipped cream and hibiscus syrup.',i:'Ripe plantain, flour, eggs, milk, butter, mixed berries, double cream, hibiscus, maple syrup.',a:'Gluten, Eggs, Dairy, Soya'},
+  {n:'Plantain Waffles — Smoked Salmon',s:'Afro-Continental',img:'menu-images/menu-27.png',p:16,sub:'Cream cheese · Capers · Micro herbs',d:'Savoury plantain waffles with smoked salmon, cream cheese, capers and micro herbs.',i:'Ripe plantain, flour, eggs, milk, butter, smoked salmon, cream cheese, capers, dill, lemon.',a:'Gluten, Eggs, Dairy, Fish, Soya'},
+  {n:'Plantain Waffles — Vegan',s:'Afro-Continental',img:'menu-images/menu-40.png',p:13,sub:'Coconut yoghurt · Tropical salsa',d:'Plant-based plantain waffles with coconut yoghurt, tropical fruit salsa and agave drizzle.',i:'Ripe plantain, oat flour, flax egg, oat milk, coconut oil, mango, pineapple, lime, agave.',a:'Gluten, Soya, Coconut',t:'VG'}
+],
+fp:[
+  {n:'Fried Plantain and Grilled Chicken',s:'Afro-Continental',img:'menu-images/menu-17.png',p:14,sub:'Sweet fried plantain · Pepper sauce',d:'Sweet fried plantain paired with herb-marinated grilled chicken and house pepper sauce.',i:'Ripe plantain, chicken breast, red peppers, scotch bonnet, garlic, ginger, sunflower oil.',a:'Poultry, Celery'},
+  {n:'Fried Plantain and Grilled Turkey',s:'Afro-Continental',img:'menu-images/menu-18.png',p:15,sub:'Sweet fried plantain · Pepper sauce',d:'Caramelised fried plantain with juicy grilled turkey and our house pepper sauce.',i:'Ripe plantain, turkey breast, red peppers, scotch bonnet, garlic, herbs, sunflower oil.',a:'Poultry, Celery'},
+  {n:'Fried Plantain and Tilapia',s:'Afro-Continental',img:'menu-images/menu-19.png',p:15,sub:'Spiced tomato sauce',d:'Golden fried plantain with whole grilled tilapia in spiced tomato sauce.',i:'Ripe plantain, tilapia, plum tomatoes, scotch bonnet, onions, garlic, herbs, lime, sunflower oil.',a:'Fish, Celery'},
+  {n:'Fried Plantain and Mackerel',s:'Afro-Continental',img:'menu-images/menu-20.png',p:14,sub:'Bold pepper sauce',d:'A West African staple — golden fried plantain with bold mackerel in our house pepper sauce.',i:'Ripe plantain, mackerel, red peppers, scotch bonnet, onions, tomatoes, garlic, sunflower oil.',a:'Fish, Celery'},
+  {n:'Fried Plantain and Catfish',s:'Afro-Continental',img:'menu-images/menu-21.png',p:15,sub:'Locust bean tomato sauce',d:'Caramelised plantain with slowly stewed catfish in a rich locust bean and tomato sauce.',i:'Ripe plantain, catfish, locust beans, plum tomatoes, scotch bonnet, onions, garlic, palm oil.',a:'Fish, Celery'},
+  {n:'Fried Plantain and Minced Beef',s:'Afro-Continental',img:'menu-images/menu-22.png',p:14,sub:'Spiced beef stew',d:'Spiced minced beef stew served alongside golden fried sweet plantain.',i:'Ripe plantain, minced beef, plum tomatoes, scotch bonnet, onions, garlic, ginger, mixed spices.',a:'Beef, Celery'},
+  {n:'Fried Plantain and Eggs',s:'Afro-Continental',img:'menu-images/menu-23.png',p:11,sub:'Ask for vegan scramble option',d:'Sweet fried plantain with scrambled eggs or plant-based eggs. Simple and wholesome.',i:'Ripe plantain, eggs (or tofu scramble), spring onion, scotch bonnet, garlic, sunflower oil.',a:'Eggs (Soya for vegan option)',t:'V'}
+],
+fries:[
+  {n:'Strip Fries and Grilled Chicken',s:'Afro-Continental',img:'menu-images/menu-28.png',p:13,sub:'Sweet potato fries · Pepper sauce',d:'Crispy sweet potato strip fries served alongside grilled chicken and house pepper sauce.',i:'Sweet potato, chicken breast, red peppers, scotch bonnet, garlic, herbs, sunflower oil.',a:'Poultry, Celery'},
+  {n:'Strip Fries and Grilled Turkey',s:'Afro-Continental',img:'menu-images/menu-29.png',p:14,sub:'Sweet potato fries · Pepper sauce',d:'Sweet potato strip fries with herb-marinated turkey breast and pepper sauce.',i:'Sweet potato, turkey breast, red peppers, scotch bonnet, garlic, rosemary, sunflower oil.',a:'Poultry, Celery'},
+  {n:'Strip Fries and Tilapia',s:'Afro-Continental',img:'menu-images/menu-30.png',p:14,sub:'Spiced tomato sauce',d:'Crispy sweet potato fries with a whole grilled tilapia in spiced tomato base.',i:'Sweet potato, tilapia, plum tomatoes, scotch bonnet, onions, garlic, lime, herbs.',a:'Fish, Celery'},
+  {n:'Strip Fries and Mackerel',s:'Afro-Continental',img:'menu-images/menu-41.png',p:13,sub:'House pepper sauce',d:'Sweet potato strip fries with bold mackerel and house pepper sauce.',i:'Sweet potato, mackerel, red peppers, scotch bonnet, onions, garlic, sunflower oil.',a:'Fish, Celery'},
+  {n:'Strip Fries and Catfish',s:'Afro-Continental',img:'menu-images/menu-42.png',p:14,sub:'Locust bean stew',d:'Sweet potato fries with slow-cooked catfish in locust bean tomato stew.',i:'Sweet potato, catfish, locust beans, plum tomatoes, scotch bonnet, onions, garlic, palm oil.',a:'Fish, Celery'},
+  {n:'Strip Fries and Minced Beef',s:'Afro-Continental',img:'menu-images/menu-43.png',p:13,sub:'Spiced beef stew',d:'Sweet potato strip fries with richly spiced minced beef stew.',i:'Sweet potato, minced beef, tomatoes, scotch bonnet, onions, garlic, ginger, mixed spices.',a:'Beef, Celery'},
+  {n:'Strip Fries — Plain with Dip',s:'Afro-Continental',img:'menu-images/menu-44.png',p:8,sub:'Choice of dipping sauce',d:'Crispy sweet potato strip fries with your choice of dipping sauce: pepper sauce, garlic mayo or guacamole.',i:'Sweet potato, sunflower oil, sea salt.',a:'May contain Eggs, Soya (in mayo)',t:'V'}
+],
+cups:[
+  {n:'Plantain Cup — Grilled Chicken',s:'Afro-Continental',img:'menu-images/menu-33.png',p:12,sub:'Shredded chicken · Pepper sauce',d:'Crispy plantain cups filled with juicy shredded grilled chicken in our pepper sauce. Perfect for sharing.',i:'Ripe plantain, chicken breast, red peppers, scotch bonnet, onions, garlic, herbs, sunflower oil.',a:'Poultry, Celery'},
+  {n:'Plantain Cup — Grilled Turkey',s:'Afro-Continental',img:'menu-images/menu-34.png',p:13,sub:'Shredded turkey · Pepper sauce',d:'Golden plantain cups with herb-marinated shredded turkey and pepper sauce.',i:'Ripe plantain, turkey, red peppers, scotch bonnet, garlic, herbs, sunflower oil.',a:'Poultry, Celery'},
+  {n:'Plantain Cup — Tilapia',s:'Afro-Continental',img:'menu-images/menu-35.png',p:13,sub:'Flaked fish · Spiced tomato sauce',d:'Crispy plantain cups filled with flaked grilled tilapia in a spiced tomato and herb sauce.',i:'Ripe plantain, tilapia, plum tomatoes, scotch bonnet, onions, garlic, lime, herbs.',a:'Fish, Celery'},
+  {n:'Plantain Cup — Mackerel',s:'Afro-Continental',img:'menu-images/menu-36.png',p:12,sub:'Pepper sauce',d:'Plantain cups with bold, flavoursome mackerel in house pepper sauce.',i:'Ripe plantain, mackerel, red peppers, scotch bonnet, onions, garlic, sunflower oil.',a:'Fish, Celery'},
+  {n:'Plantain Cup — Catfish',s:'Afro-Continental',img:'menu-images/menu-37.png',p:13,sub:'Locust bean stew',d:'Plantain cups filled with slow-stewed catfish in locust bean and tomato sauce.',i:'Ripe plantain, catfish, locust beans, plum tomatoes, scotch bonnet, onions, garlic, palm oil.',a:'Fish, Celery'},
+  {n:'Plantain Cup — Minced Beef',s:'Afro-Continental',img:'menu-images/menu-38.png',p:12,sub:'Spiced beef stew',d:'Crispy plantain cups with spiced minced beef stew and a drizzle of pepper sauce.',i:'Ripe plantain, minced beef, tomatoes, scotch bonnet, onions, garlic, ginger, sunflower oil.',a:'Beef, Celery'},
+  {n:'Plantain Cup — Vegan',s:'Afro-Continental',img:'menu-images/menu-39.png',p:11,sub:'Black bean · Guacamole',d:'Plantain cups with spiced black bean, roasted pepper and guacamole. Fully plant-based.',i:'Ripe plantain, black beans, roasted peppers, scotch bonnet, avocado, lime, coriander, garlic.',a:'Celery',t:'VG'}
+],
+fusionMains:[
+  {n:'Suya-Spiced Gyoza',s:'Afro-Fusion · Japanese x West African',p:19,sub:'Pan-seared · Tamarind-ginger broth',d:'Pan-seared pork and lemongrass dumplings coated in suya spice blend, served with a tamarind-ginger dipping broth. The crunch of the fold meets the heat of the sahel.',i:'Pork mince, lemongrass, suya spice (groundnut, ginger, paprika), tamarind, ginger, spring onion.',a:'Pork, Nuts, Gluten, Soya',t:''},
+  {n:'Truffle Suya Ribeye',s:'Afro-Fusion · French x Northern Nigerian',p:52,sub:'28-day dry-aged · Black truffle butter',d:'28-day dry-aged ribeye, marinated in suya rub and finished with black truffle butter. Accompanied by a shallot and scotch bonnet jus and crispy yam puree.',i:'Ribeye, suya spice (groundnut), black truffle butter, shallots, scotch bonnet, yam.',a:'Beef, Nuts, Dairy, Celery',t:'GF'},
+  {n:'Jollof Risotto',s:'Afro-Fusion · Italian x West African',p:26,sub:'Arborio rice · King prawns',d:'Arborio rice cooked in a smoky tomato-pepper Jollof base, finished with aged Parmesan and sauteed king prawns. The meeting point of Lagos and Milan.',i:'Arborio rice, plum tomatoes, scotch bonnet, king prawns, Parmesan, onions, garlic, butter.',a:'Shellfish, Dairy, Celery'},
+  {n:'Miso Pepper Soup',s:'Afro-Fusion · Japanese x Nigerian',p:22,sub:'White miso · Uziza leaves · Quail egg',d:'White miso broth blended with uziza leaves, African nutmeg and catfish stock. Finished with sesame oil, soft-poached quail egg and crispy shallots.',i:'White miso, catfish stock, uziza leaves, African nutmeg, quail eggs, sesame oil, shallots.',a:'Fish, Eggs, Soya, Celery'},
+  {n:'48-Hour Jerk Lamb',s:'Afro-Fusion · Signature',p:42,sub:'22-spice rub · Pimento smoke',d:'Our lamb is massaged with a 22-spice secret rub and slow-smoked over pimento wood. Served with charred corn and rum-glazed sweet potato.',i:'Lamb shoulder, pimento smoke, scotch bonnet, thyme, allspice, nutmeg, ginger, garlic, brown sugar, rum.',a:'Celery',t:'GF'},
+  {n:'Coconut Infused Jollof',s:'Afro-Fusion · Signature',p:34,sub:'Cold-pressed coconut milk · Jumbo prawns',d:'A silky interpretation of the classic, finished with cold-pressed coconut milk and jumbo prawns.',i:'Parboiled rice, coconut milk, jumbo prawns, plum tomatoes, scotch bonnet, onions, garlic, ginger.',a:'Shellfish, Celery, Coconut',t:'GF'}
+],
+fusionStarters:[
+  {n:'Egusi Dumplings',s:'Afro-Fusion · Starter',p:18,sub:'Steamed · Palm-oil emulsion',d:'Steamed melon seed parcels with wilted spinach and palm-oil emulsion. Delicate texture with deep umami notes.',i:'Melon seeds (egusi), spinach, palm oil, onions, scotch bonnet, stock.',a:'Celery',t:'VG'},
+  {n:'Suya Beef Skewers',s:'Afro-Fusion · Starter',p:16,sub:'Open-flame · Cucumber-onion salad',d:'Tender beef strips marinated in Yaji spice blend, grilled over open flame with cucumber-onion salad.',i:'Beef sirloin, groundnut spice (Yaji), cucumber, onion, lemon, sunflower oil.',a:'Nuts, Celery',t:'GF'},
+  {n:'Ghana Dark Ganache',s:'Afro-Fusion · Dessert Starter',p:14,sub:'Valrhona dark chocolate · Smoked caramel',d:'Valrhona 72% dark chocolate ganache infused with Ghanaian cocoa notes, served warm with smoked caramel and sea salt.',i:'Valrhona dark chocolate, double cream, sugar, smoked caramel, sea salt.',a:'Dairy, Soya, May contain Nuts'}
+],
+desserts:[
+  {n:'Chin Chin Brulee',s:'Desserts',p:10,sub:'Nigerian spiced brulee · Caramelised sugar',d:'Classic creme brulee infused with Nigerian chin chin spices — nutmeg, anise and coconut — with a perfectly caramelised sugar top.',i:'Double cream, egg yolks, sugar, nutmeg, anise, coconut, vanilla.',a:'Dairy, Eggs, Gluten, Coconut'},
+  {n:'Hibiscus Sorbet',s:'Desserts',p:8,sub:'Zobo reduction · Edible gold leaf',d:'Zesty Zobo (hibiscus) sorbet with ginger shortbread and edible gold leaf. Light, refreshing, sophisticated.',i:'Hibiscus flowers, ginger, lemon, sugar, shortbread, gold leaf.',a:'Gluten, Dairy',t:'VG'},
+  {n:'Puff Puff Doughnut Bites',s:'Desserts',p:7,sub:'Cinnamon sugar · Dark chocolate dip',d:'Our take on the beloved Nigerian street snack — pillowy fried dough dusted in cinnamon sugar with dark chocolate dipping sauce.',i:'Flour, yeast, eggs, sugar, nutmeg, cinnamon, milk, dark chocolate, sunflower oil.',a:'Gluten, Eggs, Dairy, Soya'},
+  {n:'Plantain Caramel Sundae',s:'Desserts',p:9,sub:'Vanilla ice cream · Peanut brittle',d:'Fried sweet plantain over vanilla bean ice cream, drizzled with salted caramel and crushed peanut brittle.',i:'Ripe plantain, vanilla ice cream, caramel sauce, sea salt, peanut brittle.',a:'Dairy, Eggs, Peanuts, Nuts, Soya'},
+  {n:'Zobo Panna Cotta',s:'Desserts',p:9,sub:'GF · Hibiscus gel · Mango',d:'Silky coconut panna cotta with hibiscus (Zobo) gel and fresh mango. Light, fragrant, and beautiful.',i:'Coconut cream, gelatin, hibiscus, mango, lime, agave, vanilla.',a:'Dairy, Coconut',t:'GF'}
+],
+smoothies:[
+  {n:'Tropical Sunrise',s:'Smoothies',p:6,sub:'Mango · Pineapple · Passion Fruit',d:'A vibrant blend of mango, pineapple and passion fruit — sunshine in a glass.',i:'Mango, pineapple, passion fruit, orange juice, banana.',a:'None',t:'VG'},
+  {n:'Green Goddess',s:'Smoothies',p:6,sub:'Spinach · Cucumber · Green Apple · Mint',d:'Spinach, cucumber, apple and mint with a squeeze of lime — clean, bright, and energising.',i:'Spinach, cucumber, green apple, mint, lime, coconut water.',a:'None',t:'VG'},
+  {n:'Zobo Berry Blast',s:'Smoothies',p:6.5,sub:'Hibiscus · Mixed Berries · Ginger',d:'Hibiscus blended with mixed berries, ginger and a touch of lemon. Deeply purple, deeply delicious.',i:'Hibiscus, strawberries, blueberries, raspberries, ginger, lemon, agave.',a:'None',t:'VG'},
+  {n:'Plantain Protein Shake',s:'Smoothies',p:7,sub:'Plantain · Peanut Butter · Cinnamon',d:'Ripe plantain blended with oat milk, peanut butter and a hint of cinnamon — thick, creamy and filling.',i:'Ripe plantain, oat milk, peanut butter, cinnamon, banana, maple syrup.',a:'Peanuts, Nuts, Soya, Gluten',t:'VG'},
+  {n:'Watermelon Cooler',s:'Smoothies',p:5.5,sub:'Watermelon · Mint · Lime',d:'Fresh watermelon, mint and lime blended with coconut water. Hydrating and refreshing.',i:'Watermelon, mint, lime, coconut water.',a:'None',t:'VG'},
+  {n:'Moringa Detox',s:'Smoothies',p:7,sub:'Moringa · Pineapple · Banana · Lemon',d:'Moringa powder, pineapple, banana and lemon — a nourishing daily ritual.',i:'Moringa powder, pineapple, banana, lemon, coconut water, agave.',a:'None',t:'VG'}
+],
+wineWhite:[
+  {n:'Sauvignon Blanc',wl:'White',orig:'Marlborough, New Zealand',p:'£9 glass / £38 bottle',d:'Crisp, zesty New Zealand Sauvignon Blanc with tropical notes. Pairs beautifully with grilled fish and lighter Afro-Continental dishes.',a:'Contains Sulphites'},
+  {n:'Chardonnay',wl:'White',orig:'Burgundy, France',p:'£11 glass / £46 bottle',d:'Elegant Burgundy Chardonnay with subtle oak and creamy texture. Excellent with the Truffle Cassava Gnocchi.',a:'Contains Sulphites'},
+  {n:'Champagne Brut NV',wl:'Sparkling',orig:'Champagne, France',p:'£14 glass / £68 bottle',d:'Classic non-vintage Champagne — toasty brioche notes with fine persistent bubbles. Perfect for celebrations.',a:'Contains Sulphites'},
+  {n:'Prosecco',wl:'Sparkling',orig:'Valdobbiadene, Italy',p:'£9 glass / £36 bottle',d:'Light, fresh Prosecco with delicate pear and apple notes. An accessible and elegant aperitivo.',a:'Contains Sulphites'}
+],
+wineRed:[
+  {n:'Malbec',wl:'Red',orig:'Mendoza, Argentina',p:'£10 glass / £42 bottle',d:'Bold Argentine Malbec with dark fruit and silky tannins. A natural companion to the Suya Ribeye.',a:'Contains Sulphites'},
+  {n:'Cotes du Rhone',wl:'Red',orig:'Southern Rhone, France',p:'£9 glass / £38 bottle',d:'Grenache-led Southern Rhone blend. Spicy, warm, and full-bodied — a great match for jerk lamb.',a:'Contains Sulphites'},
+  {n:'Pinot Noir',wl:'Red',orig:'Burgundy, France',p:'£12 glass / £52 bottle',d:'Delicate Burgundian Pinot Noir with red cherry and earthy notes. Versatile with both meat and fish dishes.',a:'Contains Sulphites'}
+]
+};
+
+// ---- RENDER ----
+function imgCard(d){
+  var idx=_s(d);
+  var img=d.img?'<img src="'+d.img+'" alt="" loading="lazy"/>':'<div style="display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:11px;color:#aaa;font-style:italic;">Photo coming soon</span></div>';
+  return '<div class="bk-card" onclick="bkOI('+idx+')">'
+    +'<div class="bk-card-img">'+img+'</div>'
+    +'<div class="bk-card-body">'
+    +'<p class="bk-card-name">'+d.n+'</p>'
+    +(d.t?'<span class="bk-tag">'+d.t+'</span>':'')
+    +(d.sub?'<p class="bk-card-sub">'+d.sub+'</p>':'')
+    +'<div class="bk-card-foot"><span class="bk-price">'+_f(d.p)+'</span>'
+    +'<button class="bk-add" onclick="event.stopPropagation();bkOI('+idx+');setTimeout(bkLbAdd,40)">Add to Cart</button>'
+    +'</div></div></div>';
+}
+
+function tCard(d){
+  var idx=_s(d);
+  return '<div class="bk-tcard" onclick="bkOI('+idx+')">'
+    +'<p class="bk-tcard-name">'+d.n+'</p>'
+    +(d.t?'<span class="bk-tag">'+d.t+'</span> ':'')
+    +(d.sub?'<p class="bk-tcard-sub">'+d.sub+'</p>':'')
+    +(d.d?'<p class="bk-tcard-desc">'+d.d.substring(0,110)+'...</p>':'')
+    +'<div class="bk-tcard-foot"><span class="bk-tprice">'+_f(d.p)+'</span>'
+    +'<button class="bk-add" onclick="event.stopPropagation();bkOI('+idx+');setTimeout(bkLbAdd,40)">Add to Cart</button>'
+    +'</div></div>';
+}
+
+function sCard(d){
+  var idx=_s(d);
+  return '<div class="bk-scard" onclick="bkOI('+idx+')">'
+    +'<p class="bk-scard-name">'+d.n+'</p>'
+    +(d.t?'<span class="bk-tag">'+d.t+'</span>':'')
+    +'<p class="bk-scard-fruits">'+d.sub+'</p>'
+    +'<div class="bk-scard-foot"><span class="bk-sprice">'+_f(d.p)+'</span>'
+    +'<button class="bk-add" onclick="event.stopPropagation();bkOI('+idx+');setTimeout(bkLbAdd,40)">Add to Cart</button>'
+    +'</div></div>';
+}
+
+function wCard(d){
+  var idx=_s(d);
+  return '<div class="bk-wcard" onclick="bkOI('+idx+')">'
+    +'<p class="bk-wlabel">'+d.wl+'</p>'
+    +'<p class="bk-wname">'+d.n+'</p>'
+    +'<p class="bk-wdesc">'+d.orig+' &mdash; '+d.d+'</p>'
+    +'<p class="bk-wprice">'+d.p+'</p>'
+    +'</div>';
+}
+
+// populate
+var G={
+  'g-rice':DATA.rice,'g-jollof':DATA.jollof,'g-burger':DATA.burger,
+  'g-spwaffle':DATA.spwaffle,'g-plwaffle':DATA.plwaffle,
+  'g-fp':DATA.fp,'g-fries':DATA.fries,'g-cups':DATA.cups
+};
+Object.keys(G).forEach(function(id){document.getElementById(id).innerHTML=G[id].map(imgCard).join('');});
+document.getElementById('g-fusion-mains').innerHTML=DATA.fusionMains.map(tCard).join('');
+document.getElementById('g-fusion-starters').innerHTML=DATA.fusionStarters.map(tCard).join('');
+document.getElementById('g-desserts').innerHTML=DATA.desserts.map(tCard).join('');
+document.getElementById('g-smoothies').innerHTML=DATA.smoothies.map(sCard).join('');
+document.getElementById('g-wine-white').innerHTML=DATA.wineWhite.map(wCard).join('');
+document.getElementById('g-wine-red').innerHTML=DATA.wineRed.map(wCard).join('');
+
+// ---- LIGHTBOX ----
+function bkOI(i){_cur=_D[i];bkLbShow();}
+function bkLbShow(){
+  if(!_cur)return;
+  document.getElementById('bk-lb-cat').textContent=_cur.s||'';
+  document.getElementById('bk-lb-nameel').textContent=_cur.n;
+  document.getElementById('bk-lb-priceel').textContent=_f(_cur.p);
+  document.getElementById('bk-lb-desc').textContent=_cur.d||'';
+  document.getElementById('bk-lb-ing').textContent=_cur.i||'';
+  document.getElementById('bk-lb-allergy').textContent=_cur.a||'None known';
+  document.getElementById('bk-lb-note').value='';
+  var imgEl=document.getElementById('bk-lb-imgel');
+  var imgWrap=document.getElementById('bk-lb-img');
+  if(_cur.img){imgEl.src=_cur.img;imgEl.alt=_cur.n;imgWrap.style.display='block';}
+  else{imgWrap.style.display='none';}
+  document.getElementById('bk-lb').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function bkClose(){document.getElementById('bk-lb').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('bk-lb').addEventListener('click',function(e){if(e.target===this)bkClose();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')bkClose();});
+
+function bkLbAdd(){
+  if(!_cur)return;
+  var notes=document.getElementById('bk-lb-note').value.trim();
+  var price=typeof _cur.p==='number'?_cur.p:0;
+  bkAddToCart('bk-'+Date.now(),_cur.n,price,_cur.img||'',1);
+  if(notes){
+    fetch('https://zvqtfsjkhlxhaifbjvkn.supabase.co/functions/v1/bk-contact',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name:'Allergy Note',email:'menu@bukahauz.com',subject:'Allergy Note: '+_cur.n,message:'Item: '+_cur.n+'\nNote: '+notes+'\nAllergens: '+_cur.a})
+    });
+  }
+  bkClose();
+}
+document.getElementById('bk-lb-cta').onclick=bkLbAdd;
+
+// ---- SECTION NAV SCROLL ----
+function bkScrollTo(id){
+  var el=document.getElementById(id);
+  if(el)window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-175,behavior:'smooth'});
+}
+var _secs=['s-afro','s-fusion','s-desserts','s-smoothies','s-wine'];
+var _btns=document.querySelectorAll('.bk-snav-btn');
+window.addEventListener('scroll',function(){
+  var mid=window.scrollY+300;
+  _secs.forEach(function(id,i){
+    var el=document.getElementById(id);
+    if(!el)return;
+    var top=el.getBoundingClientRect().top+window.scrollY;
+    var bot=top+el.offsetHeight;
+    if(mid>=top&&mid<bot){_btns.forEach(function(b){b.classList.remove('active');});_btns[i].classList.add('active');}
+  });
+},{passive:true});
 </script><footer style="background:#f4f4f1;">
   <div style="max-width:1440px;margin:0 auto;padding:80px 32px 48px;">
     <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:40px;">
