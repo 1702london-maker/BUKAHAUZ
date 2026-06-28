@@ -431,7 +431,7 @@ document.addEventListener('click', function(e) {
                 </p>
 <div class="flex flex-wrap justify-center gap-md reveal" style="transition-delay: 0.2s;">
 <a href="book.html" class="bg-primary text-on-primary px-xl py-md font-label-lg text-label-lg rounded-lg shadow-xl" style="display:inline-block;color:#fff;text-decoration:none;">Book An Experience</a>
-<button class="bg-surface/10 backdrop-blur-md border border-surface/30 text-surface px-xl py-md font-label-lg text-label-lg rounded-lg hover:bg-surface/20">Explore Menus</button>
+<a href="menus.html" style="display:inline-block;background:#466556;color:#fff;padding:14px 32px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;">Explore Menus</a>
 <a href="shop-collection.html" style="display:inline-block;color:inherit;text-decoration:none;border-bottom:inherit;" class="text-surface font-label-lg text-label-lg border-b border-surface pb-1 hover:text-secondary hover:border-secondary transition-all">Shop Collection</a>
 </div>
 </div>
@@ -474,7 +474,7 @@ document.addEventListener('click', function(e) {
 <div class="absolute bottom-0 left-0 p-xl">
 <h3 class="font-headline-lg text-headline-lg text-surface mb-sm">Private Dining</h3>
 <p class="font-body-md text-body-md text-surface/80 max-w-md mb-lg">Intimate gatherings tailored to your preferences, featuring personalized menus and discreet service.</p>
-<button class="bg-surface text-on-surface px-lg py-sm font-label-lg text-label-lg rounded-lg">Inquire Now</button>
+<a href="contact.html" style="display:inline-block;background:#8f4c37;color:#fff;padding:14px 32px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;">Inquire Now</a>
 </div>
 </div>
 <!-- Wine Tastings -->
@@ -484,7 +484,7 @@ document.addEventListener('click', function(e) {
 <div class="absolute bottom-0 left-0 p-xl">
 <h3 class="font-headline-lg text-headline-lg text-surface mb-sm">Wine Tastings</h3>
 <p class="font-body-md text-body-md text-surface/80 mb-lg">Discover rare vintages paired with artisanal Afro-fusion small plates.</p>
-<button class="text-surface font-label-lg text-label-lg underline underline-offset-4">Explore pairings</button>
+<a href="wine-pairing-menu.html" style="display:inline-block;background:transparent;color:#466556;border:1px solid #466556;padding:14px 32px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;">Explore Pairings</a>
 </div>
 </div>
 <!-- Chef Experiences -->
@@ -537,7 +537,7 @@ document.addEventListener('click', function(e) {
 <h2 class="font-display-md text-display-md text-on-surface">Seasonal Menus</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-sm">A celebration of Afro-Caribbean and Intercontinental flavors.</p>
 </div>
-<button class="hidden md:block font-label-lg text-label-lg text-primary underline underline-offset-8">View All Menus</button>
+<a href="menus.html" style="display:inline-block;background:#466556;color:#fff;padding:14px 32px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;">View All Menus</a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
 <div class="bg-surface p-lg rounded-xl flex flex-col md:flex-row gap-lg group reveal">
@@ -704,7 +704,7 @@ document.addEventListener('click', function(e) {
 </div>
 <div class="w-full md:w-auto flex flex-col sm:flex-row gap-md">
 <input class="bg-primary-container/20 border-b border-on-primary/30 text-on-primary placeholder:text-on-primary/60 px-lg py-md focus:border-on-primary focus:ring-0 w-full sm:w-80 transition-all" placeholder="Email Address" type="email"/>
-<button class="bg-surface text-primary px-xl py-md font-label-lg text-label-lg rounded-lg">Subscribe</button>
+<button onclick="this.closest('form').submit()" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Subscribe</button>
 </div>
 </div>
 </section>
@@ -772,7 +772,7 @@ document.addEventListener('click', function(e) {
         <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#424844;margin:0 0 18px;">Early access to new experiences, seasonal menus and artisan collaborations.</p>
         <form onsubmit="this.innerHTML='<p style=font-family:Inter,sans-serif;font-size:14px;color:#466556;margin:0>Thank you — you are on the list!</p>';return false;" style="display:flex;flex-direction:column;gap:8px;">
           <input type="email" required placeholder="Your email address" style="font-family:Inter,sans-serif;font-size:14px;border:none;border-bottom:1px solid #c1c8c2;background:transparent;padding:8px 0;color:#1a1c1b;outline:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-          <button type="submit" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:10px 16px;cursor:pointer;margin-top:4px;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Subscribe</button>
+          <button onclick="this.closest('form').submit()" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Subscribe</button>
         </form>
       </div>
 
@@ -883,7 +883,7 @@ function bkCookieAccept(type){
         </div>
         <div class="bk-form-field"><label>Preferred Date</label><input type="date" name="date"/></div>
         <div class="bk-form-field"><label>Tell Us More</label><textarea name="message" rows="4" placeholder="Describe your vision, dietary requirements, theme..."></textarea></div>
-        <button type="submit" class="bk-form-submit">Send Enquiry</button>
+        <button type="submit" style="background:#466556;color:#fff;padding:14px 36px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;">Send Enquiry</button>
       </form>
       <p id="bk-event-thanks" style="display:none;font-family:Inter,sans-serif;font-size:15px;color:#466556;text-align:center;padding:24px 0;margin:0;">Thank you - our events team will contact you shortly!</p>
     </div>

@@ -549,7 +549,7 @@ document.addEventListener('click', function(e) {
 <p class="text-on-surface-variant">Line-caught snapper with a fermented soy glaze, served on a bed of braised bok choy and ginger oil.</p>
 </div>
 </div>
-<button class="text-secondary font-label-lg border-b border-secondary/30 pb-1 hover:border-secondary transition-all">View All Global Classics</button>
+<button onclick="window.location.href='book.html'" style="background:#466556;color:#fff;padding:12px 24px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">View All Global Classics</button>
 </div>
 </div>
 <div class="md:col-span-8 order-1 md:order-2">
@@ -595,7 +595,7 @@ document.addEventListener('click', function(e) {
 <h2 class="font-display-md text-display-md text-on-background">Secure Your Table</h2>
 <p class="font-body-lg text-on-surface-variant">Our menus are seasonal and evolve with the harvest. We recommend booking 2 weeks in advance for weekend service.</p>
 <div class="flex flex-col md:flex-row gap-md justify-center pt-md">
-<button class="bg-primary text-on-primary px-xl py-lg rounded-lg font-label-lg text-lg transition-all hover:bg-on-primary-fixed-variant">Book a Tasting</button>
+<button onclick="window.location.href='book.html'" style="background:#466556;color:#fff;padding:12px 24px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Book a Tasting</button>
 <button class="bg-surface-container-high text-on-surface px-xl py-lg rounded-lg font-label-lg text-lg flex items-center justify-center gap-sm hover:bg-surface-container-highest transition-all">
 <span class="material-symbols-outlined">download</span>
                         Download Full Menu PDF
@@ -667,7 +667,7 @@ document.addEventListener('click', function(e) {
         <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#424844;margin:0 0 18px;">Early access to new experiences, seasonal menus and artisan collaborations.</p>
         <form onsubmit="this.innerHTML='<p style=font-family:Inter,sans-serif;font-size:14px;color:#466556;margin:0>Thank you — you are on the list!</p>';return false;" style="display:flex;flex-direction:column;gap:8px;">
           <input type="email" required placeholder="Your email address" style="font-family:Inter,sans-serif;font-size:14px;border:none;border-bottom:1px solid #c1c8c2;background:transparent;padding:8px 0;color:#1a1c1b;outline:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-          <button type="submit" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:10px 16px;cursor:pointer;margin-top:4px;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Subscribe</button>
+          <button onclick="this.closest('form')?this.closest('form').submit():null" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Subscribe</button>
         </form>
       </div>
 

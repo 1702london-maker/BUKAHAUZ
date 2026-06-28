@@ -197,13 +197,13 @@
 <!-- Top Navigation -->
 <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/10">
 <div class="flex justify-between items-center px-lg py-sm max-w-container-max mx-auto">
-<a class="font-display-md text-display-md text-primary tracking-tight" href="#">Bukahauz</a>
+<a class="font-display-md text-display-md text-primary tracking-tight" href="index.html">Bukahauz</a>
 <div class="hidden md:flex gap-lg">
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Experiences</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Menus</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Shop</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="about.html">About</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="experiences.html">Experiences</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="menus.html">Menus</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="shop-collection.html">Shop</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="contact.html">Contact</a>
 </div>
 <div class="flex gap-md">
 <button class="bg-primary text-on-primary px-md py-sm rounded hover:bg-on-primary-fixed-variant transition-all font-label-lg">Book An Experience</button>
@@ -655,7 +655,7 @@ document.addEventListener('click', function(e) {
 <p class="font-body-lg mb-lg opacity-90 max-w-xl mx-auto">Subscribe to our journal for exclusive insights into our culinary philosophy and priority access to our next pop-up experiences.</p>
 <form class="flex flex-col md:flex-row gap-sm max-w-md mx-auto">
 <input class="bg-transparent border-b border-on-secondary/30 text-on-secondary placeholder:text-on-secondary/50 py-sm px-xs focus:ring-0 focus:border-on-secondary flex-1 font-label-lg outline-none" placeholder="Email Address" type="email">
-<button class="bg-on-secondary text-secondary font-label-lg px-lg py-sm rounded hover:bg-surface transition-colors">Subscribe</button>
+<button onclick="this.closest('form')?this.closest('form').submit():null" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Subscribe</button>
 </form>
 </div>
 </section>
@@ -722,7 +722,7 @@ document.addEventListener('click', function(e) {
         <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#424844;margin:0 0 18px;">Early access to new experiences, seasonal menus and artisan collaborations.</p>
         <form onsubmit="this.innerHTML='<p style=font-family:Inter,sans-serif;font-size:14px;color:#466556;margin:0>Thank you — you are on the list!</p>';return false;" style="display:flex;flex-direction:column;gap:8px;">
           <input type="email" required placeholder="Your email address" style="font-family:Inter,sans-serif;font-size:14px;border:none;border-bottom:1px solid #c1c8c2;background:transparent;padding:8px 0;color:#1a1c1b;outline:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-          <button type="submit" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:10px 16px;cursor:pointer;margin-top:4px;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Subscribe</button>
+          <button onclick="this.closest('form')?this.closest('form').submit():null" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Subscribe</button>
         </form>
       </div>
 

@@ -540,7 +540,7 @@ document.addEventListener('click', function(e) {
 <p class="font-label-sm text-label-sm opacity-60">242 Votes</p>
 </div>
 </div>
-<button class="text-secondary font-label-lg text-label-lg group-hover:underline">+ Vote</button>
+<button onclick="var s=this.previousElementSibling||this.parentElement.querySelector('span');if(s){var n=parseInt(s.textContent)||0;s.textContent=n+1;}" style="background:#466556;color:#fff;padding:8px 16px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">+ Vote</button>
 </div>
 <div class="p-md bg-surface rounded-lg flex items-center justify-between border border-outline-variant/30 hover:border-secondary transition-all cursor-pointer group">
 <div class="flex items-center gap-md">
@@ -550,13 +550,13 @@ document.addEventListener('click', function(e) {
 <p class="font-label-sm text-label-sm opacity-60">189 Votes</p>
 </div>
 </div>
-<button class="text-secondary font-label-lg text-label-lg group-hover:underline">+ Vote</button>
+<button onclick="var s=this.previousElementSibling||this.parentElement.querySelector('span');if(s){var n=parseInt(s.textContent)||0;s.textContent=n+1;}" style="background:#466556;color:#fff;padding:8px 16px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">+ Vote</button>
 </div>
 <form class="mt-lg">
 <label class="font-label-sm text-label-sm block mb-xs">Suggest A New Location</label>
 <div class="flex gap-sm">
 <input class="flex-1 bg-surface border-b border-outline outline-none focus:border-primary p-sm font-body-md" placeholder="Enter neighborhood or city..." type="text"/>
-<button class="px-md py-sm bg-primary text-on-primary rounded-lg font-label-lg text-label-lg">Submit</button>
+<button type="submit" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Submit</button>
 </div>
 </form>
 </div>
@@ -590,7 +590,7 @@ document.addEventListener('click', function(e) {
 <li class="flex items-center gap-sm"><span class="material-symbols-outlined text-sm">check_circle</span> Professional &amp; High-Energy Service</li>
 <li class="flex items-center gap-sm"><span class="material-symbols-outlined text-sm">check_circle</span> Full Dietary Integration (Vegan, GF Options)</li>
 </ul>
-<button class="mt-md px-xl py-md bg-primary text-on-primary rounded-lg font-label-lg text-label-lg">Enquire About Booking</button>
+<a href="contact.html" style="display:inline-block;background:#466556;color:#fff;padding:14px 32px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;">Enquire About Booking</a>
 </div>
 <div class="md:w-1/2 grid grid-cols-2 gap-md">
 <img alt="Festival Food" class="rounded-lg h-48 w-full object-cover" data-alt="A candid, cinematic shot of a vibrant outdoor festival scene with people laughing and enjoying gourmet street food. In the foreground, a beautifully plated Afro-Caribbean appetizer is held by a guest, with the blurred, stylish Bukahauz food truck in the background under string lights. The warm evening glow and terracotta color accents create a joyful, upscale community atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPtiJm57p7nZjstQuTxQBPktLwu9RN6ptTX2woQNMM8QKoaMGZpGrnJtF-ozpNWV0zADg4XSBnpCs7zQ2wXQBooo8884xU-kf3tq3pTS6he0cBmtVTeO_D4e0XT2q4yyZ7Hb3K683TQxqZRnDKITziOlSJQ_eW0D-viTk8GWqPAKdJHQZToJt2p5_qfZxrJBZUPtsRMO6NnFhLfjBhUNv7xxeP9Mpfoote9UtIUl0mWn58tI_93uqyB3uHfpyWvBe3vgRznXFEjYUg"/>
@@ -625,7 +625,7 @@ document.addEventListener('click', function(e) {
 <option>The Docks</option>
 </select>
 </div>
-<button class="w-full py-md bg-secondary text-on-secondary rounded-lg font-label-lg text-label-lg uppercase tracking-widest mt-md hover:scale-[1.02] transition-transform">Get Launch Updates</button>
+<button onclick="this.closest('form').submit()" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Get Launch Updates</button>
 </form>
 </div>
 </div>
@@ -746,7 +746,7 @@ document.addEventListener('click', function(e) {
         <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#424844;margin:0 0 18px;">Early access to new experiences, seasonal menus and artisan collaborations.</p>
         <form onsubmit="this.innerHTML='<p style=font-family:Inter,sans-serif;font-size:14px;color:#466556;margin:0>Thank you — you are on the list!</p>';return false;" style="display:flex;flex-direction:column;gap:8px;">
           <input type="email" required placeholder="Your email address" style="font-family:Inter,sans-serif;font-size:14px;border:none;border-bottom:1px solid #c1c8c2;background:transparent;padding:8px 0;color:#1a1c1b;outline:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-          <button type="submit" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:10px 16px;cursor:pointer;margin-top:4px;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Subscribe</button>
+          <button onclick="this.closest('form').submit()" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Subscribe</button>
         </form>
       </div>
 

@@ -445,12 +445,12 @@ document.addEventListener('click', function(e) {
 <section class="py-xl bg-surface">
 <div class="max-w-container-max mx-auto px-lg">
 <div class="flex flex-wrap items-center justify-center gap-md md:gap-xl">
-<button class="font-label-lg text-label-lg text-primary border-b-2 border-primary py-2 px-1">All Perspectives</button>
-<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 px-1">Private Dining</button>
-<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 px-1">Wine Tastings</button>
-<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 px-1">Networking</button>
-<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 px-1">Corporate</button>
-<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 px-1">Masterclasses</button>
+<button class="font-label-lg text-label-lg text-primary border-b-2 border-primary py-2 px-1" onclick="bkGalleryFilter('all',this)" class="bk-gal-btn active">All Perspectives</button>
+<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 px-1" onclick="bkGalleryFilter('dining',this)" class="bk-gal-btn">Private Dining</button>
+<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 px-1" onclick="bkGalleryFilter('wine',this)" class="bk-gal-btn">Wine Tastings</button>
+<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 px-1" onclick="bkGalleryFilter('networking',this)" class="bk-gal-btn">Networking</button>
+<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 px-1" onclick="bkGalleryFilter('corporate',this)" class="bk-gal-btn">Corporate</button>
+<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-2 px-1" onclick="bkGalleryFilter('masterclass',this)" class="bk-gal-btn">Masterclasses</button>
 </div>
 </div>
 </section>
@@ -674,7 +674,7 @@ document.addEventListener('click', function(e) {
         <p style="font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#424844;margin:0 0 18px;">Early access to new experiences, seasonal menus and artisan collaborations.</p>
         <form onsubmit="this.innerHTML='<p style=font-family:Inter,sans-serif;font-size:14px;color:#466556;margin:0>Thank you — you are on the list!</p>';return false;" style="display:flex;flex-direction:column;gap:8px;">
           <input type="email" required placeholder="Your email address" style="font-family:Inter,sans-serif;font-size:14px;border:none;border-bottom:1px solid #c1c8c2;background:transparent;padding:8px 0;color:#1a1c1b;outline:none;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-          <button type="submit" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:10px 16px;cursor:pointer;margin-top:4px;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Subscribe</button>
+          <button onclick="this.closest('form')?this.closest('form').submit():null" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;">Subscribe</button>
         </form>
       </div>
 
@@ -741,4 +741,24 @@ document.addEventListener('click', function(e) {
             });
         }
     </script>
-<script src="cart.js"></script></body></html>
+<script src="cart.js"></script><script>
+function bkGalleryFilter(cat, btn) {
+  // Update active button
+  document.querySelectorAll('.bk-gal-btn').forEach(function(b){ b.classList.remove('active'); b.style.background='transparent'; b.style.color='#424844'; b.style.borderColor='#c1c8c2'; });
+  btn.classList.add('active');
+  btn.style.background='#466556'; btn.style.color='#fff'; btn.style.borderColor='#466556';
+  // Show/hide gallery items
+  document.querySelectorAll('[data-gal-cat]').forEach(function(el){
+    if(cat==='all' || el.getAttribute('data-gal-cat')===cat) {
+      el.style.display=''; el.style.opacity='1';
+    } else {
+      el.style.display='none';
+    }
+  });
+}
+// Style active button on load
+document.addEventListener('DOMContentLoaded',function(){
+  var active=document.querySelector('.bk-gal-btn.active');
+  if(active){active.style.background='#466556';active.style.color='#fff';active.style.borderColor='#466556';}
+});
+</script></body></html>
