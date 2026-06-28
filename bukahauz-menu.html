@@ -64,14 +64,14 @@ body{background:#faf9f7;font-family:Inter,sans-serif;color:#1a1c1b;}
 .bk-tprice{font-family:"Bodoni Moda",serif;font-size:18px;color:#1a1c1b;}
 
 /* ---- DARK SECTION (wine) ---- */
-.bk-dark{background:#1a1c1b;padding:80px 0;}
+.bk-dark{background:#466556;padding:80px 0;}
 .bk-dark .bk-label{color:#8f4c37;}
 .bk-dark .bk-title{color:#fff;}
 .bk-dark .bk-desc{color:rgba(255,255,255,.6);}
-.bk-dark .bk-col-title{color:#fff;border-bottom-color:#2a2e2c;}
-.bk-wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:#2a302c;border:1px solid #2a302c;margin-top:28px;}
-.bk-wcard{background:#1a1c1b;padding:28px 30px;cursor:pointer;transition:background .2s;}
-.bk-wcard:hover{background:#242a26;}
+.bk-dark .bk-col-title{color:#fff;border-bottom-color:#2f4d3f;}
+.bk-wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:#2f4d3f;border:1px solid #2f4d3f;margin-top:28px;}
+.bk-wcard{background:#3d5a49;padding:28px 30px;cursor:pointer;transition:background .2s;}
+.bk-wcard:hover{background:#2f4d3f;}
 .bk-wlabel{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8f4c37;margin:0 0 8px;}
 .bk-wname{font-family:"Bodoni Moda",serif;font-size:18px;color:#fff;margin:0 0 6px;}
 .bk-wdesc{font-size:12px;color:rgba(255,255,255,.55);line-height:1.65;margin:0 0 14px;}
@@ -106,7 +106,7 @@ body{background:#faf9f7;font-family:Inter,sans-serif;color:#1a1c1b;}
 .bk-lb-cta:hover{background:#2f4d3f;}
 
 /* ---- COMING SOON BANNER ---- */
-.bk-soon{background:#1a1c1b;border-top:1px solid #2a302c;padding:52px 48px;margin-top:52px;}
+.bk-soon{background:#466556;padding:52px 48px;margin-top:52px;}
 .bk-soon-inner{max-width:1440px;margin:0 auto;}
 
 /* ---- RESPONSIVE ---- */
@@ -428,11 +428,14 @@ document.addEventListener('click', function(e) {
       </div>
     </div>
 
-    <p class="bk-col-title">Fusion Signatures — Mains</p>
-    <div class="bk-tgrid" id="g-fusion-mains"></div>
-
-    <p class="bk-col-title" style="margin-top:40px;">Starters &amp; Small Plates</p>
-    <div class="bk-tgrid" id="g-fusion-starters"></div>
+    <p class="bk-col-title" style="margin-top:0;">Signature Pasta</p>
+    <div class="bk-grid" id="g-fusion-pasta"></div>
+    <p class="bk-col-title" style="margin-top:52px;">Chef's Specials</p>
+    <div class="bk-grid" id="g-fusion-specials"></div>
+    <p class="bk-col-title" style="margin-top:52px;">Street Fusion</p>
+    <div class="bk-grid" id="g-fusion-street"></div>
+    <p class="bk-col-title" style="margin-top:52px;">Sharing Experience</p>
+    <div class="bk-grid" id="g-fusion-sharing"></div>
   </div>
 </section>
 
@@ -475,15 +478,12 @@ document.addEventListener('click', function(e) {
   <div class="bk-sec-inner">
     <div class="bk-sec-top" style="margin-bottom:8px;">
       <div class="bk-sec-left">
-        <p class="bk-label" style="color:#8f4c37;">Wine Experience</p>
-        <h2 class="bk-title" style="color:#fff;">The Cellar</h2>
-        <p class="bk-desc" style="color:rgba(255,255,255,.6);">A curated selection of Old and New World wines, chosen by our sommelier to complement Afro-continental flavours. Available by the glass or bottle.</p>
+        <p class="bk-label" style="color:rgba(255,255,255,.6);">Wine Tasting Experience</p>
+        <h2 class="bk-title" style="color:#fff;">The Experience</h2>
+        <p class="bk-desc" style="color:rgba(255,255,255,.75);">French wine flights, Champagne, premium Cognac and rare spirits — curated by our sommelier. Book your tasting experience.</p>
       </div>
     </div>
-    <p class="bk-col-title" style="color:rgba(255,255,255,.4);border-bottom-color:#2a302c;margin-top:8px;">White &amp; Sparkling</p>
-    <div class="bk-wgrid" id="g-wine-white"></div>
-    <p class="bk-col-title" style="color:rgba(255,255,255,.4);border-bottom-color:#2a302c;margin-top:32px;">Red</p>
-    <div class="bk-wgrid" id="g-wine-red"></div>
+    <div class="bk-wgrid" id="g-wine"></div>
     <p style="font-size:12px;color:rgba(255,255,255,.35);margin:32px 0 0;text-align:center;letter-spacing:.04em;">Full wine list &amp; pairing suggestions available on request &nbsp;·&nbsp; concierge@bukahauz.com</p>
   </div>
 </section>
@@ -517,104 +517,117 @@ function _f(p){return typeof p==='number'?'£'+(p%1===0?p:p.toFixed(2)):p;}
 // ---- MENU DATA ----
 var DATA={
 rice:[
-  {n:'White Rice & Grilled Chicken',s:'Afro-Continental',img:'menu-images/menu-14.png',p:15,sub:'Long-grain rice · Signature pepper sauce',d:'Fluffy long-grain white rice served with our signature marinated grilled chicken breast, finished with a vibrant homemade pepper sauce.',i:'White rice, chicken breast, red peppers, scotch bonnet, tomatoes, onions, garlic, ginger, thyme, bay leaves, sunflower oil.',a:'Poultry, Celery'},
-  {n:'White Rice & Grilled Turkey',s:'Afro-Continental',img:'menu-images/menu-16.png',p:16,sub:'Long-grain rice · Signature pepper sauce',d:'Steamed white rice paired with slow-marinated grilled turkey, drizzled with our signature pepper sauce.',i:'White rice, turkey breast, red peppers, scotch bonnet, tomatoes, onions, garlic, ginger, rosemary, sunflower oil.',a:'Poultry, Celery'},
-  {n:'White Rice & Grilled Tilapia',s:'Afro-Continental',img:'menu-images/menu-15.png',p:16,sub:'Long-grain rice · Signature pepper sauce',d:'Delicate white rice served alongside a whole grilled tilapia, marinated in Bukahauz spice blend and finished with pepper sauce.',i:'White rice, tilapia, red peppers, scotch bonnet, tomatoes, onions, garlic, ginger, mixed herbs, lime, sunflower oil.',a:'Fish, Celery'},
-  {n:'White Rice & Mackerel',s:'Afro-Continental',img:'menu-images/menu-45.png',p:15,sub:'Long-grain rice · Signature pepper sauce',d:'Classic West African comfort: steamed white rice alongside richly flavoured mackerel in our signature pepper sauce.',i:'White rice, mackerel, red peppers, scotch bonnet, tomatoes, onions, garlic, ginger, sunflower oil.',a:'Fish, Celery'},
-  {n:'White Rice & Catfish',s:'Afro-Continental',img:'menu-images/menu-13.png',p:16,sub:'Long-grain rice · Signature pepper sauce',d:'Freshwater catfish, slow-cooked in a rich tomato and pepper base, served over steamed white rice.',i:'White rice, catfish, red peppers, scotch bonnet, tomatoes, onions, garlic, iru (locust beans), sunflower oil.',a:'Fish, Celery'}
+  {n:'White Rice with Chicken Breast',img:'menu-images/menu-1.png',s:'Afro-Continental',p:15,sub:'Signature Pepper Sauce',d:'Fluffy long-grain white rice served with grilled chicken breast and our signature Bukahauz pepper sauce.',i:'White rice, chicken breast, scotch bonnet, tomatoes, onions, garlic, ginger, spices.',a:'Poultry, Celery'},
+  {n:'White Rice with Turkey',img:'menu-images/menu-2.png',s:'Afro-Continental',p:15,sub:'Signature Pepper Sauce',d:'Fluffy white rice with tender grilled turkey and our signature pepper sauce.',i:'White rice, turkey, scotch bonnet, tomatoes, onions, garlic, ginger, spices.',a:'Poultry, Celery'},
+  {n:'White Rice with Tilapia',img:'menu-images/menu-3.png',s:'Afro-Continental',p:16,sub:'Signature Pepper Sauce',d:'White rice with freshly grilled tilapia fillet and Bukahauz signature pepper sauce.',i:'White rice, tilapia, scotch bonnet, tomatoes, onions, garlic, ginger, spices.',a:'Fish, Celery'},
+  {n:'White Rice with Mackerel',img:'menu-images/menu-4.png',s:'Afro-Continental',p:15,sub:'Signature Pepper Sauce',d:'White rice with rich grilled mackerel and our signature pepper sauce.',i:'White rice, mackerel, scotch bonnet, tomatoes, onions, garlic, ginger, spices.',a:'Fish, Celery'},
+  {n:'White Rice with Catfish',img:'menu-images/menu-5.png',s:'Afro-Continental',p:16,sub:'Signature Pepper Sauce',d:'White rice with tender catfish and our signature Bukahauz pepper sauce.',i:'White rice, catfish, scotch bonnet, tomatoes, onions, garlic, ginger, spices.',a:'Fish, Celery'}
 ],
 jollof:[
-  {n:'Jollof Rice & Grilled Chicken',s:'Afro-Continental',img:'menu-images/menu-4.png',p:17,sub:'Clay-pot jollof · Signature pepper sauce',d:'Our famous clay-pot Jollof Rice — smoky, rich, and aromatic — served with golden grilled chicken and house pepper sauce.',i:'Parboiled rice, chicken breast, plum tomatoes, red peppers, scotch bonnet, onions, garlic, ginger, mixed spice, bay leaves, chicken stock.',a:'Poultry, Celery'},
-  {n:'Jollof Rice & Grilled Turkey',s:'Afro-Continental',img:'menu-images/menu-7.png',p:18,sub:'Clay-pot jollof · Signature pepper sauce',d:'Richly spiced Jollof rice paired with tender, herb-marinated grilled turkey.',i:'Parboiled rice, turkey, plum tomatoes, red peppers, scotch bonnet, onions, garlic, ginger, bay leaves, turkey stock.',a:'Poultry, Celery'},
-  {n:'Jollof Rice & Tilapia',s:'Afro-Continental',img:'menu-images/menu-6.png',p:18,sub:'Clay-pot jollof · Signature pepper sauce',d:'Smoky Jollof rice paired with a perfectly grilled whole tilapia. A coastal West African classic.',i:'Parboiled rice, tilapia, plum tomatoes, red peppers, scotch bonnet, onions, garlic, ginger, lime, herbs.',a:'Fish, Celery'},
-  {n:'Jollof Rice & Mackerel',s:'Afro-Continental',img:'menu-images/menu-5.png',p:17,sub:'Clay-pot jollof · Signature pepper sauce',d:'Our signature smoky Jollof rice with bold, flavoursome mackerel.',i:'Parboiled rice, mackerel, plum tomatoes, red peppers, scotch bonnet, onions, garlic, ginger, sunflower oil.',a:'Fish, Celery'},
-  {n:'Jollof Rice & Catfish',s:'Afro-Continental',img:'menu-images/menu-3.png',p:18,sub:'Clay-pot jollof · Signature pepper sauce',d:'Deeply smoky Jollof paired with freshwater catfish slow-stewed in tomatoes and locust beans.',i:'Parboiled rice, catfish, plum tomatoes, red peppers, scotch bonnet, onions, garlic, iru (locust beans), palm oil.',a:'Fish, Celery'}
+  {n:'Jollof Rice with Chicken Breast',img:'menu-images/menu-6.png',s:'Afro-Continental',p:15,sub:'Signature Pepper Sauce',d:'Smoky, party-style jollof rice with juicy grilled chicken breast and our signature pepper sauce.',i:'Parboiled rice, tomato base, scotch bonnet, chicken breast, spices, stock.',a:'Poultry, Celery'},
+  {n:'Jollof Rice with Turkey',img:'menu-images/menu-7.png',s:'Afro-Continental',p:15,sub:'Signature Pepper Sauce',d:'Rich smoky jollof rice with tender grilled turkey and signature pepper sauce.',i:'Parboiled rice, tomato base, scotch bonnet, turkey, spices, stock.',a:'Poultry, Celery'},
+  {n:'Jollof Rice with Tilapia',img:'menu-images/menu-8.png',s:'Afro-Continental',p:16,sub:'Signature Pepper Sauce',d:'Party jollof rice with grilled tilapia fillet and our signature pepper sauce.',i:'Parboiled rice, tomato base, scotch bonnet, tilapia, spices, stock.',a:'Fish, Celery'},
+  {n:'Jollof Rice with Mackerel',img:'menu-images/menu-9.png',s:'Afro-Continental',p:15,sub:'Signature Pepper Sauce',d:'Smoky jollof rice with grilled mackerel and Bukahauz signature pepper sauce.',i:'Parboiled rice, tomato base, scotch bonnet, mackerel, spices, stock.',a:'Fish, Celery'},
+  {n:'Jollof Rice with Catfish',img:'menu-images/menu-10.png',s:'Afro-Continental',p:16,sub:'Signature Pepper Sauce',d:'Rich jollof rice with catfish and our signature Bukahauz pepper sauce.',i:'Parboiled rice, tomato base, scotch bonnet, catfish, spices, stock.',a:'Fish, Celery'}
 ],
 burger:[
-  {n:'Plantain Burger — Chicken Breast',s:'Afro-Continental',img:'menu-images/menu-1.png',p:14,sub:'Fried plantain bun · House slaw',d:'Juicy grilled chicken breast nestled in crispy fried plantain buns, topped with our house pepper sauce and fresh slaw.',i:'Plantain, chicken breast, red peppers, scotch bonnet, shredded cabbage, carrots, spring onion, mayo, garlic.',a:'Poultry, Eggs, Mustard, Celery'},
-  {n:'Plantain Burger — Crispy Chicken',s:'Afro-Continental',img:'menu-images/menu-2.png',p:13,sub:'Fried plantain bun · Scotch bonnet mayo',d:'Golden crispy fried chicken thigh in plantain buns with scotch bonnet mayo and pickled red onion.',i:'Plantain, chicken thigh, seasoned flour, eggs, scotch bonnet, red onion, vinegar, garlic.',a:'Poultry, Eggs, Gluten, Celery'},
-  {n:'Plantain Burger — Turkey',s:'Afro-Continental',img:'menu-images/menu-12.png',p:15,sub:'Fried plantain bun · Avocado cream',d:'Herb-marinated turkey patty in golden plantain buns with avocado cream and peri-peri drizzle.',i:'Plantain, turkey mince, herbs, avocado, lemon, scotch bonnet, garlic, spring onion.',a:'Poultry, Eggs, Celery'},
-  {n:'Plantain Burger — Minced Beef',s:'Afro-Continental',img:'menu-images/menu-8.png',p:14,sub:'Fried plantain bun · Caramelised onions',d:'Spiced minced beef patty in crispy plantain buns with caramelised onions and house sauce.',i:'Plantain, minced beef, onions, garlic, ginger, scotch bonnet, mixed spices, sunflower oil.',a:'Beef, Eggs, Celery'}
+  {n:'Chicken Breast Plantain Burger',img:'menu-images/menu-11.png',s:'Afro-Continental',p:14,sub:'Caramelised plantain bun · Bukahauz Sauce',d:'Caramelised fried plantain buns, grilled chicken breast, lettuce, tomatoes, cucumber and Bukahauz burger sauce.',i:'Plantain, chicken breast, lettuce, tomato, cucumber, Bukahauz sauce, spices.',a:'Poultry, Celery, Eggs, Mustard'},
+  {n:'Chicken Plantain Burger',img:'menu-images/menu-12.png',s:'Afro-Continental',p:13,sub:'Caramelised plantain bun · Bukahauz Sauce',d:'Caramelised fried plantain buns, grilled chicken, lettuce, tomatoes, cucumber and Bukahauz burger sauce.',i:'Plantain, chicken, lettuce, tomato, cucumber, Bukahauz sauce, spices.',a:'Poultry, Celery, Eggs, Mustard'},
+  {n:'Turkey Plantain Burger',img:'menu-images/menu-13.png',s:'Afro-Continental',p:13,sub:'Caramelised plantain bun · Bukahauz Sauce',d:'Caramelised fried plantain buns, grilled turkey, lettuce, tomatoes, cucumber and Bukahauz burger sauce.',i:'Plantain, turkey, lettuce, tomato, cucumber, Bukahauz sauce, spices.',a:'Poultry, Celery, Eggs, Mustard'},
+  {n:'Minced Meat Plantain Burger',img:'menu-images/menu-14.png',s:'Afro-Continental',p:13,sub:'Caramelised plantain bun · Bukahauz Sauce',d:'Caramelised fried plantain buns, seasoned minced beef, lettuce, tomatoes, cucumber and Bukahauz burger sauce.',i:'Plantain, minced beef, lettuce, tomato, cucumber, Bukahauz sauce, spices.',a:'Beef, Celery, Eggs, Mustard'}
 ],
 spwaffle:[
-  {n:'Sweet Potato Waffles — Classic',s:'Afro-Continental',img:'menu-images/menu-9.png',p:13,sub:'Caramel drizzle · Powdered sugar',d:'Crispy on the outside, pillowy within. Our signature sweet potato waffles with warm caramel drizzle.',i:'Sweet potato, flour, eggs, milk, butter, baking powder, vanilla, brown sugar, caramel sauce.',a:'Gluten, Eggs, Dairy, Soya'},
-  {n:'Sweet Potato Waffles — Loaded',s:'Afro-Continental',img:'menu-images/menu-10.png',p:15,sub:'Grilled chicken · Scotch bonnet honey',d:'Our sweet potato waffles piled with grilled chicken, pickled jalapeño and scotch bonnet honey.',i:'Sweet potato, flour, eggs, milk, butter, chicken breast, jalapeño, honey, scotch bonnet, garlic.',a:'Gluten, Eggs, Dairy, Poultry, Soya'},
-  {n:'Sweet Potato Waffles — Berries',s:'Afro-Continental',img:'menu-images/menu-11.png',p:14,sub:'Mixed berries · Hibiscus reduction',d:'Light and crisp sweet potato waffles topped with mixed berries, hibiscus reduction and whipped cream.',i:'Sweet potato, flour, eggs, milk, butter, mixed berries, hibiscus, cream, maple syrup.',a:'Gluten, Eggs, Dairy, Soya'},
-  {n:'Sweet Potato Waffles — Smoked Salmon',s:'Afro-Continental',img:'menu-images/menu-31.png',p:16,sub:'Creme fraiche · Capers · Dill',d:'Savoury sweet potato waffles layered with cold smoked salmon, creme fraiche and dill.',i:'Sweet potato, flour, eggs, milk, butter, smoked salmon, creme fraiche, capers, dill, lemon.',a:'Gluten, Eggs, Dairy, Fish, Soya'},
-  {n:'Sweet Potato Waffles — Vegan',s:'Afro-Continental',img:'menu-images/menu-32.png',p:13,sub:'Coconut cream · Mango compote',d:'100% plant-based sweet potato waffles with coconut cream, mango compote and toasted coconut flakes.',i:'Sweet potato, oat flour, flax egg, coconut milk, coconut oil, mango, lime, maple syrup.',a:'Gluten, Soya, Coconut',t:'VG'}
+  {n:'Sweet Potato Waffles with Turkey',img:'menu-images/menu-15.png',s:'Afro-Continental',p:14,sub:'Warm caramel drizzle',d:'Crispy sweet potato waffles with grilled turkey, served with warm caramel drizzle.',i:'Sweet potato, flour, eggs, turkey, caramel, butter, spices.',a:'Gluten, Eggs, Dairy, Poultry'},
+  {n:'Sweet Potato Waffles with Chicken',img:'menu-images/menu-16.png',s:'Afro-Continental',p:14,sub:'Warm caramel drizzle',d:'Crispy sweet potato waffles with grilled chicken, served with warm caramel drizzle.',i:'Sweet potato, flour, eggs, chicken, caramel, butter, spices.',a:'Gluten, Eggs, Dairy, Poultry'},
+  {n:'Sweet Potato Waffles with Chicken Breast',img:'menu-images/menu-17.png',s:'Afro-Continental',p:15,sub:'Warm caramel drizzle',d:'Crispy sweet potato waffles with premium grilled chicken breast and warm caramel drizzle.',i:'Sweet potato, flour, eggs, chicken breast, caramel, butter, spices.',a:'Gluten, Eggs, Dairy, Poultry'},
+  {n:'Sweet Potato Waffles with King Prawns',img:'menu-images/menu-18.png',s:'Afro-Continental',p:17,sub:'Warm caramel drizzle',d:'Crispy sweet potato waffles with sautéed king prawns and warm caramel drizzle.',i:'Sweet potato, flour, eggs, king prawns, caramel, butter, spices.',a:'Gluten, Eggs, Dairy, Shellfish'},
+  {n:'Sweet Potato Waffles with Minced Meat',img:'menu-images/menu-19.png',s:'Afro-Continental',p:14,sub:'Warm caramel drizzle',d:'Crispy sweet potato waffles with seasoned minced meat and warm caramel drizzle.',i:'Sweet potato, flour, eggs, minced beef, caramel, butter, spices.',a:'Gluten, Eggs, Dairy, Beef'}
 ],
 plwaffle:[
-  {n:'Plantain Waffles — Classic',s:'Afro-Continental',img:'menu-images/menu-24.png',p:13,sub:'Caramel drizzle · Sea salt',d:'Golden plantain waffles, naturally sweet with a crisp exterior. Drizzled with warm caramel and sea salt.',i:'Ripe plantain, flour, eggs, milk, butter, baking powder, caramel sauce, sea salt.',a:'Gluten, Eggs, Dairy, Soya'},
-  {n:'Plantain Waffles — Fried Chicken',s:'Afro-Continental',img:'menu-images/menu-25.png',p:15,sub:'Spiced fried chicken · Scotch bonnet honey',d:'Our iconic plantain waffles topped with spiced fried chicken and scotch bonnet honey.',i:'Ripe plantain, flour, eggs, milk, chicken thigh, seasoned flour, scotch bonnet, honey, sunflower oil.',a:'Gluten, Eggs, Dairy, Poultry, Soya'},
-  {n:'Plantain Waffles — Berries and Cream',s:'Afro-Continental',img:'menu-images/menu-26.png',p:14,sub:'Seasonal berries · Hibiscus syrup',d:'Soft plantain waffles topped with seasonal berries, whipped cream and hibiscus syrup.',i:'Ripe plantain, flour, eggs, milk, butter, mixed berries, double cream, hibiscus, maple syrup.',a:'Gluten, Eggs, Dairy, Soya'},
-  {n:'Plantain Waffles — Smoked Salmon',s:'Afro-Continental',img:'menu-images/menu-27.png',p:16,sub:'Cream cheese · Capers · Micro herbs',d:'Savoury plantain waffles with smoked salmon, cream cheese, capers and micro herbs.',i:'Ripe plantain, flour, eggs, milk, butter, smoked salmon, cream cheese, capers, dill, lemon.',a:'Gluten, Eggs, Dairy, Fish, Soya'},
-  {n:'Plantain Waffles — Vegan',s:'Afro-Continental',img:'menu-images/menu-40.png',p:13,sub:'Coconut yoghurt · Tropical salsa',d:'Plant-based plantain waffles with coconut yoghurt, tropical fruit salsa and agave drizzle.',i:'Ripe plantain, oat flour, flax egg, oat milk, coconut oil, mango, pineapple, lime, agave.',a:'Gluten, Soya, Coconut',t:'VG'}
+  {n:'Plantain Waffles with Turkey',img:'menu-images/menu-20.png',s:'Afro-Continental',p:14,sub:'Warm caramel drizzle',d:'Golden plantain waffles with grilled turkey and warm caramel drizzle.',i:'Plantain, flour, eggs, turkey, caramel, butter, spices.',a:'Gluten, Eggs, Dairy, Poultry'},
+  {n:'Plantain Waffles with Chicken',img:'menu-images/menu-21.png',s:'Afro-Continental',p:14,sub:'Warm caramel drizzle',d:'Golden plantain waffles with grilled chicken and warm caramel drizzle.',i:'Plantain, flour, eggs, chicken, caramel, butter, spices.',a:'Gluten, Eggs, Dairy, Poultry'},
+  {n:'Plantain Waffles with Chicken Breast',img:'menu-images/menu-22.png',s:'Afro-Continental',p:15,sub:'Warm caramel drizzle',d:'Golden plantain waffles with premium grilled chicken breast and warm caramel drizzle.',i:'Plantain, flour, eggs, chicken breast, caramel, butter, spices.',a:'Gluten, Eggs, Dairy, Poultry'},
+  {n:'Plantain Waffles with King Prawns',img:'menu-images/menu-23.png',s:'Afro-Continental',p:17,sub:'Warm caramel drizzle',d:'Golden plantain waffles with sautéed king prawns and warm caramel drizzle.',i:'Plantain, flour, eggs, king prawns, caramel, butter, spices.',a:'Gluten, Eggs, Dairy, Shellfish'},
+  {n:'Plantain Waffles with Minced Meat',img:'menu-images/menu-24.png',s:'Afro-Continental',p:14,sub:'Warm caramel drizzle',d:'Golden plantain waffles with seasoned minced meat and warm caramel drizzle.',i:'Plantain, flour, eggs, minced beef, caramel, butter, spices.',a:'Gluten, Eggs, Dairy, Beef'}
 ],
 fp:[
-  {n:'Fried Plantain and Grilled Chicken',s:'Afro-Continental',img:'menu-images/menu-17.png',p:14,sub:'Sweet fried plantain · Pepper sauce',d:'Sweet fried plantain paired with herb-marinated grilled chicken and house pepper sauce.',i:'Ripe plantain, chicken breast, red peppers, scotch bonnet, garlic, ginger, sunflower oil.',a:'Poultry, Celery'},
-  {n:'Fried Plantain and Grilled Turkey',s:'Afro-Continental',img:'menu-images/menu-18.png',p:15,sub:'Sweet fried plantain · Pepper sauce',d:'Caramelised fried plantain with juicy grilled turkey and our house pepper sauce.',i:'Ripe plantain, turkey breast, red peppers, scotch bonnet, garlic, herbs, sunflower oil.',a:'Poultry, Celery'},
-  {n:'Fried Plantain and Tilapia',s:'Afro-Continental',img:'menu-images/menu-19.png',p:15,sub:'Spiced tomato sauce',d:'Golden fried plantain with whole grilled tilapia in spiced tomato sauce.',i:'Ripe plantain, tilapia, plum tomatoes, scotch bonnet, onions, garlic, herbs, lime, sunflower oil.',a:'Fish, Celery'},
-  {n:'Fried Plantain and Mackerel',s:'Afro-Continental',img:'menu-images/menu-20.png',p:14,sub:'Bold pepper sauce',d:'A West African staple — golden fried plantain with bold mackerel in our house pepper sauce.',i:'Ripe plantain, mackerel, red peppers, scotch bonnet, onions, tomatoes, garlic, sunflower oil.',a:'Fish, Celery'},
-  {n:'Fried Plantain and Catfish',s:'Afro-Continental',img:'menu-images/menu-21.png',p:15,sub:'Locust bean tomato sauce',d:'Caramelised plantain with slowly stewed catfish in a rich locust bean and tomato sauce.',i:'Ripe plantain, catfish, locust beans, plum tomatoes, scotch bonnet, onions, garlic, palm oil.',a:'Fish, Celery'},
-  {n:'Fried Plantain and Minced Beef',s:'Afro-Continental',img:'menu-images/menu-22.png',p:14,sub:'Spiced beef stew',d:'Spiced minced beef stew served alongside golden fried sweet plantain.',i:'Ripe plantain, minced beef, plum tomatoes, scotch bonnet, onions, garlic, ginger, mixed spices.',a:'Beef, Celery'},
-  {n:'Fried Plantain and Eggs',s:'Afro-Continental',img:'menu-images/menu-23.png',p:11,sub:'Ask for vegan scramble option',d:'Sweet fried plantain with scrambled eggs or plant-based eggs. Simple and wholesome.',i:'Ripe plantain, eggs (or tofu scramble), spring onion, scotch bonnet, garlic, sunflower oil.',a:'Eggs (Soya for vegan option)',t:'V'}
+  {n:'Fried Plantain with Chicken Breast',img:'menu-images/menu-25.png',s:'Afro-Continental',p:13,sub:'Signature Pepper Sauce',d:'Golden caramelised fried plantain with grilled chicken breast and Bukahauz signature pepper sauce.',i:'Plantain, chicken breast, scotch bonnet, tomatoes, onions, spices.',a:'Poultry, Celery'},
+  {n:'Fried Plantain with Turkey',img:'menu-images/menu-26.png',s:'Afro-Continental',p:13,sub:'Signature Pepper Sauce',d:'Golden fried plantain with grilled turkey and Bukahauz signature pepper sauce.',i:'Plantain, turkey, scotch bonnet, tomatoes, onions, spices.',a:'Poultry, Celery'},
+  {n:'Fried Plantain with Tilapia',img:'menu-images/menu-27.png',s:'Afro-Continental',p:14,sub:'Signature Pepper Sauce',d:'Golden fried plantain with grilled tilapia and Bukahauz signature pepper sauce.',i:'Plantain, tilapia, scotch bonnet, tomatoes, onions, spices.',a:'Fish, Celery'},
+  {n:'Fried Plantain with Mackerel',img:'menu-images/menu-28.png',s:'Afro-Continental',p:13,sub:'Signature Pepper Sauce',d:'Golden fried plantain with grilled mackerel and Bukahauz signature pepper sauce.',i:'Plantain, mackerel, scotch bonnet, tomatoes, onions, spices.',a:'Fish, Celery'},
+  {n:'Fried Plantain with Catfish',img:'menu-images/menu-29.png',s:'Afro-Continental',p:14,sub:'Signature Pepper Sauce',d:'Golden fried plantain with catfish and Bukahauz signature pepper sauce.',i:'Plantain, catfish, scotch bonnet, tomatoes, onions, spices.',a:'Fish, Celery'},
+  {n:'Fried Plantain with King Prawns',img:'menu-images/menu-30.png',s:'Afro-Continental',p:15,sub:'Signature Pepper Sauce',d:'Golden fried plantain with sautéed king prawns and Bukahauz signature pepper sauce.',i:'Plantain, king prawns, scotch bonnet, tomatoes, onions, spices.',a:'Shellfish, Celery'},
+  {n:'Fried Plantain with Minced Meat',img:'menu-images/menu-31.png',s:'Afro-Continental',p:13,sub:'Signature Pepper Sauce',d:'Golden fried plantain with seasoned minced meat and Bukahauz signature pepper sauce.',i:'Plantain, minced beef, scotch bonnet, tomatoes, onions, spices.',a:'Beef, Celery'}
 ],
 fries:[
-  {n:'Strip Fries and Grilled Chicken',s:'Afro-Continental',img:'menu-images/menu-28.png',p:13,sub:'Sweet potato fries · Pepper sauce',d:'Crispy sweet potato strip fries served alongside grilled chicken and house pepper sauce.',i:'Sweet potato, chicken breast, red peppers, scotch bonnet, garlic, herbs, sunflower oil.',a:'Poultry, Celery'},
-  {n:'Strip Fries and Grilled Turkey',s:'Afro-Continental',img:'menu-images/menu-29.png',p:14,sub:'Sweet potato fries · Pepper sauce',d:'Sweet potato strip fries with herb-marinated turkey breast and pepper sauce.',i:'Sweet potato, turkey breast, red peppers, scotch bonnet, garlic, rosemary, sunflower oil.',a:'Poultry, Celery'},
-  {n:'Strip Fries and Tilapia',s:'Afro-Continental',img:'menu-images/menu-30.png',p:14,sub:'Spiced tomato sauce',d:'Crispy sweet potato fries with a whole grilled tilapia in spiced tomato base.',i:'Sweet potato, tilapia, plum tomatoes, scotch bonnet, onions, garlic, lime, herbs.',a:'Fish, Celery'},
-  {n:'Strip Fries and Mackerel',s:'Afro-Continental',img:'menu-images/menu-41.png',p:13,sub:'House pepper sauce',d:'Sweet potato strip fries with bold mackerel and house pepper sauce.',i:'Sweet potato, mackerel, red peppers, scotch bonnet, onions, garlic, sunflower oil.',a:'Fish, Celery'},
-  {n:'Strip Fries and Catfish',s:'Afro-Continental',img:'menu-images/menu-42.png',p:14,sub:'Locust bean stew',d:'Sweet potato fries with slow-cooked catfish in locust bean tomato stew.',i:'Sweet potato, catfish, locust beans, plum tomatoes, scotch bonnet, onions, garlic, palm oil.',a:'Fish, Celery'},
-  {n:'Strip Fries and Minced Beef',s:'Afro-Continental',img:'menu-images/menu-43.png',p:13,sub:'Spiced beef stew',d:'Sweet potato strip fries with richly spiced minced beef stew.',i:'Sweet potato, minced beef, tomatoes, scotch bonnet, onions, garlic, ginger, mixed spices.',a:'Beef, Celery'},
-  {n:'Strip Fries — Plain with Dip',s:'Afro-Continental',img:'menu-images/menu-44.png',p:8,sub:'Choice of dipping sauce',d:'Crispy sweet potato strip fries with your choice of dipping sauce: pepper sauce, garlic mayo or guacamole.',i:'Sweet potato, sunflower oil, sea salt.',a:'May contain Eggs, Soya (in mayo)',t:'V'}
+  {n:'Sweet Potato Strip Fries with Chicken Breast',img:'menu-images/menu-32.png',s:'Afro-Continental',p:13,sub:'Signature Pepper Sauce',d:'Crispy sweet potato strip fries with grilled chicken breast and Bukahauz signature pepper sauce.',i:'Sweet potato, chicken breast, sunflower oil, seasoning, pepper sauce.',a:'Poultry, Celery'},
+  {n:'Sweet Potato Strip Fries with Turkey',img:'menu-images/menu-33.png',s:'Afro-Continental',p:13,sub:'Signature Pepper Sauce',d:'Crispy sweet potato strip fries with grilled turkey and signature pepper sauce.',i:'Sweet potato, turkey, sunflower oil, seasoning, pepper sauce.',a:'Poultry, Celery'},
+  {n:'Sweet Potato Strip Fries with Tilapia',img:'menu-images/menu-34.png',s:'Afro-Continental',p:14,sub:'Signature Pepper Sauce',d:'Crispy sweet potato strip fries with grilled tilapia and signature pepper sauce.',i:'Sweet potato, tilapia, sunflower oil, seasoning, pepper sauce.',a:'Fish, Celery'},
+  {n:'Sweet Potato Strip Fries with Mackerel',img:'menu-images/menu-35.png',s:'Afro-Continental',p:13,sub:'Signature Pepper Sauce',d:'Crispy sweet potato strip fries with grilled mackerel and signature pepper sauce.',i:'Sweet potato, mackerel, sunflower oil, seasoning, pepper sauce.',a:'Fish, Celery'},
+  {n:'Sweet Potato Strip Fries with Catfish',img:'menu-images/menu-36.png',s:'Afro-Continental',p:14,sub:'Signature Pepper Sauce',d:'Crispy sweet potato strip fries with catfish and signature pepper sauce.',i:'Sweet potato, catfish, sunflower oil, seasoning, pepper sauce.',a:'Fish, Celery'},
+  {n:'Sweet Potato Strip Fries with King Prawns',img:'menu-images/menu-37.png',s:'Afro-Continental',p:15,sub:'Signature Pepper Sauce',d:'Crispy sweet potato strip fries with sautéed king prawns and signature pepper sauce.',i:'Sweet potato, king prawns, sunflower oil, seasoning, pepper sauce.',a:'Shellfish, Celery'},
+  {n:'Sweet Potato Strip Fries with Minced Meat',img:'menu-images/menu-38.png',s:'Afro-Continental',p:13,sub:'Signature Pepper Sauce',d:'Crispy sweet potato strip fries with seasoned minced meat and signature pepper sauce.',i:'Sweet potato, minced beef, sunflower oil, seasoning, pepper sauce.',a:'Beef, Celery'}
 ],
 cups:[
-  {n:'Plantain Cup — Grilled Chicken',s:'Afro-Continental',img:'menu-images/menu-33.png',p:12,sub:'Shredded chicken · Pepper sauce',d:'Crispy plantain cups filled with juicy shredded grilled chicken in our pepper sauce. Perfect for sharing.',i:'Ripe plantain, chicken breast, red peppers, scotch bonnet, onions, garlic, herbs, sunflower oil.',a:'Poultry, Celery'},
-  {n:'Plantain Cup — Grilled Turkey',s:'Afro-Continental',img:'menu-images/menu-34.png',p:13,sub:'Shredded turkey · Pepper sauce',d:'Golden plantain cups with herb-marinated shredded turkey and pepper sauce.',i:'Ripe plantain, turkey, red peppers, scotch bonnet, garlic, herbs, sunflower oil.',a:'Poultry, Celery'},
-  {n:'Plantain Cup — Tilapia',s:'Afro-Continental',img:'menu-images/menu-35.png',p:13,sub:'Flaked fish · Spiced tomato sauce',d:'Crispy plantain cups filled with flaked grilled tilapia in a spiced tomato and herb sauce.',i:'Ripe plantain, tilapia, plum tomatoes, scotch bonnet, onions, garlic, lime, herbs.',a:'Fish, Celery'},
-  {n:'Plantain Cup — Mackerel',s:'Afro-Continental',img:'menu-images/menu-36.png',p:12,sub:'Pepper sauce',d:'Plantain cups with bold, flavoursome mackerel in house pepper sauce.',i:'Ripe plantain, mackerel, red peppers, scotch bonnet, onions, garlic, sunflower oil.',a:'Fish, Celery'},
-  {n:'Plantain Cup — Catfish',s:'Afro-Continental',img:'menu-images/menu-37.png',p:13,sub:'Locust bean stew',d:'Plantain cups filled with slow-stewed catfish in locust bean and tomato sauce.',i:'Ripe plantain, catfish, locust beans, plum tomatoes, scotch bonnet, onions, garlic, palm oil.',a:'Fish, Celery'},
-  {n:'Plantain Cup — Minced Beef',s:'Afro-Continental',img:'menu-images/menu-38.png',p:12,sub:'Spiced beef stew',d:'Crispy plantain cups with spiced minced beef stew and a drizzle of pepper sauce.',i:'Ripe plantain, minced beef, tomatoes, scotch bonnet, onions, garlic, ginger, sunflower oil.',a:'Beef, Celery'},
-  {n:'Plantain Cup — Vegan',s:'Afro-Continental',img:'menu-images/menu-39.png',p:11,sub:'Black bean · Guacamole',d:'Plantain cups with spiced black bean, roasted pepper and guacamole. Fully plant-based.',i:'Ripe plantain, black beans, roasted peppers, scotch bonnet, avocado, lime, coriander, garlic.',a:'Celery',t:'VG'}
+  {n:'Plantain Cups with Chicken Breast',img:'menu-images/menu-39.png',s:'Afro-Continental',p:14,sub:'Signature Pepper Sauce',d:'Crispy plantain cups filled with grilled chicken breast and Bukahauz signature pepper sauce.',i:'Plantain, chicken breast, scotch bonnet, tomatoes, onions, spices.',a:'Poultry, Celery'},
+  {n:'Plantain Cups with Turkey',img:'menu-images/menu-40.png',s:'Afro-Continental',p:14,sub:'Signature Pepper Sauce',d:'Crispy plantain cups filled with grilled turkey and Bukahauz signature pepper sauce.',i:'Plantain, turkey, scotch bonnet, tomatoes, onions, spices.',a:'Poultry, Celery'},
+  {n:'Plantain Cups with Tilapia',img:'menu-images/menu-41.png',s:'Afro-Continental',p:15,sub:'Signature Pepper Sauce',d:'Crispy plantain cups filled with grilled tilapia and Bukahauz signature pepper sauce.',i:'Plantain, tilapia, scotch bonnet, tomatoes, onions, spices.',a:'Fish, Celery'},
+  {n:'Plantain Cups with Mackerel',img:'menu-images/menu-42.png',s:'Afro-Continental',p:14,sub:'Signature Pepper Sauce',d:'Crispy plantain cups filled with grilled mackerel and Bukahauz signature pepper sauce.',i:'Plantain, mackerel, scotch bonnet, tomatoes, onions, spices.',a:'Fish, Celery'},
+  {n:'Plantain Cups with Catfish',img:'menu-images/menu-43.png',s:'Afro-Continental',p:15,sub:'Signature Pepper Sauce',d:'Crispy plantain cups filled with catfish and Bukahauz signature pepper sauce.',i:'Plantain, catfish, scotch bonnet, tomatoes, onions, spices.',a:'Fish, Celery'},
+  {n:'Plantain Cups with King Prawns',img:'menu-images/menu-44.png',s:'Afro-Continental',p:16,sub:'Signature Pepper Sauce',d:'Crispy plantain cups filled with sautéed king prawns and Bukahauz signature pepper sauce.',i:'Plantain, king prawns, scotch bonnet, tomatoes, onions, spices.',a:'Shellfish, Celery'},
+  {n:'Plantain Cups with Minced Meat',img:'menu-images/menu-45.png',s:'Afro-Continental',p:14,sub:'Signature Pepper Sauce',d:'Crispy plantain cups filled with seasoned minced meat and Bukahauz signature pepper sauce.',i:'Plantain, minced beef, scotch bonnet, tomatoes, onions, spices.',a:'Beef, Celery'}
 ],
-fusionMains:[
-  {n:'Suya-Spiced Gyoza',img:'menu-images/menu-73.png',s:'Afro-Fusion · Japanese x West African',p:19,sub:'Pan-seared · Tamarind-ginger broth',d:'Pan-seared pork and lemongrass dumplings coated in suya spice blend, served with a tamarind-ginger dipping broth. The crunch of the fold meets the heat of the sahel.',i:'Pork mince, lemongrass, suya spice (groundnut, ginger, paprika), tamarind, ginger, spring onion.',a:'Pork, Nuts, Gluten, Soya',t:''},
-  {n:'Truffle Suya Ribeye',img:'menu-images/menu-67.png',s:'Afro-Fusion · French x Northern Nigerian',p:52,sub:'28-day dry-aged · Black truffle butter',d:'28-day dry-aged ribeye, marinated in suya rub and finished with black truffle butter. Accompanied by a shallot and scotch bonnet jus and crispy yam puree.',i:'Ribeye, suya spice (groundnut), black truffle butter, shallots, scotch bonnet, yam.',a:'Beef, Nuts, Dairy, Celery',t:'GF'},
-  {n:'Jollof Risotto',img:'menu-images/menu-66.png',s:'Afro-Fusion · Italian x West African',p:26,sub:'Arborio rice · King prawns',d:'Arborio rice cooked in a smoky tomato-pepper Jollof base, finished with aged Parmesan and sauteed king prawns. The meeting point of Lagos and Milan.',i:'Arborio rice, plum tomatoes, scotch bonnet, king prawns, Parmesan, onions, garlic, butter.',a:'Shellfish, Dairy, Celery'},
-  {n:'Miso Pepper Soup',img:'menu-images/menu-69.png',s:'Afro-Fusion · Japanese x Nigerian',p:22,sub:'White miso · Uziza leaves · Quail egg',d:'White miso broth blended with uziza leaves, African nutmeg and catfish stock. Finished with sesame oil, soft-poached quail egg and crispy shallots.',i:'White miso, catfish stock, uziza leaves, African nutmeg, quail eggs, sesame oil, shallots.',a:'Fish, Eggs, Soya, Celery'},
-  {n:'48-Hour Jerk Lamb',img:'menu-images/menu-65.png',s:'Afro-Fusion · Signature',p:42,sub:'22-spice rub · Pimento smoke',d:'Our lamb is massaged with a 22-spice secret rub and slow-smoked over pimento wood. Served with charred corn and rum-glazed sweet potato.',i:'Lamb shoulder, pimento smoke, scotch bonnet, thyme, allspice, nutmeg, ginger, garlic, brown sugar, rum.',a:'Celery',t:'GF'},
-  {n:'Coconut Infused Jollof',s:'Afro-Fusion · Signature',p:34,sub:'Cold-pressed coconut milk · Jumbo prawns',d:'A silky interpretation of the classic, finished with cold-pressed coconut milk and jumbo prawns.',i:'Parboiled rice, coconut milk, jumbo prawns, plum tomatoes, scotch bonnet, onions, garlic, ginger.',a:'Shellfish, Celery, Coconut',t:'GF'}
+fusionPasta:[
+  {n:'Suya Alfredo Pasta',img:'menu-images/menu-73.png',s:'Afro-Fusion · Signature Pasta',p:22,sub:'Creamy parmesan · Grilled suya chicken',d:'Creamy parmesan Alfredo sauce finished with grilled suya-spiced chicken. A West African twist on a classic Italian.',i:'Pasta, parmesan, double cream, chicken, suya spice (groundnut, ginger, paprika), garlic, butter.',a:'Gluten, Dairy, Nuts, Poultry'},
+  {n:'Coconut Curry Seafood Linguine',img:'menu-images/menu-63.png',s:'Afro-Fusion · Signature Pasta',p:26,sub:'King prawns · Calamari · Mussels',d:'King prawns, calamari and mussels in a rich creamy coconut curry sauce over linguine.',i:'Linguine, king prawns, calamari, mussels, coconut cream, curry spices, garlic, ginger.',a:'Gluten, Shellfish, Dairy, Celery'},
+  {n:'Jollof Risotto',img:'menu-images/menu-66.png',s:'Afro-Fusion · Signature Pasta',p:24,sub:'Smoky jollof base · Parmesan · Grilled prawns',d:'Italian arborio risotto infused with smoky Nigerian jollof flavours, finished with aged parmesan and grilled prawns.',i:'Arborio rice, plum tomatoes, scotch bonnet, king prawns, parmesan, onions, garlic, butter.',a:'Shellfish, Dairy, Celery'}
 ],
-fusionStarters:[
-  {n:'Egusi Dumplings',img:'menu-images/menu-61.png',s:'Afro-Fusion · Starter',p:18,sub:'Steamed · Palm-oil emulsion',d:'Steamed melon seed parcels with wilted spinach and palm-oil emulsion. Delicate texture with deep umami notes.',i:'Melon seeds (egusi), spinach, palm oil, onions, scotch bonnet, stock.',a:'Celery',t:'VG'},
-  {n:'Suya Beef Skewers',img:'menu-images/menu-68.png',s:'Afro-Fusion · Starter',p:16,sub:'Open-flame · Cucumber-onion salad',d:'Tender beef strips marinated in Yaji spice blend, grilled over open flame with cucumber-onion salad.',i:'Beef sirloin, groundnut spice (Yaji), cucumber, onion, lemon, sunflower oil.',a:'Nuts, Celery',t:'GF'},
-  {n:'Ghana Dark Ganache',s:'Afro-Fusion · Dessert Starter',p:14,sub:'Valrhona dark chocolate · Smoked caramel',d:'Valrhona 72% dark chocolate ganache infused with Ghanaian cocoa notes, served warm with smoked caramel and sea salt.',i:'Valrhona dark chocolate, double cream, sugar, smoked caramel, sea salt.',a:'Dairy, Soya, May contain Nuts'}
+fusionSpecials:[
+  {n:'Suya Steak Bowl',img:'menu-images/menu-67.png',s:'Afro-Fusion · Chef\'s Special',p:32,sub:'Premium steak · Garlic herb rice · Suya butter',d:'Premium grilled steak with garlic herb rice and suya-spiced butter. Bold, rich and deeply satisfying.',i:'Beef steak, suya spice (groundnut, ginger, paprika), rice, garlic, herbs, butter.',a:'Beef, Dairy, Nuts, Celery'},
+  {n:'Jerk Salmon Royale',img:'menu-images/menu-65.png',s:'Afro-Fusion · Chef\'s Special',p:28,sub:'Coconut rice · Roasted vegetables',d:'Grilled salmon fillet with a Caribbean jerk marinade, served over creamy coconut rice with roasted vegetables.',i:'Salmon, jerk marinade (allspice, scotch bonnet, thyme), coconut rice, seasonal vegetables.',a:'Fish, Celery, Dairy'},
+  {n:'Peri Suya Chicken',img:'menu-images/menu-67.png',s:'Afro-Fusion · Chef\'s Special',p:22,sub:'Flame grilled · Sweet potato fries',d:'Flame-grilled chicken marinated in a peri-suya blend, served with crispy sweet potato fries.',i:'Chicken, peri-peri sauce, suya spice (groundnut), sweet potato, sunflower oil, spices.',a:'Poultry, Nuts, Celery'},
+  {n:'Prawn Coconut Rice',img:'menu-images/menu-69.png',s:'Afro-Fusion · Chef\'s Special',p:24,sub:'Creamy coconut rice · Grilled king prawns',d:'Creamy coconut-infused rice finished with perfectly grilled king prawns. Elegant and aromatic.',i:'Rice, coconut cream, king prawns, garlic, ginger, spring onion, spices.',a:'Shellfish, Dairy, Celery'}
+],
+fusionStreet:[
+  {n:'Plantain & Beef Tacos',img:'menu-images/menu-68.png',s:'Afro-Fusion · Street Fusion',p:16,sub:'Soft tortillas · Spiced beef · Plantain',d:'Soft tortillas filled with spiced minced beef and sweet fried plantain. A street-food collision of Lagos and Mexico.',i:'Tortillas, minced beef, plantain, scotch bonnet, tomato, onion, coriander, lime.',a:'Gluten, Beef, Celery'},
+  {n:'Bukahauz Loaded Plantain Nachos',img:'menu-images/menu-60.png',s:'Afro-Fusion · Street Fusion',p:14,sub:'Plantain chips · Loaded toppings',d:'Crispy plantain chips loaded with spiced beef, melted cheese, scotch bonnet salsa and sour cream.',i:'Plantain, minced beef, cheddar, scotch bonnet salsa, sour cream, spring onion.',a:'Beef, Dairy, Celery'}
+],
+fusionSharing:[
+  {n:'Bukahauz Sharing Platter',img:'menu-images/menu-61.png',s:'Afro-Fusion · Sharing Experience',p:85,sub:'For 2–4 · White Rice · Jollof · All proteins',d:'The full Bukahauz experience — White Rice, Jollof Rice, Chicken, Turkey, Tilapia, Mackerel, Catfish, King Prawns, Fried Plantain, Sweet Potato Strip Fries and Signature Pepper Sauce.',i:'White rice, jollof rice, chicken, turkey, tilapia, mackerel, catfish, king prawns, plantain, sweet potato.',a:'Poultry, Fish, Shellfish, Celery'}
 ],
 desserts:[
-  {n:'Chin Chin Brulee',img:'menu-images/menu-74.png',s:'Desserts',p:10,sub:'Nigerian spiced brulee · Caramelised sugar',d:'Classic creme brulee infused with Nigerian chin chin spices — nutmeg, anise and coconut — with a perfectly caramelised sugar top.',i:'Double cream, egg yolks, sugar, nutmeg, anise, coconut, vanilla.',a:'Dairy, Eggs, Gluten, Coconut'},
-  {n:'Hibiscus Sorbet',img:'menu-images/menu-64.png',s:'Desserts',p:8,sub:'Zobo reduction · Edible gold leaf',d:'Zesty Zobo (hibiscus) sorbet with ginger shortbread and edible gold leaf. Light, refreshing, sophisticated.',i:'Hibiscus flowers, ginger, lemon, sugar, shortbread, gold leaf.',a:'Gluten, Dairy',t:'VG'},
-  {n:'Puff Puff Doughnut Bites',img:'menu-images/menu-70.png',s:'Desserts',p:7,sub:'Cinnamon sugar · Dark chocolate dip',d:'Our take on the beloved Nigerian street snack — pillowy fried dough dusted in cinnamon sugar with dark chocolate dipping sauce.',i:'Flour, yeast, eggs, sugar, nutmeg, cinnamon, milk, dark chocolate, sunflower oil.',a:'Gluten, Eggs, Dairy, Soya'},
-  {n:'Plantain Caramel Sundae',img:'menu-images/menu-56.png',s:'Desserts',p:9,sub:'Vanilla ice cream · Peanut brittle',d:'Fried sweet plantain over vanilla bean ice cream, drizzled with salted caramel and crushed peanut brittle.',i:'Ripe plantain, vanilla ice cream, caramel sauce, sea salt, peanut brittle.',a:'Dairy, Eggs, Peanuts, Nuts, Soya'},
-  {n:'Zobo Panna Cotta',img:'menu-images/menu-57.png',s:'Desserts',p:9,sub:'GF · Hibiscus gel · Mango',d:'Silky coconut panna cotta with hibiscus (Zobo) gel and fresh mango. Light, fragrant, and beautiful.',i:'Coconut cream, gelatin, hibiscus, mango, lime, agave, vanilla.',a:'Dairy, Coconut',t:'GF'}
+  {n:'Biscoff Plantain Cheesecake',img:'menu-images/menu-59.png',s:'Desserts',p:9,sub:'Biscoff crumb base · Plantain cream',d:'Biscoff crumb base with silky plantain cheesecake filling. Rich, indulgent and uniquely Bukahauz.',i:'Biscoff biscuits, cream cheese, plantain, butter, sugar, double cream.',a:'Gluten, Dairy, Eggs, Soya'},
+  {n:'Puff Puff Bites',img:'menu-images/menu-70.png',s:'Desserts',p:7,sub:'Chocolate dip · Salted caramel · Vanilla dip',d:'Golden Nigerian puff puff bites served with three dipping sauces — chocolate, salted caramel and vanilla.',i:'Flour, yeast, eggs, sugar, nutmeg, cinnamon, milk, dark chocolate, caramel.',a:'Gluten, Eggs, Dairy, Soya'},
+  {n:'Chocolate Plantain Brownie',img:'menu-images/menu-62.png',s:'Desserts',p:8,sub:'Warm chocolate brownie · Plantain swirl',d:'Warm dark chocolate brownie with ripe plantain swirl. Dense, fudgy and deeply satisfying.',i:'Dark chocolate, plantain, flour, eggs, butter, sugar, cocoa.',a:'Gluten, Eggs, Dairy, Soya'},
+  {n:'Coconut & Mango Panna Cotta',img:'menu-images/menu-64.png',s:'Desserts',p:8,sub:'GF · Coconut cream · Fresh mango',d:'Silky smooth coconut panna cotta topped with fresh mango coulis. Light, tropical and refined.',i:'Coconut cream, gelatin, mango, sugar, lime, vanilla.',a:'Dairy'},
+  {n:'Vanilla Bean Crème Brûlée',img:'menu-images/menu-74.png',s:'Desserts',p:9,sub:'GF · Madagascan vanilla · Caramelised top',d:'Classic crème brûlée with Madagascan vanilla bean and a perfectly caramelised sugar crust.',i:'Double cream, egg yolks, sugar, Madagascan vanilla bean.',a:'Dairy, Eggs'},
+  {n:'Sticky Toffee Cake',img:'menu-images/menu-72.png',s:'Desserts',p:8,sub:'Warm toffee sauce · Vanilla ice cream',d:'Warm sticky toffee cake drenched in rich toffee sauce, served with a scoop of vanilla ice cream.',i:'Dates, flour, eggs, butter, toffee sauce, vanilla ice cream, sugar.',a:'Gluten, Eggs, Dairy, Nuts'},
+  {n:'Red Velvet Royale',img:'menu-images/menu-71.png',s:'Desserts',p:9,sub:'Cream cheese frosting · Edible gold',d:'Layers of moist red velvet cake with cream cheese frosting and edible gold leaf. Show-stopping elegance.',i:'Flour, eggs, buttermilk, cocoa, red colouring, cream cheese, butter, sugar.',a:'Gluten, Eggs, Dairy'},
+  {n:'New York Cheesecake',img:'menu-images/menu-57.png',s:'Desserts',p:8,sub:'Classic baked · Berry compote',d:'Classic baked New York cheesecake with a buttery biscuit base and seasonal berry compote.',i:'Cream cheese, digestive biscuits, eggs, sugar, butter, double cream, mixed berries.',a:'Gluten, Eggs, Dairy'},
+  {n:'Chocolate Lava Cake',img:'menu-images/menu-55.png',s:'Desserts',p:9,sub:'Molten centre · Vanilla ice cream',d:'Warm dark chocolate cake with a molten liquid chocolate centre, served with vanilla bean ice cream.',i:'Dark chocolate, butter, eggs, sugar, flour, vanilla ice cream.',a:'Gluten, Eggs, Dairy, Soya'},
+  {n:'Tropical Fruit Platter',img:'menu-images/menu-58.png',s:'Desserts',p:12,sub:'Seasonal tropical fruits · Honey drizzle',d:'A beautiful arrangement of seasonal tropical fruits with a honey and lime drizzle.',i:'Watermelon, mango, pineapple, papaya, passion fruit, honey, lime.',a:'None'},
+  {n:'Luxury Ice Cream Selection',img:'menu-images/menu-56.png',s:'Desserts',p:10,sub:'6 flavours · Vanilla · Chocolate · Caramel · Coconut · Mango · Strawberry',d:'Six premium scoops — Vanilla Bean, Chocolate, Salted Caramel, Coconut, Mango Sorbet and Strawberry.',i:'Milk, cream, eggs, sugar, flavourings (vanilla, chocolate, caramel, coconut, mango, strawberry).',a:'Dairy, Eggs'}
 ],
 smoothies:[
-  {n:'Tropical Sunrise',img:'menu-images/menu-51.png',s:'Smoothies',p:6,sub:'Mango · Pineapple · Passion Fruit',d:'A vibrant blend of mango, pineapple and passion fruit — sunshine in a glass.',i:'Mango, pineapple, passion fruit, orange juice, banana.',a:'None',t:'VG'},
-  {n:'Green Goddess',img:'menu-images/menu-48.png',s:'Smoothies',p:6,sub:'Spinach · Cucumber · Green Apple · Mint',d:'Spinach, cucumber, apple and mint with a squeeze of lime — clean, bright, and energising.',i:'Spinach, cucumber, green apple, mint, lime, coconut water.',a:'None',t:'VG'},
-  {n:'Zobo Berry Blast',img:'menu-images/menu-46.png',s:'Smoothies',p:6.5,sub:'Hibiscus · Mixed Berries · Ginger',d:'Hibiscus blended with mixed berries, ginger and a touch of lemon. Deeply purple, deeply delicious.',i:'Hibiscus, strawberries, blueberries, raspberries, ginger, lemon, agave.',a:'None',t:'VG'},
-  {n:'Plantain Protein Shake',img:'menu-images/menu-47.png',s:'Smoothies',p:7,sub:'Plantain · Peanut Butter · Cinnamon',d:'Ripe plantain blended with oat milk, peanut butter and a hint of cinnamon — thick, creamy and filling.',i:'Ripe plantain, oat milk, peanut butter, cinnamon, banana, maple syrup.',a:'Peanuts, Nuts, Soya, Gluten',t:'VG'},
-  {n:'Watermelon Cooler',img:'menu-images/menu-50.png',s:'Smoothies',p:5.5,sub:'Watermelon · Mint · Lime',d:'Fresh watermelon, mint and lime blended with coconut water. Hydrating and refreshing.',i:'Watermelon, mint, lime, coconut water.',a:'None',t:'VG'},
-  {n:'Moringa Detox',img:'menu-images/menu-49.png',s:'Smoothies',p:7,sub:'Moringa · Pineapple · Banana · Lemon',d:'Moringa powder, pineapple, banana and lemon — a nourishing daily ritual.',i:'Moringa powder, pineapple, banana, lemon, coconut water, agave.',a:'None',t:'VG'}
+  {n:'Sunrise Glow',img:'menu-images/menu-51.png',s:'Smoothies',p:6,sub:'Banana · Pineapple · Honey Melon',d:'A golden, energising morning blend of banana, pineapple and honey melon.',i:'Banana, pineapple, honey melon, coconut water.',a:'None',t:'VG'},
+  {n:'Tropical Escape',img:'menu-images/menu-54.png',s:'Smoothies',p:6,sub:'Watermelon · Pineapple · Apple',d:'A refreshing tropical blend of watermelon, pineapple and apple.',i:'Watermelon, pineapple, apple, coconut water.',a:'None',t:'VG'},
+  {n:'Green Oasis',img:'menu-images/menu-48.png',s:'Smoothies',p:6,sub:'Apple · Honey Melon · Pineapple',d:'A clean, refreshing blend of apple, honey melon and pineapple.',i:'Apple, honey melon, pineapple, coconut water.',a:'None',t:'VG'},
+  {n:'Sweet Island',img:'menu-images/menu-52.png',s:'Smoothies',p:6,sub:'Banana · Watermelon · Pineapple',d:'A sweet tropical island blend of banana, watermelon and pineapple.',i:'Banana, watermelon, pineapple, coconut water.',a:'None',t:'VG'},
+  {n:'Summer Splash',img:'menu-images/menu-50.png',s:'Smoothies',p:5.5,sub:'Watermelon · Honey Melon · Apple',d:'A cool summer blend of watermelon, honey melon and apple.',i:'Watermelon, honey melon, apple, coconut water.',a:'None',t:'VG'},
+  {n:'Golden Harvest',img:'menu-images/menu-47.png',s:'Smoothies',p:6,sub:'Banana · Apple · Pineapple',d:'A rich harvest blend of banana, apple and pineapple.',i:'Banana, apple, pineapple, coconut water.',a:'None',t:'VG'},
+  {n:'Pink Paradise',img:'menu-images/menu-49.png',s:'Smoothies',p:6,sub:'Watermelon · Banana · Honey Melon',d:'A blush-pink paradise blend of watermelon, banana and honey melon.',i:'Watermelon, banana, honey melon, coconut water.',a:'None',t:'VG'},
+  {n:'Berry-Free Tropical',img:'menu-images/menu-46.png',s:'Smoothies',p:6,sub:'Watermelon · Pineapple · Honey Melon',d:'A berry-free tropical blend of watermelon, pineapple and honey melon.',i:'Watermelon, pineapple, honey melon, coconut water.',a:'None',t:'VG'},
+  {n:'The Red Garden',img:'menu-images/menu-53.png',s:'Smoothies',p:6,sub:'Tomato · Apple · Watermelon',d:'A unique, savoury-sweet blend of tomato, apple and watermelon. Refreshingly different.',i:'Tomato, apple, watermelon, lemon.',a:'None',t:'VG'},
+  {n:'Orchard Blend',img:'menu-images/menu-47.png',s:'Smoothies',p:6,sub:'Apple · Banana · Honey Melon',d:'A classic orchard blend of apple, banana and honey melon.',i:'Apple, banana, honey melon, coconut water.',a:'None',t:'VG'}
 ],
-wineWhite:[
-  {n:'Sauvignon Blanc',wl:'White',orig:'Marlborough, New Zealand',p:'£9 glass / £38 bottle',d:'Crisp, zesty New Zealand Sauvignon Blanc with tropical notes. Pairs beautifully with grilled fish and lighter Afro-Continental dishes.',a:'Contains Sulphites'},
-  {n:'Chardonnay',wl:'White',orig:'Burgundy, France',p:'£11 glass / £46 bottle',d:'Elegant Burgundy Chardonnay with subtle oak and creamy texture. Excellent with the Truffle Cassava Gnocchi.',a:'Contains Sulphites'},
-  {n:'Champagne Brut NV',wl:'Sparkling',orig:'Champagne, France',p:'£14 glass / £68 bottle',d:'Classic non-vintage Champagne — toasty brioche notes with fine persistent bubbles. Perfect for celebrations.',a:'Contains Sulphites'},
-  {n:'Prosecco',wl:'Sparkling',orig:'Valdobbiadene, Italy',p:'£9 glass / £36 bottle',d:'Light, fresh Prosecco with delicate pear and apple notes. An accessible and elegant aperitivo.',a:'Contains Sulphites'}
-],
-wineRed:[
-  {n:'Malbec',wl:'Red',orig:'Mendoza, Argentina',p:'£10 glass / £42 bottle',d:'Bold Argentine Malbec with dark fruit and silky tannins. A natural companion to the Suya Ribeye.',a:'Contains Sulphites'},
-  {n:'Cotes du Rhone',wl:'Red',orig:'Southern Rhone, France',p:'£9 glass / £38 bottle',d:'Grenache-led Southern Rhone blend. Spicy, warm, and full-bodied — a great match for jerk lamb.',a:'Contains Sulphites'},
-  {n:'Pinot Noir',wl:'Red',orig:'Burgundy, France',p:'£12 glass / £52 bottle',d:'Delicate Burgundian Pinot Noir with red cherry and earthy notes. Versatile with both meat and fish dishes.',a:'Contains Sulphites'}
+wine:[
+  {n:'French Wine Flights',s:'Wine Tasting Experience',p:45,sub:'Curated French selections',d:'A guided journey through the finest French wine regions — Bordeaux, Burgundy, Champagne and beyond. Curated by our sommelier.',i:'3 x 75ml pours, sommelier tasting notes, bread selection.',a:'Contains Sulphites'},
+  {n:'Champagne Flights',s:'Wine Tasting Experience',p:55,sub:'Premier & Grand Cru',d:'An elevated exploration of Champagne — from Premier Cru to prestige cuvée. Bubbles, elegance and celebration.',i:'3 x 75ml pours, sommelier tasting notes.',a:'Contains Sulphites'},
+  {n:'Premium Cognac Flights',s:'Wine Tasting Experience',p:65,sub:'VS · VSOP · XO',d:'Three expressions of premium Cognac — VS, VSOP and XO — exploring the depth and character of France\'s finest eau-de-vie.',i:'3 x 25ml pours, sommelier notes, dark chocolate.',a:'Contains Sulphites'},
+  {n:'Les Arrangés du Rhum',s:'Wine Tasting Experience',p:42,sub:'Infused rum flights',d:'A sensory experience of Martinique and Guadeloupe rums, infused with tropical fruits and spices.',i:'3 x 25ml pours, tropical fruit garnish, sommelier notes.',a:'Contains Sulphites'},
+  {n:'Vieux Marc de Champagne Club 1911',s:'Wine Tasting Experience',p:58,sub:'Rare · Aged · Prestige',d:'A rare tasting of aged Vieux Marc de Champagne from the storied Club 1911 house. For the true connoisseur.',i:'2 x 25ml pours, bespoke tasting card.',a:'Contains Sulphites'},
+  {n:'Ratafia Champenois Jean Goyard',s:'Wine Tasting Experience',p:38,sub:'Champenois mistelle · Aged oak',d:'A beautiful Champenois Ratafia from Jean Goyard — grape must and Cognac, aged in oak. Rich, sweet and complex.',i:'2 x 50ml pours, cheese pairing, sommelier notes.',a:'Contains Sulphites'},
+  {n:'Seasonal Sommelier Pairing Experience',s:'Wine Tasting Experience',p:75,sub:'Seasonal · 4 courses · Wine matched',d:'Our sommelier crafts a bespoke 4-course wine pairing experience matched to the season\'s finest produce. Contact us to book.',i:'4 x 75ml pours, 4 courses, tasting menu.',a:'Contains Sulphites'}
 ]
 };
 
@@ -659,10 +672,10 @@ function sCard(d){
 function wCard(d){
   var idx=_s(d);
   return '<div class="bk-wcard" onclick="bkOI('+idx+')">'
-    +'<p class="bk-wlabel">'+d.wl+'</p>'
+    +'<p class="bk-wlabel">'+d.s+'</p>'
     +'<p class="bk-wname">'+d.n+'</p>'
-    +'<p class="bk-wdesc">'+d.orig+' &mdash; '+d.d+'</p>'
-    +'<p class="bk-wprice">'+d.p+'</p>'
+    +'<p class="bk-wdesc">'+d.sub+' — '+d.d+'</p>'
+    +'<p class="bk-wprice">'+_f(d.p)+'</p>'
     +'</div>';
 }
 
@@ -673,12 +686,14 @@ var G={
   'g-fp':DATA.fp,'g-fries':DATA.fries,'g-cups':DATA.cups
 };
 Object.keys(G).forEach(function(id){document.getElementById(id).innerHTML=G[id].map(imgCard).join('');});
-document.getElementById('g-fusion-mains').innerHTML=DATA.fusionMains.map(imgCard).join('');
-document.getElementById('g-fusion-starters').innerHTML=DATA.fusionStarters.map(imgCard).join('');
+document.getElementById('g-fusion-pasta').innerHTML=DATA.fusionPasta.map(imgCard).join('');
+document.getElementById('g-fusion-specials').innerHTML=DATA.fusionSpecials.map(imgCard).join('');
+document.getElementById('g-fusion-street').innerHTML=DATA.fusionStreet.map(imgCard).join('');
+document.getElementById('g-fusion-sharing').innerHTML=DATA.fusionSharing.map(imgCard).join('');
+
 document.getElementById('g-desserts').innerHTML=DATA.desserts.map(imgCard).join('');
 document.getElementById('g-smoothies').innerHTML=DATA.smoothies.map(imgCard).join('');
-document.getElementById('g-wine-white').innerHTML=DATA.wineWhite.map(wCard).join('');
-document.getElementById('g-wine-red').innerHTML=DATA.wineRed.map(wCard).join('');
+document.getElementById('g-wine').innerHTML=DATA.wine.map(wCard).join('');
 
 // ---- LIGHTBOX ----
 function bkOI(i){_cur=_D[i];bkLbShow();}
