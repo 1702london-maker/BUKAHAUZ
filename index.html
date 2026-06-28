@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://www.bukahauz.com/"/>
 <meta property="og:type" content="website"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bukahauz","url":"https://www.bukahauz.com/","areaServed":["Manchester","Salford","Trafford","Chorlton","Didsbury","Ancoats","Deansgate"],"servesCuisine":["African","Afro-Caribbean","Afro-Continental","Intercontinental"],"email":"hello@bukahauz.com","telephone":"+44 7700 900000","sameAs":["https://instagram.com/bukahauz","https://facebook.com/bukahauz"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bukahauz","url":"https://www.bukahauz.com/","areaServed":["Manchester","Salford","Trafford","Chorlton","Didsbury","Ancoats","Deansgate"],"servesCuisine":["African","Afro-Caribbean","Afro-Continental","Intercontinental"],"email":"booking@bukahauz.com","telephone":"+44 7700 900000","sameAs":["https://instagram.com/bukahauz","https://facebook.com/bukahauz"]}</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -882,7 +882,7 @@ function bkCookieAccept(type){
   </div>
 </div>
 <script>
-function bkSubmitEvent(e){e.preventDefault();var f=e.target;var body='Name: '+f.fname.value+' '+f.lname.value+'\nEmail: '+f.email.value+'\nPhone: '+f.phone.value+'\nType: '+f.type.value+'\nGuests: '+f.guests.value+'\nDate: '+f.date.value+'\nMessage: '+f.message.value;window.location.href='mailto:events@bukahauz.com?subject=Event Enquiry: '+encodeURIComponent(f.type.value)+'&body='+encodeURIComponent(body);f.style.display='none';document.getElementById('bk-event-thanks').style.display='block';}
+function bkSubmitEvent(e){e.preventDefault();var f=e.target;var body='Name: '+f.fname.value+' '+f.lname.value+'\nEmail: '+f.email.value+'\nPhone: '+f.phone.value+'\nType: '+f.type.value+'\nGuests: '+f.guests.value+'\nDate: '+f.date.value+'\nMessage: '+f.message.value;window.location.href='mailto:booking@bukahauz.com?subject=Event Enquiry: '+encodeURIComponent(f.type.value)+'&body='+encodeURIComponent(body);f.style.display='none';document.getElementById('bk-event-thanks').style.display='block';}
 </script><!-- Join the Circle Modal -->
 <div id="bk-circle-modal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(26,28,27,.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;">
   <div style="background:#faf9f7;max-width:580px;width:100%;max-height:90vh;overflow-y:auto;position:relative;">
@@ -907,5 +907,6 @@ function bkSubmitEvent(e){e.preventDefault();var f=e.target;var body='Name: '+f.
   </div>
 </div>
 <script>
-function bkCircleSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button[type="submit"]')||f.querySelector('button');var orig=btn?btn.textContent:'Apply';if(btn){btn.textContent='Sending…';btn.disabled=true;}fetch('https://zvqtfsjkhlxhaifbjvkn.supabase.co/functions/v1/bk-circle',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fname:f.fname.value,lname:f.lname.value,email:f.email.value,phone:f.phone?f.phone.value:'',role:f.role?f.role.value:'',message:f.message?f.message.value:''})}).then(function(r){return r.json();}).then(function(){f.style.display='none';document.getElementById('bk-circle-thanks').style.display='block';}).catch(function(){if(btn){btn.textContent=orig;btn.disabled=false;}alert('Something went wrong. Please email events@bukahauz.com');});}
-</script></body></html>
+function bkCircleSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button[type="submit"]')||f.querySelector('button');var orig=btn?btn.textContent:'Apply';if(btn){btn.textContent='Sending…';btn.disabled=true;}fetch('https://zvqtfsjkhlxhaifbjvkn.supabase.co/functions/v1/bk-circle',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fname:f.fname.value,lname:f.lname.value,email:f.email.value,phone:f.phone?f.phone.value:'',role:f.role?f.role.value:'',message:f.message?f.message.value:''})}).then(function(r){return r.json();}).then(function(){f.style.display='none';document.getElementById('bk-circle-thanks').style.display='block';}).catch(function(){if(btn){btn.textContent=orig;btn.disabled=false;}alert('Something went wrong. Please email booking@bukahauz.com');});}
+</script><script src="bk-config.js"></script><script src="bk-widgets.js"></script>
+</body></html>

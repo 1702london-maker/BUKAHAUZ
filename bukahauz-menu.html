@@ -6,7 +6,7 @@
 <meta property="og:url" content="https://www.bukahauz.com/bukahauz-menu"/>
 <meta property="og:type" content="website"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bukahauz","url":"https://www.bukahauz.com/bukahauz-menu","areaServed":["Manchester","Salford","Trafford","Chorlton","Didsbury","Ancoats","Deansgate"],"servesCuisine":["African","Afro-Caribbean","Afro-Continental","Intercontinental"],"email":"hello@bukahauz.com","telephone":"+44 7700 900000","sameAs":["https://instagram.com/bukahauz","https://facebook.com/bukahauz"]}</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bukahauz","url":"https://www.bukahauz.com/bukahauz-menu","areaServed":["Manchester","Salford","Trafford","Chorlton","Didsbury","Ancoats","Deansgate"],"servesCuisine":["African","Afro-Caribbean","Afro-Continental","Intercontinental"],"email":"booking@bukahauz.com","telephone":"+44 7700 900000","sameAs":["https://instagram.com/bukahauz","https://facebook.com/bukahauz"]}</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:#faf9f7;font-family:Inter,sans-serif;color:#1a1c1b;}
@@ -495,7 +495,7 @@ document.addEventListener('click', function(e) {
       </div>
     </div>
     <div class="bk-wgrid" id="g-wine"></div>
-    <p style="font-size:12px;color:rgba(255,255,255,.35);margin:32px 0 0;text-align:center;letter-spacing:.04em;">Full wine list &amp; pairing suggestions available on request &nbsp;·&nbsp; hello@bukahauz.com</p>
+    <p style="font-size:12px;color:rgba(255,255,255,.35);margin:32px 0 0;text-align:center;letter-spacing:.04em;">Full wine list &amp; pairing suggestions available on request &nbsp;·&nbsp; booking@bukahauz.com</p>
   </div>
 </section>
 
@@ -738,7 +738,7 @@ function bkLbAdd(){
   if(notes){
     fetch('https://zvqtfsjkhlxhaifbjvkn.supabase.co/functions/v1/bk-contact',{
       method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name:'Allergy Note',email:'menu@bukahauz.com',subject:'Allergy Note: '+_cur.n,message:'Item: '+_cur.n+'\nNote: '+notes+'\nAllergens: '+_cur.a})
+      body:JSON.stringify({name:'Allergy Note',email:'booking@bukahauz.com',subject:'Allergy Note: '+_cur.n,message:'Item: '+_cur.n+'\nNote: '+notes+'\nAllergens: '+_cur.a})
     });
   }
   bkClose();
@@ -862,4 +862,5 @@ window.addEventListener('scroll',function(){
   @media(max-width:639px){footer>div:first-child>div{grid-template-columns:1fr!important;}footer>div:first-child{padding:48px 20px 32px!important;}}
   </style>
 
-</footer></body></html>
+</footer><script src="bk-config.js"></script><script src="bk-widgets.js"></script>
+</body></html>
