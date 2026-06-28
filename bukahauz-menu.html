@@ -72,6 +72,8 @@ body{background:#faf9f7;font-family:Inter,sans-serif;color:#1a1c1b;}
 .bk-wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:#2f4d3f;border:1px solid #2f4d3f;margin-top:28px;}
 .bk-wcard{background:#3d5a49;padding:28px 30px;cursor:pointer;transition:background .2s;}
 .bk-wcard:hover{background:#2f4d3f;}
+.bk-wcard-img{display:flex;justify-content:center;margin-bottom:20px;}
+.bk-wcard-img img{height:160px;width:auto;object-fit:contain;}
 .bk-wlabel{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8f4c37;margin:0 0 8px;}
 .bk-wname{font-family:"Bodoni Moda",serif;font-size:18px;color:#fff;margin:0 0 6px;}
 .bk-wdesc{font-size:12px;color:rgba(255,255,255,.55);line-height:1.65;margin:0 0 14px;}
@@ -672,7 +674,9 @@ function sCard(d){
 
 function wCard(d){
   var idx=_s(d);
+  var wimg=d.img?'<div class="bk-wcard-img"><img src="'+d.img+'" alt="" loading="lazy"/></div>':'';
   return '<div class="bk-wcard" onclick="bkOI('+idx+')">'
+    +wimg
     +'<p class="bk-wlabel">'+d.s+'</p>'
     +'<p class="bk-wname">'+d.n+'</p>'
     +'<p class="bk-wdesc">'+d.sub+' — '+d.d+'</p>'
