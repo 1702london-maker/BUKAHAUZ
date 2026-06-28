@@ -1,18 +1,82 @@
-﻿/* Mobile action button size reduction — 40% smaller */
+/* ============================================
+   BUKAHAUZ — Mobile overrides (max-width 900px)
+   ============================================ */
+
 @media (max-width: 900px) {
-  header a[href="book.html"] {
-    padding: 5px 11px !important;
-    font-size: 7px !important;
-    letter-spacing: .05em !important;
+
+  /* ---- Full width layout ---- */
+  body { overflow-x: hidden; }
+  section, .bk-sec, .bk-sec-inner, .bk-wrap,
+  [class*="container"], [class*="max-w"] {
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
   }
+
+  /* ---- Nav action buttons (Affiliate Portal, Book Now) ---- */
+  header a[href="book.html"],
   header a[href="affiliate-portal.html"] {
-    padding: 5px 9px !important;
+    padding: 5px 10px !important;
     font-size: 7px !important;
     letter-spacing: .05em !important;
+    white-space: nowrap !important;
   }
-  /* Add to Cart on menu */
-  button.bk-add {
-    padding: 7px 10px !important;
+
+  /* ---- ALL buttons across the whole site ---- */
+  button,
+  a[class*="btn"],
+  input[type="submit"],
+  input[type="button"] {
+    font-size: 9px !important;
+    padding: 8px 14px !important;
+    letter-spacing: .06em !important;
+  }
+
+  /* Hero CTA buttons (inline style overrides) */
+  button[style*="padding:12px 24px"],
+  button[style*="padding: 12px 24px"],
+  button[style*="padding:14px 36px"],
+  button[style*="padding:12px 28px"] {
+    padding: 8px 14px !important;
+    font-size: 9px !important;
+  }
+
+  /* Book Now full-width mobile menu */
+  #bk-mobile-menu a[href="book.html"] {
+    padding: 8px 14px !important;
+    font-size: 9px !important;
+  }
+
+  /* Menu page Add to Cart */
+  .bk-add {
+    padding: 6px 10px !important;
     font-size: 8px !important;
+    letter-spacing: .05em !important;
   }
+
+  /* Subscribe / form submit buttons */
+  button[style*="background:#466556"] {
+    padding: 8px 14px !important;
+    font-size: 9px !important;
+  }
+
+  /* Tailwind-styled hero outline buttons */
+  button.border,
+  button[class*="border-white"] {
+    padding: 8px 14px !important;
+    font-size: 9px !important;
+  }
+
+  /* ---- Cards full width on mobile ---- */
+  .bk-card, .bk-wcard {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Grid single column on very small screens */
+  .bk-grid {
+    grid-template-columns: 1fr !important;
+  }
+
 }
