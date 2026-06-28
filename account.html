@@ -184,7 +184,7 @@
 }
 @media (max-width: 640px) { .bk-form-wrap { padding: 28px 20px; } }
 </style>
-</head>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></head>
 <body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
 <div class="grain-overlay"></div>
 <!-- TopNavBar -->
@@ -421,78 +421,127 @@ document.addEventListener('click', function(e) {
 <main style="padding-top:140px;min-height:75vh;">
 <div style="max-width:500px;margin:0 auto;padding:48px 32px 100px;">
 
-  <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 10px;text-align:center;">Welcome</p>
-  <h1 style="font-family:'Bodoni Moda',serif;font-size:40px;font-weight:500;color:#1a1c1b;margin:0 0 8px;text-align:center;">My Account</h1>
-  <p style="font-family:Inter,sans-serif;font-size:15px;color:#727974;margin:0 0 40px;text-align:center;">Sign in or create your Bukahauz account.</p>
+  <!-- AUTH PANEL (shown when not logged in) -->
+  <div id="bk-auth-panel">
+    <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 10px;text-align:center;">Welcome</p>
+    <h1 style="font-family:'Bodoni Moda',serif;font-size:40px;font-weight:500;color:#1a1c1b;margin:0 0 8px;text-align:center;">My Account</h1>
+    <p style="font-family:Inter,sans-serif;font-size:15px;color:#727974;margin:0 0 40px;text-align:center;">Sign in or create your Bukahauz account.</p>
 
-  <!-- Tabs -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid #e3e2e0;margin-bottom:36px;">
-    <button onclick="alert('Account login is coming soon. Please contact us at concierge@bukahauz.com')" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;width:100%;">Sign In</button>
-    <button id="tab-register" onclick="switchTab('register')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#727974;border:none;border-bottom:2px solid transparent;background:none;padding:14px;cursor:pointer;margin-bottom:-2px;transition:color .2s,border-color .2s;">Create Account</button>
-  </div>
+    <!-- Error/Success message -->
+    <div id="bk-auth-msg" style="display:none;padding:14px 18px;margin-bottom:24px;font-family:Inter,sans-serif;font-size:14px;border-radius:0;"></div>
 
-  <!-- Login Form -->
-  <div id="form-login">
-    <form onsubmit="handleLogin(event)" style="background:#fff;border:1px solid #e3e2e0;padding:40px;">
-      <div style="margin-bottom:20px;">
-        <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Email Address</label>
-        <input type="email" required placeholder="hello@example.com" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-      </div>
-      <div style="margin-bottom:28px;">
-        <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Password</label>
-        <input type="password" required placeholder="Your password" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-        <a href="contact.html" style="display:block;font-family:Inter,sans-serif;font-size:12px;color:#466556;text-decoration:none;margin-top:8px;">Forgot your password?</a>
-      </div>
-      <button onclick="alert('Account login is coming soon. Please contact us at concierge@bukahauz.com')" style="background:#466556;color:#fff;padding:12px 28px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;width:100%;">Sign In</button>
-    </form>
-    <p style="font-family:Inter,sans-serif;font-size:13px;color:#727974;text-align:center;margin-top:20px;">Don't have an account? <a href="contact.html" onclick="switchTab('register');return false;" style="color:#466556;">Create account</a></p>
-  </div>
-
-  <!-- Register Form -->
-  <div id="form-register" style="display:none;">
-    <form onsubmit="handleRegister(event)" style="background:#fff;border:1px solid #e3e2e0;padding:40px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
-        <div>
-          <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">First Name</label>
-          <input type="text" required placeholder="First name" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-        </div>
-        <div>
-          <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Last Name</label>
-          <input type="text" required placeholder="Last name" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-        </div>
-      </div>
-      <div style="margin-bottom:20px;">
-        <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Email Address</label>
-        <input type="email" required placeholder="hello@example.com" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-      </div>
-      <div style="margin-bottom:20px;">
-        <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Password</label>
-        <input type="password" required placeholder="At least 8 characters" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
-      </div>
-      <div style="margin-bottom:28px;">
-        <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
-          <input type="checkbox" style="margin-top:3px;accent-color:#466556;"/>
-          <span style="font-family:Inter,sans-serif;font-size:13px;color:#424844;line-height:1.5;">I agree to the <a href="terms.html" style="color:#466556;">Terms &amp; Conditions</a> and <a href="privacy.html" style="color:#466556;">Privacy Policy</a></span>
-        </label>
-      </div>
-      <button type="submit" style="width:100%;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:16px;cursor:pointer;transition:background .2s;" onmouseover="this.style.background='#2f4d3f';" onmouseout="this.style.background='#466556';">Create Account</button>
-    </form>
-    <p style="font-family:Inter,sans-serif;font-size:13px;color:#727974;text-align:center;margin-top:20px;">Already have an account? <a href="contact.html" onclick="switchTab('login');return false;" style="color:#466556;">Sign in</a></p>
-  </div>
-
-  <!-- Benefits strip -->
-  <div style="margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center;">
-    <div style="padding:20px 12px;border:1px solid #e3e2e0;">
-      <p style="font-family:'Bodoni Moda',serif;font-size:20px;color:#466556;margin:0 0 6px;">★</p>
-      <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#424844;margin:0;">Order History</p>
+    <!-- Tabs -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid #e3e2e0;margin-bottom:36px;">
+      <button id="tab-login" onclick="bkSwitchTab('login')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#466556;border:none;border-bottom:2px solid #466556;background:none;padding:14px;cursor:pointer;margin-bottom:-2px;transition:all .2s;">Sign In</button>
+      <button id="tab-register" onclick="bkSwitchTab('register')" style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#727974;border:none;border-bottom:2px solid transparent;background:none;padding:14px;cursor:pointer;margin-bottom:-2px;transition:all .2s;">Create Account</button>
     </div>
-    <div style="padding:20px 12px;border:1px solid #e3e2e0;">
-      <p style="font-family:'Bodoni Moda',serif;font-size:20px;color:#466556;margin:0 0 6px;">♡</p>
-      <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#424844;margin:0;">Wishlist</p>
+
+    <!-- Login Form -->
+    <div id="form-login">
+      <form onsubmit="bkLogin(event)" style="background:#fff;border:1px solid #e3e2e0;padding:40px;">
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Email Address</label>
+          <input id="login-email" type="email" required placeholder="hello@example.com" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+        </div>
+        <div style="margin-bottom:28px;">
+          <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Password</label>
+          <input id="login-password" type="password" required placeholder="Your password" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+          <button type="button" onclick="bkForgotPassword()" style="background:none;border:none;display:block;font-family:Inter,sans-serif;font-size:12px;color:#466556;text-decoration:none;margin-top:8px;cursor:pointer;padding:0;">Forgot your password?</button>
+        </div>
+        <button type="submit" id="btn-login" style="width:100%;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:16px;cursor:pointer;transition:background .2s;">Sign In</button>
+      </form>
+      <p style="font-family:Inter,sans-serif;font-size:13px;color:#727974;text-align:center;margin-top:20px;">Don't have an account? <a href="#" onclick="bkSwitchTab('register');return false;" style="color:#466556;">Create account</a></p>
     </div>
-    <div style="padding:20px 12px;border:1px solid #e3e2e0;">
-      <p style="font-family:'Bodoni Moda',serif;font-size:20px;color:#466556;margin:0 0 6px;">◎</p>
-      <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#424844;margin:0;">Early Access</p>
+
+    <!-- Register Form -->
+    <div id="form-register" style="display:none;">
+      <form onsubmit="bkRegister(event)" style="background:#fff;border:1px solid #e3e2e0;padding:40px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+          <div>
+            <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">First Name</label>
+            <input id="reg-fname" type="text" required placeholder="First name" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+          </div>
+          <div>
+            <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Last Name</label>
+            <input id="reg-lname" type="text" required placeholder="Last name" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+          </div>
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Email Address</label>
+          <input id="reg-email" type="email" required placeholder="hello@example.com" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#424844;margin-bottom:8px;">Password</label>
+          <input id="reg-password" type="password" required placeholder="At least 8 characters" style="width:100%;box-sizing:border-box;font-family:Inter,sans-serif;font-size:15px;border:1px solid #c1c8c2;padding:14px 16px;background:#faf9f7;color:#1a1c1b;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='#466556';" onblur="this.style.borderColor='#c1c8c2';"/>
+        </div>
+        <div style="margin-bottom:28px;">
+          <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
+            <input id="reg-terms" type="checkbox" required style="margin-top:3px;accent-color:#466556;"/>
+            <span style="font-family:Inter,sans-serif;font-size:13px;color:#424844;line-height:1.5;">I agree to the <a href="terms.html" style="color:#466556;">Terms &amp; Conditions</a> and <a href="privacy.html" style="color:#466556;">Privacy Policy</a></span>
+          </label>
+        </div>
+        <button type="submit" id="btn-register" style="width:100%;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#466556;color:#fff;border:none;padding:16px;cursor:pointer;transition:background .2s;">Create Account</button>
+      </form>
+      <p style="font-family:Inter,sans-serif;font-size:13px;color:#727974;text-align:center;margin-top:20px;">Already have an account? <a href="#" onclick="bkSwitchTab('login');return false;" style="color:#466556;">Sign in</a></p>
+    </div>
+
+    <!-- Benefits strip -->
+    <div style="margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center;">
+      <div style="padding:20px 12px;border:1px solid #e3e2e0;">
+        <p style="font-family:'Bodoni Moda',serif;font-size:20px;color:#466556;margin:0 0 6px;">★</p>
+        <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#424844;margin:0;">Order History</p>
+      </div>
+      <div style="padding:20px 12px;border:1px solid #e3e2e0;">
+        <p style="font-family:'Bodoni Moda',serif;font-size:20px;color:#466556;margin:0 0 6px;">♡</p>
+        <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#424844;margin:0;">Wishlist</p>
+      </div>
+      <div style="padding:20px 12px;border:1px solid #e3e2e0;">
+        <p style="font-family:'Bodoni Moda',serif;font-size:20px;color:#466556;margin:0 0 6px;">◎</p>
+        <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#424844;margin:0;">Early Access</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD (shown when logged in) -->
+  <div id="bk-dashboard" style="display:none;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
+      <div>
+        <p style="font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f4c37;margin:0 0 6px;">Welcome back</p>
+        <h1 id="dash-name" style="font-family:'Bodoni Moda',serif;font-size:36px;font-weight:500;color:#1a1c1b;margin:0;"></h1>
+        <p id="dash-email" style="font-family:Inter,sans-serif;font-size:14px;color:#727974;margin:6px 0 0;"></p>
+      </div>
+      <button onclick="bkLogout()" style="background:transparent;border:1px solid #c1c8c2;color:#424844;padding:10px 20px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;" onmouseover="this.style.borderColor='#8f4c37';this.style.color='#8f4c37';" onmouseout="this.style.borderColor='#c1c8c2';this.style.color='#424844';">Sign Out</button>
+    </div>
+
+    <div style="display:grid;gap:16px;">
+      <a href="shop-collection.html" style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border:1px solid #e3e2e0;background:#fff;text-decoration:none;" onmouseover="this.style.borderColor='#466556';" onmouseout="this.style.borderColor='#e3e2e0';">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <span style="font-size:22px;">★</span>
+          <div><p style="font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#1a1c1b;margin:0;">Order History</p><p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:4px 0 0;">View past purchases</p></div>
+        </div>
+        <span style="font-family:Inter,sans-serif;font-size:18px;color:#c1c8c2;">›</span>
+      </a>
+      <a href="book.html" style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border:1px solid #e3e2e0;background:#fff;text-decoration:none;" onmouseover="this.style.borderColor='#466556';" onmouseout="this.style.borderColor='#e3e2e0';">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <span style="font-size:22px;">◎</span>
+          <div><p style="font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#1a1c1b;margin:0;">My Bookings</p><p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:4px 0 0;">Manage experiences &amp; dining reservations</p></div>
+        </div>
+        <span style="font-family:Inter,sans-serif;font-size:18px;color:#c1c8c2;">›</span>
+      </a>
+      <a href="shop-collection.html" style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border:1px solid #e3e2e0;background:#fff;text-decoration:none;" onmouseover="this.style.borderColor='#466556';" onmouseout="this.style.borderColor='#e3e2e0';">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <span style="font-size:22px;">♡</span>
+          <div><p style="font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#1a1c1b;margin:0;">Wishlist</p><p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:4px 0 0;">Your saved items</p></div>
+        </div>
+        <span style="font-family:Inter,sans-serif;font-size:18px;color:#c1c8c2;">›</span>
+      </a>
+      <a href="contact.html" style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border:1px solid #e3e2e0;background:#fff;text-decoration:none;" onmouseover="this.style.borderColor='#466556';" onmouseout="this.style.borderColor='#e3e2e0';">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <span style="font-size:22px;">✉</span>
+          <div><p style="font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#1a1c1b;margin:0;">Concierge Support</p><p style="font-family:Inter,sans-serif;font-size:12px;color:#727974;margin:4px 0 0;">Get in touch with our team</p></div>
+        </div>
+        <span style="font-family:Inter,sans-serif;font-size:18px;color:#c1c8c2;">›</span>
+      </a>
     </div>
   </div>
 
@@ -626,4 +675,89 @@ function handleRegister(e) {
   </style>
 
 </footer>
-</body></html>
+<script>
+const _bkSB = supabase.createClient(
+  'https://zvqtfsjkhlxhaifbjvkn.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp2cXRmc2praGx4aGFpZmJqdmtuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1NzI2NjgsImV4cCI6MjA5ODE0ODY2OH0.LZALTKytt_1mJXZJqZt5t5I4kYfn7XZvnRVYvZs0sKo'
+);
+
+function bkMsg(text, ok) {
+  var el = document.getElementById('bk-auth-msg');
+  el.textContent = text;
+  el.style.display = 'block';
+  el.style.background = ok ? '#edf7f0' : '#fdf1f0';
+  el.style.color = ok ? '#2d6a4f' : '#8f4c37';
+  el.style.border = '1px solid ' + (ok ? '#b7dfca' : '#f5c6c2');
+}
+
+function bkSwitchTab(tab) {
+  var isLogin = tab === 'login';
+  document.getElementById('form-login').style.display = isLogin ? '' : 'none';
+  document.getElementById('form-register').style.display = isLogin ? 'none' : '';
+  document.getElementById('tab-login').style.color = isLogin ? '#466556' : '#727974';
+  document.getElementById('tab-login').style.borderBottomColor = isLogin ? '#466556' : 'transparent';
+  document.getElementById('tab-register').style.color = isLogin ? '#727974' : '#466556';
+  document.getElementById('tab-register').style.borderBottomColor = isLogin ? 'transparent' : '#466556';
+  document.getElementById('bk-auth-msg').style.display = 'none';
+}
+
+function bkShowDash(user) {
+  document.getElementById('bk-auth-panel').style.display = 'none';
+  var dash = document.getElementById('bk-dashboard');
+  dash.style.display = '';
+  var meta = user.user_metadata || {};
+  var name = (meta.first_name || '') + (meta.last_name ? ' ' + meta.last_name : '') || user.email.split('@')[0];
+  document.getElementById('dash-name').textContent = name;
+  document.getElementById('dash-email').textContent = user.email;
+}
+
+async function bkLogin(e) {
+  e.preventDefault();
+  var btn = document.getElementById('btn-login');
+  btn.textContent = 'Signing in…'; btn.disabled = true;
+  var { data, error } = await _bkSB.auth.signInWithPassword({
+    email: document.getElementById('login-email').value,
+    password: document.getElementById('login-password').value
+  });
+  btn.textContent = 'Sign In'; btn.disabled = false;
+  if (error) { bkMsg(error.message, false); return; }
+  bkShowDash(data.user);
+}
+
+async function bkRegister(e) {
+  e.preventDefault();
+  var btn = document.getElementById('btn-register');
+  btn.textContent = 'Creating account…'; btn.disabled = true;
+  var { data, error } = await _bkSB.auth.signUp({
+    email: document.getElementById('reg-email').value,
+    password: document.getElementById('reg-password').value,
+    options: { data: { first_name: document.getElementById('reg-fname').value, last_name: document.getElementById('reg-lname').value } }
+  });
+  btn.textContent = 'Create Account'; btn.disabled = false;
+  if (error) { bkMsg(error.message, false); return; }
+  bkMsg('Account created! Please check your email to confirm then sign in.', true);
+  bkSwitchTab('login');
+}
+
+async function bkForgotPassword() {
+  var email = document.getElementById('login-email').value;
+  if (!email) { bkMsg('Enter your email address above first.', false); return; }
+  var { error } = await _bkSB.auth.resetPasswordForEmail(email, {
+    redirectTo: window.location.origin + '/account.html'
+  });
+  if (error) { bkMsg(error.message, false); return; }
+  bkMsg('Password reset email sent — check your inbox.', true);
+}
+
+async function bkLogout() {
+  await _bkSB.auth.signOut();
+  document.getElementById('bk-dashboard').style.display = 'none';
+  document.getElementById('bk-auth-panel').style.display = '';
+  bkSwitchTab('login');
+}
+
+// Check session on load
+_bkSB.auth.getSession().then(function(res) {
+  if (res.data && res.data.session) bkShowDash(res.data.session.user);
+});
+</script></body></html>
